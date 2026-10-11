@@ -1,0 +1,3130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRECA E-SERVICES | Your Business’s Health Center</title>
+  <meta name="description" content="FRECA E-SERVICES is your business’s health center. We listen, explore business challenges, recommend practical next steps and provide digital solutions when they are the right fit. Based in Uganda, working remotely.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="FRECA E-SERVICES">
+  <meta property="og:title" content="FRECA E-SERVICES | Your Business’s Health Center">
+  <meta property="og:description" content="Your business’s health center. We listen first, explore the cause of business challenges, and recommend practical advice or digital solutions when appropriate.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_UG">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1426;
+      --navy-mid: #111C33;
+      --navy-light: #1A2744;
+      --accent: #0EA5E9;
+      --accent-bright: #38BDF8;
+      --accent-soft: rgba(14, 165, 233, 0.12);
+      --white: #FFFFFF;
+      --off-white: #F8FAFC;
+      --gray-50: #F1F5F9;
+      --gray-100: #E2E8F0;
+      --gray-200: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-800: #1E293B;
+      --success: #10B981;
+      --radius: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow: 0 4px 20px rgba(11, 20, 38, 0.08);
+      --shadow-lg: 0 20px 40px rgba(11, 20, 38, 0.12);
+      --shadow-xl: 0 30px 60px rgba(11, 20, 38, 0.18);
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --container: min(1180px, 92vw);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background: #F8FAFC;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button, input, select, textarea { font-family: inherit; font-size: inherit; }
+
+    .container { width: var(--container); margin-inline: auto; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border-radius: var(--radius);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
+    }
+    .btn-primary:hover {
+      background: #0284C7;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(14, 165, 233, 0.4);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--gray-200);
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .btn-outline-light {
+      background: transparent;
+      color: white;
+      border-color: rgba(255,255,255,0.35);
+    }
+    .btn-outline-light:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+    .btn-lg { padding: 1.05rem 2rem; font-size: 1rem; }
+    .btn-sm { padding: 0.6rem 1.25rem; font-size: 0.875rem; }
+    .btn-full { width: 100%; }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .nav.scrolled {
+      background: rgba(255,255,255,0.97);
+      border-bottom-color: var(--gray-100);
+      box-shadow: 0 1px 12px rgba(11,20,38,0.06);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+      gap: 1.5rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--accent), #0284C7);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 0.8rem;
+      box-shadow: 0 4px 14px rgba(14,165,233,0.35);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+    }
+    .nav-link {
+      padding: 0.5rem 0.9rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--navy);
+      background: var(--gray-50);
+    }
+    .nav-toggle {
+      display: none;
+      width: 42px; height: 42px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      border-radius: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--navy);
+      border-radius: 1px;
+      transition: all 0.25s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed;
+      top: 74px; left: 0; right: 0;
+      background: white;
+      border-bottom: 1px solid var(--gray-100);
+      padding: 1rem;
+      transform: translateY(-110%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.35s ease;
+      z-index: 999;
+      box-shadow: var(--shadow-lg);
+    }
+    .mobile-menu.open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    .mobile-menu a {
+      display: block;
+      padding: 0.9rem 1rem;
+      font-weight: 500;
+      color: var(--navy);
+      border-radius: 10px;
+    }
+    .mobile-menu a:hover { background: var(--gray-50); color: var(--accent); }
+    .mobile-menu .btn { width: 100%; margin-top: 0.75rem; }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      padding: 9rem 0 5.5rem;
+      background: linear-gradient(160deg, #0B1426 0%, #132038 50%, #0B1426 100%);
+      overflow: hidden;
+      min-height: 94vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 75% 15%, rgba(14,165,233,0.18), transparent),
+        radial-gradient(ellipse 50% 40% at 15% 85%, rgba(14,165,233,0.08), transparent);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3.5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(14,165,233,0.12);
+      border: 1px solid rgba(14,165,233,0.28);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #7DD3FC;
+      margin-bottom: 1.5rem;
+    }
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+    .hero-title {
+      font-size: clamp(2.4rem, 5.2vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, #7DD3FC, #0EA5E9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: rgba(248,250,252,0.78);
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    
+    
+
+    .hero-visual {
+      position: relative;
+    }
+    .hero-img-wrap {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid rgba(255,255,255,0.1);
+      aspect-ratio: 4/3;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    
+    
+    .section-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+    }
+    .section-title {
+      font-size: clamp(1.7rem, 3.8vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--navy);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.9rem;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+    }
+
+    /* ABOUT */
+    .about { background: white; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-img {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3;
+    }
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-content .section-label { text-align: left; }
+    .about-content .section-title { text-align: left; }
+    .about-text {
+      color: var(--gray-600);
+      margin-bottom: 1.15rem;
+      line-height: 1.75;
+    }
+    
+    
+    
+
+    /* SERVICES */
+    .services, .solutions { background: var(--off-white); }
+    .solutions { background: var(--off-white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .service-card {
+      background: white;
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #38BDF8);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: var(--accent-soft);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      transition: all 0.3s;
+    }
+    .service-card:hover .service-icon {
+      background: var(--accent);
+      color: white;
+    }
+    .service-icon svg { width: 24px; height: 24px; }
+    .service-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.55rem;
+    }
+    .service-desc {
+      font-size: 0.925rem;
+      color: var(--gray-500);
+      line-height: 1.65;
+      margin-bottom: 1.15rem;
+    }
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+      transition: gap 0.2s;
+    }
+    .service-link:hover { gap: 0.6rem; }
+
+    /* WHY */
+    .why { background: white; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .why-card {
+      text-align: center;
+      padding: 2rem 1.4rem;
+      border-radius: var(--radius-lg);
+      background: var(--off-white);
+      border: 1px solid transparent;
+      transition: all 0.3s;
+    }
+    .why-card:hover {
+      background: white;
+      box-shadow: var(--shadow);
+      border-color: var(--gray-100);
+      transform: translateY(-3px);
+    }
+    .why-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 1.15rem;
+      background: linear-gradient(135deg, var(--accent-soft), rgba(14,165,233,0.04));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+    .why-icon svg { width: 26px; height: 26px; }
+    .why-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.45rem;
+    }
+    .why-desc {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* PROCESS */
+    .process {
+      background: var(--navy);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .process::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(14,165,233,0.12), transparent);
+      pointer-events: none;
+    }
+    .process .section-label { color: #7DD3FC; }
+    .process .section-title { color: white; }
+    .process .section-desc { color: rgba(248,250,252,0.65); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .process-step { text-align: center; position: relative; }
+    .process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(50% + 28px);
+      width: calc(100% - 56px);
+      height: 2px;
+      background: rgba(14,165,233,0.25);
+    }
+    .process-num {
+      width: 56px; height: 56px;
+      margin: 0 auto 1.15rem;
+      background: rgba(14,165,233,0.12);
+      border: 2px solid rgba(14,165,233,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s;
+    }
+    .process-step:hover .process-num {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      transform: scale(1.08);
+    }
+    .process-title {
+      font-size: 0.975rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .process-desc {
+      font-size: 0.8rem;
+      color: rgba(248,250,252,0.6);
+      line-height: 1.55;
+    }
+
+    /* PROJECTS */
+    .projects { background: var(--off-white); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .project-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--gray-100);
+      transition: all 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .project-img {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      position: relative;
+      background: var(--gray-50);
+    }
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover .project-img img { transform: scale(1.06); }
+    .project-cat {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      padding: 0.3rem 0.75rem;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .project-body { padding: 1.2rem 1.4rem 1.4rem; }
+    .project-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.45rem;
+    }
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 0.9rem;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .project-link:hover { gap: 0.55rem; }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    /* FAQ */
+    .faq { background: white; }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item {
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius);
+      margin-bottom: 0.7rem;
+      overflow: hidden;
+      background: var(--off-white);
+      transition: all 0.25s;
+    }
+    .faq-item.active {
+      background: white;
+      box-shadow: var(--shadow);
+      border-color: var(--accent);
+    }
+    .faq-q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem 1.25rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-icon {
+      width: 22px; height: 22px;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+      color: var(--gray-400);
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--accent);
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-item.active .faq-a { max-height: 280px; }
+    .faq-a-inner {
+      padding: 0 1.25rem 1.2rem;
+      font-size: 0.925rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+    }
+
+    /* CONTACT */
+    .contact { background: var(--off-white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-info h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+    }
+    .contact-info > p {
+      color: var(--gray-500);
+      margin-bottom: 1.75rem;
+      line-height: 1.7;
+    }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+      margin-bottom: 1.75rem;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.95rem;
+    }
+    .contact-detail-icon {
+      width: 44px; height: 44px;
+      background: var(--accent-soft);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .contact-detail-icon svg { width: 20px; height: 20px; }
+    .contact-detail h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.1rem;
+    }
+    .contact-detail p {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+    }
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.875rem 1.5rem;
+      background: #25D366;
+      color: white;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.925rem;
+      transition: all 0.25s;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+    }
+    .whatsapp-btn:hover {
+      background: #1DA851;
+      transform: translateY(-2px);
+    }
+    .whatsapp-btn svg { width: 20px; height: 20px; }
+
+    .form-wrap {
+      background: white;
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius);
+      background: var(--off-white);
+      color: var(--gray-800);
+      transition: all 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+      background: white;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .form-success.show { display: block; }
+    .form-success-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 1rem;
+      background: rgba(16,185,129,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--success);
+    }
+    .form-success h4 {
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .form-success p {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #070E1A;
+      color: rgba(248,250,252,0.75);
+      padding: 4rem 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 2.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-brand .logo { color: white; margin-bottom: 1rem; }
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.4rem;
+      max-width: 280px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 0.55rem;
+    }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.65);
+      transition: all 0.25s;
+    }
+    .footer-social a:hover {
+      background: var(--accent);
+      color: white;
+    }
+    .footer-social svg { width: 17px; height: 17px; }
+    .footer-col h4 {
+      font-size: 0.925rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 1.15rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .footer-links a {
+      font-size: 0.875rem;
+      color: rgba(248,250,252,0.55);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.875rem;
+    }
+    .footer-contact-item svg {
+      width: 16px; height: 16px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 0;
+      font-size: 0.8rem;
+      color: rgba(248,250,252,0.4);
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    
+
+    /* BACK TO TOP */
+    .back-top {
+      position: fixed;
+      bottom: 1.6rem;
+      right: 1.6rem;
+      width: 44px; height: 44px;
+      background: var(--navy);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: all 0.25s;
+      z-index: 100;
+    }
+    .back-top { right: 6.2rem; } /* leave space for the Ekkaris launcher */
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-top:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+    .back-top svg { width: 20px; height: 20px; }
+
+    /* ===== EKKARIS CHATBOT ===== */
+    .ekkaris-btn {
+      position: fixed;
+      bottom: 1.4rem;
+      right: 1.4rem;
+      z-index: 1100;
+      width: 66px; height: 66px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      background: radial-gradient(circle at 30% 25%, #1E3A5F, #0B1426);
+      box-shadow: 0 10px 30px rgba(11,20,38,0.4), 0 0 0 3px rgba(56,189,248,0.55);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+    }
+    .ekkaris-btn:hover, .ekkaris-btn.active {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 14px 34px rgba(14,165,233,0.4), 0 0 0 3px var(--accent-bright);
+    }
+    .ekkaris-btn::before {
+      content: '';
+      position: absolute;
+      inset: -7px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-bright);
+      opacity: 0.45;
+      pointer-events: none;
+      animation: ekkaris-pulse 2.4s ease infinite;
+    }
+    @keyframes ekkaris-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.45; }
+      50% { transform: scale(1.14); opacity: 0; }
+    }
+    .ekkaris-btn .bot-art {
+      display: block; width: 100%; height: 100%;
+      border-radius: 50%; overflow: hidden;
+    }
+    .ekkaris-btn .bot-art svg { width: 100%; height: 100%; display: block; animation: bot-float 3.6s ease-in-out infinite; }
+    .ekkaris-btn .online-dot {
+      position: absolute; right: 2px; bottom: 3px;
+      width: 15px; height: 15px; border-radius: 50%;
+      background: var(--success); border: 3px solid #fff;
+    }
+    @keyframes bot-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.5px); } }
+
+    .b-eye, .b-mouth, .b-ant { transform-box: fill-box; transform-origin: center; }
+    .b-eye { animation: b-blink 4.4s infinite; }
+    @keyframes b-blink { 0%, 92%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.12); } }
+    .b-ant { animation: b-ant 1.8s ease-in-out infinite; }
+    @keyframes b-ant { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .is-thinking .b-ant { animation-duration: 0.45s; }
+    .is-talking .b-mouth { animation: b-talk 0.28s ease-in-out infinite alternate; }
+    @keyframes b-talk { from { transform: scaleY(1); } to { transform: scaleY(2.4); } }
+
+    .ekkaris-hello {
+      position: fixed;
+      right: 1.4rem; bottom: 5.7rem;
+      z-index: 1100;
+      max-width: 230px;
+      background: #fff;
+      color: var(--navy);
+      border: 1px solid var(--gray-100);
+      border-radius: 16px 16px 4px 16px;
+      padding: 0.7rem 0.95rem;
+      font-size: 0.85rem; font-weight: 500; line-height: 1.45;
+      box-shadow: var(--shadow-lg);
+      opacity: 0; transform: translateY(8px) scale(0.96);
+      pointer-events: none;
+      transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    .ekkaris-hello.show { opacity: 1; transform: none; pointer-events: auto; cursor: pointer; }
+
+    .ekkaris-panel {
+      position: fixed;
+      bottom: 6.2rem; right: 1.4rem;
+      width: min(400px, calc(100vw - 2rem));
+      height: min(620px, calc(100dvh - 8rem));
+      z-index: 1100;
+      display: flex; flex-direction: column;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: var(--shadow-xl), 0 0 0 1px var(--gray-100);
+      overflow: hidden;
+      opacity: 0; visibility: hidden;
+      transform: translateY(18px) scale(0.97);
+      transform-origin: bottom right;
+      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .ekkaris-panel.open { opacity: 1; visibility: visible; transform: none; }
+    @media (max-width: 480px) {
+      .ekkaris-panel { left: 0.75rem; right: 0.75rem; width: auto; bottom: 5.6rem; height: calc(100dvh - 7rem); }
+      .ekkaris-hello { right: 1rem; }
+    }
+    .ekkaris-header {
+      display: flex; align-items: center; gap: 0.7rem;
+      padding: 0.85rem 0.9rem;
+      background: linear-gradient(135deg, #0B1426, #1A2744);
+      color: #fff;
+    }
+    .ekkaris-header .bot-mini {
+      width: 46px; height: 46px; flex: none;
+      border-radius: 50%; overflow: hidden;
+      background: radial-gradient(circle at 30% 25%, #1E3A5F, #0B1426);
+      box-shadow: 0 0 0 2px rgba(56,189,248,0.6);
+    }
+    .ekkaris-header .bot-mini svg { width: 100%; height: 100%; display: block; }
+    .ekkaris-header h4 { font-size: 0.98rem; font-weight: 700; margin: 0; display: flex; align-items: center; gap: 0.5rem; }
+    .ekkaris-mode {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.03em;
+      padding: 0.12rem 0.5rem; border-radius: 999px;
+      background: rgba(56,189,248,0.2); color: #7DD3FC;
+    }
+    .ekkaris-header p { font-size: 0.75rem; opacity: 0.8; margin: 0.1rem 0 0; display: flex; align-items: center; gap: 0.4rem; }
+    .ekkaris-header p::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--success); display: inline-block; }
+    .ekkaris-hbtn {
+      width: 34px; height: 34px; flex: none;
+      border: none; border-radius: 50%;
+      background: rgba(255,255,255,0.1); color: #fff;
+      cursor: pointer; display: grid; place-items: center;
+      transition: background 0.2s;
+    }
+    .ekkaris-hbtn:hover, .ekkaris-hbtn[aria-pressed="true"] { background: rgba(255,255,255,0.28); }
+    .ekkaris-hbtn svg { width: 16px; height: 16px; }
+    .ekkaris-messages {
+      flex: 1; overflow-y: auto;
+      padding: 1rem;
+      display: flex; flex-direction: column; gap: 0.65rem;
+      background: #F8FAFC;
+      scroll-behavior: smooth;
+    }
+    .ekkaris-msg {
+      max-width: 88%;
+      padding: 0.7rem 0.95rem;
+      border-radius: 18px;
+      font-size: 0.9rem; line-height: 1.5;
+      animation: ekk-pop 0.25s ease;
+      overflow-wrap: anywhere;
+    }
+    .ekkaris-msg.bot {
+      align-self: flex-start;
+      background: #fff; color: var(--gray-800);
+      border: 1px solid var(--gray-100);
+      border-bottom-left-radius: 6px;
+      box-shadow: 0 1px 2px rgba(11,20,38,0.04);
+    }
+    .ekkaris-msg.user {
+      align-self: flex-end;
+      background: var(--accent); color: #fff;
+      border-bottom-right-radius: 6px;
+    }
+    @keyframes ekk-pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .ekkaris-acts { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.65rem; }
+    .ekkaris-act {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.78rem; font-weight: 600;
+      padding: 0.42rem 0.8rem; border-radius: 999px;
+      border: 1px solid var(--accent); color: var(--accent); background: var(--accent-soft);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .ekkaris-act:hover { background: var(--accent); color: #fff; }
+    .ekkaris-act.wa { background: #25D366; border-color: #25D366; color: #fff; }
+    .ekkaris-act.wa:hover { background: #1DA851; border-color: #1DA851; }
+    .ekkaris-typing {
+      align-self: flex-start; display: inline-flex; gap: 4px;
+      padding: 0.85rem 0.95rem;
+      background: #fff; border: 1px solid var(--gray-100);
+      border-radius: 18px; border-bottom-left-radius: 6px;
+    }
+    .ekkaris-typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--gray-400); animation: ekk-dot 1s ease-in-out infinite; }
+    .ekkaris-typing span:nth-child(2) { animation-delay: 0.15s; }
+    .ekkaris-typing span:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes ekk-dot { 0%, 100% { transform: translateY(0); opacity: 0.5; } 50% { transform: translateY(-4px); opacity: 1; } }
+    .ekkaris-quick {
+      display: flex; gap: 0.4rem; overflow-x: auto;
+      padding: 0.6rem 0.9rem;
+      border-top: 1px solid var(--gray-100);
+      background: #fff; scrollbar-width: none;
+    }
+    .ekkaris-quick::-webkit-scrollbar { display: none; }
+    .ekkaris-quick button {
+      white-space: nowrap; font-size: 0.78rem;
+      padding: 0.42rem 0.85rem; border-radius: 999px;
+      border: 1px solid var(--gray-200); background: #fff; color: var(--gray-600);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .ekkaris-quick button:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .ekkaris-input-row { display: flex; gap: 0.5rem; padding: 0.65rem 0.9rem 0.9rem; background: #fff; }
+    .ekkaris-input-row input {
+      flex: 1; min-width: 0;
+      font-size: 16px; padding: 0.7rem 1rem;
+      border: 1.5px solid var(--gray-200); border-radius: 999px;
+      outline: none; transition: border-color 0.2s; color: var(--gray-800);
+    }
+    .ekkaris-input-row input:focus { border-color: var(--accent); }
+    .ekkaris-send {
+      width: 44px; height: 44px; flex: none;
+      border: none; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      cursor: pointer; display: grid; place-items: center;
+      transition: background 0.2s;
+    }
+    .ekkaris-send:hover { background: #0284C7; }
+    .ekkaris-send svg { width: 18px; height: 18px; }
+
+    /* ===== VOICE READER ===== */
+    .voice-btn {
+      position: fixed;
+      bottom: 1.6rem;
+      left: 1.6rem;
+      z-index: 1100;
+      width: 48px; height: 48px;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      color: var(--navy);
+      transition: all 0.25s;
+      opacity: 0.85;
+    }
+    .voice-btn:hover, .voice-btn.active {
+      opacity: 1;
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .voice-btn svg { width: 22px; height: 22px; }
+    .voice-tooltip {
+      position: absolute;
+      left: 56px;
+      background: var(--navy);
+      color: white;
+      padding: 0.4rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .voice-btn:hover .voice-tooltip { opacity: 1; }
+
+    /* Lottie / animated illustration helpers */
+    .hero-lottie-wrap {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid rgba(255,255,255,0.1);
+      aspect-ratio: 4/3;
+      background: rgba(14,165,233,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-lottie-wrap lottie-player,
+    .hero-lottie-wrap .lottie-fallback {
+      width: 100%;
+      height: 100%;
+    }
+    .lottie-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      color: #7DD3FC;
+      font-size: 0.9rem;
+    }
+    .animated-brain {
+      width: 140px;
+      height: 140px;
+      position: relative;
+    }
+    .animated-brain svg {
+      width: 100%;
+      height: 100%;
+      animation: float-brain 4s ease-in-out infinite;
+    }
+    @keyframes float-brain {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ANIMATIONS */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.25); }
+    }
+    
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .js-enabled .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .js-enabled .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-visual { max-width: 520px; margin: 0 auto; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-img { max-width: 520px; margin: 0 auto; }
+      .services-grid, .why-grid, .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem 1.2rem; }
+      .process-step:nth-child(3)::after { display: none; }
+      
+      
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      .hero { padding: 7.5rem 0 4rem; min-height: auto; }
+      
+      
+      .services-grid, .why-grid, .projects-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; gap: 1.4rem; }
+      .process-step:not(:last-child)::after { display: none; }
+      .process-step {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        gap: 1rem;
+      }
+      .process-num { margin: 0; flex-shrink: 0; }
+      
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .form-wrap { padding: 1.5rem; }
+    }
+
+    /* ===== WATCH: CODED ANIMATION CARDS ===== */
+    .motion-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .motion-card {
+      display: flex; flex-direction: column;
+      background: #fff;
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .motion-card .stage { aspect-ratio: 16 / 9; background: linear-gradient(135deg, #0B1426, #1A2744); }
+    .motion-card .stage svg { width: 100%; height: 100%; display: block; }
+    .motion-card .player { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 1rem; background: #0B1426; }
+    .motion-card .pbtn {
+      width: 34px; height: 34px; flex: none;
+      border: none; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      cursor: pointer; display: grid; place-items: center;
+      transition: background 0.2s;
+    }
+    .motion-card .pbtn:hover { background: #0284C7; }
+    .motion-card .pbtn svg { width: 14px; height: 14px; }
+    .motion-card .pbar { flex: 1; min-width: 0; accent-color: #38BDF8; cursor: pointer; }
+    .motion-card .ptime { min-width: 70px; text-align: right; font-size: 0.75rem; color: var(--gray-400); font-variant-numeric: tabular-nums; }
+    .motion-body { padding: 1.25rem 1.4rem 1.5rem; }
+    .motion-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; letter-spacing: -0.01em; }
+    .motion-desc { font-size: 0.9rem; color: var(--gray-500); }
+    .motion-live {
+      margin-top: 0.85rem; min-height: 3.2rem;
+      padding: 0.6rem 0.85rem;
+      font-size: 0.85rem; color: var(--navy);
+      background: var(--accent-soft); border-radius: 10px;
+    }
+    @media (max-width: 768px) { .motion-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <noscript>
+    <div style="padding:1rem;background:#0EA5E9;color:white;text-align:center;font-family:system-ui,sans-serif;">
+      JavaScript is disabled. The site content is still available below — use the contact details to reach FRECA E-SERVICES.
+    </div>
+  </noscript>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">FE</span>
+        <span>FRECA E-SERVICES</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#solutions" class="nav-link">Solutions</a>
+        <a href="#problems" class="nav-link">Find a Solution</a>
+        <a href="#process" class="nav-link">How We Work</a>
+        <a href="#projects" class="nav-link">Work</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <a href="#problems" class="btn btn-primary btn-sm nav-cta">Find a Solution</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#problems">Find a Solution</a>
+    <a href="#process">How We Work</a>
+    <a href="#projects">Work</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="#problems" class="btn btn-primary">Find a Solution</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Your Business’s Health Center
+          </div>
+          <h1 class="hero-title">
+            Your Business Deserves a Check-up.<br>
+            <span>Let's Understand What It Needs.</span>
+          </h1>
+          <p class="hero-desc">
+            FRECA E-SERVICES is your business’s health center. We listen first, explore what may be getting in the way, and recommend a practical next step. Sometimes that means advice; when a digital solution is appropriate, we can help plan and build it.
+          </p>
+          <div class="hero-actions">
+            <a href="#problems" class="btn btn-primary btn-lg">
+              Find a Solution
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="#solutions" class="btn btn-outline-light btn-lg">Explore Our Capabilities</a>
+          </div>
+          <p style="font-size:0.875rem;color:rgba(248,250,252,0.5);">Based in Uganda · Working remotely with businesses and individuals</p>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-lottie-wrap">
+            <!-- Animated digital illustration (CSS + SVG) + optional Lottie -->
+            <div class="lottie-fallback" id="heroAnim">
+              <div class="animated-brain">
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="100" cy="100" r="70" stroke="#0EA5E9" stroke-width="2" opacity="0.25"/>
+                  <circle cx="100" cy="100" r="50" stroke="#38BDF8" stroke-width="1.5" opacity="0.4">
+                    <animate attributeName="r" values="48;54;48" dur="3s" repeatCount="indefinite"/>
+                  </circle>
+                  <!-- Brain shape simplified -->
+                  <path d="M70 95 Q60 70 80 60 Q100 45 120 60 Q140 70 130 95 Q145 110 130 130 Q115 150 100 145 Q85 150 70 130 Q55 110 70 95Z" fill="url(#brainGrad)" opacity="0.9"/>
+                  <path d="M85 85 Q100 70 115 85 M80 105 Q100 95 120 105 M90 125 Q100 118 110 125" stroke="#7DD3FC" stroke-width="2" stroke-linecap="round" fill="none"/>
+                  <!-- Nodes -->
+                  <circle cx="75" cy="80" r="4" fill="#0EA5E9"><animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/></circle>
+                  <circle cx="125" cy="80" r="4" fill="#0EA5E9"><animate attributeName="opacity" values="1;0.6;1" dur="2.2s" repeatCount="indefinite"/></circle>
+                  <circle cx="100" cy="110" r="5" fill="#38BDF8"><animate attributeName="opacity" values="0.7;1;0.7" dur="1.8s" repeatCount="indefinite"/></circle>
+                  <circle cx="70" cy="120" r="3.5" fill="#7DD3FC"/>
+                  <circle cx="130" cy="120" r="3.5" fill="#7DD3FC"/>
+                  <!-- Connecting lines -->
+                  <line x1="75" y1="80" x2="100" y2="110" stroke="#0EA5E9" stroke-width="1.2" opacity="0.5"/>
+                  <line x1="125" y1="80" x2="100" y2="110" stroke="#0EA5E9" stroke-width="1.2" opacity="0.5"/>
+                  <line x1="70" y1="120" x2="100" y2="110" stroke="#38BDF8" stroke-width="1" opacity="0.4"/>
+                  <line x1="130" y1="120" x2="100" y2="110" stroke="#38BDF8" stroke-width="1" opacity="0.4"/>
+                  <defs>
+                    <linearGradient id="brainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#0EA5E9"/>
+                      <stop offset="100%" stop-color="#0284C7"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <p style="color:#7DD3FC;font-size:0.85rem;font-weight:500;">Business Challenges, Thoughtfully Explored</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-img reveal">
+            <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791579812/f7eeb98c91da110c4700f59b993eccbd.jpg" alt="Collaborative workspace with digital devices and notebooks" loading="lazy">
+          </div>
+          <div class="about-content reveal">
+            <span class="section-label">About FRECA E-SERVICES</span>
+            <h2 class="section-title">Your Business’s Health Comes Before the Solution</h2>
+            <p class="about-text">
+              Every business has its own circumstances. A challenge that looks like a marketing problem may have a different cause; a process that feels complicated may only need a clearer method. We listen before recommending anything, because a website, system or app is only useful when it addresses the real need.
+            </p>
+            <p class="about-text">
+              We explore how you currently work, what is getting in the way, and what you want to improve. If simple advice is enough, we can share practical guidance. If the challenge calls for digital business medical attention, we discuss a suitable option such as design, content, a website, a spreadsheet system, automation or a custom application. If it falls outside our competence, we will say so and suggest an appropriate next step where possible.
+            </p>
+            <p class="about-text">
+              Solutions may involve existing tools, AI-assisted workflows, custom development or no new technology at all. We prefer a practical treatment over unnecessary complexity, and we do not assume every business needs a paid service.
+            </p>
+            <a href="#problems" class="btn btn-primary">Find a Solution</a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="solutions" class="services section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Capabilities</span>
+          <h2 class="section-title">Possible Treatments for Business Challenges</h2>
+          <p class="section-desc">These are capabilities we can consider after listening and exploring the problem. They are options, not a prescription for every business.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="service-title">Branding, Graphic Design & Documents</h3>
+            <p class="service-desc">Logo design, flyers, business cards, catalogues, company profiles, CVs, quotations, invoices and professional document formatting.</p>
+            <a href="#problems" class="service-link">Discuss this area →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <h3 class="service-title">Digital Marketing Content & Creative</h3>
+            <p class="service-desc">Video ads, short videos, editing, voiceovers, ad scripts, social media graphics, product image enhancement and marketing copy.</p>
+            <a href="#problems" class="service-link">Discuss this area →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+            </div>
+            <h3 class="service-title">Websites & Online Presence</h3>
+            <p class="service-desc">Business websites, landing pages, e-commerce, portfolios, menus, booking pages, redesigns and mobile-friendly experiences. Traffic depends on other factors too.</p>
+            <a href="#problems" class="service-link">Discuss this area →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="service-title">Web Applications & Custom Systems</h3>
+            <p class="service-desc">Order management, inventory tracking, booking systems, inquiry management, dashboards, CRM tools, internal portals and custom forms. Simpler tools are sometimes more appropriate.</p>
+            <a href="#problems" class="service-link">Discuss this area →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            </div>
+            <h3 class="service-title">Automation & Productivity Tools</h3>
+            <p class="service-desc">Automated spreadsheets, sales tracking, scheduling, order tracking, digital forms, reports, follow-up workflows and templates. Configuration matters.</p>
+            <a href="#problems" class="service-link">Discuss this area →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            </div>
+            <h3 class="service-title">AI Assistants, SEO & Other Solutions</h3>
+            <p class="service-desc">FAQ chatbots, AI-assisted support, SEO fundamentals, copywriting, content strategy — and other digital approaches. Describe your challenge if it does not fit a category.</p>
+            <a href="#problems" class="service-link">Discuss this area →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why" class="why section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Why Choose Us</span>
+          <h2 class="section-title">Careful Diagnosis. Practical Solutions. Honest Advice.</h2>
+          <p class="section-desc">We take time to understand the situation, explain options clearly and recommend work that fits the need. We aim for useful outcomes, not simply delivering a digital product.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            </div>
+            <h3 class="why-title">Solutions That Fit</h3>
+            <p class="why-desc">We consider the actual problem, your goals, available resources and the simplest approach that can reasonably help.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="why-title">Clear Scope & Communication</h3>
+            <p class="why-desc">Before paid work begins, we discuss the proposed work, deliverables, expected timeline and cost so you can make an informed decision.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="why-title">Mobile-First Experience</h3>
+            <p class="why-desc">When a website or digital interface is appropriate, we consider mobile usability and how real customers will use it.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="why-title">Fast & Optimized</h3>
+            <p class="why-desc">Where relevant, we consider usability, performance and basic search-friendly practices. Results such as search rankings or sales depend on many factors and cannot be guaranteed.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </div>
+            <h3 class="why-title">Clear Communication</h3>
+            <p class="why-desc">We explain our reasoning, distinguish evidence from assumptions, and keep decisions and expectations clear.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </div>
+            <h3 class="why-title">After-Launch Support</h3>
+            <p class="why-desc">Where ongoing support is useful and agreed, we can help maintain, review and improve the solution as your business changes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    
+    <!-- PROBLEMS / FIND A SOLUTION -->
+    <section id="problems" class="section" style="background:white;">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Find a Solution</span>
+          <h2 class="section-title">What Is Troubling Your Business?</h2>
+          <p class="section-desc">You do not need to know the cause or name the solution. Tell us what is happening. We will listen and explore possible next steps — which may be advice, further investigation, a digital solution, or guidance to seek help elsewhere.</p>
+        </div>
+        <div id="problemSelector" class="reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0.85rem;margin-bottom:2.5rem;">
+          <div class="problem-option" data-problem="I want more people to discover my business" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I want more people to discover my business</span>
+          </div>
+          <div class="problem-option" data-problem="I want to present my products or services more professionally" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I want to present my products or services more professionally</span>
+          </div>
+          <div class="problem-option" data-problem="Customers struggle to find the information they need" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">Customers struggle to find the information they need</span>
+          </div>
+          <div class="problem-option" data-problem="I spend too much time answering repetitive questions" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I spend too much time answering repetitive questions</span>
+          </div>
+          <div class="problem-option" data-problem="I want to simplify customer inquiries or ordering" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I want to simplify customer inquiries or ordering</span>
+          </div>
+          <div class="problem-option" data-problem="I struggle to organize orders, appointments, or bookings" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I struggle to organize orders, appointments, or bookings</span>
+          </div>
+          <div class="problem-option" data-problem="I need a better way to track stock, sales, or business records" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I need a better way to track stock, sales, or business records</span>
+          </div>
+          <div class="problem-option" data-problem="I want to reduce repetitive administrative work" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I want to reduce repetitive administrative work</span>
+          </div>
+          <div class="problem-option" data-problem="I need better promotional content or advertisements" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I need better promotional content or advertisements</span>
+          </div>
+          <div class="problem-option" data-problem="I want to improve my website or online presence" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I want to improve my website or online presence</span>
+          </div>
+          <div class="problem-option" data-problem="I need a custom application or digital system" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I need a custom application or digital system</span>
+          </div>
+          <div class="problem-option" data-problem="I want to explore chatbots or AI-assisted workflows" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I want to explore chatbots or AI-assisted workflows</span>
+          </div>
+          <div class="problem-option" data-problem="I need help with SEO, copywriting, or business content" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I need help with SEO, copywriting, or business content</span>
+          </div>
+          <div class="problem-option" data-problem="I have another problem" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I have another problem</span>
+          </div>
+          <div class="problem-option" data-problem="I'm not sure what the problem is, but I want to explore possible improvements" tabindex="0" role="checkbox" aria-checked="false" style="display:flex;align-items:flex-start;gap:0.75rem;padding:1rem 1.1rem;background:var(--off-white);border:2px solid var(--gray-100);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;text-align:left;user-select:none;">
+            <div class="problem-check" style="width:20px;height:20px;border:2px solid var(--gray-200);border-radius:5px;flex-shrink:0;margin-top:0.1rem;display:flex;align-items:center;justify-content:center;"></div>
+            <span style="font-size:0.875rem;font-weight:500;color:var(--navy);line-height:1.4;">I'm not sure what the problem is, but I want to explore possible improvements</span>
+          </div>
+        </div>
+        <div id="problemHints" style="display:none;background:var(--off-white);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:2.5rem;">
+          <h4 style="font-size:0.95rem;font-weight:600;color:var(--navy);margin-bottom:0.75rem;">Possible approaches (examples only)</h4>
+          <div id="hintsContent"></div>
+          <p style="font-size:0.8rem;color:var(--gray-400);font-style:italic;margin-top:0.75rem;">These are only starting points, not a diagnosis or a promise that a particular tool will solve the issue. We need to understand your situation first.</p>
+        </div>
+        <div class="form-wrap reveal" style="max-width:720px;margin:0 auto;">
+          <form id="problemForm" novalidate>
+            <div id="selectedDisplay" style="display:none;font-size:0.8rem;color:var(--gray-500);margin-bottom:1rem;padding:0.75rem 1rem;background:var(--gray-50);border-radius:var(--radius);"></div>
+            <div id="problemFormError" style="display:none;color:#DC2626;font-size:0.85rem;margin-bottom:0.75rem;"></div>
+            <div class="form-row">
+              <div class="form-group"><label for="pname">Full Name *</label><input type="text" id="pname" required placeholder="Your name" autocomplete="name"></div>
+              <div class="form-group"><label for="pbusiness">Business / Organisation <span style="font-weight:400;color:var(--gray-400);">(optional)</span></label><input type="text" id="pbusiness" placeholder="Your company"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="pphone">Phone / WhatsApp *</label><input type="tel" id="pphone" required placeholder="+256 7XX XXX XXX" autocomplete="tel"></div>
+              <div class="form-group"><label for="pemail">Email <span style="font-weight:400;color:var(--gray-400);">(optional)</span></label><input type="email" id="pemail" placeholder="you@example.com"></div>
+            </div>
+            <div class="form-group"><label for="pindustry">Business type / Industry <span style="font-weight:400;color:var(--gray-400);">(optional)</span></label><input type="text" id="pindustry" placeholder="e.g. retail, hospitality, professional services"></div>
+            <div class="form-group"><label for="pchallenge">Describe the challenge you are experiencing *</label><textarea id="pchallenge" required placeholder="What is happening in your business? What is getting in the way?" style="min-height:130px;"></textarea></div>
+            <div class="form-group"><label for="pgoal">What would you like to improve or achieve? <span style="font-weight:400;color:var(--gray-400);">(optional)</span></label><textarea id="pgoal" placeholder="What does a good outcome look like for you?"></textarea></div>
+            <div class="form-group"><label for="pcurrent">How are you currently handling this? <span style="font-weight:400;color:var(--gray-400);">(optional)</span></label><textarea id="pcurrent" placeholder="Paper, spreadsheets, verbal processes, existing software, etc."></textarea></div>
+            <div class="form-group"><label for="pextra">Anything else we should know? <span style="font-weight:400;color:var(--gray-400);">(optional)</span></label><textarea id="pextra" placeholder="Timeline, constraints, previous attempts, or other context"></textarea></div>
+            <button type="submit" class="btn btn-primary btn-full btn-lg">Discuss My Business Challenge</button>
+            <p style="font-size:0.8rem;color:var(--gray-400);margin-top:0.75rem;text-align:center;line-height:1.5;">Submitting opens WhatsApp with a pre-filled message. Review and send it to complete your inquiry.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="process section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">How We Work</span>
+          <h2 class="section-title">Listen First. Diagnose Carefully. Act When Appropriate.</h2>
+          <p class="section-desc">We do not prescribe the same treatment to every business. We may offer simple advice, recommend further investigation, provide an agreed paid digital solution, or suggest help beyond our scope.</p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step reveal">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Understand</h3>
+            <p class="process-desc">Listen to your concerns, goals and how things currently work.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Explore</h3>
+            <p class="process-desc">Explore possible causes and whether a digital approach could genuinely help.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">03</div>
+            <h3 class="process-title">Recommend</h3>
+            <p class="process-desc">Recommend practical advice, an appropriate digital treatment, or another next step.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">04</div>
+            <h3 class="process-title">Build or Configure</h3>
+            <p class="process-desc">If you choose a paid digital solution, build or configure the agreed work and test it.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-num">05</div>
+            <h3 class="process-title">Review & Improve</h3>
+            <p class="process-desc">Check whether the solution is useful, discuss improvements and follow up where appropriate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WATCH: coded animation cards -->
+    <section id="watch" class="section" style="background:white;">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Watch</span>
+          <h2 class="section-title">See How a Business Check-up Works</h2>
+          <p class="section-desc">Four short animations, built with code and played right in your browser. They illustrate common ideas and are not client results.</p>
+        </div>
+        <div class="motion-grid">
+          <article class="motion-card reveal" data-scene="steps" data-dur="10">
+            <div class="stage" role="img" aria-label="Animation: a line moves through five steps, Understand, Explore, Recommend, Build and Review"></div>
+            <div class="player"><button class="pbtn" type="button" aria-label="Play or pause animation"></button><input class="pbar" type="range" min="0" max="1000" value="0" aria-label="Animation position"><span class="ptime">0:00 / 0:10</span></div>
+            <div class="motion-body">
+              <h3 class="motion-title">Listen first. Then act.</h3>
+              <p class="motion-desc">The five steps we follow, from understanding your concerns to reviewing the result.</p>
+              <p class="motion-live" aria-live="off"></p>
+            </div>
+          </article>
+          <article class="motion-card reveal" data-scene="faq" data-dur="10">
+            <div class="stage" role="img" aria-label="Animation: repeated customer questions pile up, an FAQ assistant answers them, and a custom question goes to the team"></div>
+            <div class="player"><button class="pbtn" type="button" aria-label="Play or pause animation"></button><input class="pbar" type="range" min="0" max="1000" value="0" aria-label="Animation position"><span class="ptime">0:00 / 0:10</span></div>
+            <div class="motion-body">
+              <h3 class="motion-title">Fewer repeated questions</h3>
+              <p class="motion-desc">Common questions can be answered by a carefully configured FAQ assistant, while custom or complex ones still reach a person.</p>
+            </div>
+          </article>
+          <article class="motion-card reveal" data-scene="records" data-dur="10">
+            <div class="stage" role="img" aria-label="Animation: scattered paper notes turn into one clear dashboard with bars and a line chart"></div>
+            <div class="player"><button class="pbtn" type="button" aria-label="Play or pause animation"></button><input class="pbar" type="range" min="0" max="1000" value="0" aria-label="Animation position"><span class="ptime">0:00 / 0:10</span></div>
+            <div class="motion-body">
+              <h3 class="motion-title">From scattered records to one clear view</h3>
+              <p class="motion-desc">Orders, stock and sales kept in notes can move into a structured spreadsheet or a simple dashboard. An illustrative concept.</p>
+            </div>
+          </article>
+          <article class="motion-card reveal" data-scene="mobile" data-dur="10">
+            <div class="stage" role="img" aria-label="Animation: a mobile page builds up with clear information and a simple inquiry button that opens WhatsApp"></div>
+            <div class="player"><button class="pbtn" type="button" aria-label="Play or pause animation"></button><input class="pbar" type="range" min="0" max="1000" value="0" aria-label="Animation position"><span class="ptime">0:00 / 0:10</span></div>
+            <div class="motion-body">
+              <h3 class="motion-title">A clear path for your customers</h3>
+              <p class="motion-desc">A mobile-friendly page that shows what you do and gives customers a simple way to make an inquiry.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Work & Concepts</span>
+          <h2 class="section-title">Selected Work & Solution Concepts</h2>
+          <p class="section-desc">Examples illustrate kinds of digital solutions that can be explored. Some are concepts rather than completed client commissions. Real project details are discussed directly with clients.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-img">
+              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791579920/fb3e989e56e2f56bed707286b6841b54.jpg" alt="Analytics dashboard and business charts on screen" loading="lazy">
+              <span class="project-cat">Web Applications</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Operations Dashboard Concept</h3>
+              <p class="project-desc">Illustrative concept for a sales and operations overview — showing how structured data and simple dashboards can support decision-making.</p>
+              <a href="#problems" class="project-link">Discuss a similar need →</a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-img">
+              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791579888/b28397cfc3d490f63ee1e6e5abc7807b.jpg" alt="Modern city skyline with glass skyscrapers" loading="lazy">
+              <span class="project-cat">Branding & Documents</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Professional Document Systems</h3>
+              <p class="project-desc">Examples of structured company profiles, quotations and reusable templates designed for clarity and consistent presentation.</p>
+              <a href="#problems" class="project-link">Discuss a similar need →</a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-img">
+              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791581066/3acdfe44f29d72b6748e4cdca7b6d57c.jpg" alt="Modern empty conference room with large table and city view" loading="lazy">
+              <span class="project-cat">Websites</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Service Business Presence</h3>
+              <p class="project-desc">Concept for a clear, mobile-friendly service website focused on information structure, credibility and simple inquiry paths.</p>
+              <a href="#problems" class="project-link">Discuss a similar need →</a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-img">
+              <img src=https://res.cloudinary.com/lgjllewt/image/upload/v1791582432/fd92c5107c75533f99124b3518009eb8.jpg alt="Abstract technology and code on dark screens" loading="lazy">
+              <span class="project-cat">Automation</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Spreadsheet & Workflow Tools</h3>
+              <p class="project-desc">Illustrative approach to inventory tracking, order registers and automated calculations using structured digital worksheets.</p>
+              <a href="#problems" class="project-link">Discuss a similar need →</a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-img">
+              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791581848/c408c308f9971c7ec942bb6c8bf9c910.jpg"alt="Bright modern office interior with glass walls" loading="lazy">
+              <span class="project-cat">Content & Creative</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Promotional Content Concepts</h3>
+              <p class="project-desc">Examples of how product imagery, short promotional videos and campaign materials can support clearer communication of offers.</p>
+              <a href="#problems" class="project-link">Discuss a similar need →</a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-img">
+              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791581847/fc85a5642426e91dbf9064d690fbbad1.jpg" alt="Clean desk workspace with laptop and documents" loading="lazy">
+              <span class="project-cat">AI & Chatbots</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Information Assistant Concepts</h3>
+              <p class="project-desc">Illustrative approaches to FAQ assistants and guided information tools configured around a specific business's content and limits.</p>
+              <a href="#problems" class="project-link">Discuss a similar need →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">FAQ</span>
+          <h2 class="section-title">Questions About Our Approach</h2>
+          <p class="section-desc">Learn how we listen, explore problems and decide whether a digital solution is appropriate.</p>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-q" type="button">What kinds of digital solutions do you provide?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">We work across branding and documents, digital content and creative production, websites and online presence, custom web applications, automation and productivity tools, AI assistants and chatbots, and SEO and copywriting. The specific approach depends on the problem you are trying to solve.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">What if I don't know which service I need?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">That is completely fine. Tell us what is happening and what you hope to improve. We will listen and explore the situation before recommending a next step. You do not need to arrive knowing the cause or the tool you need.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Do you only build websites?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">No. Websites are one possible treatment among many. We may consider design, documents, content, automation, a simple system or another appropriate digital approach. Sometimes advice is enough; sometimes the best next step is outside our scope.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Can you help improve an existing business process?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">Often yes — when the process involves information, communication, records, ordering, or repetitive tasks that digital tools can support. We first understand how you currently work, then discuss whether a digital approach is practical.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Do all projects require custom software?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">No. Many needs are better served by design work, structured documents, content, a well-organised website, or carefully set-up spreadsheets and forms. Custom applications are considered when simpler options are not enough.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Can you help with branding, documents and promotional content?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. That includes logo and identity work, flyers, business materials, catalogues, company profiles, CVs, document templates, product imagery, short videos, social media graphics and related creative content.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Can you develop AI-assisted tools or chatbots?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">Where appropriate, we can configure AI assistants and chatbots around your business information and limits. These tools work best for structured questions. Uncertain or complex inquiries should still be handled by a person when needed.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How is a project scoped and quoted?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">We first listen and explore the problem. If paid work appears appropriate, we explain the proposed scope, deliverables, estimated cost and timeline before you decide whether to proceed. Simple initial guidance may be free; substantial investigation or implementation may require an agreed fee.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How long does a project take?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">It depends on the scope. Simple design or document work can be completed relatively quickly. Larger websites or applications take longer. A realistic timeline is provided as part of the proposal for your specific project.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How do I get started?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">Use the business challenge form or contact us directly. Describe what is happening in your business. We will discuss possible next steps; if paid work is appropriate, nothing proceeds until the scope and terms are agreed.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <h3>Get in Touch</h3>
+            <p>Reach out by WhatsApp, phone or email. Describe your situation — you do not need to know which solution you need before contacting us.</p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <div class="contact-detail-icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <div>
+                  <h4>Phone / WhatsApp</h4>
+                  <p><a href="tel:+256758991506">+256 758 991506</a><br><a href="tel:+256726978988">+256 726 978988</a></p>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                  <h4>Email</h4>
+                  <p><a href="mailto:fredrickstads@gmail.com">fredrickstads@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <h4>Location</h4>
+                  <p>Based in Uganda — working remotely</p>
+                </div>
+              </div>
+
+            </div>
+            <a href="https://wa.me/256726978988" class="whatsapp-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp: 0726 978 988
+            </a>
+            <a href="https://wa.me/256758991506" class="whatsapp-btn" target="_blank" rel="noopener" style="background:transparent;color:var(--navy);border:2px solid var(--gray-200);box-shadow:none;margin-top:0.75rem;">
+              Alternative: 0758 991506
+            </a>
+          </div>
+          <div class="form-wrap reveal">
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required placeholder="you@company.com">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+256 758 991506">
+                </div>
+                <div class="form-group">
+                  <label for="business">Business Name</label>
+                  <input type="text" id="business" name="business" placeholder="Your company">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="service">Service Interested In</label>
+                <select id="service" name="service">
+                  <option value="">Select a service</option>
+                  <option value="website">Business Website</option>
+                  <option value="development">Web Development</option>
+                  <option value="branding">Branding & Identity</option>
+                  <option value="strategy">Digital Strategy</option>
+                  <option value="ecommerce">E-Commerce</option>
+                  <option value="support">Support & Maintenance</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required placeholder="Describe the challenge you are experiencing..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">Discuss via WhatsApp</button>
+            </form>
+            <div class="form-success" id="formSuccess">
+              <div class="form-success-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="28" height="28"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <h4>Opening WhatsApp</h4>
+              <p>Review the pre-filled message and send it to complete your inquiry. If WhatsApp did not open, use the contact numbers or email above.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <span class="logo-mark">FE</span>
+            <span>FRECA E-SERVICES</span>
+          </a>
+          <p>Your Business’s Health Center. We listen first, explore what may be wrong, and recommend practical advice or digital solutions when they are appropriate.</p>
+          
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#solutions">Solutions</a>
+            <a href="#problems">Find a Solution</a>
+            <a href="#process">How We Work</a>
+            <a href="#watch">Watch</a>
+            <a href="#projects">Work</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <div class="footer-links">
+            <a href="#solutions">Branding & Documents</a>
+            <a href="#solutions">Content & Creative</a>
+            <a href="#solutions">Websites</a>
+            <a href="#solutions">Web Applications</a>
+            <a href="#solutions">Automation</a>
+            <a href="#solutions">AI & Chatbots</a>
+            <a href="#solutions">SEO & Copywriting</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span><a href="tel:+256758991506">+256 758 991506</a><br><a href="tel:+256726978988">+256 726 978988</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:fredrickstads@gmail.com">fredrickstads@gmail.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Based in Uganda — working remotely</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 FRECA E-SERVICES. All rights reserved.</p>
+        
+      </div>
+    </div>
+  </footer>
+
+  <!-- Voice Reader -->
+  <button class="voice-btn" id="voiceBtn" aria-label="Listen to page content" title="Listen">
+    <svg id="voiceIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M12 6v12m0 0l3-3m-3 3l-3-3M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+    <span class="voice-tooltip">Listen / Stop</span>
+  </button>
+
+  <!-- Ekkaris Chatbot -->
+  <div class="ekkaris-hello" id="ekkarisHello" role="status">👋 Hi, I’m Ekkaris. Need a hand with your business?</div>
+  <button class="ekkaris-btn" id="ekkarisBtn" aria-label="Chat with Ekkaris, the FRECA E-SERVICES assistant" aria-expanded="false" aria-controls="ekkarisPanel"></button>
+  <div class="ekkaris-panel" id="ekkarisPanel" role="dialog" aria-label="Chat with Ekkaris">
+    <div class="ekkaris-header">
+      <div class="bot-mini" id="ekkarisAvatar"></div>
+      <div style="flex:1;min-width:0;">
+        <h4>Ekkaris <span class="ekkaris-mode" id="ekkarisMode">Guide</span></h4>
+        <p>FRECA assistant</p>
+      </div>
+      <button class="ekkaris-hbtn" id="ekkarisSound" type="button" aria-label="Read replies aloud" aria-pressed="false" title="Read replies aloud">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 010 7M19 5a10 10 0 010 14"/></svg>
+      </button>
+      <button class="ekkaris-hbtn" id="ekkarisReset" type="button" aria-label="Start a new chat" title="New chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 019-9 9.7 9.7 0 016.7 2.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 01-9 9 9.7 9.7 0 01-6.7-2.7L3 16"/><path d="M3 21v-5h5"/></svg>
+      </button>
+      <button class="ekkaris-hbtn" id="ekkarisClose" type="button" aria-label="Close chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="ekkaris-messages" id="ekkarisMessages" aria-live="polite"></div>
+    <div class="ekkaris-quick" id="ekkarisQuick"></div>
+    <form class="ekkaris-input-row" id="ekkarisForm" autocomplete="off">
+      <input type="text" id="ekkarisInput" placeholder="Ask a question or describe a problem…" aria-label="Type your message" maxlength="300">
+      <button class="ekkaris-send" id="ekkarisSend" type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+    </form>
+  </div>
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+  </button>
+
+  <script>
+    (function() {
+      document.documentElement.classList.add('js-enabled');
+      const nav = document.getElementById('nav');
+      const toggle = document.getElementById('navToggle');
+      const mobile = document.getElementById('mobileMenu');
+      const backTop = document.getElementById('backTop');
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('formSuccess');
+
+      // Navbar scroll
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 40);
+        backTop.classList.toggle('visible', window.scrollY > 500);
+      }, { passive: true });
+
+      // Mobile menu
+      toggle.addEventListener('click', () => {
+        const open = mobile.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      mobile.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mobile.classList.remove('open');
+          toggle.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const id = a.getAttribute('href');
+          if (id === '#') return;
+          const el = document.querySelector(id);
+          if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+        });
+      });
+
+      // Active nav
+      const sections = document.querySelectorAll('section[id]');
+      const links = document.querySelectorAll('.nav-link');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const id = e.target.id;
+            links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' });
+      sections.forEach(s => obs.observe(s));
+
+      // Reveal
+      const reveals = document.querySelectorAll('.reveal');
+      const revObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            revObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+      reveals.forEach(r => revObs.observe(r));
+
+      
+
+      // FAQ
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('.faq-q').addEventListener('click', () => {
+          const active = item.classList.contains('active');
+          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+          if (!active) item.classList.add('active');
+        });
+      });
+
+      // Form → WhatsApp
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const name = (document.getElementById('name') || {}).value || '';
+        const email = (document.getElementById('email') || {}).value || '';
+        const phone = (document.getElementById('phone') || {}).value || '';
+        const business = (document.getElementById('business') || {}).value || '';
+        const service = (document.getElementById('service') || {}).value || '';
+        const message = (document.getElementById('message') || {}).value || '';
+        if (!name.trim() || !message.trim()) {
+          alert('Please fill in your name and message.');
+          return;
+        }
+        let msg = 'Hello FRECA E-SERVICES,\n\nI would like to discuss a business challenge.\n\n';
+        msg += '*Name:* ' + name.trim() + '\n';
+        if (business.trim()) msg += '*Business:* ' + business.trim() + '\n';
+        if (phone.trim()) msg += '*Phone:* ' + phone.trim() + '\n';
+        if (email.trim()) msg += '*Email:* ' + email.trim() + '\n';
+        if (service) msg += '*Service interest:* ' + service + '\n';
+        msg += '\n*Message:*\n' + message.trim() + '\n';
+        msg += '\nSent via the FRECA E-SERVICES website form.';
+        const url = 'https://wa.me/256758991506?text=' + encodeURIComponent(msg);
+        window.open(url, '_blank') || (window.location.href = url);
+      });
+
+      // Back to top
+      
+      // Problem selector
+      const problemOptions = document.querySelectorAll('.problem-option');
+      const HINTS = {
+        'I want more people to discover my business': 'Possible approaches may include clearer online presentation, search-friendly content, promotional materials, or a well-structured website.',
+        'I want to present my products or services more professionally': 'Possible approaches may include improved product images, descriptions, catalogues, branding materials, or a focused online presence.',
+        'Customers struggle to find the information they need': 'Possible approaches may include better organisation of information, clearer service pages, FAQs, or structured content.',
+        'I spend too much time answering repetitive questions': 'Possible approaches may include FAQs, reusable reply templates, structured information pages, or an appropriately configured chatbot.',
+        'I want to simplify customer inquiries or ordering': 'Possible approaches may include inquiry forms, booking pages, order forms, or a simple digital process.',
+        'I struggle to organize orders, appointments, or bookings': 'Possible approaches may include a structured spreadsheet, digital order register, booking system, or a custom order-management tool.',
+        'I need a better way to track stock, sales, or business records': 'Possible approaches may include automated spreadsheets, simple tracking systems, or custom tools.',
+        'I want to reduce repetitive administrative work': 'Possible approaches may include templates, digital forms, automated calculations, or workflow tools.',
+        'I need better promotional content or advertisements': 'Possible approaches may include creative graphics, short videos, product imagery, scripts, or campaign materials.',
+        'I want to improve my website or online presence': 'Possible approaches may include redesign, clearer structure, better content, mobile improvements, or a new site.',
+        'I need a custom application or digital system': 'Possible approaches may include a custom web application, internal portal, or specialised workflow tool — after confirming simpler options are not sufficient.',
+        'I want to explore chatbots or AI-assisted workflows': 'Possible approaches may include FAQ assistants or information tools configured around your content. Complex questions should still reach a person.',
+        'I need help with SEO, copywriting, or business content': 'Possible approaches may include clearer page titles and descriptions, service or product copy, or basic search-friendly structure. Rankings cannot be guaranteed.',
+        'I have another problem': 'Describe the situation in the form. We will explore whether a digital approach is appropriate.',
+        "I'm not sure what the problem is, but I want to explore possible improvements": 'Share how things currently work and what feels inefficient. We can explore options together.'
+      };
+      function getSelectedProblems() {
+        return Array.from(problemOptions).filter(o => o.classList.contains('selected')).map(o => o.dataset.problem);
+      }
+      function updateProblemUI() {
+        const sel = getSelectedProblems();
+        const disp = document.getElementById('selectedDisplay');
+        const hints = document.getElementById('problemHints');
+        const hc = document.getElementById('hintsContent');
+        if (sel.length && disp) {
+          disp.style.display = 'block';
+          disp.textContent = 'Selected: ' + sel.join(' · ');
+          if (hc && hints) {
+            hc.innerHTML = sel.filter(p => HINTS[p]).map(p => '<p style="font-size:0.875rem;color:var(--gray-500);margin-bottom:0.5rem;"><strong>' + p + '</strong><br>' + HINTS[p] + '</p>').join('');
+            hints.style.display = 'block';
+          }
+        } else if (disp) {
+          disp.style.display = 'none';
+          if (hints) hints.style.display = 'none';
+        }
+      }
+      problemOptions.forEach(opt => {
+        opt.addEventListener('click', () => {
+          opt.classList.toggle('selected');
+          const on = opt.classList.contains('selected');
+          opt.setAttribute('aria-checked', on ? 'true' : 'false');
+          opt.style.borderColor = on ? 'var(--accent)' : 'var(--gray-100)';
+          opt.style.background = on ? 'var(--accent-soft)' : 'var(--off-white)';
+          const check = opt.querySelector('.problem-check');
+          if (check) {
+            check.style.background = on ? 'var(--accent)' : 'transparent';
+            check.style.borderColor = on ? 'var(--accent)' : 'var(--gray-200)';
+            check.innerHTML = on ? '<svg width="12" height="12" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>' : '';
+          }
+          updateProblemUI();
+        });
+      });
+      const problemForm = document.getElementById('problemForm');
+      if (problemForm) {
+        problemForm.addEventListener('submit', e => {
+          e.preventDefault();
+          const err = document.getElementById('problemFormError');
+          const name = document.getElementById('pname').value.trim();
+          const phone = document.getElementById('pphone').value.trim();
+          const challenge = document.getElementById('pchallenge').value.trim();
+          if (!name || !phone || !challenge) {
+            if (err) { err.style.display = 'block'; err.textContent = 'Please fill in your name, phone/WhatsApp number, and a description of the challenge.'; }
+            return;
+          }
+          if (err) err.style.display = 'none';
+          const business = document.getElementById('pbusiness').value.trim();
+          const email = document.getElementById('pemail').value.trim();
+          const industry = document.getElementById('pindustry').value.trim();
+          const goal = document.getElementById('pgoal').value.trim();
+          const current = document.getElementById('pcurrent').value.trim();
+          const extra = document.getElementById('pextra').value.trim();
+          const selected = getSelectedProblems();
+          let msg = 'Hello FRECA E-SERVICES,\n\nI would like to discuss a business challenge.\n\n';
+          msg += '*Name:* ' + name + '\n';
+          if (business) msg += '*Business:* ' + business + '\n';
+          msg += '*Phone/WhatsApp:* ' + phone + '\n';
+          if (email) msg += '*Email:* ' + email + '\n';
+          if (industry) msg += '*Industry:* ' + industry + '\n';
+          if (selected.length) { msg += '\n*Selected challenges:*\n'; selected.forEach(s => { msg += '• ' + s + '\n'; }); }
+          msg += '\n*Challenge description:*\n' + challenge + '\n';
+          if (goal) msg += '\n*Desired improvement:*\n' + goal + '\n';
+          if (current) msg += '\n*Current approach:*\n' + current + '\n';
+          if (extra) msg += '\n*Additional notes:*\n' + extra + '\n';
+          msg += '\nSent via the FRECA E-SERVICES website form.';
+          const url = 'https://wa.me/256758991506?text=' + encodeURIComponent(msg);
+          window.open(url, '_blank') || (window.location.href = url);
+        });
+      }
+
+      backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      /* ========== EKKARIS CHATBOT ========== */
+      // AI MODE: paste the URL of your deployed Worker (see worker.js) between the quotes to switch on
+      // the AI brain. While it is empty, Ekkaris uses its built-in guide, which needs no keys or servers.
+      const AI_ENDPOINT = '';
+
+      const WA_NUMBER = '256726978988';
+      const WA_ALT = '256758991506';
+      const WA_LINK = 'https://wa.me/' + WA_NUMBER;
+
+      const BOT_SVG = '<svg viewBox="0 0 64 64" aria-hidden="true">' +
+        '<path d="M10 66C10 52 20 48 32 48S54 52 54 66Z" fill="#0EA5E9"/>' +
+        '<path d="M26 48L32 55L38 48Z" fill="#E0F2FE"/>' +
+        '<rect x="28" y="41" width="8" height="9" rx="2" fill="#94A3B8"/>' +
+        '<line x1="32" y1="9" x2="32" y2="15" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>' +
+        '<circle class="b-ant" cx="32" cy="7" r="3.2" fill="#38BDF8"/>' +
+        '<rect x="14" y="14" width="36" height="31" rx="13" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>' +
+        '<path d="M12 27C12 9 52 9 52 27" stroke="#0EA5E9" stroke-width="2.5" fill="none" stroke-linecap="round"/>' +
+        '<rect x="9" y="25" width="6" height="12" rx="3" fill="#0EA5E9"/>' +
+        '<rect x="49" y="25" width="6" height="12" rx="3" fill="#0EA5E9"/>' +
+        '<path d="M52 36C52 46 47 49 41 49" stroke="#0EA5E9" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+        '<circle cx="39" cy="49" r="2.6" fill="#0B1426"/>' +
+        '<rect x="19" y="21" width="26" height="17" rx="8" fill="#0B1426"/>' +
+        '<rect class="b-eye" x="25" y="26" width="4" height="7" rx="2" fill="#38BDF8"/>' +
+        '<rect class="b-eye" x="35" y="26" width="4" height="7" rx="2" fill="#38BDF8"/>' +
+        '<path class="b-mouth" d="M28.5 35.2Q32 37.4 35.5 35.2" stroke="#38BDF8" stroke-width="1.6" fill="none" stroke-linecap="round"/>' +
+        '</svg>';
+
+      const $e = id => document.getElementById(id);
+      const ekkarisBtn = $e('ekkarisBtn');
+      const ekkarisPanel = $e('ekkarisPanel');
+      const ekkarisClose = $e('ekkarisClose');
+      const ekkarisMessages = $e('ekkarisMessages');
+      const ekkarisInput = $e('ekkarisInput');
+      const ekkarisForm = $e('ekkarisForm');
+      const ekkarisQuick = $e('ekkarisQuick');
+      const ekkarisAvatar = $e('ekkarisAvatar');
+      const ekkarisHello = $e('ekkarisHello');
+      const ekkarisSound = $e('ekkarisSound');
+      const ekkarisReset = $e('ekkarisReset');
+      const useAI = !!AI_ENDPOINT;
+
+      ekkarisBtn.innerHTML = '<span class="bot-art">' + BOT_SVG + '</span><span class="online-dot"></span>';
+      ekkarisAvatar.innerHTML = BOT_SVG;
+      $e('ekkarisMode').textContent = useAI ? 'AI' : 'Guide';
+
+      let ctx = { last: null, offer: null, name: null, asked: [] };
+      let history = [];
+      let soundOn = false, busy = false, started = false;
+
+      /*BRAIN-START*/
+      function waHandoff(extra) {
+        let msg = 'Hello FRECA E-SERVICES, I was chatting with Ekkaris on your website.';
+        const qs = ctx.asked.slice(-4);
+        if (qs.length) msg += '\n\nMy questions so far:\n' + qs.map(q => '• ' + q).join('\n');
+        if (extra) msg += '\n\n' + extra;
+        return WA_LINK + '?text=' + encodeURIComponent(msg);
+      }
+      function waAct(label) { return { label: label || 'Continue on WhatsApp', wa: true, href: waHandoff() }; }
+      const GO_FORM = { label: 'Open the Find a Solution form', go: '#problems' };
+
+      const DEFAULT_CHIPS = ['What services do you offer?', 'How does the process work?', 'How much does it cost?', 'Contact details'];
+      const START_CHIPS = ['What services do you offer?', 'How does the process work?', 'Do you only build websites?', 'I have a problem in my business', 'Contact details'];
+
+      const INTENTS = [
+        { id: 'greet', label: 'a greeting', w: 0.6,
+          k: ['hello', 'hi', 'hey', 'howdy', 'hola', 'greetings', 'good morning', 'good afternoon', 'good evening', 'how are you', 'whats up'],
+          reply: 'Hello! I’m Ekkaris, the FRECA E-SERVICES assistant. You can ask me about our services, how we work or how pricing works, or simply describe what’s troubling your business.',
+          chips: ['What services do you offer?', 'My customers keep asking the same questions', 'How does the process work?'] },
+        { id: 'identity', label: 'who I am', q: 'Who are you?',
+          k: ['who are you', 'what are you', 'your name', 'are you a bot', 'are you human', 'are you real', 'are you ai', 'are you a robot', 'ekkaris', 'who made you', 'who built you'],
+          reply: 'I’m **Ekkaris**, the website assistant for FRECA E-SERVICES. I’m an automated assistant, not a person, so for anything detailed or specific to your business I’ll point you to the team on WhatsApp.',
+          acts: () => [waAct('Talk to the team')], chips: DEFAULT_CHIPS },
+        { id: 'about', label: 'what FRECA E-SERVICES is', q: 'What is FRECA E-SERVICES?',
+          k: ['what is freca', 'who is freca', 'about freca', 'about this', 'this website', 'this site', 'what is this', 'whats this', 'overview', 'summary', 'health center', 'business health', 'tell me about', 'what do you do', 'what does freca do'],
+          reply: 'FRECA E-SERVICES is your business’s health center, based in Uganda. We listen to business challenges, explore possible causes and recommend practical next steps. Sometimes advice is enough; when a digital solution is appropriate, we can plan and build it.',
+          more: 'We don’t assume every business needs a paid service. Solutions may involve existing tools, AI-assisted workflows, custom development or no new technology at all. If something falls outside our competence, we say so and suggest an appropriate next step where possible.',
+          acts: () => [{ label: 'Read about us', go: '#about' }], chips: ['What services do you offer?', 'How does the process work?', 'How can I get started?'] },
+        { id: 'services', label: 'our services', q: 'What services do you offer?',
+          k: ['services', 'service', 'offer', 'capabilities', 'solutions', 'treatments', 'what can you do', 'help with', 'provide'],
+          reply: 'We explore practical digital solutions in six areas:\n• Branding, graphic design & documents\n• Digital marketing content & creative\n• Websites & online presence\n• Web applications & custom systems\n• Automation & productivity tools\n• AI assistants, SEO & other solutions',
+          more: 'These are options we consider after listening, not a prescription for every business. Tell me what’s happening in yours and I can suggest which area may be relevant.',
+          acts: () => [{ label: 'See the solutions', go: '#solutions' }], chips: ['Do you only build websites?', 'Tell me about AI chatbots', 'How much does it cost?'] },
+        { id: 'branding', label: 'branding and documents', q: 'Do you do branding and documents?',
+          k: ['logo', 'logos', 'branding', 'brand', 'identity', 'flyer', 'flyers', 'business card', 'business cards', 'catalogue', 'catalogues', 'catalog', 'company profile', 'cv', 'cvs', 'resume', 'quotation', 'quotations', 'invoice', 'invoices', 'document', 'documents', 'graphic design', 'graphics'],
+          reply: 'Yes. In branding, graphic design and documents we handle logo and identity work, flyers, business cards, catalogues, company profiles, CVs, quotations, invoices and professional document formatting.',
+          acts: () => [{ label: 'Discuss this area', go: '#problems' }], chips: DEFAULT_CHIPS },
+        { id: 'content', label: 'marketing content and creative', q: 'Do you make video ads?',
+          k: ['video', 'videos', 'video ad', 'video ads', 'advert', 'adverts', 'advertisement', 'ads', 'short video', 'editing', 'voiceover', 'voiceovers', 'script', 'social media', 'product image', 'product images', 'photo', 'photos', 'marketing copy', 'promo', 'promotional', 'promotion'],
+          reply: 'For digital marketing content and creative, we can help with video ads, short videos, editing, voiceovers, ad scripts, social media graphics, product image enhancement and marketing copy.',
+          acts: () => [{ label: 'Discuss this area', go: '#problems' }], chips: DEFAULT_CHIPS },
+        { id: 'website', label: 'websites', q: 'Can you build my website?',
+          k: ['website', 'web site', 'landing page', 'ecommerce', 'e-commerce', 'online shop', 'online store', 'portfolio', 'menu', 'booking page', 'redesign', 'mobile friendly', 'online presence', 'webpage'],
+          reply: 'Yes. For websites and online presence we can help with business websites, landing pages, e-commerce, portfolios, menus, booking pages, redesigns and mobile-friendly experiences. Traffic depends on other factors too, so we can’t promise rankings or sales.',
+          acts: () => [{ label: 'Discuss a website', go: '#problems' }], chips: ['Do you only build websites?', 'How much does it cost?', 'How long does a project take?'] },
+        { id: 'webapp', label: 'web applications and custom systems', q: 'Can you build a custom system?',
+          k: ['web app', 'web application', 'application', 'custom system', 'custom app', 'order management', 'inventory', 'booking system', 'dashboard', 'crm', 'portal', 'internal tool', 'custom forms', 'software', 'system for'],
+          reply: 'Yes, in web applications and custom systems we can consider order management, inventory tracking, booking systems, inquiry management, dashboards, CRM tools, internal portals and custom forms. Simpler tools are sometimes more appropriate, so we check that first.',
+          acts: () => [{ label: 'Discuss a system', go: '#problems' }], chips: ['Do all projects require custom software?', 'How is a project quoted?'] },
+        { id: 'automation', label: 'automation and productivity tools', q: 'Can you automate repetitive work?',
+          k: ['automate', 'automation', 'automated', 'spreadsheet', 'spreadsheets', 'excel', 'sales tracking', 'scheduling', 'order tracking', 'reports', 'templates', 'workflow', 'workflows', 'follow-up', 'productivity', 'digital forms'],
+          reply: 'Yes. Automation and productivity tools can include automated spreadsheets, sales tracking, scheduling, order tracking, digital forms, reports, follow-up workflows and templates. Getting the configuration right matters more than the tool.',
+          acts: () => [{ label: 'Discuss this area', go: '#problems' }], chips: DEFAULT_CHIPS },
+        { id: 'ai', label: 'AI assistants and chatbots', q: 'Tell me about AI chatbots',
+          k: ['ai', 'chatbot', 'chatbots', 'chat bot', 'ai assistant', 'ai tools', 'artificial intelligence', 'faq bot', 'virtual assistant', 'ai workflow'],
+          reply: 'Yes. Where appropriate we can configure FAQ chatbots and AI-assisted support around your business information and limits. They work best for structured questions; uncertain or complex inquiries should still be handled by a person.',
+          more: 'Simpler solutions are preferred when they solve the problem just as well, so we’d first look at how many repeated questions you get and what they are.',
+          acts: () => [{ label: 'Watch how it works', go: '#watch' }, { label: 'Discuss an assistant', go: '#problems' }], chips: ['How much does it cost?', 'How can I get started?'] },
+        { id: 'seo', label: 'SEO and copywriting', q: 'Do you help with SEO?',
+          k: ['seo', 'copywriting', 'copywriter', 'content strategy', 'search engine', 'google ranking', 'rank', 'ranking', 'keywords'],
+          reply: 'Yes. We can help with SEO fundamentals such as clear page titles and descriptions and search-friendly structure, plus copywriting and content strategy. Search rankings depend on many factors and can’t be guaranteed.',
+          acts: () => [{ label: 'Discuss SEO or content', go: '#problems' }], chips: DEFAULT_CHIPS },
+        { id: 'process', label: 'how we work', q: 'How does the process work?',
+          k: ['process', 'how we work', 'how does it work', 'how do you work', 'steps', 'method', 'methodology', 'approach', 'procedure', 'diagnose', 'diagnosis'],
+          reply: 'We follow five steps:\n1. **Understand** – listen to your concerns, goals and how things work now\n2. **Explore** – look at possible causes and whether a digital approach could genuinely help\n3. **Recommend** – practical advice, a suitable digital treatment, or another next step\n4. **Build or configure** – only if you choose a paid solution, then test it\n5. **Review & improve** – check it is useful and follow up\n\nPaid work only starts once the scope and terms are agreed.',
+          acts: () => [{ label: 'Watch the animation', go: '#watch' }, { label: 'See how we work', go: '#process' }], chips: ['How much does it cost?', 'How long does a project take?', 'How can I get started?'] },
+        { id: 'onlyweb', label: 'whether you only build websites', q: 'Do you only build websites?',
+          k: ['only build websites', 'only websites', 'just websites', 'do you only', 'only do websites', 'website only'],
+          reply: 'No. Websites are one possible treatment among many. Depending on what we learn, we may offer advice, design work, documents, content, automation, a simple system or another digital approach. Sometimes advice is enough; sometimes the best next step is outside our scope.',
+          chips: ['What services do you offer?', 'What if I don’t know what I need?'] },
+        { id: 'unsure', label: 'not knowing what you need', q: 'What if I don’t know what I need?',
+          k: ['dont know which', 'not sure which', 'which service', 'what do i need', 'dont know what i need', 'not sure what', 'dont know the problem', 'dont know where to start'],
+          reply: 'That is completely fine. You don’t need to know the cause or the tool you need. Tell us what is happening and what you hope to improve, and we will explore it before recommending a next step.',
+          acts: () => [GO_FORM], chips: ['I have a problem in my business', 'How can I get started?'] },
+        { id: 'price', label: 'pricing', q: 'How much does it cost?', offer: true,
+          k: ['price', 'prices', 'pricing', 'cost', 'costs', 'how much', 'quote', 'package', 'packages', 'fee', 'fees', 'charge', 'rates', 'budget', 'expensive', 'cheap', 'afford', 'free', 'payment', 'pay'],
+          reply: 'There is no fixed package price, because the right response depends on your situation. Simple initial advice may be free. If investigation or a digital solution needs paid work, we explain the scope, estimated cost and timeline first, and you decide whether to proceed.\n\nWould you like to describe your situation to the team?',
+          more: 'Paid work never starts without an agreed scope and terms. That is why we begin by listening and exploring before any cost is discussed.',
+          offerActs: () => [GO_FORM, waAct('Ask on WhatsApp')], chips: ['How long does a project take?', 'How can I get started?'] },
+        { id: 'time', label: 'timelines', q: 'How long does a project take?',
+          k: ['how long', 'timeline', 'duration', 'deadline', 'how soon', 'turnaround', 'how fast', 'delivery time', 'how many days', 'how many weeks', 'quickly'],
+          reply: 'It depends on the scope. Simple design or document work can be relatively quick, while larger websites or applications take longer. A realistic timeline is included in the proposal for your specific project.',
+          acts: () => [waAct('Ask about my project')], chips: ['How much does it cost?', 'How can I get started?'] },
+        { id: 'contact', label: 'contact details', q: 'Contact details',
+          k: ['contact', 'reach', 'whatsapp', 'phone', 'call', 'email', 'mail', 'number', 'talk to someone', 'speak to', 'human', 'real person', 'the team', 'address'],
+          reply: 'You can reach the team here:\n• WhatsApp: +256 726 978 988\n• Alternative: +256 758 991 506\n• Email: fredrickstads@gmail.com\n\nJust describe what is happening in your business. You don’t need to know which solution you need.',
+          acts: () => [waAct('WhatsApp 0726 978 988'), { label: 'Alt: 0758 991 506', wa: true, href: 'https://wa.me/' + WA_ALT }, { label: 'Email', href: 'mailto:fredrickstads@gmail.com' }], chips: ['How can I get started?', 'Where are you based?'] },
+        { id: 'start', label: 'getting started', q: 'How can I get started?',
+          k: ['get started', 'start', 'begin', 'how do i start', 'hire', 'order', 'work with you', 'work with us', 'next step', 'proceed', 'sign up', 'engage'],
+          reply: 'To get started, use the **Find a Solution** form or contact us directly. Describe what is happening in your business and we’ll discuss possible next steps. If paid work is appropriate, nothing proceeds until the scope and terms are agreed.',
+          acts: () => [GO_FORM, waAct('Message on WhatsApp')], chips: ['How much does it cost?', 'How does the process work?'] },
+        { id: 'location', label: 'where we are based', q: 'Where are you based?',
+          k: ['where are you', 'where is freca', 'location', 'located', 'based', 'uganda', 'ugandan', 'remote', 'remotely', 'office', 'visit', 'in person', 'meet'],
+          reply: 'FRECA E-SERVICES is based in Uganda and works remotely with businesses and individuals. The quickest way to arrange anything is WhatsApp.',
+          acts: () => [waAct('Message on WhatsApp')], chips: ['Contact details', 'How can I get started?'] },
+        { id: 'support', label: 'after-launch support', q: 'Do you offer support after launch?',
+          k: ['support', 'maintenance', 'maintain', 'after launch', 'after-launch', 'updates', 'update', 'ongoing', 'aftercare'],
+          reply: 'Where ongoing support is useful and agreed, we can help maintain, review and improve a solution as your business changes.',
+          chips: DEFAULT_CHIPS },
+        { id: 'guarantee', label: 'guarantees', q: 'Do you guarantee results?',
+          k: ['guarantee', 'guaranteed', 'promise', 'results', 'sure to', 'increase sales', 'more sales', 'ensure'],
+          reply: 'We can’t guarantee outcomes such as search rankings or sales, because they depend on many factors. What we do commit to is careful listening, a clear scope and honest advice before any paid work begins.',
+          chips: ['Why choose FRECA E-SERVICES?', 'How does the process work?'] },
+        { id: 'why', label: 'why choose us', q: 'Why choose FRECA E-SERVICES?',
+          k: ['why choose', 'why you', 'why should', 'trust', 'honest', 'different', 'better than', 'advantage', 'benefits'],
+          reply: 'Here’s what we focus on:\n• Solutions that fit the real problem, not the same treatment for everyone\n• Clear scope, timeline and cost before paid work begins\n• Mobile-first thinking where a digital interface is appropriate\n• Plain explanations that separate evidence from assumptions\n• Optional after-launch support, where agreed',
+          acts: () => [{ label: 'Why choose us', go: '#why' }], chips: ['How does the process work?', 'How can I get started?'] },
+        { id: 'work', label: 'examples of work', q: 'Can I see examples of your work?',
+          k: ['portfolio', 'examples', 'example', 'projects', 'past work', 'previous work', 'samples', 'sample', 'clients', 'concepts', 'case study', 'case studies'],
+          reply: 'The Work section shows illustrative solution concepts: an operations dashboard, document systems, a service-business website, spreadsheet tools, promotional content and information assistants. Some are concepts rather than completed client commissions, and real project details are discussed directly with clients.',
+          acts: () => [{ label: 'See the work', go: '#projects' }, { label: 'Watch the animations', go: '#watch' }], chips: ['How does the process work?', 'How can I get started?'] },
+        { id: 'watch', label: 'the animations', q: 'What are the animations?',
+          k: ['watch', 'animation', 'animations', 'animated', 'explainer', 'demo', 'see it in action', 'motion'],
+          reply: 'The **Watch** section has four short animated explainers: the check-up process, answering repeated questions, turning scattered records into one clear view, and a mobile-friendly page with a simple inquiry path. They illustrate ideas and are not client results.',
+          acts: () => [{ label: 'Watch them', go: '#watch' }], chips: DEFAULT_CHIPS },
+        { id: 'form', label: 'the Find a Solution form', q: 'How does the form work?',
+          k: ['form', 'find a solution', 'problem form', 'submit', 'fill'],
+          reply: 'The **Find a Solution** form lets you tick the challenges that sound like yours and add details. Submitting opens WhatsApp with a pre-filled message that you review and send.',
+          acts: () => [GO_FORM], chips: DEFAULT_CHIPS },
+        { id: 'voice', label: 'the listen feature', q: 'Can the page be read aloud?',
+          k: ['listen', 'read aloud', 'read to me', 'voice', 'audio', 'hear', 'speak', 'read this'],
+          reply: 'Use the **Listen** button at the bottom-left of the page to hear the section you’re viewing read aloud. You can also tap the speaker icon at the top of this chat so I read my replies out loud.',
+          chips: DEFAULT_CHIPS },
+        { id: 'describe', label: 'describing a problem', q: 'I have a problem in my business',
+          k: ['have a problem', 'business problem', 'problem in my business', 'need advice', 'something is wrong', 'whats wrong', 'my business is'],
+          reply: 'Tell me what’s happening in a sentence or two, for example “customers keep asking the same questions” or “I can’t keep track of my stock”. I’ll suggest possible approaches and can pre-fill the form for you.',
+          chips: ['Customers keep asking the same questions', 'I can’t keep track of my stock', 'I want more people to find my business'] },
+        { id: 'thanks', label: 'thanks', w: 0.8,
+          k: ['thank', 'thanks', 'thank you', 'thx', 'appreciate', 'great', 'nice', 'cool', 'awesome', 'perfect', 'helpful'],
+          reply: 'You’re welcome! Ask me anything else, or use the Find a Solution form if you’d like to discuss a specific challenge.', chips: DEFAULT_CHIPS },
+        { id: 'ack', label: 'okay', w: 0.5, k: ['ok', 'okay', 'alright', 'got it', 'i see', 'fine', 'understood'],
+          reply: 'Great. Is there anything else you’d like to know?', chips: DEFAULT_CHIPS },
+        { id: 'bye', label: 'goodbye', w: 0.7, k: ['bye', 'goodbye', 'see you', 'later', 'cya', 'good night'],
+          reply: 'Goodbye! If you’d like to talk to the team, WhatsApp is the quickest way.', acts: () => [waAct('Message on WhatsApp')] },
+        { id: 'offtopic', label: 'off-topic', w: 0.9,
+          k: ['weather', 'joke', 'recipe', 'football', 'politics', 'president', 'homework', 'poem', 'lyrics', 'horoscope', 'movie', 'bitcoin', 'translate'],
+          reply: 'That’s outside what I can help with. I’m here for questions about FRECA E-SERVICES: our services, how we work, and how to get started.', chips: DEFAULT_CHIPS }
+      ];
+
+      const CHALLENGES = [
+        { l: 'getting more people to discover your business', p: 'I want more people to discover my business', k: ['discover', 'more customers', 'get customers', 'find customers', 'no customers', 'few customers', 'more people', 'visibility', 'be found', 'found online', 'attract'] },
+        { l: 'presenting your products or services more professionally', p: 'I want to present my products or services more professionally', k: ['professional', 'presentation', 'look better', 'catalogue', 'catalog', 'product photos', 'product images', 'unprofessional'] },
+        { l: 'customers struggling to find information', p: 'Customers struggle to find the information they need', k: ['find the information', 'cant find', 'confused', 'where to find', 'information they need', 'unclear'] },
+        { l: 'time spent answering repetitive questions', p: 'I spend too much time answering repetitive questions', k: ['same question', 'same questions', 'repetitive question', 'repeat the same', 'keep asking', 'always asking', 'answering questions', 'answering customers', 'answer customers', 'repeated questions'] },
+        { l: 'simplifying customer inquiries or ordering', p: 'I want to simplify customer inquiries or ordering', k: ['inquiries', 'enquiries', 'ordering', 'take orders', 'orders online', 'make orders', 'easier to order'] },
+        { l: 'organizing orders, appointments or bookings', p: 'I struggle to organize orders, appointments, or bookings', k: ['appointments', 'appointment', 'bookings', 'booking', 'reservations', 'organize orders', 'organise orders', 'double booked', 'double booking'] },
+        { l: 'tracking stock, sales or business records', p: 'I need a better way to track stock, sales, or business records', k: ['stock', 'inventory', 'sales records', 'records', 'keep track', 'track my', 'tracking', 'bookkeeping', 'notebook', 'exercise book'] },
+        { l: 'repetitive administrative work', p: 'I want to reduce repetitive administrative work', k: ['paperwork', 'administrative', 'admin work', 'manual work', 'repetitive work', 'waste time', 'wasting time', 'takes too long', 'time consuming', 'by hand'] },
+        { l: 'promotional content and advertising', p: 'I need better promotional content or advertisements', k: ['advertisements', 'adverts', 'ads', 'promotion', 'promote', 'marketing', 'promotional', 'video ad'] },
+        { l: 'improving your website or online presence', p: 'I want to improve my website or online presence', k: ['my website', 'old website', 'outdated website', 'redesign', 'online presence', 'website is'] },
+        { l: 'a custom application or digital system', p: 'I need a custom application or digital system', k: ['custom app', 'custom system', 'application for', 'software for', 'system for', 'app for'] },
+        { l: 'chatbots or AI-assisted workflows', p: 'I want to explore chatbots or AI-assisted workflows', k: ['chatbot', 'ai assistant', 'ai workflow', 'ai tools', 'use ai'] },
+        { l: 'SEO, copywriting or business content', p: 'I need help with SEO, copywriting, or business content', k: ['seo', 'copywriting', 'business content', 'rank on google', 'ranking'] }
+      ];
+      const PAIN = ['struggl', 'problem', 'too much', 'too many', 'waste', 'too long', 'hard to', 'difficult', 'cant', 'cannot', 'trouble', 'issue', 'challenge', 'keep', 'always', 'tired', 'losing', 'slow', 'messy', 'manual', 'overwhelm', 'not getting', 'no customers', 'few customers', 'dont know how', 'need help', 'want to', 'looking for', 'how can i', 'how do i', 'not sure how', 'wish'];
+
+      function norm(s) { return ' ' + s.toLowerCase().replace(/[’']/g, '').replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim() + ' '; }
+      function lev(a, b) {
+        const m = a.length, n = b.length;
+        if (!m) return n; if (!n) return m;
+        let prev2 = null, prev = [], cur = [];
+        for (let j = 0; j <= n; j++) prev[j] = j;
+        for (let i = 1; i <= m; i++) {
+          cur = [i];
+          for (let j = 1; j <= n; j++) {
+            cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+            if (prev2 && i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) cur[j] = Math.min(cur[j], prev2[j - 2] + 1);
+          }
+          prev2 = prev; prev = cur;
+        }
+        return prev[n];
+      }
+      function scoreKeys(keys, t, words, weight) {
+        let s = 0;
+        keys.forEach(kw => {
+          if (kw.indexOf(' ') > -1) {
+            if (t.indexOf(' ' + kw + ' ') > -1 || t.indexOf(' ' + kw) > -1) s += 2 + kw.length * 0.08;
+          } else {
+            for (let i = 0; i < words.length; i++) {
+              const w = words[i];
+              if (w === kw) { s += 2; break; }
+              if (kw.length >= 4 && w.length >= kw.length && w.indexOf(kw) === 0) { s += 1.6; break; }
+              if (kw.length >= 5 && Math.abs(w.length - kw.length) <= 1 && lev(w, kw) <= (kw.length >= 9 ? 2 : 1)) { s += 1.8; break; }
+            }
+          }
+        });
+        return s * (weight || 1);
+      }
+
+      const YES = ['yes', 'yeah', 'yep', 'yup', 'sure', 'ok', 'okay', 'please', 'yes please', 'alright', 'go ahead', 'sounds good', 'why not'];
+      const NO = ['no', 'nope', 'not now', 'no thanks', 'no thank you', 'maybe later', 'nah'];
+      const MORE = ['more', 'tell me more', 'go on', 'continue', 'elaborate', 'more details', 'explain more', 'what else', 'and', 'why', 'how'];
+
+      function prefillForm(problem, text) {
+        const opt = Array.prototype.slice.call(document.querySelectorAll('.problem-option')).filter(o => o.dataset.problem === problem)[0];
+        if (opt && !opt.classList.contains('selected')) opt.click();
+        const ch = document.getElementById('pchallenge');
+        if (ch && text && !ch.value.trim()) ch.value = text;
+      }
+
+      function fromIntent(it) {
+        const out = { text: it.reply, acts: it.acts ? it.acts() : [], chips: it.chips || DEFAULT_CHIPS, intent: it };
+        if (it.id === 'greet' && ctx.name) out.text = 'Hello ' + ctx.name + '! ' + it.reply.replace(/^Hello! /, '');
+        ctx.last = it;
+        ctx.offer = it.offer ? { acts: it.offerActs } : null;
+        return out;
+      }
+
+      function localAnswer(text) {
+        const t = norm(text), words = t.trim().split(' ');
+        const bare = t.trim();
+
+        const nm = bare.match(/^(?:(?:hi|hello|hey) )?(?:my name is|i am|im|this is|call me) ([a-z]{2,20})$/);
+        if (nm && !/^(?:a|an|the|not|just|here|looking|interested|ready|sure)$/.test(nm[1])) {
+          ctx.name = nm[1].charAt(0).toUpperCase() + nm[1].slice(1);
+          return { text: 'Nice to meet you, ' + ctx.name + '! What would you like to know, or what’s troubling your business?', acts: [], chips: START_CHIPS };
+        }
+
+        if (ctx.offer && YES.indexOf(bare) > -1) {
+          const acts = ctx.offer.acts ? ctx.offer.acts() : [];
+          ctx.offer = null;
+          return { text: 'Great. Here are your options. Describe your situation in the form, or message the team directly.', acts: acts, chips: DEFAULT_CHIPS };
+        }
+        if (ctx.offer && NO.indexOf(bare) > -1) {
+          ctx.offer = null;
+          return { text: 'No problem. Is there anything else you’d like to know?', acts: [], chips: DEFAULT_CHIPS };
+        }
+        if (!ctx.offer && YES.indexOf(bare) > -1 && bare !== 'ok' && bare !== 'okay' && bare !== 'alright') {
+          return { text: 'Sure. What would you like to know? You can ask about our services, how we work or pricing, or tell me what’s troubling your business.', acts: [], chips: START_CHIPS };
+        }
+        if (ctx.last && MORE.indexOf(bare) > -1) {
+          const it = ctx.last;
+          return { text: it.more || it.reply, acts: it.acts ? it.acts() : [], chips: it.chips || DEFAULT_CHIPS, intent: it };
+        }
+
+        if (!ctx.last && MORE.indexOf(bare) > -1) {
+          return { text: 'Happy to go into more detail. What would you like to hear more about?', acts: [], chips: START_CHIPS };
+        }
+
+        let pain = 0;
+        PAIN.forEach(c => { if (t.indexOf(' ' + c) > -1) pain++; });
+        if (pain && words.length >= 4) {
+          let bestC = null, bestCS = 0;
+          CHALLENGES.forEach(c => { const s = scoreKeys(c.k, t, words, 1); if (s > bestCS) { bestCS = s; bestC = c; } });
+          if (bestC && bestCS >= 1.6) {
+            const hint = (typeof HINTS !== 'undefined' && HINTS[bestC.p]) ? HINTS[bestC.p] : '';
+            ctx.last = null; ctx.offer = null;
+            return {
+              text: 'Thanks for sharing that. It sounds like this may relate to **' + bestC.l + '**.\n\n' + hint + '\n\nWe would want to understand your situation before recommending anything. I can pre-fill the form with what you told me.',
+              acts: [{ label: 'Pre-fill the form', go: '#problems', fn: () => prefillForm(bestC.p, text) }, waAct('Send to the team')],
+              chips: ['How much does it cost?', 'How does the process work?']
+            };
+          }
+        }
+
+        let best = null, bestS = 0;
+        INTENTS.forEach(it => { const s = scoreKeys(it.k, t, words, it.w); if (s > bestS) { bestS = s; best = it; } });
+        if (best && bestS >= 1.8 * (best.w || 1)) return fromIntent(best);
+
+        ctx.last = null; ctx.offer = null;
+        const out = { text: '', acts: [waAct('Ask the team on WhatsApp')], chips: DEFAULT_CHIPS };
+        if (best && bestS >= 0.8 && best.q) {
+          out.text = 'I’m not completely sure I understood. Did you mean **' + best.label + '**? Tap the suggestion below, or rephrase your question.\n\nFor anything specific to your business, the team can answer directly on WhatsApp.';
+          out.chips = [best.q].concat(DEFAULT_CHIPS).slice(0, 5);
+        } else {
+          out.text = 'I’m not sure I can answer that one well. I can help with our services, how we work, pricing approach, timelines and getting started, or you can describe a problem in your business.\n\nFor anything specific, the team can reply directly on WhatsApp.';
+        }
+        return out;
+      }
+      /*BRAIN-END*/
+
+      /* ---- AI mode (optional) ---- */
+      async function askAI() {
+        const ctrl = new AbortController();
+        const to = setTimeout(() => ctrl.abort(), 15000);
+        try {
+          const res = await fetch(AI_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: history.slice(-10) }),
+            signal: ctrl.signal
+          });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          const data = await res.json();
+          if (!data || !data.reply) throw new Error('Empty reply');
+          return String(data.reply);
+        } finally { clearTimeout(to); }
+      }
+      function parseAI(raw) {
+        const acts = []; let chips = [];
+        const seen = {};
+        let r = raw.replace(/\[\[SUGGEST:([^\]]*)\]\]/i, (m, s) => { chips = s.split('|').map(x => x.trim()).filter(Boolean); return ''; });
+        const MAP = {
+          WA: () => waAct('Chat on WhatsApp'),
+          FORM: () => GO_FORM,
+          SERVICES: () => ({ label: 'See the solutions', go: '#solutions' }),
+          PROCESS: () => ({ label: 'See how we work', go: '#process' }),
+          WATCH: () => ({ label: 'Watch the animations', go: '#watch' }),
+          WORK: () => ({ label: 'See the work', go: '#projects' }),
+          FAQ: () => ({ label: 'Read the FAQ', go: '#faq' }),
+          CONTACT: () => ({ label: 'Contact details', go: '#contact' })
+        };
+        r = r.replace(/\[\[(WA|FORM|SERVICES|PROCESS|WATCH|WORK|FAQ|CONTACT)\]\]/gi, (m, k) => {
+          k = k.toUpperCase();
+          if (!seen[k]) { seen[k] = 1; acts.push(MAP[k]()); }
+          return '';
+        });
+        return { text: r.trim(), acts: acts, chips: chips.length ? chips.slice(0, 4) : DEFAULT_CHIPS };
+      }
+
+      /* ---- UI helpers ---- */
+      function esc(s) { return s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+      function rich(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>'); }
+      function scrollDown() { ekkarisMessages.scrollTop = ekkarisMessages.scrollHeight; }
+
+      function makeAct(a) {
+        let el;
+        if (a.href) {
+          el = document.createElement('a');
+          el.href = a.href;
+          if (a.href.indexOf('mailto:') !== 0 && a.href.indexOf('tel:') !== 0) { el.target = '_blank'; el.rel = 'noopener'; }
+        } else {
+          el = document.createElement('button');
+          el.type = 'button';
+          el.addEventListener('click', () => {
+            if (a.fn) a.fn();
+            if (a.go) {
+              closeEkkaris();
+              const target = document.querySelector(a.go);
+              if (target) target.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        }
+        el.className = 'ekkaris-act' + (a.wa ? ' wa' : '');
+        el.textContent = a.label;
+        return el;
+      }
+      function addEkkarisMsg(text, isUser, acts) {
+        const div = document.createElement('div');
+        div.className = 'ekkaris-msg ' + (isUser ? 'user' : 'bot');
+        div.innerHTML = rich(text);
+        if (acts && acts.length) {
+          const row = document.createElement('div');
+          row.className = 'ekkaris-acts';
+          acts.forEach(a => row.appendChild(makeAct(a)));
+          div.appendChild(row);
+        }
+        ekkarisMessages.appendChild(div);
+        scrollDown();
+        return div;
+      }
+      function setChips(list) {
+        ekkarisQuick.innerHTML = '';
+        (list || []).slice(0, 5).forEach(q => {
+          const b = document.createElement('button');
+          b.type = 'button'; b.textContent = q;
+          b.addEventListener('click', () => send(q));
+          ekkarisQuick.appendChild(b);
+        });
+        ekkarisQuick.style.display = (list && list.length) ? 'flex' : 'none';
+      }
+      function setThinking(on) { [ekkarisBtn, ekkarisAvatar].forEach(el => el.classList.toggle('is-thinking', on)); }
+      function setTalking(on) { [ekkarisBtn, ekkarisAvatar].forEach(el => el.classList.toggle('is-talking', on)); }
+      function showTyping() {
+        const t = document.createElement('div');
+        t.className = 'ekkaris-typing';
+        t.innerHTML = '<span></span><span></span><span></span>';
+        ekkarisMessages.appendChild(t);
+        scrollDown(); setThinking(true);
+        return t;
+      }
+
+      function speak(text) {
+        if (!soundOn || !window.speechSynthesis) return;
+        speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text.replace(/[•]/g, '.').replace(/\*\*/g, '').replace(/\s+/g, ' '));
+        u.rate = 0.98; u.lang = 'en-US';
+        const vs = speechSynthesis.getVoices().filter(v => /^en/i.test(v.lang));
+        const v = vs.filter(x => /natural|google/i.test(x.name))[0] || vs[0];
+        if (v) { u.voice = v; u.lang = v.lang; }
+        u.onstart = () => setTalking(true);
+        u.onend = u.onerror = () => setTalking(false);
+        speechSynthesis.speak(u);
+      }
+
+      async function send(raw) {
+        const text = (raw || '').trim().slice(0, 300);
+        if (!text || busy) return;
+        busy = true;
+        ekkarisInput.value = '';
+        addEkkarisMsg(text, true);
+        ctx.asked.push(text);
+        setChips([]);
+        const typing = showTyping();
+        const t0 = Date.now();
+        let out = null;
+
+        if (useAI) {
+          history.push({ role: 'user', content: text });
+          try {
+            const raw2 = await askAI();
+            history.push({ role: 'assistant', content: raw2 });
+            out = parseAI(raw2);
+          } catch (err) {
+            console.warn('Ekkaris AI unavailable, using the built-in guide:', err);
+            out = localAnswer(text);
+            history.push({ role: 'assistant', content: out.text });
+          }
+        } else {
+          out = localAnswer(text);
+        }
+
+        const wait = Math.max(0, Math.min(1000, 380 + out.text.length * 3) - (Date.now() - t0));
+        setTimeout(() => {
+          typing.remove(); setThinking(false);
+          addEkkarisMsg(out.text, false, out.acts);
+          setChips(out.chips);
+          scrollDown();
+          speak(out.text);
+          busy = false;
+        }, wait);
+      }
+
+      function greet() {
+        addEkkarisMsg('Hi! I’m **Ekkaris**, the FRECA E-SERVICES assistant. Ask me about our services, how we work, pricing approach or how to get started, or tell me what’s troubling your business and I’ll suggest possible approaches.', false);
+        setChips(START_CHIPS);
+        scrollDown();
+      }
+      function openEkkaris() {
+        ekkarisPanel.classList.add('open');
+        ekkarisBtn.classList.add('active');
+        ekkarisBtn.setAttribute('aria-expanded', 'true');
+        ekkarisHello.classList.remove('show');
+        if (!started) { started = true; greet(); }
+        if (!window.matchMedia('(pointer: coarse)').matches) setTimeout(() => ekkarisInput.focus(), 300);
+      }
+      function closeEkkaris() {
+        ekkarisPanel.classList.remove('open');
+        ekkarisBtn.classList.remove('active');
+        ekkarisBtn.setAttribute('aria-expanded', 'false');
+        if (soundOn && window.speechSynthesis) { speechSynthesis.cancel(); setTalking(false); }
+      }
+
+      ekkarisBtn.addEventListener('click', () => { if (ekkarisPanel.classList.contains('open')) closeEkkaris(); else openEkkaris(); });
+      ekkarisClose.addEventListener('click', closeEkkaris);
+      ekkarisHello.addEventListener('click', openEkkaris);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && ekkarisPanel.classList.contains('open')) closeEkkaris(); });
+      ekkarisForm.addEventListener('submit', e => { e.preventDefault(); send(ekkarisInput.value); });
+      ekkarisSound.addEventListener('click', () => {
+        if (!window.speechSynthesis) { alert('Sorry, your browser does not support text-to-speech.'); return; }
+        soundOn = !soundOn;
+        ekkarisSound.setAttribute('aria-pressed', String(soundOn));
+        if (!soundOn) { speechSynthesis.cancel(); setTalking(false); }
+      });
+      ekkarisReset.addEventListener('click', () => {
+        ctx = { last: null, offer: null, name: null, asked: [] };
+        history = []; busy = false;
+        if (window.speechSynthesis) speechSynthesis.cancel();
+        setTalking(false); setThinking(false);
+        ekkarisMessages.innerHTML = '';
+        greet();
+      });
+
+      setTimeout(() => {
+        if (!ekkarisPanel.classList.contains('open')) {
+          ekkarisHello.classList.add('show');
+          setTimeout(() => ekkarisHello.classList.remove('show'), 8000);
+        }
+      }, 5000);
+
+      /* ========== VOICE READER (TTS) ========== */
+      const voiceBtn = document.getElementById('voiceBtn');
+      let isSpeaking = false;
+      let currentUtterance = null;
+
+      function getReadableText() {
+        // Prefer the currently visible section, otherwise hero + about
+        const sections = document.querySelectorAll('section[id]');
+        let text = '';
+        const mid = window.innerHeight / 2;
+        let best = null;
+        let bestDist = Infinity;
+        sections.forEach(s => {
+          const r = s.getBoundingClientRect();
+          const dist = Math.abs(r.top + r.height / 2 - mid);
+          if (dist < bestDist && r.top < window.innerHeight && r.bottom > 0) {
+            bestDist = dist;
+            best = s;
+          }
+        });
+        if (best) {
+          const clone = best.cloneNode(true);
+          clone.querySelectorAll('script, style, button, .ekkaris-btn, .ekkaris-panel, .ekkaris-hello, .voice-btn, .back-top, .player, svg, form, input, select, textarea').forEach(el => el.remove());
+          text = clone.innerText.replace(/\s+/g, ' ').trim();
+        }
+        if (!text || text.length < 40) {
+          text = document.querySelector('.hero-title')?.innerText + '. ' +
+                 document.querySelector('.hero-desc')?.innerText + '. ' +
+                 (document.querySelector('.about-text')?.innerText || '');
+        }
+        return text.slice(0, 2800); // keep it reasonable
+      }
+
+      function stopSpeaking() {
+        if (window.speechSynthesis) {
+          window.speechSynthesis.cancel();
+        }
+        isSpeaking = false;
+        voiceBtn.classList.remove('active');
+        voiceBtn.setAttribute('aria-label', 'Listen to page content');
+      }
+
+      function startSpeaking() {
+        if (!window.speechSynthesis) {
+          alert('Sorry, your browser does not support text-to-speech.');
+          return;
+        }
+        stopSpeaking();
+        const text = getReadableText();
+        if (!text) return;
+        currentUtterance = new SpeechSynthesisUtterance(text);
+        currentUtterance.rate = 0.95;
+        currentUtterance.pitch = 1;
+        currentUtterance.lang = 'en-UG';
+        // Prefer a clear English voice if available
+        const voices = speechSynthesis.getVoices();
+        const preferred = voices.find(v => v.lang.startsWith('en') && (v.name.includes('Female') || v.name.includes('Google') || v.name.includes('Samantha'))) ||
+                          voices.find(v => v.lang.startsWith('en'));
+        if (preferred) currentUtterance.voice = preferred;
+
+        currentUtterance.onend = () => stopSpeaking();
+        currentUtterance.onerror = () => stopSpeaking();
+
+        speechSynthesis.speak(currentUtterance);
+        isSpeaking = true;
+        voiceBtn.classList.add('active');
+        voiceBtn.setAttribute('aria-label', 'Stop listening');
+      }
+
+      voiceBtn.addEventListener('click', () => {
+        if (isSpeaking) stopSpeaking();
+        else startSpeaking();
+      });
+
+      // Load voices (some browsers need this)
+      if (window.speechSynthesis) {
+        speechSynthesis.getVoices();
+        speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+      }
+    })();
+  </script>
+<script>
+/* ========== CODED ANIMATION CARDS ========== */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function clamp(x) { return Math.max(0, Math.min(1, x)); }
+  function seg(t, a, b) { return clamp((t - a) / (b - a)); }
+  function ease(p) { return 1 - Math.pow(1 - p, 3); }
+  function lerp(a, b, p) { return a + (b - a) * p; }
+  function setA(el, o) { for (var k in o) el.setAttribute(k, o[k]); }
+  function fmt(s) { s = Math.floor(s); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); }
+  var PLAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>';
+  var PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>';
+
+  /* ---- Scene 1: the five steps ---- */
+  function sceneSteps(stage, card) {
+    var names = ['Understand', 'Explore', 'Recommend', 'Build', 'Review'];
+    var desc = [
+      'Listen to your concerns, goals and how things currently work.',
+      'Explore possible causes and whether a digital approach could genuinely help.',
+      'Recommend practical advice, an appropriate digital treatment, or another next step.',
+      'If you choose a paid digital solution, build or configure the agreed work and test it.',
+      'Check whether the solution is useful, discuss improvements and follow up where appropriate.'
+    ];
+    var h = '<svg viewBox="0 0 320 180" aria-hidden="true">';
+    h += '<text x="160" y="40" text-anchor="middle" font-size="11" font-weight="600" fill="#94A3B8">A business check-up, step by step</text>';
+    h += '<line x1="40" y1="96" x2="280" y2="96" stroke="#334155" stroke-width="3" stroke-linecap="round"/>';
+    h += '<line class="pg" x1="40" y1="96" x2="40" y2="96" stroke="#0EA5E9" stroke-width="3" stroke-linecap="round"/>';
+    for (var i = 0; i < 5; i++) {
+      var x = 40 + i * 60;
+      h += '<circle class="rg" cx="' + x + '" cy="96" r="12" fill="none" stroke="#38BDF8" stroke-width="2" opacity="0"/>';
+      h += '<circle class="nd" cx="' + x + '" cy="96" r="12" fill="#1A2744" stroke="#334155" stroke-width="2"/>';
+      h += '<text class="nt" x="' + x + '" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#94A3B8">' + (i + 1) + '</text>';
+      h += '<text class="lb" x="' + x + '" y="126" text-anchor="middle" font-size="9.5" font-weight="600" fill="#64748B">' + names[i] + '</text>';
+    }
+    h += '<circle class="dt" cx="40" cy="96" r="4.5" fill="#BAE6FD" opacity="0"/></svg>';
+    stage.innerHTML = h;
+    var pg = stage.querySelector('.pg'), dt = stage.querySelector('.dt');
+    var rg = stage.querySelectorAll('.rg'), nd = stage.querySelectorAll('.nd'), nt = stage.querySelectorAll('.nt'), lb = stage.querySelectorAll('.lb');
+    var live = card.querySelector('.motion-live'), lastI = -1;
+    return function (t) {
+      var x = 40 + 240 * clamp((t - 0.5) / 7);
+      setA(pg, { x2: x });
+      setA(dt, { cx: x, opacity: t > 0.45 ? 1 : 0 });
+      var act = 0;
+      for (var i = 0; i < 5; i++) {
+        var tr = 0.5 + 1.75 * i, reached = t >= tr - 0.01;
+        if (reached) act = i;
+        var age = (t - tr) / 1.3;
+        setA(nd[i], { fill: reached ? '#0EA5E9' : '#1A2744', stroke: reached ? '#38BDF8' : '#334155' });
+        setA(nt[i], { fill: reached ? '#FFFFFF' : '#94A3B8' });
+        setA(lb[i], { fill: reached ? '#FFFFFF' : '#64748B' });
+        setA(rg[i], { r: 12 + clamp(age) * 12, opacity: (age >= 0 && age < 1) ? (1 - age) * 0.8 : 0 });
+      }
+      if (live && act !== lastI) { lastI = act; live.textContent = (act + 1) + '. ' + names[act] + ': ' + desc[act]; }
+    };
+  }
+
+  /* ---- Scene 2: repeated questions ---- */
+  function sceneFaq(stage) {
+    var qs = ['Opening hours?', 'Do you take bookings?', 'How do I order?'];
+    var h = '<svg viewBox="0 0 320 180" aria-hidden="true">';
+    h += '<text class="cn" x="14" y="18" font-size="10" font-weight="700" fill="#FBBF24">Waiting: 0</text>';
+    for (var i = 0; i < 3; i++) {
+      var y = 28 + i * 30;
+      h += '<g class="qb"><rect x="14" y="' + y + '" width="120" height="22" rx="9" fill="#1E293B" stroke="#334155"/><text x="24" y="' + (y + 14.5) + '" font-size="9" fill="#E2E8F0">' + qs[i] + '</text></g>';
+      h += '<g class="an"><rect x="142" y="' + y + '" width="78" height="22" rx="9" fill="rgba(16,185,129,0.16)" stroke="#10B981"/><text x="152" y="' + (y + 14.5) + '" font-size="9" font-weight="600" fill="#6EE7B7">✓ Answered</text></g>';
+    }
+    h += '<g class="bt"><line x1="268" y1="38" x2="268" y2="31" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/><circle cx="268" cy="28" r="3.5" fill="#38BDF8"/>' +
+         '<rect x="240" y="50" width="5" height="14" rx="2.5" fill="#0EA5E9"/><rect x="291" y="50" width="5" height="14" rx="2.5" fill="#0EA5E9"/>' +
+         '<rect x="244" y="38" width="48" height="40" rx="13" fill="#F8FAFC"/><rect x="250" y="46" width="36" height="24" rx="9" fill="#0B1426"/>' +
+         '<rect x="258" y="52" width="5" height="9" rx="2.5" fill="#38BDF8"/><rect x="273" y="52" width="5" height="9" rx="2.5" fill="#38BDF8"/>' +
+         '<path d="M261 65Q268 69 275 65" stroke="#38BDF8" stroke-width="1.8" fill="none" stroke-linecap="round"/>' +
+         '<text x="268" y="94" text-anchor="middle" font-size="9" font-weight="600" fill="#7DD3FC">FAQ assistant</text></g>';
+    h += '<g class="cx"><rect x="14" y="128" width="130" height="22" rx="9" fill="rgba(251,191,36,0.14)" stroke="#FBBF24"/><text x="24" y="142.5" font-size="9" fill="#FDE68A">Need a custom quote?</text>' +
+         '<path d="M150 139H184" stroke="#FBBF24" stroke-width="1.5" stroke-dasharray="3 3"/>' +
+         '<circle cx="202" cy="135" r="6" fill="#FDE68A"/><path d="M191 153C191 144 213 144 213 153Z" fill="#FDE68A"/>' +
+         '<text x="224" y="138" font-size="8.5" fill="#FDE68A">The team replies</text><text x="224" y="149" font-size="8.5" fill="#FDE68A">on WhatsApp</text></g>';
+    h += '</svg>';
+    stage.innerHTML = h;
+    var cn = stage.querySelector('.cn'), qb = stage.querySelectorAll('.qb'), an = stage.querySelectorAll('.an');
+    var bt = stage.querySelector('.bt'), cx = stage.querySelector('.cx');
+    return function (t) {
+      var i, p;
+      for (i = 0; i < 3; i++) {
+        p = ease(seg(t, 0.5 + i * 0.9, 1.0 + i * 0.9));
+        setA(qb[i], { transform: 'translate(' + (-(1 - p) * 150).toFixed(1) + ' 0)', opacity: p });
+        p = ease(seg(t, 5.1 + i * 0.6, 5.5 + i * 0.6));
+        setA(an[i], { transform: 'translate(' + ((1 - p) * 30).toFixed(1) + ' 0)', opacity: p });
+      }
+      var n = t < 5 ? Math.round(9 * seg(t, 0.5, 4.5)) : Math.round(9 * (1 - seg(t, 5.2, 7)));
+      cn.textContent = n > 0 ? 'Waiting: ' + n : 'All answered ✓';
+      setA(cn, { fill: n > 0 ? '#FBBF24' : '#34D399' });
+      var s = Math.max(0.001, ease(seg(t, 4.4, 5.0)));
+      setA(bt, { transform: 'translate(268 62) scale(' + s.toFixed(3) + ') translate(-268 -62)', opacity: clamp(s * 1.5) });
+      p = ease(seg(t, 7.6, 8.4));
+      setA(cx, { transform: 'translate(0 ' + ((1 - p) * 10).toFixed(1) + ')', opacity: p });
+    };
+  }
+
+  /* ---- Scene 3: scattered records to one clear view ---- */
+  function sceneRecords(stage) {
+    var cols = ['#FEF3C7', '#E0F2FE', '#FCE7F3', '#DCFCE7', '#FEF9C3', '#EDE9FE'];
+    var pos = [[42, 46, -12], [104, 34, 8], [166, 54, -5], [230, 40, 14], [76, 110, 10], [200, 112, -9]];
+    var bars = [22, 34, 28, 46, 40];
+    var h = '<svg viewBox="0 0 320 180" aria-hidden="true">';
+    h += '<g class="dash" opacity="0"><rect x="40" y="22" width="240" height="136" rx="10" fill="#111C33" stroke="#334155"/>' +
+         '<text x="54" y="40" font-size="10" font-weight="700" fill="#E2E8F0">Overview</text>';
+    var tiles = ['Orders', 'Stock', 'Sales'];
+    for (var k = 0; k < 3; k++) {
+      h += '<rect x="' + (54 + k * 76) + '" y="48" width="68" height="24" rx="6" fill="#1A2744"/><circle cx="' + (64 + k * 76) + '" cy="60" r="3" fill="#38BDF8"/><text x="' + (72 + k * 76) + '" y="63" font-size="8.5" fill="#94A3B8">' + tiles[k] + '</text>';
+    }
+    h += '<line x1="54" y1="146" x2="266" y2="146" stroke="#334155"/>';
+    for (k = 0; k < 5; k++) h += '<rect class="br" x="' + (58 + k * 26) + '" y="146" width="18" height="0" rx="3" fill="#0EA5E9"/>';
+    h += '<path class="ln" d="M196 138L214 122L230 128L248 104L268 92" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" fill="none" stroke="#34D399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>';
+    for (k = 0; k < 6; k++) {
+      h += '<g class="nt"><rect x="-18" y="-13" width="36" height="26" rx="3" fill="' + cols[k] + '"/><rect x="-12" y="-7" width="22" height="2.5" rx="1" fill="#94A3B8"/><rect x="-12" y="-1" width="26" height="2.5" rx="1" fill="#94A3B8"/><rect x="-12" y="5" width="14" height="2.5" rx="1" fill="#94A3B8"/></g>';
+    }
+    h += '<text class="l1" x="160" y="172" text-anchor="middle" font-size="10" font-weight="600" fill="#94A3B8">Notes, receipts, messages…</text>';
+    h += '<text class="l2" x="160" y="172" text-anchor="middle" font-size="10" font-weight="600" fill="#7DD3FC" opacity="0">One clear view</text></svg>';
+    stage.innerHTML = h;
+    var dash = stage.querySelector('.dash'), br = stage.querySelectorAll('.br'), ln = stage.querySelector('.ln');
+    var nt = stage.querySelectorAll('.nt'), l1 = stage.querySelector('.l1'), l2 = stage.querySelector('.l2');
+    return function (t) {
+      var i, p;
+      for (i = 0; i < 6; i++) {
+        p = ease(seg(t, 2.4 + i * 0.08, 3.8));
+        var jit = t < 2.4 ? Math.sin(t * 2.2 + i * 1.7) * 2.5 : 0;
+        var x = lerp(pos[i][0] + jit, 160, p), y = lerp(pos[i][1] + jit * 0.6, 90, p);
+        setA(nt[i], { transform: 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') rotate(' + (pos[i][2] * (1 - p)).toFixed(1) + ') scale(' + lerp(1, 0.25, p).toFixed(3) + ')', opacity: 1 - seg(t, 3.0, 3.8) });
+      }
+      setA(dash, { opacity: seg(t, 3.2, 4.2) });
+      for (i = 0; i < 5; i++) {
+        var hh = bars[i] * ease(seg(t, 4.3 + i * 0.35, 5.5 + i * 0.35));
+        setA(br[i], { y: 146 - hh, height: hh });
+      }
+      setA(ln, { 'stroke-dashoffset': (1 - ease(seg(t, 5, 7.2))).toFixed(3) });
+      setA(l1, { opacity: 1 - seg(t, 2.4, 3.2) });
+      setA(l2, { opacity: seg(t, 7, 7.8) });
+    };
+  }
+
+  /* ---- Scene 4: a mobile page with a simple inquiry path ---- */
+  function sceneMobile(stage) {
+    var h = '<svg viewBox="0 0 320 180" aria-hidden="true"><defs><clipPath id="phoneClip"><rect x="116" y="16" width="88" height="148" rx="9"/></clipPath></defs>';
+    h += '<rect x="110" y="9" width="100" height="162" rx="14" fill="#0F172A" stroke="#475569" stroke-width="2"/><rect x="116" y="16" width="88" height="148" rx="9" fill="#F8FAFC"/>';
+    h += '<g clip-path="url(#phoneClip)">';
+    h += '<g class="hd"><rect x="116" y="16" width="88" height="16" fill="#0EA5E9"/><rect x="122" y="21" width="12" height="6" rx="2" fill="#fff"/><rect x="176" y="22" width="22" height="4" rx="2" fill="rgba(255,255,255,0.6)"/></g>';
+    h += '<g class="hr"><rect x="122" y="38" width="76" height="34" rx="6" fill="#E0F2FE"/><rect x="128" y="46" width="50" height="5" rx="2" fill="#0EA5E9"/><rect x="128" y="56" width="36" height="4" rx="2" fill="#94A3B8"/></g>';
+    for (var k = 0; k < 3; k++) {
+      var cx = 122 + k * 27;
+      h += '<g class="cd"><rect x="' + cx + '" y="78" width="22" height="26" rx="5" fill="#fff" stroke="#CBD5E1"/><circle cx="' + (cx + 11) + '" cy="87" r="3.5" fill="#0EA5E9"/><rect x="' + (cx + 4) + '" y="95" width="14" height="3" rx="1.5" fill="#CBD5E1"/></g>';
+    }
+    h += '<g class="fq"><rect x="122" y="110" width="76" height="8" rx="4" fill="#E2E8F0"/><rect x="122" y="121" width="76" height="8" rx="4" fill="#E2E8F0"/></g>';
+    h += '<g class="bn"><rect x="122" y="134" width="76" height="20" rx="10" fill="#10B981"/><text x="160" y="147.5" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">Send inquiry</text></g>';
+    h += '<circle class="rp" cx="160" cy="144" r="5" fill="none" stroke="#0EA5E9" stroke-width="2" opacity="0"/>';
+    h += '<circle class="cu" cx="190" cy="100" r="5" fill="rgba(14,165,233,0.35)" stroke="#0EA5E9" stroke-width="1.5" opacity="0"/>';
+    h += '</g>';
+    var tags = [['Mobile-first', 20], ['Clear information', 84], ['Simple inquiry path', 142]];
+    for (k = 0; k < 3; k++) {
+      h += '<g class="tg"><rect x="8" y="' + tags[k][1] + '" width="94" height="18" rx="9" fill="rgba(14,165,233,0.15)" stroke="#0EA5E9"/><text x="17" y="' + (tags[k][1] + 12.3) + '" font-size="8.5" font-weight="600" fill="#7DD3FC">' + tags[k][0] + '</text></g>';
+    }
+    h += '<g class="wa"><text x="222" y="126" font-size="8" fill="#6EE7B7">Pre-filled message</text><rect x="222" y="131" width="90" height="24" rx="10" fill="#10B981"/><text x="267" y="146.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#fff">WhatsApp opens</text></g>';
+    h += '</svg>';
+    stage.innerHTML = h;
+    var q = function (s) { return stage.querySelector(s); }, qa = function (s) { return stage.querySelectorAll(s); };
+    var hd = q('.hd'), hr = q('.hr'), cd = qa('.cd'), fq = q('.fq'), bn = q('.bn'), rp = q('.rp'), cu = q('.cu'), tg = qa('.tg'), wa = q('.wa');
+    var tagT = [1.0, 2.6, 4.8];
+    return function (t) {
+      var i, p;
+      p = ease(seg(t, 0.4, 1.0));
+      setA(hd, { transform: 'translate(0 ' + (-(1 - p) * 20).toFixed(1) + ')', opacity: p });
+      p = ease(seg(t, 1.2, 2.0));
+      setA(hr, { transform: 'translate(160 55) scale(' + lerp(0.85, 1, p).toFixed(3) + ') translate(-160 -55)', opacity: p });
+      for (i = 0; i < 3; i++) {
+        p = ease(seg(t, 2.2 + i * 0.4, 2.7 + i * 0.4));
+        var cxx = 133 + i * 27;
+        setA(cd[i], { transform: 'translate(' + cxx + ' 91) scale(' + lerp(0.6, 1, p).toFixed(3) + ') translate(' + (-cxx) + ' -91)', opacity: p });
+      }
+      p = ease(seg(t, 3.6, 4.2));
+      setA(fq, { transform: 'translate(' + ((1 - p) * 30).toFixed(1) + ' 0)', opacity: p });
+      p = ease(seg(t, 4.8, 5.4));
+      var press = (t > 6.2 && t < 6.45) ? 0.95 : 1;
+      setA(bn, { transform: 'translate(160 144) scale(' + (lerp(0.7, 1, p) * press).toFixed(3) + ') translate(-160 -144)', opacity: p });
+      var m = ease(seg(t, 5.4, 6.2));
+      setA(cu, { cx: lerp(190, 160, m), cy: lerp(100, 146, m), opacity: seg(t, 5.2, 5.5) * (1 - seg(t, 7, 7.5)) });
+      var rr = seg(t, 6.2, 6.9);
+      setA(rp, { r: 5 + rr * 14, opacity: rr > 0 && rr < 1 ? (1 - rr) * 0.8 : 0 });
+      for (i = 0; i < 3; i++) {
+        p = ease(seg(t, tagT[i], tagT[i] + 0.5));
+        setA(tg[i], { transform: 'translate(' + (-(1 - p) * 30).toFixed(1) + ' 0)', opacity: p });
+      }
+      p = ease(seg(t, 6.9, 7.5));
+      setA(wa, { transform: 'translate(' + ((1 - p) * 20).toFixed(1) + ' 0)', opacity: p });
+    };
+  }
+
+  var SCENES = { steps: sceneSteps, faq: sceneFaq, records: sceneRecords, mobile: sceneMobile };
+
+  function init(card) {
+    var build = SCENES[card.getAttribute('data-scene')];
+    if (!build) return;
+    var D = parseFloat(card.getAttribute('data-dur')) || 10;
+    var stage = card.querySelector('.stage'), btn = card.querySelector('.pbtn'), bar = card.querySelector('.pbar'), tm = card.querySelector('.ptime');
+    var upd = build(stage, card);
+    var t = 0, playing = false, last = 0, userPaused = false, raf = 0;
+    function draw() { upd(t); bar.value = Math.round(t / D * 1000); tm.textContent = fmt(t) + ' / ' + fmt(D); }
+    function icon() { btn.innerHTML = playing ? PAUSE : PLAY; btn.setAttribute('aria-label', playing ? 'Pause animation' : 'Play animation'); }
+    function loop(now) {
+      if (!playing) return;
+      t += Math.min((now - last) / 1000, 0.1); last = now;
+      if (t >= D) t = 0;
+      draw();
+      raf = requestAnimationFrame(loop);
+    }
+    function play() { if (playing) return; playing = true; last = performance.now(); icon(); raf = requestAnimationFrame(loop); }
+    function pause() { playing = false; cancelAnimationFrame(raf); icon(); }
+    btn.addEventListener('click', function () { if (playing) { userPaused = true; pause(); } else { userPaused = false; play(); } });
+    bar.addEventListener('input', function () { userPaused = true; pause(); t = bar.value / 1000 * D; draw(); });
+    if (reduce) { t = D * 0.85; userPaused = true; }
+    draw(); icon();
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting && !userPaused) play();
+          else if (!e.isIntersecting && playing) pause();
+        });
+      }, { threshold: 0.35 }).observe(card);
+    } else if (!reduce) { play(); }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.motion-card'), init);
+})();
+</script>
+
+</body>
+</html>
