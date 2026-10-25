@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FRECA E-SERVICES | Your Business’s Health Center</title>
-  <meta name="description" content="FRECA E-SERVICES is your business’s health center. We listen, explore business challenges, recommend practical next steps and provide digital solutions when they are the right fit. Based in Uganda, working remotely.">
+  <meta name="description" content="FRECA E-SERVICES builds Interactive WhatsApp Repliers, shopping websites, and business tools for Ugandan businesses. Clear UGX prices, monthly care plans, and a screenshot-first 50/50 WhatsApp workflow. Based in Uganda, working remotely.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="FRECA E-SERVICES">
   <meta property="og:title" content="FRECA E-SERVICES | Your Business’s Health Center">
-  <meta property="og:description" content="Your business’s health center. We listen first, explore the cause of business challenges, and recommend practical advice or digital solutions when appropriate.">
+  <meta property="og:description" content="Interactive WhatsApp Repliers, shopping websites, and business tools with clear UGX prices. Screenshot-first delivery: you approve screenshots, then pay 50/50 on WhatsApp.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_UG">
   
@@ -377,9 +377,177 @@
       font-weight: 800;
       flex-shrink: 0;
     }
+    .pkg-price {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.3rem 0.55rem;
+      margin: 0.1rem 0 0.7rem;
+    }
+    .pkg-price strong {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #047857;
+    }
+    .pkg-price span {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-500);
+    }
+    .package-card.span-2 { grid-column: 1 / -1; }
+    .package-card.featured {
+      background: linear-gradient(180deg, rgba(16,185,129,0.1), rgba(14,165,233,0.04) 38%, var(--off-white));
+      border-color: rgba(16,185,129,0.4);
+    }
+    .contrast-note {
+      background: white;
+      border-left: 3px solid #10B981;
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      margin: 0.35rem 0 1rem;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--gray-600);
+    }
+    .wa-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin: 0.2rem 0 0.2rem;
+    }
+    .wa-option {
+      background: white;
+      border: 1px solid var(--gray-100);
+      border-radius: 14px;
+      padding: 1rem 1.05rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .wa-option h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+    .wa-option p { font-size: 0.86rem; color: var(--gray-600); line-height: 1.55; }
+    .wa-option .pkg-actions { margin-top: auto; padding-top: 0.85rem; }
+    .menu-sample {
+      margin: 0.15rem 0;
+      padding: 0.65rem 0.75rem;
+      border-radius: 8px;
+      background: var(--navy);
+      color: #A7F3D0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+    .example-q { font-size: 0.82rem; color: var(--gray-500); font-style: italic; }
+    .addon-box {
+      background: white;
+      border: 1px dashed rgba(16,185,129,0.6);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+      margin: 0.15rem 0 1rem;
+    }
+    .addon-box .addon-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #047857;
+      margin-bottom: 0.45rem;
+    }
+    .addon-box ul { display: flex; flex-direction: column; gap: 0.5rem; }
+    .addon-box li {
+      font-size: 0.84rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .addon-box li::before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      color: #047857;
+      font-weight: 800;
+    }
+    .addon-box li strong { color: var(--navy); }
+    .package-card .btn, .replier-feature .btn { white-space: normal; text-align: center; }
+    .pkg-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .replier-feature {
+      background: white;
+      border: 1px solid rgba(16,185,129,0.4);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: -0.5rem 0 1.4rem;
+      box-shadow: var(--shadow);
+    }
+    .trust-banner {
+      margin-top: 1.75rem;
+      background: var(--navy);
+      color: white;
+      border-radius: var(--radius-xl);
+      padding: 1.7rem 1.4rem 1.45rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .trust-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 80% at 100% 0%, rgba(16,185,129,0.2), transparent 55%);
+      pointer-events: none;
+    }
+    .trust-banner .section-label { color: #6EE7B7; }
+    .trust-banner h3 {
+      position: relative;
+      font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+    .trust-lead {
+      position: relative;
+      color: rgba(248,250,252,0.74);
+      max-width: 70ch;
+      margin-bottom: 1.15rem;
+      line-height: 1.6;
+    }
+    .trust-steps {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.8rem;
+    }
+    .trust-step {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 0.95rem 0.9rem 1rem;
+    }
+    .trust-step .step-kicker {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #6EE7B7;
+      margin-bottom: 0.3rem;
+    }
+    .trust-step h4 { font-size: 0.95rem; font-weight: 700; line-height: 1.35; margin-bottom: 0.35rem; }
+    .trust-step p { font-size: 0.8rem; line-height: 1.55; color: rgba(248,250,252,0.74); }
+    .trust-step a { color: #6EE7B7; font-weight: 700; }
+    .trust-step strong { color: white; }
+    @media (max-width: 900px) {
+      .trust-steps { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 768px) {
       .section { padding: 4rem 0; }
-      .packages-grid { grid-template-columns: 1fr; }
+      .packages-grid, .wa-options, .trust-steps { grid-template-columns: 1fr; }
+      .package-card.span-2 { grid-column: auto; }
     }
     .section-label {
       display: inline-block;
@@ -569,24 +737,23 @@
     .process .section-desc { color: rgba(248,250,252,0.65); }
     .process-steps {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1.2rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
       position: relative;
       z-index: 1;
     }
-    .process-step { text-align: center; position: relative; }
-    .process-step:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 28px;
-      left: calc(50% + 28px);
-      width: calc(100% - 56px);
-      height: 2px;
-      background: rgba(14,165,233,0.25);
+    .process-step {
+      text-align: left;
+      position: relative;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 1.15rem 1.2rem 1.25rem;
     }
+    .process-step:not(:last-child)::after { display: none; }
     .process-num {
       width: 56px; height: 56px;
-      margin: 0 auto 1.15rem;
+      margin: 0 0 0.95rem;
       background: rgba(14,165,233,0.12);
       border: 2px solid rgba(14,165,233,0.35);
       border-radius: 50%;
@@ -612,10 +779,12 @@
       margin-bottom: 0.4rem;
     }
     .process-desc {
-      font-size: 0.8rem;
-      color: rgba(248,250,252,0.6);
+      font-size: 0.84rem;
+      color: rgba(248,250,252,0.72);
       line-height: 1.55;
     }
+    .process-desc a { color: #6EE7B7; font-weight: 700; }
+    .process-desc strong { color: white; }
 
     /* PROJECTS */
     .projects { background: var(--off-white); }
@@ -747,7 +916,7 @@
       overflow: hidden;
       transition: max-height 0.35s ease;
     }
-    .faq-item.active .faq-a { max-height: 280px; }
+    .faq-item.active .faq-a { max-height: 820px; }
     .faq-a-inner {
       padding: 0 1.25rem 1.2rem;
       font-size: 0.925rem;
@@ -1326,8 +1495,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-img { max-width: 520px; margin: 0 auto; }
       .services-grid, .why-grid, .projects-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem 1.2rem; }
-      .process-step:nth-child(3)::after { display: none; }
+      .process-steps { grid-template-columns: 1fr; }
       
       
       .contact-grid { grid-template-columns: 1fr; }
@@ -1413,10 +1581,10 @@
       <nav class="nav-links">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#solutions" class="nav-link">Solutions</a>
+        <a href="#services" class="nav-link">Services</a>
         <a href="#packages" class="nav-link">Quick-Start Packs</a>
         <a href="#problems" class="nav-link">Find a Solution</a>
-        <a href="#process" class="nav-link">How We Work</a>
+        <a href="#how-it-works" class="nav-link">How We Work</a>
         <a href="#projects" class="nav-link">Work</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -1431,10 +1599,10 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#home">Home</a>
     <a href="#about">About</a>
-    <a href="#solutions">Solutions</a>
+    <a href="#services">Services</a>
     <a href="#packages">Quick-Start Packs</a>
     <a href="#problems">Find a Solution</a>
-    <a href="#process">How We Work</a>
+    <a href="#how-it-works">How We Work</a>
     <a href="#projects">Work</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
@@ -1455,14 +1623,14 @@
             <span>Let's Understand What It Needs.</span>
           </h1>
           <p class="hero-desc">
-            FRECA E-SERVICES is your business’s health center. We listen first, diagnose what is slowing down your sales or daily operations, and deliver practical treatments — from WhatsApp booking &amp; catalog pages and studio-grade AI ad visuals to automated stock systems and custom web apps.
+            FRECA E-SERVICES is your business’s health center. We listen first, then put practical treatments in place — Interactive WhatsApp Repliers that answer real customer questions 24/7, shopping websites, studio ad visuals, and stock or custom web apps. Prices are in UGX, and you approve screenshots before you pay.
           </p>
           <div class="hero-actions">
-            <a href="#problems" class="btn btn-primary btn-lg">
-              Find a Solution
+            <a href="#packages" class="btn btn-primary btn-lg">
+              See UGX Packages
               <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
-            <a href="#solutions" class="btn btn-outline-light btn-lg">Explore Our Capabilities</a>
+            <a href="#how-it-works" class="btn btn-outline-light btn-lg">Screenshot-First 50/50</a>
           </div>
           <p style="font-size:0.875rem;color:rgba(248,250,252,0.5);">Based in Uganda · Working remotely with businesses and individuals</p>
         </div>
@@ -1519,7 +1687,7 @@
               Every business has its own circumstances. A challenge that looks like a marketing problem may actually be a slow inquiry flow; a process that feels overwhelming may only need a clean digital tracker. We listen before prescribing anything, because a website, ad campaign, or system is only valuable when it solves the real bottleneck.
             </p>
             <p class="about-text">
-              We examine how customers currently find you, how orders come in on WhatsApp or phone, and how your team tracks daily records. When a practical adjustment is enough, we tell you honestly. When your business needs digital treatment, we design and build it rapidly — whether that is a high-converting WhatsApp sales page, studio-grade product &amp; video ads, an automated stock &amp; sales system, or a custom web application.
+              We examine how customers currently find you, how orders come in on WhatsApp or phone, and how your team tracks daily records. When a practical adjustment is enough, we tell you honestly. When your business needs digital treatment, we design and build it rapidly — whether that is an Interactive WhatsApp Replier, a high-converting WhatsApp sales page, studio-grade product &amp; video ads, an automated stock &amp; sales system, or a custom web application.
             </p>
             <p class="about-text">
               We combine sharp business judgment with modern creative, web, and automation tools so you get fast turnaround, zero unnecessary complexity, and tools your customers and staff can use effortlessly on any phone or computer.
@@ -1534,20 +1702,49 @@
     </section>
 
     <!-- SERVICES -->
-    <section id="solutions" class="services section">
+    <section id="services" class="services section">
       <div class="container">
+        <span id="solutions"></span>
         <div class="section-header reveal">
-          <span class="section-label">Capabilities</span>
+          <span class="section-label">Services</span>
           <h2 class="section-title">Practical Treatments for Business Growth &amp; Efficiency</h2>
-          <p class="section-desc">Once we understand your bottleneck, we deploy the exact digital treatment that solves it — built for fast results on mobile and desktop.</p>
+          <p class="section-desc">Once we understand your bottleneck, we deploy the exact digital treatment that solves it — built for fast results on mobile and desktop. The one clients ask for first is an Interactive WhatsApp Replier, which is not the basic one-line greeting.</p>
         </div>
+        <article class="replier-feature reveal">
+          <span class="package-badge">Interactive WhatsApp Replier Setup</span>
+          <h3 class="service-title">Answers real questions inside WhatsApp — not a one-line greeting</h3>
+          <p class="contrast-note">Unlike the standard WhatsApp 'Thank you for contacting us' message that stops after one line, our Interactive WhatsApp Repliers actually answer your customers' real questions about prices, stock, delivery fees, and location 24/7 while you're busy.</p>
+          <div class="wa-options">
+            <div class="wa-option">
+              <h4>Option A — Numbered-Menu WhatsApp Replier</h4>
+              <p class="pkg-price"><strong>UGX 60,000</strong><span>one-time setup</span></p>
+              <p>Customers receive an interactive menu and get an instant automated answer for each choice.</p>
+              <p class="menu-sample">Reply 1 for Price List, 2 for Location &amp; Hours, 3 for Delivery Fees, 4 to Order</p>
+              <p>Each future menu edit is <strong style="color:var(--navy);">UGX 15,000</strong>.</p>
+              <div class="pkg-actions">
+                <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20Option%20A%20%E2%80%94%20the%20Numbered-Menu%20WhatsApp%20Replier%20(UGX%2060%2C000%20one-time%20setup)%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request Option A</a>
+              </div>
+            </div>
+            <div class="wa-option">
+              <h4>Option B — Smart AI WhatsApp Replier + Managed Updates</h4>
+              <p class="pkg-price"><strong>UGX 50,000</strong><span>setup</span></p>
+              <p class="pkg-price"><strong>UGX 30,000</strong><span>per month</span></p>
+              <p>Answers natural customer questions 24/7, in the way people actually type them.</p>
+              <p class="example-q">“Do you have size 42?” · “How much is boda delivery to Entebbe?”</p>
+              <p>Includes unlimited monthly price and stock updates.</p>
+              <div class="pkg-actions">
+                <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20Option%20B%20%E2%80%94%20the%20Smart%20AI%20WhatsApp%20Replier%20(UGX%2050%2C000%20setup%20%2B%20UGX%2030%2C000%2Fmonth)%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request Option B</a>
+              </div>
+            </div>
+          </div>
+        </article>
         <div class="services-grid">
           <article class="service-card reveal">
             <div class="service-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
             </div>
-            <h3 class="service-title">WhatsApp Sales Funnels &amp; Business Websites</h3>
-            <p class="service-desc">Mobile-first websites, instant WhatsApp ordering &amp; booking pages, digital menus, interactive product catalogs, and high-trust landing pages that turn visitors into direct WhatsApp inquiries.</p>
+            <h3 class="service-title">WhatsApp Shopping Websites &amp; Catalogs</h3>
+            <p class="service-desc">Mobile-first shopping pages, digital menus, and product catalogs with a free lifetime link and no monthly hosting fee. Pair one with an Interactive WhatsApp Replier when you want customers answered even while you are away.</p>
             <a href="#problems" class="service-link">Discuss this area →</a>
           </article>
           <article class="service-card reveal">
@@ -1586,8 +1783,8 @@
             <div class="service-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
             </div>
-            <h3 class="service-title">AI Customer Assistants, Lead Outreach &amp; Local SEO</h3>
-            <p class="service-desc">24/7 website &amp; FAQ assistants trained on your business, B2B lead research &amp; outreach campaigns, Google visibility optimization, and persuasive sales copywriting.</p>
+            <h3 class="service-title">Website Guides, Lead Outreach &amp; Local SEO</h3>
+            <p class="service-desc">On-site FAQ guides (like Ekkaris on this page), B2B lead research, Google visibility, and sales copy. These sit on your website. The Interactive WhatsApp Replier above is the separate service that replies inside WhatsApp itself — unlike the basic “Thank you for contacting us” greeting.</p>
             <a href="#problems" class="service-link">Discuss this area →</a>
           </article>
         </div>
@@ -1598,79 +1795,169 @@
     <section id="packages" class="packages section">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Quick-Start Treatments</span>
-          <h2 class="section-title">Fast, Fixed-Scope Packages Ready in Days</h2>
-          <p class="section-desc">Not sure where to start? Alongside custom diagnosis, we offer four high-impact treatments designed to upgrade your sales, visuals, or records immediately.</p>
+          <span class="section-label">Quick-Start Packages</span>
+          <h2 class="section-title">Clear Ugandan Prices. Optional Monthly Care.</h2>
+          <p class="section-desc">Every package below is priced in UGX. You see screenshots before the first payment, and monthly care is optional — you only add it when you want us to keep prices, stock, or menus up to date.</p>
         </div>
         <div class="packages-grid">
-          <article class="package-card reveal">
+          <article class="package-card featured span-2 reveal">
             <div>
-              <span class="package-badge">⚡ 48–72 Hour Turnaround</span>
-              <h3 class="service-title">1. WhatsApp Landing Page &amp; Catalog Sprint</h3>
-              <p class="service-desc" style="margin-bottom:0.5rem;">Turn social media viewers into paying customers with a fast, mobile-first showcase wired straight to your WhatsApp Business.</p>
-              <ul class="package-list">
-                <li>Custom mobile-ready landing page, digital menu, or interactive catalog</li>
-                <li>1-tap WhatsApp order / booking builder (customers send structured orders)</li>
-                <li>Live link for your WhatsApp profile, Instagram, TikTok &amp; Google</li>
-              </ul>
-            </div>
-            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-              <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20*WhatsApp%20Landing%20Page%20%26%20Catalog%20Sprint*%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp →</a>
-              <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="WhatsApp Landing Page & Catalog Sprint" data-prob="I want to simplify customer inquiries or ordering">Select in Form</button>
+              <span class="package-badge">Not the basic WhatsApp greeting</span>
+              <h3 class="service-title">Interactive WhatsApp Repliers (Menu or Smart AI)</h3>
+              <p class="service-desc" style="margin-bottom:0.35rem;">UGX 60,000 one-time for the Numbered Menu, or UGX 50,000 setup + UGX 30,000/mo for Smart AI with unlimited menu updates.</p>
+              <p class="contrast-note">Unlike the standard WhatsApp 'Thank you for contacting us' message that stops after one line, our Interactive WhatsApp Repliers actually answer your customers' real questions about prices, stock, delivery fees, and location 24/7 while you're busy.</p>
+              <div class="wa-options">
+                <div class="wa-option">
+                  <h4>Option A — Numbered-Menu WhatsApp Replier</h4>
+                  <p class="pkg-price"><strong>UGX 60,000</strong><span>one-time setup</span></p>
+                  <p>Customers receive an interactive menu and get instant automated answers.</p>
+                  <p class="menu-sample">Reply 1 for Price List, 2 for Location &amp; Hours, 3 for Delivery Fees, 4 to Order</p>
+                  <p>Future menu edits are <strong style="color:var(--navy);">UGX 15,000</strong> each.</p>
+                  <div class="pkg-actions">
+                <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20Option%20A%20%E2%80%94%20the%20Numbered-Menu%20WhatsApp%20Replier%20%28UGX%2060%2C000%20one-time%20setup%29%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request Option A</a>
+                <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Numbered-Menu WhatsApp Replier" data-prob="I spend too much time answering repetitive questions">Select in Form</button>
+              </div>
+                </div>
+                <div class="wa-option">
+                  <h4>Option B — Smart AI WhatsApp Replier + Managed Updates</h4>
+                  <p class="pkg-price"><strong>UGX 50,000</strong><span>setup</span></p>
+                  <p class="pkg-price"><strong>UGX 30,000</strong><span>per month · unlimited price &amp; stock updates</span></p>
+                  <p>Answers natural customer questions 24/7, the way people actually ask them.</p>
+                  <p class="example-q">“Do you have size 42?” · “How much is boda delivery to Entebbe?”</p>
+                  <div class="pkg-actions">
+                <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20Option%20B%20%E2%80%94%20the%20Smart%20AI%20WhatsApp%20Replier%20%28UGX%2050%2C000%20setup%20%2B%20UGX%2030%2C000%2Fmonth%2C%20with%20unlimited%20price%20and%20stock%20updates%29%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request Option B</a>
+                <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Smart AI WhatsApp Replier" data-prob="I want to explore chatbots or AI-assisted workflows">Select in Form</button>
+              </div>
+                </div>
+              </div>
             </div>
           </article>
 
           <article class="package-card reveal">
             <div>
-              <span class="package-badge">🎨 Studio Creative Pack</span>
-              <h3 class="service-title">2. Studio Ad &amp; Product Visual Makeover</h3>
-              <p class="service-desc" style="margin-bottom:0.5rem;">Upgrade ordinary phone snapshots into studio-grade product visuals and scroll-stopping video ads that command attention.</p>
+              <span class="package-badge">48–72 hour turnaround</span>
+              <h3 class="service-title">WhatsApp Shopping Website &amp; Catalog Sprint</h3>
+              <p class="pkg-price"><strong>UGX 150,000 – 200,000</strong><span>one-time</span></p>
+              <p class="service-desc" style="margin-bottom:0.5rem;">A mobile shopping page, digital menu, or product catalog with a free lifetime link and zero monthly hosting fee.</p>
               <ul class="package-list">
-                <li>Studio-enhanced product, food, fashion, or service imagery</li>
-                <li>Custom promotional flyers &amp; WhatsApp Status / Instagram ad cards</li>
-                <li>Short promotional video ad with script, captions &amp; voiceover</li>
+                <li>Free lifetime link for WhatsApp, Instagram, TikTok, and Google</li>
+                <li>Zero monthly hosting fee on this sprint</li>
+                <li>1-tap WhatsApp ordering so customers send a clear order</li>
               </ul>
+              <div class="addon-box">
+                <p class="addon-label">Optional add-ons</p>
+                <ul>
+                  <li><strong>Done-For-You Monthly Price Updates &amp; 2 Promo Flyers</strong> — UGX 25,000/month</li>
+                  <li><strong>Pro Website + Self-Service Admin Dashboard</strong> — UGX 250,000 – 350,000 + UGX 20,000/mo cloud database sync</li>
+                </ul>
+              </div>
             </div>
-            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-              <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20*Studio%20Ad%20%26%20Product%20Visual%20Makeover*%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp →</a>
-              <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Studio Ad & Product Visual Makeover" data-prob="I need better promotional content or advertisements">Select in Form</button>
-            </div>
+            <div class="pkg-actions">
+                <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20WhatsApp%20Shopping%20Website%20%26%20Catalog%20Sprint%20%28UGX%20150%2C000%E2%80%93200%2C000%2C%20free%20lifetime%20link%2C%20zero%20monthly%20hosting%29%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp</a>
+                <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="WhatsApp Shopping Website & Catalog Sprint" data-prob="I want to simplify customer inquiries or ordering">Select in Form</button>
+              </div>
           </article>
 
           <article class="package-card reveal">
             <div>
-              <span class="package-badge">🏢 Corporate &amp; SME Trust</span>
-              <h3 class="service-title">3. Business Credibility &amp; Tender Kit</h3>
-              <p class="service-desc" style="margin-bottom:0.5rem;">Present your company like an established industry leader when pitching corporate clients, partnerships, or tenders.</p>
+              <span class="package-badge">Website + replier</span>
+              <h3 class="service-title">Website + Interactive WhatsApp Replier Bundle</h3>
+              <p class="pkg-price"><strong>UGX 220,000 – 300,000</strong><span>setup together</span></p>
+              <p class="service-desc" style="margin-bottom:0.5rem;">The shopping website and an Interactive WhatsApp Replier, scoped as one job so customers can browse and get answers.</p>
               <ul class="package-list">
-                <li>Logo refinement &amp; clean brand style guide</li>
-                <li>Persuasive, print- &amp; WhatsApp-ready Company Profile PDF</li>
-                <li>Branded Quotation, Invoice &amp; Official Letterhead templates</li>
+                <li>WhatsApp shopping website or catalog</li>
+                <li>Numbered-Menu or Smart AI replier setup included in this range</li>
+                <li>Smart AI managed updates stay UGX 30,000/month if you choose Option B</li>
               </ul>
             </div>
-            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-              <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20*Business%20Credibility%20%26%20Tender%20Kit*%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp →</a>
-              <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Business Credibility & Tender Kit" data-prob="I want to present my products or services more professionally">Select in Form</button>
-            </div>
+            <div class="pkg-actions">
+                <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20Website%20%2B%20Interactive%20WhatsApp%20Replier%20Bundle%20%28UGX%20220%2C000%E2%80%93300%2C000%29%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request the Bundle</a>
+                <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Website + Interactive WhatsApp Replier Bundle" data-prob="I want to simplify customer inquiries or ordering">Select in Form</button>
+              </div>
           </article>
 
           <article class="package-card reveal">
             <div>
-              <span class="package-badge">📊 Operations &amp; Control</span>
-              <h3 class="service-title">4. Smart Operations &amp; Stock Tracker Setup</h3>
-              <p class="service-desc" style="margin-bottom:0.5rem;">Stop losing money to missing records or stock outs with a clean, custom digital tracking system and live dashboard.</p>
+              <span class="package-badge">1 free watermarked sample</span>
+              <h3 class="service-title">Studio Product Photo &amp; Ad Makeover Pack</h3>
+              <p class="pkg-price"><strong>UGX 60,000 – 100,000</strong><span>after your free sample</span></p>
+              <p class="service-desc" style="margin-bottom:0.5rem;">Phone photos of products, food, fashion, or your shop, rebuilt into studio-style images and ads. You see 1 free watermarked sample before you commit.</p>
               <ul class="package-list">
-                <li>Custom sales, stock &amp; expense tracker (web app or automated sheet)</li>
-                <li>Automatic daily/monthly profit &amp; low-stock alerts</li>
-                <li>Zero recurring software subscription fees + team walkthrough</li>
+                <li>1 free watermarked sample first</li>
+                <li>Studio product photos and promotional flyers</li>
+                <li>WhatsApp Status and Instagram ad cards</li>
               </ul>
             </div>
-            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-              <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20*Smart%20Operations%20%26%20Stock%20Tracker%20Setup*%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp →</a>
-              <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Smart Operations & Stock Tracker Setup" data-prob="I need a better way to track stock, sales, or business records">Select in Form</button>
+            <div class="pkg-actions">
+                <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27d%20like%20the%201%20free%20watermarked%20sample%2C%20then%20the%20Studio%20Product%20Photo%20%26%20Ad%20Makeover%20Pack%20%28UGX%2060%2C000%E2%80%93100%2C000%29%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request a Free Sample</a>
+                <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Studio Product Photo & Ad Makeover Pack" data-prob="I need better promotional content or advertisements">Select in Form</button>
+              </div>
+          </article>
+
+          <article class="package-card reveal">
+            <div>
+              <span class="package-badge">Tenders &amp; company trust</span>
+              <h3 class="service-title">Business Credibility &amp; Tender Kit</h3>
+              <p class="pkg-price"><strong>UGX 120,000 – 200,000</strong><span>one-time</span></p>
+              <p class="service-desc" style="margin-bottom:0.5rem;">The documents buyers and tender committees ask for, ready to send on WhatsApp or print.</p>
+              <ul class="package-list">
+                <li>Company Profile PDF</li>
+                <li>Letterhead</li>
+                <li>Invoice and Quotation templates</li>
+              </ul>
             </div>
+            <div class="pkg-actions">
+                <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20Business%20Credibility%20%26%20Tender%20Kit%20%28UGX%20120%2C000%E2%80%93200%2C000%3A%20Company%20Profile%20PDF%2C%20Letterhead%2C%20Invoice%20and%20Quotation%20templates%29%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp</a>
+                <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Business Credibility & Tender Kit" data-prob="I want to present my products or services more professionally">Select in Form</button>
+              </div>
+          </article>
+
+          <article class="package-card reveal">
+            <div>
+              <span class="package-badge">Stock, sales, or a custom app</span>
+              <h3 class="service-title">Smart Operations / Stock &amp; Sales Tracker or Custom Web App</h3>
+              <p class="pkg-price"><strong>UGX 250,000 – 500,000+</strong><span>scoped to the job</span></p>
+              <p class="service-desc" style="margin-bottom:0.5rem;">Replace scattered notebooks with a stock and sales tracker, or a custom web app when the work needs one.</p>
+              <ul class="package-list">
+                <li>Sales, stock, and expense tracking</li>
+                <li>Daily summaries and low-stock alerts</li>
+                <li>A walkthrough so your team can run it without us in the room</li>
+              </ul>
+            </div>
+            <div class="pkg-actions">
+                <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20a%20Smart%20Operations%20%2F%20Stock%20%26%20Sales%20Tracker%20or%20Custom%20Web%20App%20%28UGX%20250%2C000%E2%80%93500%2C000%2B%29%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp</a>
+                <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Smart Operations / Stock & Sales Tracker or Custom Web App" data-prob="I need a better way to track stock, sales, or business records">Select in Form</button>
+              </div>
           </article>
         </div>
+
+        <aside class="trust-banner reveal" aria-labelledby="trust-title">
+          <span class="section-label">Zero-risk delivery</span>
+          <h3 id="trust-title">Screenshot-First 50/50 — you never pay blind</h3>
+          <p class="trust-lead">The whole job runs on WhatsApp. You confirm screenshots before any money moves, and you never need to sit in Kampala traffic for a meeting.</p>
+          <ol class="trust-steps">
+            <li class="trust-step">
+              <span class="step-kicker">Step 1</span>
+              <h4>We build &amp; send screenshots first</h4>
+              <p>Send 3–5 product or service photos and your prices on WhatsApp <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%20want%20to%20start%20the%20Screenshot-First%20workflow.%20I%20will%20send%203%E2%80%935%20product%20photos%20and%20prices%20in%20this%20chat.">+256 726 978988</a>. We build the first layout and send screenshots for your confirmation.</p>
+            </li>
+            <li class="trust-step">
+              <span class="step-kicker">Step 2</span>
+              <h4>First 50% deposit</h4>
+              <p>Once you love the screenshots, pay the first 50% by Mobile Money: <a href="tel:+256758991506">0758 991506</a> — <strong>FREDRICK MUGAMBE</strong>.</p>
+            </li>
+            <li class="trust-step">
+              <span class="step-kicker">Step 3</span>
+              <h4>Preview link &amp; revisions</h4>
+              <p>We send a clickable preview link. Test it on your phone and tell us what to adjust.</p>
+            </li>
+            <li class="trust-step">
+              <span class="step-kicker">Step 4</span>
+              <h4>Final 50% &amp; live launch</h4>
+              <p>When everything is 100% approved, clear the remaining 50% and receive your permanent live link. A custom .com or .co.ug domain can be connected at the registrar’s annual rate.</p>
+            </li>
+          </ol>
+        </aside>
       </div>
     </section>
 
@@ -1830,38 +2117,34 @@
       </div>
     </section>
 
-    <section id="process" class="process section">
+    <section id="how-it-works" class="process section">
+      <span id="process"></span>
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">How We Work</span>
-          <h2 class="section-title">Listen First. Diagnose Carefully. Act When Appropriate.</h2>
-          <p class="section-desc">We do not prescribe the same treatment to every business. We may offer simple advice, recommend further investigation, provide an agreed paid digital solution, or suggest help beyond our scope.</p>
+          <span class="section-label">How it works</span>
+          <h2 class="section-title">Screenshot-First. Half Now, Half When You Approve.</h2>
+          <p class="section-desc">Four remote steps on WhatsApp. You never pay blind, and you never need to sit in Kampala traffic for a meeting. If a package is the wrong fit, we say so before any design starts.</p>
         </div>
         <div class="process-steps">
           <div class="process-step reveal">
             <div class="process-num">01</div>
-            <h3 class="process-title">Understand</h3>
-            <p class="process-desc">Listen to your concerns, goals and how things currently work.</p>
+            <h3 class="process-title">We Build &amp; Send Screenshots First</h3>
+            <p class="process-desc">Send 3–5 product or service photos and prices on WhatsApp (<a href="https://wa.me/256726978988">+256 726 978988</a>). We build your initial layout and send screenshots on WhatsApp for your confirmation.</p>
           </div>
           <div class="process-step reveal">
             <div class="process-num">02</div>
-            <h3 class="process-title">Explore</h3>
-            <p class="process-desc">Explore possible causes and whether a digital approach could genuinely help.</p>
+            <h3 class="process-title">First 50% Deposit</h3>
+            <p class="process-desc">Once you love the screenshots, pay the first 50% deposit via Mobile Money (<a href="tel:+256758991506">0758 991506</a> — <strong>FREDRICK MUGAMBE</strong>).</p>
           </div>
           <div class="process-step reveal">
             <div class="process-num">03</div>
-            <h3 class="process-title">Recommend</h3>
-            <p class="process-desc">Recommend practical advice, an appropriate digital treatment, or another next step.</p>
+            <h3 class="process-title">Interactive Preview Link &amp; Revisions</h3>
+            <p class="process-desc">We send your clickable preview link so you can test it on your phone and request any adjustments.</p>
           </div>
           <div class="process-step reveal">
             <div class="process-num">04</div>
-            <h3 class="process-title">Build or Configure</h3>
-            <p class="process-desc">If you choose a paid digital solution, build or configure the agreed work and test it.</p>
-          </div>
-          <div class="process-step reveal">
-            <div class="process-num">05</div>
-            <h3 class="process-title">Review & Improve</h3>
-            <p class="process-desc">Check whether the solution is useful, discuss improvements and follow up where appropriate.</p>
+            <h3 class="process-title">Final 50% Balance &amp; Live Launch</h3>
+            <p class="process-desc">Once everything is 100% approved, clear the remaining 50% balance and receive your permanent live link. Custom .com or .co.ug domains can also be connected at the registrar’s annual rate.</p>
           </div>
         </div>
       </div>
@@ -1881,7 +2164,7 @@
             <div class="player"><button class="pbtn" type="button" aria-label="Play or pause animation"></button><input class="pbar" type="range" min="0" max="1000" value="0" aria-label="Animation position"><span class="ptime">0:00 / 0:10</span></div>
             <div class="motion-body">
               <h3 class="motion-title">Listen first. Then act.</h3>
-              <p class="motion-desc">The five steps we follow, from understanding your concerns to reviewing the result.</p>
+              <p class="motion-desc">How a check-up sounds out the problem, from understanding your concerns to reviewing the result. Payment and launch follow the Screenshot-First steps in How We Work.</p>
               <p class="motion-live" aria-live="off"></p>
             </div>
           </article>
@@ -2011,6 +2294,18 @@
         </div>
         <div class="faq-list reveal">
           <div class="faq-item">
+            <button class="faq-q" type="button">How is an Interactive WhatsApp Replier different from the WhatsApp greeting?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">Unlike the standard WhatsApp 'Thank you for contacting us' message that stops after one line, our Interactive WhatsApp Repliers actually answer your customers' real questions about prices, stock, delivery fees, and location 24/7 while you're busy. Option A is a Numbered-Menu replier at UGX 60,000 one-time (UGX 15,000 per later menu edit). Option B is a Smart AI replier at UGX 50,000 setup plus UGX 30,000/month, with unlimited price and stock updates.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">What do the packages cost in UGX?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">Numbered-Menu WhatsApp Replier UGX 60,000. Smart AI WhatsApp Replier UGX 50,000 setup + UGX 30,000/month. Shopping website and catalog sprint UGX 150,000–200,000 (free lifetime link, no monthly hosting). Optional care: price updates and 2 promo flyers UGX 25,000/month, or a Pro website with a self-service admin dashboard at UGX 250,000–350,000 plus UGX 20,000/month cloud sync. Website + replier bundle UGX 220,000–300,000. Studio photo and ad pack UGX 60,000–100,000 after 1 free watermarked sample. Credibility and tender kit UGX 120,000–200,000. Stock tracker or custom web app UGX 250,000–500,000+.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How does the Screenshot-First 50/50 payment work?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">You never pay blind, and you do not need a meeting in Kampala. 1) Send 3–5 photos and prices on WhatsApp (+256 726 978988). We send screenshots first. 2) When you love them, pay the first 50% by Mobile Money to 0758 991506 — FREDRICK MUGAMBE. 3) We send a clickable preview link so you can test it and request changes. 4) After 100% approval, pay the remaining 50% and receive your permanent live link. Custom .com or .co.ug domains can be connected at the registrar’s annual rate.</div></div>
+          </div>
+          <div class="faq-item">
             <button class="faq-q" type="button">What kinds of digital solutions do you provide?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
             <div class="faq-a"><div class="faq-a-inner">We work across branding and documents, digital content and creative production, websites and online presence, custom web applications, automation and productivity tools, AI assistants and chatbots, and SEO and copywriting. The specific approach depends on the problem you are trying to solve.</div></div>
           </div>
@@ -2040,7 +2335,7 @@
           </div>
           <div class="faq-item">
             <button class="faq-q" type="button">How is a project scoped and quoted?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-            <div class="faq-a"><div class="faq-a-inner">We first listen and explore the problem. If paid work appears appropriate, we explain the proposed scope, deliverables, estimated cost and timeline before you decide whether to proceed. Simple initial guidance may be free; substantial investigation or implementation may require an agreed fee.</div></div>
+            <div class="faq-a"><div class="faq-a-inner">Quick-Start packages have published UGX prices on this page. For anything outside those packages, we explain the scope, deliverables, cost, and timeline before you decide. Paid delivery follows the Screenshot-First 50/50 steps: screenshots first, then a 50% Mobile Money deposit, a preview link, and the final 50% only after you approve.</div></div>
           </div>
           <div class="faq-item">
             <button class="faq-q" type="button">How long does a project take?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
@@ -2126,10 +2421,17 @@
                 <select id="service" name="service">
                   <option value="">Select a package or service (optional)</option>
                   <optgroup label="Quick-Start Packages">
-                    <option value="WhatsApp Landing Page & Catalog Sprint">1. WhatsApp Landing Page &amp; Catalog Sprint</option>
-                    <option value="Studio Ad & Product Visual Makeover">2. Studio Ad &amp; Product Visual Makeover</option>
-                    <option value="Business Credibility & Tender Kit">3. Business Credibility &amp; Tender Kit</option>
-                    <option value="Smart Operations & Stock Tracker Setup">4. Smart Operations &amp; Stock Tracker Setup</option>
+                    <option value="Numbered-Menu WhatsApp Replier">Option A — Numbered-Menu WhatsApp Replier (UGX 60,000)</option>
+                    <option value="Smart AI WhatsApp Replier">Option B — Smart AI WhatsApp Replier (UGX 50,000 + UGX 30,000/mo)</option>
+                    <option value="WhatsApp Shopping Website & Catalog Sprint">WhatsApp Shopping Website &amp; Catalog Sprint (UGX 150,000–200,000)</option>
+                    <option value="Website + Interactive WhatsApp Replier Bundle">Website + Interactive WhatsApp Replier Bundle (UGX 220,000–300,000)</option>
+                    <option value="Studio Product Photo & Ad Makeover Pack">Studio Product Photo &amp; Ad Makeover Pack (UGX 60,000–100,000)</option>
+                    <option value="Business Credibility & Tender Kit">Business Credibility &amp; Tender Kit (UGX 120,000–200,000)</option>
+                    <option value="Smart Operations / Stock & Sales Tracker or Custom Web App">Stock &amp; Sales Tracker or Custom Web App (UGX 250,000–500,000+)</option>
+                  </optgroup>
+                  <optgroup label="Monthly Care Plans">
+                    <option value="Done-For-You Monthly Price Updates & 2 Promo Flyers">Monthly Price Updates &amp; 2 Promo Flyers (UGX 25,000/mo)</option>
+                    <option value="Pro Website + Self-Service Admin Dashboard">Pro Website + Admin Dashboard (UGX 250,000–350,000 + UGX 20,000/mo)</option>
                   </optgroup>
                   <optgroup label="Custom Capabilities">
                     <option value="Business Website / Online Store">Business Website / Online Store</option>
@@ -2178,10 +2480,10 @@
           <div class="footer-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
-            <a href="#solutions">Solutions</a>
+            <a href="#services">Services</a>
             <a href="#packages">Quick-Start Packs</a>
             <a href="#problems">Find a Solution</a>
-            <a href="#process">How We Work</a>
+            <a href="#how-it-works">How We Work</a>
             <a href="#watch">Watch</a>
             <a href="#projects">Work</a>
             <a href="#faq">FAQ</a>
@@ -2191,6 +2493,8 @@
         <div class="footer-col">
           <h4>Services</h4>
           <div class="footer-links">
+            <a href="#services">Interactive WhatsApp Repliers</a>
+            <a href="#packages">UGX Packages &amp; Care Plans</a>
             <a href="#solutions">Branding & Documents</a>
             <a href="#solutions">Content & Creative</a>
             <a href="#solutions">Websites</a>
@@ -2387,7 +2691,7 @@
         'I want more people to discover my business': 'Possible approaches may include clearer online presentation, search-friendly content, promotional materials, or a well-structured website.',
         'I want to present my products or services more professionally': 'Possible approaches may include improved product images, descriptions, catalogues, branding materials, or a focused online presence.',
         'Customers struggle to find the information they need': 'Possible approaches may include better organisation of information, clearer service pages, FAQs, or structured content.',
-        'I spend too much time answering repetitive questions': 'Possible approaches may include FAQs, reusable reply templates, structured information pages, or an appropriately configured chatbot.',
+        'I spend too much time answering repetitive questions': 'An Interactive WhatsApp Replier can answer prices, stock, delivery fees, and location 24/7. That is different from the one-line WhatsApp greeting. Option A is a numbered menu (UGX 60,000). Option B is a Smart AI replier (UGX 50,000 setup + UGX 30,000/month).',
         'I want to simplify customer inquiries or ordering': 'Possible approaches may include inquiry forms, booking pages, order forms, or a simple digital process.',
         'I struggle to organize orders, appointments, or bookings': 'Possible approaches may include a structured spreadsheet, digital order register, booking system, or a custom order-management tool.',
         'I need a better way to track stock, sales, or business records': 'Possible approaches may include automated spreadsheets, simple tracking systems, or custom tools.',
@@ -2533,16 +2837,39 @@
         return WA_LINK + '?text=' + encodeURIComponent(msg);
       }
       function waAct(label) { return { label: label || 'Continue on WhatsApp', wa: true, href: waHandoff() }; }
+      function waPrefill(label, text) { return { label: label, wa: true, href: WA_LINK + '?text=' + encodeURIComponent(text) }; }
       const GO_FORM = { label: 'Open the Find a Solution form', go: '#problems' };
+      const GO_PACKAGES = { label: 'See UGX packages', go: '#packages' };
 
-      const DEFAULT_CHIPS = ['What services do you offer?', 'How does the process work?', 'How much does it cost?', 'Contact details'];
-      const START_CHIPS = ['What services do you offer?', 'How does the process work?', 'Do you only build websites?', 'I have a problem in my business', 'Contact details'];
+      const DEFAULT_CHIPS = ['WhatsApp Auto-Repliers', 'UGX prices', 'Monthly Care Plans', 'Screenshot-First payment', 'Contact details'];
+      const START_CHIPS = ['WhatsApp Auto-Repliers', 'Different from the WhatsApp greeting?', 'UGX prices', 'Monthly Care Plans', 'Screenshot-First payment'];
 
-      const INTENTS = [
+      /* knowledgeBase — built-in Ekkaris guide. Answers UGX prices, repliers, care plans, and the Screenshot-First workflow with no server. */
+      const knowledgeBase = [
         { id: 'greet', label: 'a greeting', w: 0.6,
           k: ['hello', 'hi', 'hey', 'howdy', 'hola', 'greetings', 'good morning', 'good afternoon', 'good evening', 'how are you', 'whats up'],
-          reply: 'Hello! I’m Ekkaris, the FRECA E-SERVICES assistant. You can ask me about our services, how we work or how pricing works, or simply describe what’s troubling your business.',
-          chips: ['What services do you offer?', 'My customers keep asking the same questions', 'How does the process work?'] },
+          reply: 'Hello! I’m Ekkaris, the FRECA E-SERVICES assistant. Ask me about Interactive WhatsApp Repliers, how they differ from the basic WhatsApp greeting, UGX prices, Monthly Care Plans, or the Screenshot-First payment.',
+          chips: START_CHIPS },
+        { id: 'replier', label: 'Interactive WhatsApp Repliers', q: 'WhatsApp Auto-Repliers', w: 1.25,
+          k: ['replier', 'repliers', 'auto replier', 'auto reply', 'auto replies', 'whatsapp replier', 'whatsapp auto', 'interactive whatsapp', 'numbered menu', 'number menu', 'smart ai', 'option a', 'option b', 'price list', 'size 42', 'boda delivery'],
+          reply: 'An **Interactive WhatsApp Replier** answers customers inside WhatsApp while you are busy. Unlike the standard WhatsApp \'Thank you for contacting us\' message that stops after one line, our Interactive WhatsApp Repliers actually answer your customers\' real questions about prices, stock, delivery fees, and location 24/7 while you\'re busy.\n\n**Option A — Numbered-Menu WhatsApp Replier: UGX 60,000** one-time. Customers get a menu: Reply 1 for Price List, 2 for Location & Hours, 3 for Delivery Fees, 4 to Order. Each future menu edit is **UGX 15,000**.\n**Option B — Smart AI WhatsApp Replier: UGX 50,000** setup + **UGX 30,000/month**. It answers natural questions (“Do you have size 42?”, “How much is boda delivery to Entebbe?”) and includes unlimited monthly price and stock updates.',
+          acts: () => [GO_PACKAGES, { label: 'See it under Services', go: '#services' }, waPrefill('Option A on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option A — the Numbered-Menu WhatsApp Replier (UGX 60,000 one-time setup).'), waPrefill('Option B on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option B — the Smart AI WhatsApp Replier (UGX 50,000 setup + UGX 30,000/month).')],
+          chips: ['Different from the WhatsApp greeting?', 'UGX prices', 'Monthly Care Plans'] },
+        { id: 'greetingdiff', label: 'how a replier differs from the WhatsApp greeting', q: 'Different from the WhatsApp greeting?', w: 1.35,
+          k: ['whatsapp greeting', 'default greeting', 'basic greeting', 'thank you for contacting', 'auto message', 'one line', 'stops after', 'different from', 'differs from', 'unlike the', 'away message', 'greeting message', 'basic whatsapp', 'default whatsapp', 'standard whatsapp'],
+          reply: 'Unlike the standard WhatsApp \'Thank you for contacting us\' message that stops after one line, our Interactive WhatsApp Repliers actually answer your customers\' real questions about prices, stock, delivery fees, and location 24/7 while you\'re busy.\n\nThe basic Business greeting sends one line and then waits for you. A replier keeps answering.\n• **Option A — Numbered Menu:** UGX 60,000 one-time. Reply 1 for Price List, 2 for Location & Hours, 3 for Delivery Fees, 4 to Order. Later edits are UGX 15,000.\n• **Option B — Smart AI:** UGX 50,000 setup + UGX 30,000/month, with unlimited price and stock updates.',
+          acts: () => [GO_PACKAGES, waPrefill('Option A on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option A — the Numbered-Menu WhatsApp Replier (UGX 60,000 one-time setup).'), waPrefill('Option B on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option B — the Smart AI WhatsApp Replier (UGX 50,000 setup + UGX 30,000/month).')],
+          chips: ['WhatsApp Auto-Repliers', 'UGX prices', 'Screenshot-First payment'] },
+        { id: 'care', label: 'Monthly Care Plans', q: 'Monthly Care Plans', w: 1.25,
+          k: ['monthly care', 'care plan', 'care plans', 'monthly', 'per month', 'a month', 'price update', 'price updates', 'promo flyer', 'promo flyers', 'unlimited update', 'admin dashboard', 'cloud database', 'hosting fee', 'self service', 'self-service'],
+          reply: 'Monthly care is optional. You can stop at the one-time setup.\n• **Smart AI WhatsApp Replier:** UGX 30,000/month, with unlimited price and stock updates (setup is UGX 50,000).\n• **Numbered-Menu edits**, only when you ask: UGX 15,000 each. There is no monthly fee on Option A.\n• **Done-For-You Monthly Price Updates & 2 Promo Flyers:** UGX 25,000/month, for a shopping website.\n• **Pro Website + Self-Service Admin Dashboard:** UGX 250,000–350,000 to build, then UGX 20,000/month for cloud database sync.\n\nThe catalog sprint itself has a free lifetime link and zero monthly hosting fee.',
+          acts: () => [GO_PACKAGES, waPrefill('Monthly care on WhatsApp', 'Hello FRECA E-SERVICES, I would like to ask about Monthly Care Plans (UGX 30,000/month Smart AI, UGX 25,000/month price updates and 2 flyers, or the Pro admin dashboard).'), waPrefill('Pro website on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in the Pro Website + Self-Service Admin Dashboard (UGX 250,000–350,000 + UGX 20,000/month cloud database sync).')],
+          chips: ['UGX prices', 'WhatsApp Auto-Repliers', 'Screenshot-First payment'] },
+        { id: 'workflow', label: 'the Screenshot-First payment workflow', q: 'Screenshot-First payment', w: 1.3,
+          k: ['screenshot', 'screenshots', 'screenshot first', '50 50', 'fifty', 'deposit', 'mobile money', 'momo', 'preview link', 'final balance', 'pay blind', 'fredrick', 'mugambe', 'first 50', 'remaining 50', 'how do i pay', 'payment', 'kampala', 'never pay'],
+          reply: 'You never pay blind, and you do not need to sit in Kampala traffic for a meeting. The Screenshot-First 50/50 workflow is:\n1. **Screenshots first.** Send 3–5 product or service photos and prices on WhatsApp (+256 726 978988). We build the layout and send screenshots for your confirmation.\n2. **First 50% deposit.** When you love the screenshots, pay half by Mobile Money to **0758 991506 — FREDRICK MUGAMBE**.\n3. **Preview link.** We send a clickable link so you can test it on your phone and request adjustments.\n4. **Final 50% and launch.** After 100% approval, pay the balance and receive your permanent live link. A custom .com or .co.ug domain can be connected at the registrar’s annual rate.',
+          acts: () => [{ label: 'See the 4 steps', go: '#how-it-works' }, waPrefill('Start with screenshots', 'Hello FRECA E-SERVICES, I want to start the Screenshot-First workflow. I will send 3–5 product photos and prices in this chat.')],
+          chips: ['UGX prices', 'WhatsApp Auto-Repliers', 'Monthly Care Plans'] },
         { id: 'identity', label: 'who I am', q: 'Who are you?',
           k: ['who are you', 'what are you', 'your name', 'are you a bot', 'are you human', 'are you real', 'are you ai', 'are you a robot', 'ekkaris', 'who made you', 'who built you'],
           reply: 'I’m **Ekkaris**, the website assistant for FRECA E-SERVICES. I’m an automated assistant, not a person, so for anything detailed or specific to your business I’ll point you to the team on WhatsApp.',
@@ -2554,24 +2881,24 @@
           acts: () => [{ label: 'Read about us', go: '#about' }], chips: ['What services do you offer?', 'How does the process work?', 'How can I get started?'] },
         { id: 'services', label: 'our services', q: 'What services do you offer?',
           k: ['services', 'service', 'offer', 'capabilities', 'solutions', 'treatments', 'what can you do', 'help with', 'provide'],
-          reply: 'We deliver practical digital treatments across six core areas:\n• **WhatsApp Sales Funnels & Websites** (landing pages, menus, catalogs, booking pages)\n• **AI Product Photography & Video Ads** (studio product visuals, reels, promotional graphics)\n• **Branding, Company Profiles & Tender Kits** (logos, profiles, quotation & invoice suites)\n• **Custom Web Apps & Calculators** (dashboards, portals, quote calculators, booking systems)\n• **Smart Spreadsheets & Stock Automation** (sales, expense & inventory trackers)\n• **AI Assistants, Local SEO & Lead Outreach** (24/7 FAQ bots, B2B lead generation & copy)',
-          more: 'We also offer 4 fast-turnaround **Quick-Start Packages** if you want an immediate upgrade, or we can diagnose your specific bottleneck first.',
-          acts: () => [{ label: 'See Capabilities', go: '#solutions' }, { label: 'Quick-Start Packages', go: '#packages' }], chips: ['What Quick-Start packages do you have?', 'Can I see examples of your work?', 'How much does it cost?'] },
+          reply: 'These are the main services, with published UGX prices:\n• **Interactive WhatsApp Repliers** — Numbered Menu UGX 60,000, or Smart AI UGX 50,000 + UGX 30,000/month. This is not the one-line “Thank you for contacting us” greeting.\n• **WhatsApp Shopping Website & Catalog Sprint** — UGX 150,000–200,000 (free lifetime link, no monthly hosting)\n• **Website + Replier bundle** — UGX 220,000–300,000\n• **Studio Product Photo & Ad Makeover** — UGX 60,000–100,000 (1 free watermarked sample first)\n• **Business Credibility & Tender Kit** — UGX 120,000–200,000\n• **Stock & sales tracker or custom web app** — UGX 250,000–500,000+',
+          more: 'Optional monthly care: price updates and 2 promo flyers at UGX 25,000/month, or a Pro website with a self-service admin dashboard at UGX 250,000–350,000 plus UGX 20,000/month cloud sync.',
+          acts: () => [{ label: 'See Services', go: '#services' }, GO_PACKAGES], chips: ['WhatsApp Auto-Repliers', 'UGX prices', 'Monthly Care Plans'] },
         { id: 'branding', label: 'branding and documents', q: 'Do you do branding and documents?',
           k: ['logo', 'logos', 'branding', 'brand', 'identity', 'flyer', 'flyers', 'business card', 'business cards', 'catalogue', 'catalogues', 'catalog', 'company profile', 'cv', 'cvs', 'resume', 'quotation', 'quotations', 'invoice', 'invoices', 'document', 'documents', 'graphic design', 'graphics'],
-          reply: 'Yes. In branding, graphic design and documents we handle logo and identity work, flyers, business cards, catalogues, company profiles, CVs, quotations, invoices and professional document formatting.',
+          reply: 'Yes. The **Business Credibility & Tender Kit** is UGX 120,000–200,000 and includes a Company Profile PDF, Letterhead, and Invoice/Quotation templates. We also handle logos, flyers, business cards, catalogues, and CVs when you need them.',
           acts: () => [{ label: 'Discuss this area', go: '#problems' }], chips: DEFAULT_CHIPS },
         { id: 'content', label: 'marketing content and creative', q: 'Do you make video ads?',
           k: ['video', 'videos', 'video ad', 'video ads', 'advert', 'adverts', 'advertisement', 'ads', 'short video', 'editing', 'voiceover', 'voiceovers', 'script', 'social media', 'product image', 'product images', 'photo', 'photos', 'marketing copy', 'promo', 'promotional', 'promotion'],
-          reply: 'For digital marketing content and creative, we can help with video ads, short videos, editing, voiceovers, ad scripts, social media graphics, product image enhancement and marketing copy.',
+          reply: 'The **Studio Product Photo & Ad Makeover Pack** is UGX 60,000–100,000. You get **1 free watermarked sample first**, then studio-style product photos, flyers, and WhatsApp or Instagram ad cards. Short video ads can be scoped with the same pack.',
           acts: () => [{ label: 'Discuss this area', go: '#problems' }], chips: DEFAULT_CHIPS },
         { id: 'website', label: 'websites', q: 'Can you build my website?',
           k: ['website', 'web site', 'landing page', 'ecommerce', 'e-commerce', 'online shop', 'online store', 'portfolio', 'menu', 'booking page', 'redesign', 'mobile friendly', 'online presence', 'webpage'],
-          reply: 'Yes. For websites and online presence we can help with business websites, landing pages, e-commerce, portfolios, menus, booking pages, redesigns and mobile-friendly experiences. Traffic depends on other factors too, so we can’t promise rankings or sales.',
-          acts: () => [{ label: 'Discuss a website', go: '#problems' }], chips: ['Do you only build websites?', 'How much does it cost?', 'How long does a project take?'] },
+          reply: 'Yes. A **WhatsApp Shopping Website & Catalog Sprint** is UGX 150,000–200,000 one-time, with a free lifetime link and zero monthly hosting fee. It is usually ready in 48–72 hours.\n\nOptional care: **Done-For-You Monthly Price Updates & 2 Promo Flyers** at UGX 25,000/month, or a **Pro Website + Self-Service Admin Dashboard** at UGX 250,000–350,000 plus UGX 20,000/month cloud database sync.\n\nA **Website + Interactive WhatsApp Replier bundle** is UGX 220,000–300,000. If you choose the Smart AI replier, UGX 30,000/month for managed updates stays separate. We can’t promise search rankings or sales.',
+          acts: () => [GO_PACKAGES, waPrefill('Website sprint on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in the WhatsApp Shopping Website & Catalog Sprint (UGX 150,000–200,000).')], chips: ['Monthly Care Plans', 'WhatsApp Auto-Repliers', 'UGX prices'] },
         { id: 'webapp', label: 'web applications and custom systems', q: 'Can you build a custom system?',
           k: ['web app', 'web application', 'application', 'custom system', 'custom app', 'order management', 'inventory', 'booking system', 'dashboard', 'crm', 'portal', 'internal tool', 'custom forms', 'software', 'system for'],
-          reply: 'Yes, in web applications and custom systems we can consider order management, inventory tracking, booking systems, inquiry management, dashboards, CRM tools, internal portals and custom forms. Simpler tools are sometimes more appropriate, so we check that first.',
+          reply: 'Yes. A **stock and sales tracker or custom web app** is UGX 250,000–500,000+, depending on how much the job needs. Simpler trackers are often enough, so we check that before building a larger app.',
           acts: () => [{ label: 'Discuss a system', go: '#problems' }], chips: ['Do all projects require custom software?', 'How is a project quoted?'] },
         { id: 'automation', label: 'automation and productivity tools', q: 'Can you automate repetitive work?',
           k: ['automate', 'automation', 'automated', 'spreadsheet', 'spreadsheets', 'excel', 'sales tracking', 'scheduling', 'order tracking', 'reports', 'templates', 'workflow', 'workflows', 'follow-up', 'productivity', 'digital forms'],
@@ -2579,17 +2906,17 @@
           acts: () => [{ label: 'Discuss this area', go: '#problems' }], chips: DEFAULT_CHIPS },
         { id: 'ai', label: 'AI assistants and chatbots', q: 'Tell me about AI chatbots',
           k: ['ai', 'chatbot', 'chatbots', 'chat bot', 'ai assistant', 'ai tools', 'artificial intelligence', 'faq bot', 'virtual assistant', 'ai workflow'],
-          reply: 'Yes. Where appropriate we can configure FAQ chatbots and AI-assisted support around your business information and limits. They work best for structured questions; uncertain or complex inquiries should still be handled by a person.',
-          more: 'Simpler solutions are preferred when they solve the problem just as well, so we’d first look at how many repeated questions you get and what they are.',
-          acts: () => [{ label: 'Watch how it works', go: '#watch' }, { label: 'Discuss an assistant', go: '#problems' }], chips: ['How much does it cost?', 'How can I get started?'] },
+          reply: 'For answers **inside WhatsApp**, use an Interactive WhatsApp Replier — not the basic one-line greeting.\n• **Option A — Numbered Menu:** UGX 60,000 one-time (UGX 15,000 per later menu edit).\n• **Option B — Smart AI:** UGX 50,000 setup + UGX 30,000/month, including unlimited price and stock updates. It can answer “Do you have size 42?” or “How much is boda delivery to Entebbe?”\n\nEkkaris on this website is a separate on-page guide. A person should still handle unusual questions.',
+          more: 'The numbered menu is the simpler option. Choose Smart AI when customers ask in their own words instead of picking 1, 2, 3, or 4.',
+          acts: () => [GO_PACKAGES, waPrefill('Smart AI on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option B — the Smart AI WhatsApp Replier (UGX 50,000 setup + UGX 30,000/month).')], chips: ['Different from the WhatsApp greeting?', 'Monthly Care Plans', 'UGX prices'] },
         { id: 'seo', label: 'SEO and copywriting', q: 'Do you help with SEO?',
           k: ['seo', 'copywriting', 'copywriter', 'content strategy', 'search engine', 'google ranking', 'rank', 'ranking', 'keywords'],
           reply: 'Yes. We can help with SEO fundamentals such as clear page titles and descriptions and search-friendly structure, plus copywriting and content strategy. Search rankings depend on many factors and can’t be guaranteed.',
           acts: () => [{ label: 'Discuss SEO or content', go: '#problems' }], chips: DEFAULT_CHIPS },
         { id: 'process', label: 'how we work', q: 'How does the process work?',
           k: ['process', 'how we work', 'how does it work', 'how do you work', 'steps', 'method', 'methodology', 'approach', 'procedure', 'diagnose', 'diagnosis'],
-          reply: 'We follow five steps:\n1. **Understand** – listen to your concerns, goals and how things work now\n2. **Explore** – look at possible causes and whether a digital approach could genuinely help\n3. **Recommend** – practical advice, a suitable digital treatment, or another next step\n4. **Build or configure** – only if you choose a paid solution, then test it\n5. **Review & improve** – check it is useful and follow up\n\nPaid work only starts once the scope and terms are agreed.',
-          acts: () => [{ label: 'Watch the animation', go: '#watch' }, { label: 'See how we work', go: '#process' }], chips: ['How much does it cost?', 'How long does a project take?', 'How can I get started?'] },
+          reply: 'Paid work follows the **Screenshot-First 50/50** steps on WhatsApp. You never pay blind, and you do not need a meeting in Kampala.\n1. **Screenshots first.** Send 3–5 photos and prices to +256 726 978988. We send screenshots before any payment.\n2. **First 50%.** When you love the screenshots, pay half by Mobile Money to **0758 991506 — FREDRICK MUGAMBE**.\n3. **Preview link.** Test the clickable link on your phone and request changes.\n4. **Final 50%.** After 100% approval, pay the balance and get your permanent live link. Custom .com or .co.ug domains connect at the registrar’s annual rate.',
+          acts: () => [{ label: 'See the 4 steps', go: '#how-it-works' }, waPrefill('Start with screenshots', 'Hello FRECA E-SERVICES, I want to start the Screenshot-First workflow. I will send 3–5 product photos and prices in this chat.')], chips: ['Screenshot-First payment', 'UGX prices', 'WhatsApp Auto-Repliers'] },
         { id: 'onlyweb', label: 'whether you only build websites', q: 'Do you only build websites?',
           k: ['only build websites', 'only websites', 'just websites', 'do you only', 'only do websites', 'website only'],
           reply: 'No. Websites are one possible treatment among many. Depending on what we learn, we may offer advice, design work, documents, content, automation, a simple system or another digital approach. Sometimes advice is enough; sometimes the best next step is outside our scope.',
@@ -2598,32 +2925,33 @@
           k: ['dont know which', 'not sure which', 'which service', 'what do i need', 'dont know what i need', 'not sure what', 'dont know the problem', 'dont know where to start'],
           reply: 'That is completely fine. You don’t need to know the cause or the tool you need. Tell us what is happening and what you hope to improve, and we will explore it before recommending a next step.',
           acts: () => [GO_FORM], chips: ['I have a problem in my business', 'How can I get started?'] },
-        { id: 'price', label: 'pricing and packages', q: 'What Quick-Start packages do you have?', offer: true,
-          k: ['price', 'prices', 'pricing', 'cost', 'costs', 'how much', 'quote', 'package', 'packages', 'quick start', 'sprint', 'fee', 'fees', 'charge', 'rates', 'budget', 'expensive', 'cheap', 'afford', 'free', 'payment', 'pay'],
-          reply: 'We offer two ways to work together:\n1. **Fast Quick-Start Packages** with clear, fixed scopes (our *WhatsApp Landing Page & Catalog Sprint*, *Studio Ad & Product Visual Makeover*, *Business Credibility & Tender Kit*, and *Smart Operations & Stock Tracker Setup*).\n2. **Custom Diagnosis & Scoping**, where initial guidance is free and any custom build is quoted clearly upfront before work begins.\n\nWould you like to view the packages or get a quote on WhatsApp?',
-          more: 'Paid work never starts without an agreed scope, deliverable list, and timeline.',
-          acts: () => [{ label: 'View Quick-Start Packages', go: '#packages' }, waAct('Get a Quote on WhatsApp')],
-          offerActs: () => [{ label: 'View Quick-Start Packages', go: '#packages' }, GO_FORM, waAct('Ask on WhatsApp')], chips: ['Can I see examples of your work?', 'How long does a project take?', 'How can I get started?'] },
+        { id: 'price', label: 'UGX prices', q: 'UGX prices', offer: true,
+          k: ['price', 'prices', 'pricing', 'cost', 'costs', 'how much', 'quote', 'package', 'packages', 'quick start', 'sprint', 'fee', 'fees', 'charge', 'rates', 'budget', 'expensive', 'cheap', 'afford', 'ugx', 'ugx prices', 'shilling', 'shillings', 'catalog sprint', 'shopping website', 'tender kit', '150 000', '60 000', '220 000'],
+          reply: 'Published prices in Ugandan shillings:\n• **Numbered-Menu WhatsApp Replier** — UGX 60,000 one-time (UGX 15,000 per later menu edit)\n• **Smart AI WhatsApp Replier** — UGX 50,000 setup + UGX 30,000/month, unlimited price and stock updates\n• **Shopping website & catalog sprint** (48–72h) — UGX 150,000–200,000. Free lifetime link, zero monthly hosting\n• **Monthly price updates + 2 promo flyers** — UGX 25,000/month\n• **Pro website + self-service admin** — UGX 250,000–350,000 + UGX 20,000/month cloud sync\n• **Website + replier bundle** — UGX 220,000–300,000\n• **Studio photo & ad pack** — UGX 60,000–100,000, after 1 free watermarked sample\n• **Credibility & tender kit** — UGX 120,000–200,000\n• **Stock tracker or custom web app** — UGX 250,000–500,000+\n\nYou approve screenshots before the first 50% deposit.',
+          more: 'The Smart AI monthly plan and the website care plans are optional. Option A, the numbered menu, has no monthly fee.',
+          acts: () => [GO_PACKAGES, waPrefill('Ask about a package', 'Hello FRECA E-SERVICES, I was reading your UGX packages and I would like a recommendation for my business.')],
+          offerActs: () => [GO_PACKAGES, GO_FORM, waPrefill('Ask about a package', 'Hello FRECA E-SERVICES, I was reading your UGX packages and I would like a recommendation for my business.')], chips: ['WhatsApp Auto-Repliers', 'Monthly Care Plans', 'Screenshot-First payment'] },
         { id: 'time', label: 'timelines', q: 'How long does a project take?',
           k: ['how long', 'timeline', 'duration', 'deadline', 'how soon', 'turnaround', 'how fast', 'delivery time', 'how many days', 'how many weeks', 'quickly'],
-          reply: 'It depends on the scope. Simple design or document work can be relatively quick, while larger websites or applications take longer. A realistic timeline is included in the proposal for your specific project.',
-          acts: () => [waAct('Ask about my project')], chips: ['How much does it cost?', 'How can I get started?'] },
+          reply: 'A **WhatsApp Shopping Website & Catalog Sprint** is usually ready in **48–72 hours** once we have your photos and prices. A numbered-menu or Smart AI replier is typically a few days. Photo packs and tender kits are quick. Stock trackers and custom web apps take longer and are timed in the quote.',
+          acts: () => [waPrefill('Ask about timing', 'Hello FRECA E-SERVICES, I would like a timing estimate for my project.')], chips: ['UGX prices', 'Screenshot-First payment', 'WhatsApp Auto-Repliers'] },
         { id: 'contact', label: 'contact details', q: 'Contact details',
           k: ['contact', 'reach', 'whatsapp', 'phone', 'call', 'email', 'mail', 'number', 'talk to someone', 'speak to', 'human', 'real person', 'the team', 'address'],
-          reply: 'You can reach the team here:\n• WhatsApp: +256 726 978 988\n• Alternative: +256 758 991 506\n• Email: fredrickstads@gmail.com\n\nJust describe what is happening in your business. You don’t need to know which solution you need.',
-          acts: () => [waAct('WhatsApp 0726 978 988'), { label: 'Alt: 0758 991 506', wa: true, href: 'https://wa.me/' + WA_ALT }, { label: 'Email', href: 'mailto:fredrickstads@gmail.com' }], chips: ['How can I get started?', 'Where are you based?'] },
+          reply: 'Send photos, prices, and project questions on WhatsApp: **+256 726 978 988**.\n\nMobile Money deposits (the 50/50 payments) go to **0758 991506 — FREDRICK MUGAMBE**. That number can also reach the team.\n\nEmail: fredrickstads@gmail.com',
+          acts: () => [waPrefill('WhatsApp 0726 978 988', 'Hello FRECA E-SERVICES, I was chatting with Ekkaris and I would like to talk about a project.'), { label: 'Alt: 0758 991 506', wa: true, href: 'https://wa.me/' + WA_ALT }, { label: 'Email', href: 'mailto:fredrickstads@gmail.com' }], chips: ['Screenshot-First payment', 'UGX prices', 'WhatsApp Auto-Repliers'] },
         { id: 'start', label: 'getting started', q: 'How can I get started?',
           k: ['get started', 'start', 'begin', 'how do i start', 'hire', 'order', 'work with you', 'work with us', 'next step', 'proceed', 'sign up', 'engage'],
-          reply: 'To get started, use the **Find a Solution** form or contact us directly. Describe what is happening in your business and we’ll discuss possible next steps. If paid work is appropriate, nothing proceeds until the scope and terms are agreed.',
-          acts: () => [GO_FORM, waAct('Message on WhatsApp')], chips: ['How much does it cost?', 'How does the process work?'] },
+          reply: 'Send **3–5 product or service photos and your prices** on WhatsApp (+256 726 978988). We build a first layout and send **screenshots before any payment**. When you love them, the first 50% goes by Mobile Money to 0758 991506 — FREDRICK MUGAMBE. You only pay the last 50% after you approve the live preview.',
+          acts: () => [waPrefill('Start on WhatsApp', 'Hello FRECA E-SERVICES, I want to start. I will send 3–5 product photos and prices in this chat.'), { label: 'See the 4 steps', go: '#how-it-works' }], chips: ['Screenshot-First payment', 'UGX prices', 'WhatsApp Auto-Repliers'] },
         { id: 'location', label: 'where we are based', q: 'Where are you based?',
           k: ['where are you', 'where is freca', 'location', 'located', 'based', 'uganda', 'ugandan', 'remote', 'remotely', 'office', 'visit', 'in person', 'meet'],
-          reply: 'FRECA E-SERVICES is based in Uganda and works remotely with businesses and individuals. The quickest way to arrange anything is WhatsApp.',
+          reply: 'FRECA E-SERVICES is based in Uganda and works remotely. You do not need to sit in Kampala traffic for a meeting. Send photos and prices on WhatsApp, approve screenshots, then pay 50/50 by Mobile Money.',
           acts: () => [waAct('Message on WhatsApp')], chips: ['Contact details', 'How can I get started?'] },
         { id: 'support', label: 'after-launch support', q: 'Do you offer support after launch?',
           k: ['support', 'maintenance', 'maintain', 'after launch', 'after-launch', 'updates', 'update', 'ongoing', 'aftercare'],
-          reply: 'Where ongoing support is useful and agreed, we can help maintain, review and improve a solution as your business changes.',
-          chips: DEFAULT_CHIPS },
+          reply: 'Yes. Optional **Monthly Care Plans** keep a live project current:\n• Smart AI replier updates — UGX 30,000/month (unlimited price and stock changes)\n• Numbered-menu edits when you ask — UGX 15,000 each, no monthly fee\n• Website price updates and 2 promo flyers — UGX 25,000/month\n• Pro admin dashboard cloud sync — UGX 20,000/month after the build\n\nThe catalog sprint link itself has no monthly hosting fee.',
+          acts: () => [GO_PACKAGES, waPrefill('Ask about monthly care', 'Hello FRECA E-SERVICES, I would like to ask about a Monthly Care Plan.')],
+          chips: ['Monthly Care Plans', 'UGX prices', 'WhatsApp Auto-Repliers'] },
         { id: 'guarantee', label: 'guarantees', q: 'Do you guarantee results?',
           k: ['guarantee', 'guaranteed', 'promise', 'results', 'sure to', 'increase sales', 'more sales', 'ensure'],
           reply: 'We can’t guarantee outcomes such as search rankings or sales, because they depend on many factors. What we do commit to is careful listening, a clear scope and honest advice before any paid work begins.',
@@ -2781,7 +3109,7 @@
         }
 
         let best = null, bestS = 0;
-        INTENTS.forEach(it => { const s = scoreKeys(it.k, t, words, it.w); if (s > bestS) { bestS = s; best = it; } });
+        knowledgeBase.forEach(it => { const s = scoreKeys(it.k, t, words, it.w); if (s > bestS) { bestS = s; best = it; } });
         if (best && bestS >= 1.8 * (best.w || 1)) return fromIntent(best);
 
         ctx.last = null; ctx.offer = null;
@@ -2820,14 +3148,15 @@
         const MAP = {
           WA: () => waAct('Chat on WhatsApp'),
           FORM: () => GO_FORM,
-          SERVICES: () => ({ label: 'See the solutions', go: '#solutions' }),
-          PROCESS: () => ({ label: 'See how we work', go: '#process' }),
+          SERVICES: () => ({ label: 'See the services', go: '#services' }),
+          PACKAGES: () => ({ label: 'See UGX packages', go: '#packages' }),
+          PROCESS: () => ({ label: 'See how we work', go: '#how-it-works' }),
           WATCH: () => ({ label: 'Watch the animations', go: '#watch' }),
           WORK: () => ({ label: 'See the work', go: '#projects' }),
           FAQ: () => ({ label: 'Read the FAQ', go: '#faq' }),
           CONTACT: () => ({ label: 'Contact details', go: '#contact' })
         };
-        r = r.replace(/\[\[(WA|FORM|SERVICES|PROCESS|WATCH|WORK|FAQ|CONTACT)\]\]/gi, (m, k) => {
+        r = r.replace(/\[\[(WA|FORM|SERVICES|PACKAGES|PROCESS|WATCH|WORK|FAQ|CONTACT)\]\]/gi, (m, k) => {
           k = k.toUpperCase();
           if (!seen[k]) { seen[k] = 1; acts.push(MAP[k]()); }
           return '';
@@ -2949,7 +3278,7 @@
       }
 
       function greet() {
-        addEkkarisMsg('Hi! I’m **Ekkaris**, the FRECA E-SERVICES assistant. Ask me about our services, how we work, pricing approach or how to get started, or tell me what’s troubling your business and I’ll suggest possible approaches.', false);
+        addEkkarisMsg('Hi! I’m **Ekkaris**, the FRECA E-SERVICES assistant. I can explain **Interactive WhatsApp Repliers** (and how they differ from the one-line WhatsApp greeting), **UGX prices**, **Monthly Care Plans**, and the **Screenshot-First 50/50** payment.', false);
         setChips(START_CHIPS);
         scrollDown();
       }
