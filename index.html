@@ -317,6 +317,70 @@
     
     
     
+    .section { padding: 5.5rem 0; }
+    .section-header { text-align: center; max-width: 680px; margin: 0 auto 3.5rem; }
+    .packages { background: white; }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .package-card {
+      background: var(--off-white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .package-card:hover {
+      background: white;
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+    .package-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+    .package-list {
+      margin: 1rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .package-list li {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .package-list li::before {
+      content: '✓';
+      color: var(--success);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .section { padding: 4rem 0; }
+      .packages-grid { grid-template-columns: 1fr; }
+    }
     .section-label {
       display: inline-block;
       font-size: 0.8rem;
@@ -1350,6 +1414,7 @@
         <a href="#home" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#solutions" class="nav-link">Solutions</a>
+        <a href="#packages" class="nav-link">Quick-Start Packs</a>
         <a href="#problems" class="nav-link">Find a Solution</a>
         <a href="#process" class="nav-link">How We Work</a>
         <a href="#projects" class="nav-link">Work</a>
@@ -1367,6 +1432,7 @@
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#solutions">Solutions</a>
+    <a href="#packages">Quick-Start Packs</a>
     <a href="#problems">Find a Solution</a>
     <a href="#process">How We Work</a>
     <a href="#projects">Work</a>
@@ -1389,7 +1455,7 @@
             <span>Let's Understand What It Needs.</span>
           </h1>
           <p class="hero-desc">
-            FRECA E-SERVICES is your business’s health center. We listen first, explore what may be getting in the way, and recommend a practical next step. Sometimes that means advice; when a digital solution is appropriate, we can help plan and build it.
+            FRECA E-SERVICES is your business’s health center. We listen first, diagnose what is slowing down your sales or daily operations, and deliver practical treatments — from WhatsApp booking &amp; catalog pages and studio-grade AI ad visuals to automated stock systems and custom web apps.
           </p>
           <div class="hero-actions">
             <a href="#problems" class="btn btn-primary btn-lg">
@@ -1450,17 +1516,19 @@
             <span class="section-label">About FRECA E-SERVICES</span>
             <h2 class="section-title">Your Business’s Health Comes Before the Solution</h2>
             <p class="about-text">
-              Every business has its own circumstances. A challenge that looks like a marketing problem may have a different cause; a process that feels complicated may only need a clearer method. We listen before recommending anything, because a website, system or app is only useful when it addresses the real need.
+              Every business has its own circumstances. A challenge that looks like a marketing problem may actually be a slow inquiry flow; a process that feels overwhelming may only need a clean digital tracker. We listen before prescribing anything, because a website, ad campaign, or system is only valuable when it solves the real bottleneck.
             </p>
             <p class="about-text">
-              We explore how you currently work, what is getting in the way, and what you want to improve. If simple advice is enough, we can share practical guidance. If the challenge calls for digital business medical attention, we discuss a suitable option such as design, content, a website, a spreadsheet system, automation or a custom application. If it falls outside our competence, we will say so and suggest an appropriate next step where possible.
+              We examine how customers currently find you, how orders come in on WhatsApp or phone, and how your team tracks daily records. When a practical adjustment is enough, we tell you honestly. When your business needs digital treatment, we design and build it rapidly — whether that is a high-converting WhatsApp sales page, studio-grade product &amp; video ads, an automated stock &amp; sales system, or a custom web application.
             </p>
             <p class="about-text">
-              Solutions may involve existing tools, AI-assisted workflows, custom development or no new technology at all. We prefer a practical treatment over unnecessary complexity, and we do not assume every business needs a paid service.
+              We combine sharp business judgment with modern creative, web, and automation tools so you get fast turnaround, zero unnecessary complexity, and tools your customers and staff can use effortlessly on any phone or computer.
             </p>
-            <a href="#problems" class="btn btn-primary">Find a Solution</a>
+            <div style="display:flex;gap:0.85rem;flex-wrap:wrap;">
+              <a href="#problems" class="btn btn-primary">Diagnose My Business</a>
+              <a href="#packages" class="btn btn-secondary">View Quick-Start Packages</a>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </section>
@@ -1470,57 +1538,137 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">Capabilities</span>
-          <h2 class="section-title">Possible Treatments for Business Challenges</h2>
-          <p class="section-desc">These are capabilities we can consider after listening and exploring the problem. They are options, not a prescription for every business.</p>
+          <h2 class="section-title">Practical Treatments for Business Growth &amp; Efficiency</h2>
+          <p class="section-desc">Once we understand your bottleneck, we deploy the exact digital treatment that solves it — built for fast results on mobile and desktop.</p>
         </div>
         <div class="services-grid">
           <article class="service-card reveal">
             <div class="service-icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            </div>
-            <h3 class="service-title">Branding, Graphic Design & Documents</h3>
-            <p class="service-desc">Logo design, flyers, business cards, catalogues, company profiles, CVs, quotations, invoices and professional document formatting.</p>
-            <a href="#problems" class="service-link">Discuss this area →</a>
-          </article>
-          <article class="service-card reveal">
-            <div class="service-icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-            </div>
-            <h3 class="service-title">Digital Marketing Content & Creative</h3>
-            <p class="service-desc">Video ads, short videos, editing, voiceovers, ad scripts, social media graphics, product image enhancement and marketing copy.</p>
-            <a href="#problems" class="service-link">Discuss this area →</a>
-          </article>
-          <article class="service-card reveal">
-            <div class="service-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
             </div>
-            <h3 class="service-title">Websites & Online Presence</h3>
-            <p class="service-desc">Business websites, landing pages, e-commerce, portfolios, menus, booking pages, redesigns and mobile-friendly experiences. Traffic depends on other factors too.</p>
+            <h3 class="service-title">WhatsApp Sales Funnels &amp; Business Websites</h3>
+            <p class="service-desc">Mobile-first websites, instant WhatsApp ordering &amp; booking pages, digital menus, interactive product catalogs, and high-trust landing pages that turn visitors into direct WhatsApp inquiries.</p>
+            <a href="#problems" class="service-link">Discuss this area →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="service-title">AI Product Photography &amp; Scroll-Stopping Video Ads</h3>
+            <p class="service-desc">Transform simple phone photos of your products, food, fashion, or premises into studio-grade commercial visuals, promotional reels, voiceover video ads, and high-converting social campaigns.</p>
+            <a href="#problems" class="service-link">Discuss this area →</a>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="service-title">Branding, Company Profiles &amp; Tender Documents</h3>
+            <p class="service-desc">Complete visual identity, persuasive company profiles, product catalogues, flyers, business cards, CVs, and reusable quotation, invoice &amp; receipt templates that win institutional and retail trust.</p>
             <a href="#problems" class="service-link">Discuss this area →</a>
           </article>
           <article class="service-card reveal">
             <div class="service-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
             </div>
-            <h3 class="service-title">Web Applications & Custom Systems</h3>
-            <p class="service-desc">Order management, inventory tracking, booking systems, inquiry management, dashboards, CRM tools, internal portals and custom forms. Simpler tools are sometimes more appropriate.</p>
+            <h3 class="service-title">Custom Web Apps, Calculators &amp; Client Portals</h3>
+            <p class="service-desc">Interactive quote calculators, booking engines, order management systems, inventory &amp; POS dashboards, CRM tools, and custom internal portals tailored to how your team works.</p>
             <a href="#problems" class="service-link">Discuss this area →</a>
           </article>
           <article class="service-card reveal">
             <div class="service-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
             </div>
-            <h3 class="service-title">Automation & Productivity Tools</h3>
-            <p class="service-desc">Automated spreadsheets, sales tracking, scheduling, order tracking, digital forms, reports, follow-up workflows and templates. Configuration matters.</p>
+            <h3 class="service-title">Smart Spreadsheets, Stock &amp; Sales Automation</h3>
+            <p class="service-desc">Replace scattered exercise books with automated sales, expense, and stock trackers, instant daily summaries, digital intake forms, and zero-monthly-fee reporting workflows.</p>
             <a href="#problems" class="service-link">Discuss this area →</a>
           </article>
           <article class="service-card reveal">
             <div class="service-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
             </div>
-            <h3 class="service-title">AI Assistants, SEO & Other Solutions</h3>
-            <p class="service-desc">FAQ chatbots, AI-assisted support, SEO fundamentals, copywriting, content strategy — and other digital approaches. Describe your challenge if it does not fit a category.</p>
+            <h3 class="service-title">AI Customer Assistants, Lead Outreach &amp; Local SEO</h3>
+            <p class="service-desc">24/7 website &amp; FAQ assistants trained on your business, B2B lead research &amp; outreach campaigns, Google visibility optimization, and persuasive sales copywriting.</p>
             <a href="#problems" class="service-link">Discuss this area →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK-START PACKAGES -->
+    <section id="packages" class="packages section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Quick-Start Treatments</span>
+          <h2 class="section-title">Fast, Fixed-Scope Packages Ready in Days</h2>
+          <p class="section-desc">Not sure where to start? Alongside custom diagnosis, we offer four high-impact treatments designed to upgrade your sales, visuals, or records immediately.</p>
+        </div>
+        <div class="packages-grid">
+          <article class="package-card reveal">
+            <div>
+              <span class="package-badge">⚡ 48–72 Hour Turnaround</span>
+              <h3 class="service-title">1. WhatsApp Landing Page &amp; Catalog Sprint</h3>
+              <p class="service-desc" style="margin-bottom:0.5rem;">Turn social media viewers into paying customers with a fast, mobile-first showcase wired straight to your WhatsApp Business.</p>
+              <ul class="package-list">
+                <li>Custom mobile-ready landing page, digital menu, or interactive catalog</li>
+                <li>1-tap WhatsApp order / booking builder (customers send structured orders)</li>
+                <li>Live link for your WhatsApp profile, Instagram, TikTok &amp; Google</li>
+              </ul>
+            </div>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20*WhatsApp%20Landing%20Page%20%26%20Catalog%20Sprint*%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp →</a>
+              <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="WhatsApp Landing Page & Catalog Sprint" data-prob="I want to simplify customer inquiries or ordering">Select in Form</button>
+            </div>
+          </article>
+
+          <article class="package-card reveal">
+            <div>
+              <span class="package-badge">🎨 Studio Creative Pack</span>
+              <h3 class="service-title">2. Studio Ad &amp; Product Visual Makeover</h3>
+              <p class="service-desc" style="margin-bottom:0.5rem;">Upgrade ordinary phone snapshots into studio-grade product visuals and scroll-stopping video ads that command attention.</p>
+              <ul class="package-list">
+                <li>Studio-enhanced product, food, fashion, or service imagery</li>
+                <li>Custom promotional flyers &amp; WhatsApp Status / Instagram ad cards</li>
+                <li>Short promotional video ad with script, captions &amp; voiceover</li>
+              </ul>
+            </div>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20*Studio%20Ad%20%26%20Product%20Visual%20Makeover*%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp →</a>
+              <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Studio Ad & Product Visual Makeover" data-prob="I need better promotional content or advertisements">Select in Form</button>
+            </div>
+          </article>
+
+          <article class="package-card reveal">
+            <div>
+              <span class="package-badge">🏢 Corporate &amp; SME Trust</span>
+              <h3 class="service-title">3. Business Credibility &amp; Tender Kit</h3>
+              <p class="service-desc" style="margin-bottom:0.5rem;">Present your company like an established industry leader when pitching corporate clients, partnerships, or tenders.</p>
+              <ul class="package-list">
+                <li>Logo refinement &amp; clean brand style guide</li>
+                <li>Persuasive, print- &amp; WhatsApp-ready Company Profile PDF</li>
+                <li>Branded Quotation, Invoice &amp; Official Letterhead templates</li>
+              </ul>
+            </div>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20*Business%20Credibility%20%26%20Tender%20Kit*%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp →</a>
+              <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Business Credibility & Tender Kit" data-prob="I want to present my products or services more professionally">Select in Form</button>
+            </div>
+          </article>
+
+          <article class="package-card reveal">
+            <div>
+              <span class="package-badge">📊 Operations &amp; Control</span>
+              <h3 class="service-title">4. Smart Operations &amp; Stock Tracker Setup</h3>
+              <p class="service-desc" style="margin-bottom:0.5rem;">Stop losing money to missing records or stock outs with a clean, custom digital tracking system and live dashboard.</p>
+              <ul class="package-list">
+                <li>Custom sales, stock &amp; expense tracker (web app or automated sheet)</li>
+                <li>Automatic daily/monthly profit &amp; low-stock alerts</li>
+                <li>Zero recurring software subscription fees + team walkthrough</li>
+              </ul>
+            </div>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+              <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20*Smart%20Operations%20%26%20Stock%20Tracker%20Setup*%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp →</a>
+              <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Smart Operations & Stock Tracker Setup" data-prob="I need a better way to track stock, sales, or business records">Select in Form</button>
+            </div>
           </article>
         </div>
       </div>
@@ -1561,7 +1709,7 @@
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             </div>
             <h3 class="why-title">Fast & Optimized</h3>
-            <p class="why-desc">Where relevant, we consider usability, performance and basic search-friendly practices. Results such as search rankings or sales depend on many factors and cannot be guaranteed.</p>
+            <p class="why-desc">We build lightweight, fast-loading pages and clean digital tools optimized for mobile data in Uganda and beyond, with search-friendly structure and frictionless WhatsApp conversion paths.</p>
           </div>
           <div class="why-card reveal">
             <div class="why-icon">
@@ -1654,7 +1802,7 @@
           </div>
         </div>
         <div id="problemHints" style="display:none;background:var(--off-white);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:2.5rem;">
-          <h4 style="font-size:0.95rem;font-weight:600;color:var(--navy);margin-bottom:0.75rem;">Possible approaches (examples only)</h4>
+          <h3 style="font-size:0.95rem;font-weight:600;color:var(--navy);margin:1.33em 0 0.75rem;">Possible approaches (examples only)</h3>
           <div id="hintsContent"></div>
           <p style="font-size:0.8rem;color:var(--gray-400);font-style:italic;margin-top:0.75rem;">These are only starting points, not a diagnosis or a promise that a particular tool will solve the issue. We need to understand your situation first.</p>
         </div>
@@ -1725,7 +1873,7 @@
         <div class="section-header reveal">
           <span class="section-label">Watch</span>
           <h2 class="section-title">See How a Business Check-up Works</h2>
-          <p class="section-desc">Four short animations, built with code and played right in your browser. They illustrate common ideas and are not client results.</p>
+          <p class="section-desc">Four short interactive animations built with code right in your browser — showing how we diagnose bottlenecks and streamline your customer journey.</p>
         </div>
         <div class="motion-grid">
           <article class="motion-card reveal" data-scene="steps" data-dur="10">
@@ -1750,7 +1898,7 @@
             <div class="player"><button class="pbtn" type="button" aria-label="Play or pause animation"></button><input class="pbar" type="range" min="0" max="1000" value="0" aria-label="Animation position"><span class="ptime">0:00 / 0:10</span></div>
             <div class="motion-body">
               <h3 class="motion-title">From scattered records to one clear view</h3>
-              <p class="motion-desc">Orders, stock and sales kept in notes can move into a structured spreadsheet or a simple dashboard. An illustrative concept.</p>
+              <p class="motion-desc">Orders, stock and daily sales kept in scattered notebooks move into one structured spreadsheet or live operations dashboard.</p>
             </div>
           </article>
           <article class="motion-card reveal" data-scene="mobile" data-dur="10">
@@ -1769,75 +1917,84 @@
     <section id="projects" class="projects section">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Work & Concepts</span>
-          <h2 class="section-title">Selected Work & Solution Concepts</h2>
-          <p class="section-desc">Examples illustrate kinds of digital solutions that can be explored. Some are concepts rather than completed client commissions. Real project details are discussed directly with clients.</p>
+          <span class="section-label">Live Demos &amp; Blueprints</span>
+          <h2 class="section-title">Live Client Demos &amp; Ready-to-Deploy Blueprints</h2>
+          <p class="section-desc">Explore live interactive websites built for Ugandan businesses alongside our core operational blueprints — ready to be customized with your branding, products, and WhatsApp flow in days.</p>
         </div>
         <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-img">
+              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791581066/3acdfe44f29d72b6748e4cdca7b6d57c.jpg" alt="Reshan Cakes live website showcase" loading="lazy">
+              <span class="project-cat">Live Demo · Bakery &amp; Events</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Reshan Cakes — Custom Order &amp; Showcase Site</h3>
+              <p class="project-desc">Mobile-first bakery showcase and custom cake ordering experience with visual galleries and direct WhatsApp order routing.</p>
+              <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+                <a href="https://frecae-services.github.io/reshan-cakes/" target="_blank" rel="noopener" class="project-link">View Live Site ↗</a>
+                <a href="#problems" class="project-link" style="color:var(--gray-500);font-weight:500;">Build similar →</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-img">
+              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791581848/c408c308f9971c7ec942bb6c8bf9c910.jpg" alt="Sweet Cake Impressions live website showcase" loading="lazy">
+              <span class="project-cat">Live Demo · Food &amp; Hospitality</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Sweet Cake Impressions — Digital Catalog &amp; Booking</h3>
+              <p class="project-desc">High-converting visual menu and celebration cake inquiry funnel built to turn social media traffic into confirmed WhatsApp orders.</p>
+              <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+                <a href="https://frecae-services.github.io/SweetCakeImpressions/" target="_blank" rel="noopener" class="project-link">View Live Site ↗</a>
+                <a href="#problems" class="project-link" style="color:var(--gray-500);font-weight:500;">Build similar →</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-img">
+              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791579888/b28397cfc3d490f63ee1e6e5abc7807b.jpg" alt="Unique Fashions live website showcase" loading="lazy">
+              <span class="project-cat">Live Demo · Retail &amp; Fashion</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Unique Fashions — Boutique Lookbook &amp; Storefront</h3>
+              <p class="project-desc">Sleek mobile fashion catalog designed for fast browsing on phone data and 1-tap WhatsApp product inquiries.</p>
+              <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+                <a href="https://frecae-services.github.io/UniqueFashions/" target="_blank" rel="noopener" class="project-link">View Live Site ↗</a>
+                <a href="#problems" class="project-link" style="color:var(--gray-500);font-weight:500;">Build similar →</a>
+              </div>
+            </div>
+          </article>
           <article class="project-card reveal">
             <div class="project-img">
               <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791579920/fb3e989e56e2f56bed707286b6841b54.jpg" alt="Analytics dashboard and business charts on screen" loading="lazy">
               <span class="project-cat">Web Applications</span>
             </div>
             <div class="project-body">
-              <h3 class="project-title">Operations Dashboard Concept</h3>
-              <p class="project-desc">Illustrative concept for a sales and operations overview — showing how structured data and simple dashboards can support decision-making.</p>
-              <a href="#problems" class="project-link">Discuss a similar need →</a>
+              <h3 class="project-title">Sales, Stock &amp; Operations Dashboard</h3>
+              <p class="project-desc">Real-time business overview blueprint combining daily sales, low-stock alerts, expense tracking, and customer order status in one screen.</p>
+              <a href="#problems" class="project-link">Deploy for your business →</a>
             </div>
           </article>
           <article class="project-card reveal">
             <div class="project-img">
-              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791579888/b28397cfc3d490f63ee1e6e5abc7807b.jpg" alt="Modern city skyline with glass skyscrapers" loading="lazy">
-              <span class="project-cat">Branding & Documents</span>
+              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791582432/fd92c5107c75533f99124b3518009eb8.jpg" alt="Abstract technology and code on dark screens" loading="lazy">
+              <span class="project-cat">Branding &amp; Tender Systems</span>
             </div>
             <div class="project-body">
-              <h3 class="project-title">Professional Document Systems</h3>
-              <p class="project-desc">Examples of structured company profiles, quotations and reusable templates designed for clarity and consistent presentation.</p>
-              <a href="#problems" class="project-link">Discuss a similar need →</a>
-            </div>
-          </article>
-          <article class="project-card reveal">
-            <div class="project-img">
-              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791581066/3acdfe44f29d72b6748e4cdca7b6d57c.jpg" alt="Modern empty conference room with large table and city view" loading="lazy">
-              <span class="project-cat">Websites</span>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Service Business Presence</h3>
-              <p class="project-desc">Concept for a clear, mobile-friendly service website focused on information structure, credibility and simple inquiry paths.</p>
-              <a href="#problems" class="project-link">Discuss a similar need →</a>
-            </div>
-          </article>
-          <article class="project-card reveal">
-            <div class="project-img">
-              <img src=https://res.cloudinary.com/lgjllewt/image/upload/v1791582432/fd92c5107c75533f99124b3518009eb8.jpg alt="Abstract technology and code on dark screens" loading="lazy">
-              <span class="project-cat">Automation</span>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Spreadsheet & Workflow Tools</h3>
-              <p class="project-desc">Illustrative approach to inventory tracking, order registers and automated calculations using structured digital worksheets.</p>
-              <a href="#problems" class="project-link">Discuss a similar need →</a>
-            </div>
-          </article>
-          <article class="project-card reveal">
-            <div class="project-img">
-              <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791581848/c408c308f9971c7ec942bb6c8bf9c910.jpg"alt="Bright modern office interior with glass walls" loading="lazy">
-              <span class="project-cat">Content & Creative</span>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Promotional Content Concepts</h3>
-              <p class="project-desc">Examples of how product imagery, short promotional videos and campaign materials can support clearer communication of offers.</p>
-              <a href="#problems" class="project-link">Discuss a similar need →</a>
+              <h3 class="project-title">Corporate Profile, Quotation &amp; Invoice Suite</h3>
+              <p class="project-desc">Complete B2B documentation system including persuasive company profiles, automated quotation calculators, and branded invoice templates.</p>
+              <a href="#problems" class="project-link">Deploy for your business →</a>
             </div>
           </article>
           <article class="project-card reveal">
             <div class="project-img">
               <img src="https://res.cloudinary.com/lgjllewt/image/upload/v1791581847/fc85a5642426e91dbf9064d690fbbad1.jpg" alt="Clean desk workspace with laptop and documents" loading="lazy">
-              <span class="project-cat">AI & Chatbots</span>
+              <span class="project-cat">AI &amp; Customer Support</span>
             </div>
             <div class="project-body">
-              <h3 class="project-title">Information Assistant Concepts</h3>
-              <p class="project-desc">Illustrative approaches to FAQ assistants and guided information tools configured around a specific business's content and limits.</p>
-              <a href="#problems" class="project-link">Discuss a similar need →</a>
+              <h3 class="project-title">24/7 Guided FAQ &amp; WhatsApp Triage Assistant</h3>
+              <p class="project-desc">Interactive website assistant (like Ekkaris on this page) trained on your exact services and pricing to answer common questions and route warm leads to WhatsApp.</p>
+              <a href="#problems" class="project-link">Deploy for your business →</a>
             </div>
           </article>
         </div>
@@ -1943,43 +2100,51 @@
             </a>
           </div>
           <div class="form-wrap reveal">
-            <form id="contactForm">
+            <form id="contactForm" novalidate>
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Full Name *</label>
-                  <input type="text" id="name" name="name" required placeholder="Your name">
+                  <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
                 </div>
                 <div class="form-group">
-                  <label for="email">Email *</label>
-                  <input type="email" id="email" name="email" required placeholder="you@company.com">
+                  <label for="phone">Phone / WhatsApp *</label>
+                  <input type="tel" id="phone" name="phone" required placeholder="+256 7XX XXX XXX" autocomplete="tel">
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" placeholder="+256 758 991506">
+                  <label for="business">Business Name <span style="font-weight:400;color:var(--gray-400);">(optional)</span></label>
+                  <input type="text" id="business" name="business" placeholder="Your company">
                 </div>
                 <div class="form-group">
-                  <label for="business">Business Name</label>
-                  <input type="text" id="business" name="business" placeholder="Your company">
+                  <label for="email">Email <span style="font-weight:400;color:var(--gray-400);">(optional)</span></label>
+                  <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email">
                 </div>
               </div>
               <div class="form-group">
-                <label for="service">Service Interested In</label>
+                <label for="service">Treatment / Package Interested In</label>
                 <select id="service" name="service">
-                  <option value="">Select a service</option>
-                  <option value="website">Business Website</option>
-                  <option value="development">Web Development</option>
-                  <option value="branding">Branding & Identity</option>
-                  <option value="strategy">Digital Strategy</option>
-                  <option value="ecommerce">E-Commerce</option>
-                  <option value="support">Support & Maintenance</option>
-                  <option value="other">Other</option>
+                  <option value="">Select a package or service (optional)</option>
+                  <optgroup label="Quick-Start Packages">
+                    <option value="WhatsApp Landing Page & Catalog Sprint">1. WhatsApp Landing Page &amp; Catalog Sprint</option>
+                    <option value="Studio Ad & Product Visual Makeover">2. Studio Ad &amp; Product Visual Makeover</option>
+                    <option value="Business Credibility & Tender Kit">3. Business Credibility &amp; Tender Kit</option>
+                    <option value="Smart Operations & Stock Tracker Setup">4. Smart Operations &amp; Stock Tracker Setup</option>
+                  </optgroup>
+                  <optgroup label="Custom Capabilities">
+                    <option value="Business Website / Online Store">Business Website / Online Store</option>
+                    <option value="AI Product Photos & Video Ads">AI Product Photos &amp; Promotional Video Ads</option>
+                    <option value="Custom Web App / Calculator / Portal">Custom Web App, Calculator or Dashboard</option>
+                    <option value="Branding, Company Profile & Documents">Branding, Company Profile &amp; Documents</option>
+                    <option value="Spreadsheets & Workflow Automation">Spreadsheets &amp; Workflow Automation</option>
+                    <option value="AI FAQ Assistant & Lead Outreach">AI FAQ Assistant, SEO &amp; Lead Outreach</option>
+                    <option value="General Business Check-up / Diagnosis">Not sure — Diagnose my business challenge</option>
+                  </optgroup>
                 </select>
               </div>
               <div class="form-group">
                 <label for="message">Message *</label>
-                <textarea id="message" name="message" required placeholder="Describe the challenge you are experiencing..."></textarea>
+                <textarea id="message" name="message" required placeholder="Describe what is happening in your business or what you want to achieve..."></textarea>
               </div>
               <button type="submit" class="btn btn-primary btn-full">Discuss via WhatsApp</button>
             </form>
@@ -2014,6 +2179,7 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#solutions">Solutions</a>
+            <a href="#packages">Quick-Start Packs</a>
             <a href="#problems">Find a Solution</a>
             <a href="#process">How We Work</a>
             <a href="#watch">Watch</a>
@@ -2172,6 +2338,22 @@
         });
       });
 
+      // Package buttons -> pre-fill form & scroll
+      document.querySelectorAll('.pkg-select-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const pkg = btn.getAttribute('data-pkg') || '';
+          const prob = btn.getAttribute('data-prob') || '';
+          const opt = Array.from(document.querySelectorAll('.problem-option')).find(o => o.dataset.problem === prob);
+          if (opt && !opt.classList.contains('selected')) opt.click();
+          const goalEl = document.getElementById('pgoal');
+          if (goalEl && !goalEl.value.trim()) goalEl.value = 'Interested in Quick-Start Package: ' + pkg;
+          const srvEl = document.getElementById('service');
+          if (srvEl) srvEl.value = pkg;
+          const target = document.getElementById('problems');
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
       // Form → WhatsApp
       form.addEventListener('submit', e => {
         e.preventDefault();
@@ -2181,19 +2363,19 @@
         const business = (document.getElementById('business') || {}).value || '';
         const service = (document.getElementById('service') || {}).value || '';
         const message = (document.getElementById('message') || {}).value || '';
-        if (!name.trim() || !message.trim()) {
-          alert('Please fill in your name and message.');
+        if (!name.trim() || !phone.trim() || !message.trim()) {
+          alert('Please fill in your name, phone/WhatsApp number, and message.');
           return;
         }
         let msg = 'Hello FRECA E-SERVICES,\n\nI would like to discuss a business challenge.\n\n';
         msg += '*Name:* ' + name.trim() + '\n';
         if (business.trim()) msg += '*Business:* ' + business.trim() + '\n';
-        if (phone.trim()) msg += '*Phone:* ' + phone.trim() + '\n';
+        msg += '*Phone/WhatsApp:* ' + phone.trim() + '\n';
         if (email.trim()) msg += '*Email:* ' + email.trim() + '\n';
-        if (service) msg += '*Service interest:* ' + service + '\n';
+        if (service) msg += '*Package / Service:* ' + service + '\n';
         msg += '\n*Message:*\n' + message.trim() + '\n';
         msg += '\nSent via the FRECA E-SERVICES website form.';
-        const url = 'https://wa.me/256758991506?text=' + encodeURIComponent(msg);
+        const url = 'https://wa.me/256726978988?text=' + encodeURIComponent(msg);
         window.open(url, '_blank') || (window.location.href = url);
       });
 
@@ -2286,7 +2468,7 @@
           if (current) msg += '\n*Current approach:*\n' + current + '\n';
           if (extra) msg += '\n*Additional notes:*\n' + extra + '\n';
           msg += '\nSent via the FRECA E-SERVICES website form.';
-          const url = 'https://wa.me/256758991506?text=' + encodeURIComponent(msg);
+          const url = 'https://wa.me/256726978988?text=' + encodeURIComponent(msg);
           window.open(url, '_blank') || (window.location.href = url);
         });
       }
@@ -2372,9 +2554,9 @@
           acts: () => [{ label: 'Read about us', go: '#about' }], chips: ['What services do you offer?', 'How does the process work?', 'How can I get started?'] },
         { id: 'services', label: 'our services', q: 'What services do you offer?',
           k: ['services', 'service', 'offer', 'capabilities', 'solutions', 'treatments', 'what can you do', 'help with', 'provide'],
-          reply: 'We explore practical digital solutions in six areas:\n• Branding, graphic design & documents\n• Digital marketing content & creative\n• Websites & online presence\n• Web applications & custom systems\n• Automation & productivity tools\n• AI assistants, SEO & other solutions',
-          more: 'These are options we consider after listening, not a prescription for every business. Tell me what’s happening in yours and I can suggest which area may be relevant.',
-          acts: () => [{ label: 'See the solutions', go: '#solutions' }], chips: ['Do you only build websites?', 'Tell me about AI chatbots', 'How much does it cost?'] },
+          reply: 'We deliver practical digital treatments across six core areas:\n• **WhatsApp Sales Funnels & Websites** (landing pages, menus, catalogs, booking pages)\n• **AI Product Photography & Video Ads** (studio product visuals, reels, promotional graphics)\n• **Branding, Company Profiles & Tender Kits** (logos, profiles, quotation & invoice suites)\n• **Custom Web Apps & Calculators** (dashboards, portals, quote calculators, booking systems)\n• **Smart Spreadsheets & Stock Automation** (sales, expense & inventory trackers)\n• **AI Assistants, Local SEO & Lead Outreach** (24/7 FAQ bots, B2B lead generation & copy)',
+          more: 'We also offer 4 fast-turnaround **Quick-Start Packages** if you want an immediate upgrade, or we can diagnose your specific bottleneck first.',
+          acts: () => [{ label: 'See Capabilities', go: '#solutions' }, { label: 'Quick-Start Packages', go: '#packages' }], chips: ['What Quick-Start packages do you have?', 'Can I see examples of your work?', 'How much does it cost?'] },
         { id: 'branding', label: 'branding and documents', q: 'Do you do branding and documents?',
           k: ['logo', 'logos', 'branding', 'brand', 'identity', 'flyer', 'flyers', 'business card', 'business cards', 'catalogue', 'catalogues', 'catalog', 'company profile', 'cv', 'cvs', 'resume', 'quotation', 'quotations', 'invoice', 'invoices', 'document', 'documents', 'graphic design', 'graphics'],
           reply: 'Yes. In branding, graphic design and documents we handle logo and identity work, flyers, business cards, catalogues, company profiles, CVs, quotations, invoices and professional document formatting.',
@@ -2416,11 +2598,12 @@
           k: ['dont know which', 'not sure which', 'which service', 'what do i need', 'dont know what i need', 'not sure what', 'dont know the problem', 'dont know where to start'],
           reply: 'That is completely fine. You don’t need to know the cause or the tool you need. Tell us what is happening and what you hope to improve, and we will explore it before recommending a next step.',
           acts: () => [GO_FORM], chips: ['I have a problem in my business', 'How can I get started?'] },
-        { id: 'price', label: 'pricing', q: 'How much does it cost?', offer: true,
-          k: ['price', 'prices', 'pricing', 'cost', 'costs', 'how much', 'quote', 'package', 'packages', 'fee', 'fees', 'charge', 'rates', 'budget', 'expensive', 'cheap', 'afford', 'free', 'payment', 'pay'],
-          reply: 'There is no fixed package price, because the right response depends on your situation. Simple initial advice may be free. If investigation or a digital solution needs paid work, we explain the scope, estimated cost and timeline first, and you decide whether to proceed.\n\nWould you like to describe your situation to the team?',
-          more: 'Paid work never starts without an agreed scope and terms. That is why we begin by listening and exploring before any cost is discussed.',
-          offerActs: () => [GO_FORM, waAct('Ask on WhatsApp')], chips: ['How long does a project take?', 'How can I get started?'] },
+        { id: 'price', label: 'pricing and packages', q: 'What Quick-Start packages do you have?', offer: true,
+          k: ['price', 'prices', 'pricing', 'cost', 'costs', 'how much', 'quote', 'package', 'packages', 'quick start', 'sprint', 'fee', 'fees', 'charge', 'rates', 'budget', 'expensive', 'cheap', 'afford', 'free', 'payment', 'pay'],
+          reply: 'We offer two ways to work together:\n1. **Fast Quick-Start Packages** with clear, fixed scopes (our *WhatsApp Landing Page & Catalog Sprint*, *Studio Ad & Product Visual Makeover*, *Business Credibility & Tender Kit*, and *Smart Operations & Stock Tracker Setup*).\n2. **Custom Diagnosis & Scoping**, where initial guidance is free and any custom build is quoted clearly upfront before work begins.\n\nWould you like to view the packages or get a quote on WhatsApp?',
+          more: 'Paid work never starts without an agreed scope, deliverable list, and timeline.',
+          acts: () => [{ label: 'View Quick-Start Packages', go: '#packages' }, waAct('Get a Quote on WhatsApp')],
+          offerActs: () => [{ label: 'View Quick-Start Packages', go: '#packages' }, GO_FORM, waAct('Ask on WhatsApp')], chips: ['Can I see examples of your work?', 'How long does a project take?', 'How can I get started?'] },
         { id: 'time', label: 'timelines', q: 'How long does a project take?',
           k: ['how long', 'timeline', 'duration', 'deadline', 'how soon', 'turnaround', 'how fast', 'delivery time', 'how many days', 'how many weeks', 'quickly'],
           reply: 'It depends on the scope. Simple design or document work can be relatively quick, while larger websites or applications take longer. A realistic timeline is included in the proposal for your specific project.',
@@ -2449,10 +2632,10 @@
           k: ['why choose', 'why you', 'why should', 'trust', 'honest', 'different', 'better than', 'advantage', 'benefits'],
           reply: 'Here’s what we focus on:\n• Solutions that fit the real problem, not the same treatment for everyone\n• Clear scope, timeline and cost before paid work begins\n• Mobile-first thinking where a digital interface is appropriate\n• Plain explanations that separate evidence from assumptions\n• Optional after-launch support, where agreed',
           acts: () => [{ label: 'Why choose us', go: '#why' }], chips: ['How does the process work?', 'How can I get started?'] },
-        { id: 'work', label: 'examples of work', q: 'Can I see examples of your work?',
-          k: ['portfolio', 'examples', 'example', 'projects', 'past work', 'previous work', 'samples', 'sample', 'clients', 'concepts', 'case study', 'case studies'],
-          reply: 'The Work section shows illustrative solution concepts: an operations dashboard, document systems, a service-business website, spreadsheet tools, promotional content and information assistants. Some are concepts rather than completed client commissions, and real project details are discussed directly with clients.',
-          acts: () => [{ label: 'See the work', go: '#projects' }, { label: 'Watch the animations', go: '#watch' }], chips: ['How does the process work?', 'How can I get started?'] },
+        { id: 'work', label: 'live demos and examples of work', q: 'Can I see examples of your work?',
+          k: ['portfolio', 'examples', 'example', 'projects', 'past work', 'previous work', 'samples', 'sample', 'clients', 'concepts', 'case study', 'case studies', 'live demo', 'demos'],
+          reply: 'Yes! In our **Live Demos & Blueprints** section you can explore live Ugandan business sites we built — including **Reshan Cakes**, **Sweet Cake Impressions**, and **Unique Fashions** — alongside our ready-to-deploy blueprints for operations dashboards, corporate tender kits, and 24/7 FAQ assistants.',
+          acts: () => [{ label: 'See Live Demos & Work', go: '#projects' }, { label: 'Quick-Start Packages', go: '#packages' }], chips: ['What Quick-Start packages do you have?', 'How does the process work?', 'How can I get started?'] },
         { id: 'watch', label: 'the animations', q: 'What are the animations?',
           k: ['watch', 'animation', 'animations', 'animated', 'explainer', 'demo', 'see it in action', 'motion'],
           reply: 'The **Watch** section has four short animated explainers: the check-up process, answering repeated questions, turning scattered records into one clear view, and a mobile-friendly page with a simple inquiry path. They illustrate ideas and are not client results.',
