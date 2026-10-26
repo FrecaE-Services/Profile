@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cake Bond Uganda | Custom Cakes in Kampala</title>
+  <meta name="description" content="Cake Bond Uganda – Beautiful custom cakes for weddings, birthdays, baby showers, graduations & more. Order via WhatsApp in Kampala." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#C41E3A',
+              darkred: '#9B1B30',
+              pink: '#E91E63',
+              lightpink: '#FCE4EC',
+              green: '#2E7D32',
+              lightgreen: '#E8F5E9',
+            }
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-gradient {
+      background: linear-gradient(135deg, #C41E3A 0%, #9B1B30 50%, #E91E63 100%);
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -12px rgba(196, 30, 58, 0.25);
+    }
+    .whatsapp-btn {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+    }
+    .whatsapp-btn:hover {
+      background: linear-gradient(135deg, #128C7E, #075E54);
+    }
+  </style>
+</head>
+<body class="font-sans bg-white text-gray-800 antialiased">
+
+  <!-- Sticky Header -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-red-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center text-white font-bold text-lg shadow">
+          CB
+        </div>
+        <div>
+          <span class="font-display font-bold text-brand-red text-lg leading-tight block">Cake Bond</span>
+          <span class="text-xs text-gray-500 -mt-1 block">Uganda</span>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#gallery" class="hover:text-brand-red transition">Gallery</a>
+        <a href="#categories" class="hover:text-brand-red transition">Categories</a>
+        <a href="#order" class="hover:text-brand-red transition">Order</a>
+        <a href="#contact" class="hover:text-brand-red transition">Contact</a>
+      </nav>
+      <a href="https://wa.me/256758193701?text=Hello%20Cake%20Bond%20Uganda!%20I%20would%20like%20to%20order%20a%20cake." 
+         target="_blank" rel="noopener"
+         class="whatsapp-btn text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-md hover:shadow-lg transition">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order Now
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-gradient text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-40 h-40 rounded-full bg-white/20 blur-2xl"></div>
+      <div class="absolute bottom-10 right-10 w-60 h-60 rounded-full bg-pink-300/30 blur-3xl"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 relative z-10 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="inline-block bg-white/20 backdrop-blur text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+          📍 Kampala, Uganda
+        </span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+          Sweet Moments,<br>
+          <span class="text-pink-200">Beautifully Baked</span>
+        </h1>
+        <p class="text-lg text-white/90 mb-8 max-w-lg">
+          Custom cakes for weddings, birthdays, baby showers, graduations, Kwanjula & every special occasion. Fresh, delicious & made with love in Kampala.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://wa.me/256758193701?text=Hello%20Cake%20Bond%20Uganda!%20I%20would%20like%20to%20order%20a%20cake." 
+             target="_blank" rel="noopener"
+             class="whatsapp-btn text-white px-6 py-3.5 rounded-full font-semibold text-base flex items-center gap-2 shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Book on WhatsApp
+          </a>
+          <a href="#gallery" class="bg-white text-brand-red px-6 py-3.5 rounded-full font-semibold text-base shadow hover:bg-pink-50 transition">
+            View Gallery
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-white/80">
+          Calls during working hours • WhatsApp anytime
+        </p>
+      </div>
+      <div class="relative hidden md:block">
+        <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/30 transform rotate-2">
+          <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=700&q=80" 
+               alt="Elegant wedding cake" 
+               class="w-full h-80 object-cover" loading="eager" />
+        </div>
+        <div class="absolute -bottom-6 -left-6 rounded-xl overflow-hidden shadow-xl border-4 border-white w-40 h-40">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&q=80" 
+               alt="Chocolate cake" 
+               class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust / Quick Info -->
+  <section class="bg-brand-lightpink py-6 border-b border-pink-100">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div>
+        <div class="text-2xl font-bold text-brand-red">🎂</div>
+        <p class="text-sm font-medium text-gray-700 mt-1">Custom Designs</p>
+      </div>
+      <div>
+        <div class="text-2xl font-bold text-brand-red">📍</div>
+        <p class="text-sm font-medium text-gray-700 mt-1">Kampala Based</p>
+      </div>
+      <div>
+        <div class="text-2xl font-bold text-brand-green">💬</div>
+        <p class="text-sm font-medium text-gray-700 mt-1">Easy WhatsApp Order</p>
+      </div>
+      <div>
+        <div class="text-2xl font-bold text-brand-pink">❤️</div>
+        <p class="text-sm font-medium text-gray-700 mt-1">Made with Love</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3">Our Cake Categories</h2>
+        <p class="text-gray-600 max-w-xl mx-auto">From elegant wedding cakes to fun character cakes and traditional Kwanjula designs — we create for every celebration.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <!-- Category cards -->
+        <div class="bg-white rounded-2xl border border-red-100 p-5 text-center card-hover transition duration-300 shadow-sm">
+          <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-brand-lightpink flex items-center justify-center text-2xl">💒</div>
+          <h3 class="font-semibold text-gray-900">Wedding Cakes</h3>
+          <p class="text-xs text-gray-500 mt-1">Elegant multi-tier</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-red-100 p-5 text-center card-hover transition duration-300 shadow-sm">
+          <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-brand-lightgreen flex items-center justify-center text-2xl">🎂</div>
+          <h3 class="font-semibold text-gray-900">Birthday Cakes</h3>
+          <p class="text-xs text-gray-500 mt-1">Any theme & size</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-red-100 p-5 text-center card-hover transition duration-300 shadow-sm">
+          <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-brand-lightpink flex items-center justify-center text-2xl">👶</div>
+          <h3 class="font-semibold text-gray-900">Baby Shower</h3>
+          <p class="text-xs text-gray-500 mt-1">Cute & colourful</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-red-100 p-5 text-center card-hover transition duration-300 shadow-sm">
+          <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-brand-lightgreen flex items-center justify-center text-2xl">🎓</div>
+          <h3 class="font-semibold text-gray-900">Graduation</h3>
+          <p class="text-xs text-gray-500 mt-1">Celebrate success</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-red-100 p-5 text-center card-hover transition duration-300 shadow-sm">
+          <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-brand-lightpink flex items-center justify-center text-2xl">⛪</div>
+          <h3 class="font-semibold text-gray-900">Baptism Cakes</h3>
+          <p class="text-xs text-gray-500 mt-1">Sacred celebrations</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-red-100 p-5 text-center card-hover transition duration-300 shadow-sm">
+          <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-brand-lightgreen flex items-center justify-center text-2xl">🎭</div>
+          <h3 class="font-semibold text-gray-900">Characters</h3>
+          <p class="text-xs text-gray-500 mt-1">Superheroes & more</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-red-100 p-5 text-center card-hover transition duration-300 shadow-sm">
+          <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-brand-lightpink flex items-center justify-center text-2xl">💍</div>
+          <h3 class="font-semibold text-gray-900">Kwanjula</h3>
+          <p class="text-xs text-gray-500 mt-1">Traditional elegance</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-red-100 p-5 text-center card-hover transition duration-300 shadow-sm">
+          <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-brand-lightgreen flex items-center justify-center text-2xl">🎁</div>
+          <h3 class="font-semibold text-gray-900">Bento & More</h3>
+          <p class="text-xs text-gray-500 mt-1">Packages & gifts</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery - 8 samples -->
+  <section id="gallery" class="py-16 bg-gradient-to-b from-white to-brand-lightpink">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3">Cake Gallery</h2>
+        <p class="text-gray-600 max-w-xl mx-auto">A selection of our beautiful creations. Every cake is custom-made to your vision.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
+        <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-square">
+          <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=500&q=80" alt="Elegant white wedding cake" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
+            <span class="text-white text-sm font-medium">Wedding Cake</span>
+          </div>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-square">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&q=80" alt="Rich chocolate cake" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
+            <span class="text-white text-sm font-medium">Chocolate Delight</span>
+          </div>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-square">
+          <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&q=80" alt="Birthday cake with candles" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
+            <span class="text-white text-sm font-medium">Birthday Special</span>
+          </div>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-square">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&q=80" alt="Strawberry cake" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
+            <span class="text-white text-sm font-medium">Berry Fresh</span>
+          </div>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-square">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&q=80" alt="Layered cake" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
+            <span class="text-white text-sm font-medium">Layered Beauty</span>
+          </div>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-square">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&q=80" alt="Decorated celebration cake" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
+            <span class="text-white text-sm font-medium">Celebration Cake</span>
+          </div>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-square">
+          <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=500&q=80" alt="Pink frosted cake" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
+            <span class="text-white text-sm font-medium">Pretty in Pink</span>
+          </div>
+        </div>
+        <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-square">
+          <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500&q=80" alt="Elegant dessert cake" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" loading="lazy" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
+            <span class="text-white text-sm font-medium">Classic Elegance</span>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="https://wa.me/256758193701?text=Hello%20Cake%20Bond%20Uganda!%20I%20saw%20your%20gallery%20and%20would%20like%20to%20discuss%20a%20custom%20cake." 
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-darkred text-white px-8 py-3.5 rounded-full font-semibold shadow-lg transition">
+          Order a Similar Cake
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Options / Pricing hints -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3">Popular Options</h2>
+        <p class="text-gray-600">Starting prices for common sizes. Final price depends on design complexity & flavours.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-2xl border-2 border-red-100 p-6 hover:border-brand-red transition shadow-sm">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="font-semibold text-lg text-gray-900">Bento Cakes</h3>
+            <span class="bg-brand-lightpink text-brand-red text-sm font-bold px-3 py-1 rounded-full">from 10K</span>
+          </div>
+          <p class="text-gray-600 text-sm mb-4">Perfect small treats for personal celebrations or gifts. Multiple flavour options.</p>
+          <a href="https://wa.me/256758193701?text=Hi%20Cake%20Bond!%20I%27m%20interested%20in%20Bento%20Cakes." target="_blank" rel="noopener"
+             class="text-brand-red font-medium text-sm hover:underline flex items-center gap-1">
+            Order via WhatsApp →
+          </a>
+        </div>
+        <div class="rounded-2xl border-2 border-red-100 p-6 hover:border-brand-red transition shadow-sm">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="font-semibold text-lg text-gray-900">6–8 inch Cakes</h3>
+            <span class="bg-brand-lightgreen text-brand-green text-sm font-bold px-3 py-1 rounded-full">from 35K</span>
+          </div>
+          <p class="text-gray-600 text-sm mb-4">Ideal for birthdays and small gatherings. 2 layers, customisable design.</p>
+          <a href="https://wa.me/256758193701?text=Hi%20Cake%20Bond!%20I%27m%20interested%20in%20a%206-8%20inch%20cake." target="_blank" rel="noopener"
+             class="text-brand-red font-medium text-sm hover:underline flex items-center gap-1">
+            Order via WhatsApp →
+          </a>
+        </div>
+        <div class="rounded-2xl border-2 border-red-100 p-6 hover:border-brand-red transition shadow-sm">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="font-semibold text-lg text-gray-900">Large & Tiered</h3>
+            <span class="bg-brand-lightpink text-brand-red text-sm font-bold px-3 py-1 rounded-full">from 50K+</span>
+          </div>
+          <p class="text-gray-600 text-sm mb-4">Wedding cakes, Kwanjula, big celebrations. Multiple tiers available.</p>
+          <a href="https://wa.me/256758193701?text=Hi%20Cake%20Bond!%20I%27m%20interested%20in%20a%20large%20or%20tiered%20cake." target="_blank" rel="noopener"
+             class="text-brand-red font-medium text-sm hover:underline flex items-center gap-1">
+            Order via WhatsApp →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Order -->
+  <section id="order" class="py-16 bg-brand-lightgreen">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mb-3">How to Order</h2>
+        <p class="text-gray-600">Simple, fast, and friendly — just a few steps.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-6 shadow-sm text-center">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand-red text-white flex items-center justify-center font-bold text-xl">1</div>
+          <h3 class="font-semibold text-lg mb-2">Message Us</h3>
+          <p class="text-gray-600 text-sm">Tap the WhatsApp button and tell us the occasion, size, flavours and any design ideas.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm text-center">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand-pink text-white flex items-center justify-center font-bold text-xl">2</div>
+          <h3 class="font-semibold text-lg mb-2">Confirm Details</h3>
+          <p class="text-gray-600 text-sm">We’ll discuss options, share estimates, and confirm your order & delivery/pickup time.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm text-center">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand-green text-white flex items-center justify-center font-bold text-xl">3</div>
+          <h3 class="font-semibold text-lg mb-2">Enjoy Your Cake</h3>
+          <p class="text-gray-600 text-sm">We bake with care and deliver fresh. Celebrate with a cake made just for you!</p>
+        </div>
+      </div>
+      <div class="mt-12 text-center">
+        <a href="https://wa.me/256758193701?text=Hello%20Cake%20Bond%20Uganda!%20I%20would%20like%20to%20place%20an%20order." 
+           target="_blank" rel="noopener"
+           class="whatsapp-btn inline-flex items-center gap-3 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition transform hover:-translate-y-1">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Start Your Order on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="bg-gradient-to-br from-brand-red to-brand-darkred rounded-3xl p-8 md:p-12 text-white text-center shadow-2xl">
+        <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Ready to Order?</h2>
+        <p class="text-white/90 max-w-xl mx-auto mb-8">
+          Reach out on WhatsApp for the fastest response. We’re based in Kampala and happy to discuss your dream cake.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <a href="https://wa.me/256758193701" target="_blank" rel="noopener"
+             class="bg-white text-brand-red px-8 py-3.5 rounded-full font-bold flex items-center gap-2 shadow-lg hover:bg-pink-50 transition">
+            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            +256 758 193701
+          </a>
+        </div>
+        <p class="text-sm text-white/70">
+          📍 Kampala, Uganda &nbsp;•&nbsp; Calls during working hours • WhatsApp anytime
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center text-white font-bold">
+            CB
+          </div>
+          <div>
+            <span class="font-display font-bold text-white block">Cake Bond Uganda</span>
+            <span class="text-xs text-gray-400">Custom cakes in Kampala</span>
+          </div>
+        </div>
+        <div class="flex gap-6 text-sm">
+          <a href="#gallery" class="hover:text-white transition">Gallery</a>
+          <a href="#categories" class="hover:text-white transition">Categories</a>
+          <a href="#order" class="hover:text-white transition">Order</a>
+          <a href="https://wa.me/256758193701" target="_blank" rel="noopener" class="hover:text-white transition">WhatsApp</a>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+        © 2026 Cake Bond Uganda. All rights reserved. Made with ❤️ in Kampala.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/256758193701?text=Hello%20Cake%20Bond%20Uganda!%20I%20would%20like%20to%20order%20a%20cake." 
+     target="_blank" rel="noopener"
+     class="fixed bottom-6 right-6 z-50 whatsapp-btn text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition transform"
+     aria-label="Chat on WhatsApp">
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+</body>
+</html>

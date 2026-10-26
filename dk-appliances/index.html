@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DK Appliances | Home Appliances & Electronics – Kampala</title>
+  <meta name="description" content="Quality home appliances and electronics at unbeatable prices. Doorstep delivery & cash on delivery. Open 24 hours in Kampala." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+/* ===== DK Appliances — Single-file demo ===== */
+:root {
+  --bg: #0d0d12;
+  --bg-elevated: #16161f;
+  --bg-card: #1c1c28;
+  --border: #2a2a3a;
+  --text: #f0f0f5;
+  --text-muted: #a0a0b0;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --accent: #22c55e;
+  --whatsapp: #25d366;
+  --danger: #ef4444;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --header-h: 64px;
+  --contact-bar-h: 52px;
+  --font: "Inter", system-ui, -apple-system, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  padding-bottom: var(--contact-bar-h);
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, textarea { font-family: inherit; }
+.container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.page { display: none; }
+.page.active { display: block; }
+
+/* Mobile contact bar */
+.mobile-contact-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; height: var(--contact-bar-h);
+  background: var(--bg-elevated); border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+.mobile-contact-bar a {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  gap: 8px; font-weight: 600; font-size: 0.95rem;
+}
+.btn-call { background: var(--primary); color: #fff; }
+.btn-call:hover { background: var(--primary-hover); }
+.btn-whatsapp { background: var(--whatsapp); color: #fff; }
+.btn-whatsapp:hover { filter: brightness(1.08); }
+@media (min-width: 768px) {
+  .mobile-contact-bar { display: none; }
+  body { padding-bottom: 0; }
+}
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(13,13,18,0.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border); height: var(--header-h);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: var(--header-h); gap: 16px;
+}
+.logo-text { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; cursor: pointer; }
+.main-nav { display: none; gap: 8px; }
+.nav-link {
+  padding: 8px 14px; border-radius: var(--radius-sm);
+  font-weight: 500; font-size: 0.95rem; color: var(--text-muted);
+  transition: color 0.15s, background 0.15s; cursor: pointer;
+}
+.nav-link:hover, .nav-link.active { color: var(--text); background: var(--bg-card); }
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.cart-btn {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 50%; color: var(--text);
+  background: var(--bg-card); transition: background 0.15s; cursor: pointer;
+}
+.cart-btn:hover { background: var(--border); }
+.cart-count {
+  position: absolute; top: 2px; right: 2px; min-width: 18px; height: 18px;
+  padding: 0 4px; border-radius: 9px; background: var(--primary); color: #fff;
+  font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+}
+.menu-toggle {
+  display: flex; flex-direction: column; gap: 5px; width: 40px; height: 40px;
+  align-items: center; justify-content: center; border-radius: var(--radius-sm);
+}
+.menu-toggle span {
+  display: block; width: 20px; height: 2px; background: var(--text);
+  border-radius: 1px; transition: transform 0.2s, opacity 0.2s;
+}
+.menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (min-width: 768px) {
+  .main-nav { display: flex; }
+  .menu-toggle { display: none; }
+}
+@media (max-width: 767px) {
+  .main-nav.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: var(--header-h); left: 0; right: 0;
+    background: var(--bg-elevated); border-bottom: 1px solid var(--border);
+    padding: 12px 16px; gap: 4px;
+  }
+  .main-nav.open .nav-link { padding: 12px 16px; }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 24px; border-radius: var(--radius-sm);
+  font-weight: 600; font-size: 0.95rem;
+  transition: background 0.15s, transform 0.1s, filter 0.15s; cursor: pointer;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-outline {
+  border: 1.5px solid var(--border); color: var(--text); background: transparent;
+}
+.btn-outline:hover { background: var(--bg-card); border-color: var(--text-muted); }
+.btn-whatsapp-lg { background: var(--whatsapp); color: #fff; }
+.btn-whatsapp-lg:hover { filter: brightness(1.08); }
+.btn-block { width: 100%; }
+.btn-lg { padding: 14px 28px; font-size: 1rem; }
+
+/* Hero */
+.hero { position: relative; padding: 64px 0 72px; overflow: hidden; }
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, rgba(59,130,246,0.15) 0%, transparent 50%),
+    linear-gradient(to bottom, var(--bg-elevated), var(--bg));
+  z-index: 0;
+}
+.hero-content {
+  position: relative; z-index: 1; text-align: center;
+  max-width: 640px; margin: 0 auto;
+}
+.hero h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 700;
+  letter-spacing: -0.03em; margin-bottom: 12px;
+}
+.hero-tagline { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 28px; }
+.hero-ctas {
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 28px;
+}
+.hero-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.badge {
+  padding: 6px 14px; border-radius: 999px; background: var(--bg-card);
+  border: 1px solid var(--border); font-size: 0.8rem; font-weight: 500; color: var(--text-muted);
+}
+
+/* Sections */
+.section { padding: 48px 0; }
+.section-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 24px; gap: 16px;
+}
+.section-header h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }
+.see-all { color: var(--primary); font-weight: 500; font-size: 0.95rem; cursor: pointer; }
+.see-all:hover { text-decoration: underline; }
+.page-header {
+  padding: 32px 0 8px; border-bottom: 1px solid var(--border); margin-bottom: 8px;
+}
+.page-header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
+.page-header p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* Categories */
+.category-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+}
+@media (min-width: 640px) { .category-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .category-grid { grid-template-columns: repeat(5, 1fr); } }
+.category-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px 16px; text-align: center; cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.category-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.cat-icon { font-size: 1.75rem; margin-bottom: 8px; }
+.category-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 2px; }
+.category-card p { font-size: 0.8rem; color: var(--text-muted); }
+
+/* Product grid */
+.product-grid {
+  display: grid; grid-template-columns: 1fr; gap: 16px;
+}
+@media (min-width: 480px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
+.product-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s;
+  display: flex; flex-direction: column;
+}
+.product-card:hover { border-color: #3a3a50; box-shadow: var(--shadow); }
+.product-image-wrap {
+  position: relative; aspect-ratio: 3/2; background: #111; overflow: hidden; cursor: pointer;
+}
+.product-image-wrap img {
+  width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;
+}
+.product-card:hover .product-image-wrap img { transform: scale(1.03); }
+.product-badge {
+  position: absolute; top: 10px; left: 10px; padding: 4px 10px; border-radius: 6px;
+  background: var(--primary); color: #fff; font-size: 0.7rem; font-weight: 600;
+}
+.product-info { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; gap: 6px; }
+.product-name {
+  font-weight: 600; font-size: 0.95rem; line-height: 1.3; cursor: pointer;
+}
+.product-name:hover { color: var(--primary); }
+.product-desc { font-size: 0.8rem; color: var(--text-muted); flex: 1; }
+.product-footer {
+  display: flex; align-items: center; justify-content: space-between; margin-top: 8px; gap: 8px;
+}
+.product-price { font-weight: 700; font-size: 1rem; color: var(--text); }
+.add-btn {
+  width: 36px; height: 36px; border-radius: 50%; background: var(--bg-elevated);
+  border: 1px solid var(--border); color: var(--text); font-size: 1.25rem; font-weight: 500;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+}
+.add-btn:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+/* Category tabs */
+.category-tabs {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;
+  overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch;
+}
+.tab {
+  padding: 8px 16px; border-radius: 999px; font-weight: 500; font-size: 0.9rem;
+  color: var(--text-muted); background: var(--bg-card); border: 1px solid var(--border);
+  white-space: nowrap; transition: all 0.15s; cursor: pointer;
+}
+.tab:hover { color: var(--text); border-color: var(--text-muted); }
+.tab.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+/* Social proof */
+.social-proof {
+  background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.social-strip { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+.social-item { display: flex; align-items: center; gap: 12px; }
+.social-icon {
+  width: 44px; height: 44px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;
+}
+.social-icon.facebook { background: #1877f2; color: #fff; }
+.social-icon.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff; font-size: 1rem;
+}
+.social-item strong { display: block; font-size: 0.95rem; }
+.social-item span { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Why us */
+.why-us h2 { text-align: center; margin-bottom: 28px; font-size: 1.35rem; }
+.why-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 600px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .why-grid { grid-template-columns: repeat(4, 1fr); } }
+.why-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px 20px; text-align: center;
+}
+.why-icon { font-size: 1.75rem; margin-bottom: 10px; }
+.why-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+.why-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Product detail */
+.product-detail { padding-top: 24px; }
+.back-link {
+  display: inline-block; color: var(--text-muted); font-size: 0.9rem;
+  margin-bottom: 20px; cursor: pointer;
+}
+.back-link:hover { color: var(--primary); }
+.product-detail-grid { display: grid; gap: 32px; }
+@media (min-width: 768px) {
+  .product-detail-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+.detail-image {
+  border-radius: var(--radius); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border);
+}
+.detail-image img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.detail-category {
+  text-transform: uppercase; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.06em; color: var(--primary); margin-bottom: 8px; display: block;
+}
+.detail-info h1 {
+  font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em;
+}
+.detail-price { font-size: 1.5rem; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+.detail-desc { color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; }
+.delivery-note {
+  background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+  border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 20px;
+  font-size: 0.9rem; color: var(--accent);
+}
+.qty-row { margin-bottom: 20px; }
+.qty-row label {
+  display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 8px; color: var(--text-muted);
+}
+.qty-control {
+  display: inline-flex; align-items: center; border: 1px solid var(--border);
+  border-radius: var(--radius-sm); overflow: hidden;
+}
+.qty-control.small { border-radius: 6px; }
+.qty-btn {
+  width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; color: var(--text); background: var(--bg-card); transition: background 0.15s;
+}
+.qty-btn:hover { background: var(--border); }
+.qty-control input {
+  width: 48px; height: 40px; text-align: center; border: none; background: var(--bg);
+  color: var(--text); font-weight: 600; font-size: 1rem; -moz-appearance: textfield;
+}
+.qty-control input::-webkit-outer-spin-button,
+.qty-control input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.detail-info .btn { margin-bottom: 10px; width: 100%; max-width: 320px; }
+
+/* Cart */
+.cart-layout { display: grid; gap: 32px; }
+@media (min-width: 900px) {
+  .cart-layout { grid-template-columns: 1fr 380px; align-items: start; }
+}
+.cart-item {
+  display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border);
+}
+.cart-item img {
+  width: 88px; height: 66px; object-fit: cover; border-radius: var(--radius-sm);
+  background: var(--bg-card); flex-shrink: 0;
+}
+.cart-item-info { flex: 1; min-width: 0; }
+.cart-item-info a {
+  font-weight: 600; font-size: 0.95rem; display: block; margin-bottom: 4px; cursor: pointer;
+}
+.cart-item-info a:hover { color: var(--primary); }
+.cart-item-price { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
+.cart-item-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.cart-item-total { font-weight: 700; font-size: 0.95rem; }
+.remove-btn { color: var(--text-muted); font-size: 0.9rem; padding: 4px; }
+.remove-btn:hover { color: var(--danger); }
+.cart-qty { min-width: 28px; text-align: center; font-weight: 600; font-size: 0.9rem; }
+.qty-control.small .qty-btn { width: 32px; height: 32px; font-size: 1rem; }
+.empty-cart { text-align: center; padding: 48px 16px; color: var(--text-muted); }
+.empty-cart .btn { margin-top: 16px; }
+.cart-summary {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; position: sticky; top: calc(var(--header-h) + 16px);
+}
+.cart-summary h3 { font-size: 1.1rem; margin-bottom: 16px; }
+.summary-row {
+  display: flex; justify-content: space-between; margin-bottom: 10px;
+  font-size: 0.95rem; color: var(--text-muted);
+}
+.summary-row.total {
+  font-weight: 700; font-size: 1.1rem; color: var(--text);
+  padding-top: 12px; border-top: 1px solid var(--border); margin-top: 8px; margin-bottom: 16px;
+}
+.checkout-note {
+  font-size: 0.85rem; color: var(--text-muted); background: var(--bg);
+  padding: 12px; border-radius: var(--radius-sm); margin-bottom: 20px; line-height: 1.5;
+}
+.checkout-form h4 { font-size: 0.95rem; margin-bottom: 12px; }
+.checkout-form label {
+  display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 14px; color: var(--text-muted);
+}
+.checkout-form input[type="text"],
+.checkout-form input[type="tel"],
+.checkout-form textarea {
+  display: block; width: 100%; margin-top: 6px; padding: 10px 12px;
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font-size: 0.95rem;
+}
+.checkout-form input:focus, .checkout-form textarea:focus {
+  outline: none; border-color: var(--primary);
+}
+.radio-label {
+  display: flex !important; align-items: center; gap: 8px;
+  margin-bottom: 16px !important; color: var(--text) !important;
+}
+.radio-label input { width: auto; }
+.demo-disclaimer {
+  font-size: 0.75rem; color: var(--text-muted); margin-top: 12px; text-align: center;
+}
+
+/* Contact */
+.contact-grid { display: grid; gap: 32px; }
+@media (min-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+.info-block { display: flex; gap: 14px; margin-bottom: 24px; }
+.info-icon { font-size: 1.4rem; flex-shrink: 0; }
+.info-block h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+.info-block p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+.info-block a:hover { color: var(--primary); }
+.open-now { color: var(--accent); font-weight: 600; }
+.contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+.about-block {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+}
+.about-block h3 { font-size: 1rem; margin-bottom: 10px; }
+.about-block p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+.map-placeholder {
+  border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border);
+  background: var(--bg-card); min-height: 280px;
+}
+.map-frame {
+  height: 100%; min-height: 280px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #1a2332 0%, #0d1520 100%);
+}
+.map-content { text-align: center; padding: 24px; }
+.map-pin { font-size: 2.5rem; margin-bottom: 8px; }
+.map-content p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px; }
+.map-content strong { color: var(--text); font-size: 1.05rem; }
+.map-note { margin-top: 12px !important; font-size: 0.8rem !important; opacity: 0.8; }
+
+/* Footer */
+.site-footer {
+  background: var(--bg-elevated); border-top: 1px solid var(--border);
+  padding-top: 40px; margin-top: 24px;
+}
+.footer-grid { display: grid; gap: 28px; margin-bottom: 32px; }
+@media (min-width: 640px) { .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; } }
+.footer-brand strong { display: block; font-size: 1.1rem; margin-bottom: 8px; }
+.footer-brand p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px; }
+.footer-brand .address { font-size: 0.85rem; line-height: 1.5; }
+.footer-links h4, .footer-contact h4 {
+  font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--text-muted); margin-bottom: 12px;
+}
+.footer-links a, .footer-contact a {
+  display: block; font-size: 0.95rem; margin-bottom: 8px; color: var(--text); cursor: pointer;
+}
+.footer-links a:hover, .footer-contact a:hover { color: var(--primary); }
+.footer-contact p { font-size: 0.9rem; color: var(--text-muted); margin-top: 8px; }
+.footer-bottom { border-top: 1px solid var(--border); padding: 16px 0; }
+.footer-bottom p { font-size: 0.8rem; color: var(--text-muted); text-align: center; }
+
+/* Toast */
+.toast {
+  position: fixed; bottom: calc(var(--contact-bar-h) + 16px); left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text);
+  padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 500; font-size: 0.95rem;
+  box-shadow: var(--shadow); opacity: 0; pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s; z-index: 2000; white-space: nowrap;
+}
+@media (min-width: 768px) { .toast { bottom: 24px; } }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.empty-msg { grid-column: 1 / -1; text-align: center; color: var(--text-muted); padding: 40px; }
+  </style>
+</head>
+<body>
+  <!-- Sticky Mobile Contact Bar -->
+  <div class="mobile-contact-bar">
+    <a href="tel:+256702671069" class="btn-call" aria-label="Call us">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Call
+    </a>
+    <a href="https://wa.me/256702671069" target="_blank" rel="noopener" class="btn-whatsapp" aria-label="WhatsApp us">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" data-nav="home"><span class="logo-text">DK Appliances</span></a>
+      <nav class="main-nav" id="mainNav">
+        <a class="nav-link active" data-nav="home">Home</a>
+        <a class="nav-link" data-nav="catalog">Catalog</a>
+        <a class="nav-link" data-nav="contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="cart-btn" data-nav="cart" aria-label="Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HOME ========== -->
+  <div id="page-home" class="page active">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <h1>DK Appliance Store</h1>
+        <p class="hero-tagline">Quality home appliances & electronics at unbeatable prices. Doorstep delivery · Cash on delivery · Open 24 hours.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" data-nav="catalog">Shop Now</a>
+          <a href="https://wa.me/256702671069" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Us</a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge">Cash on Delivery</span>
+          <span class="badge">Doorstep Delivery</span>
+          <span class="badge">Open 24 Hours</span>
+        </div>
+      </div>
+    </section>
+    <section class="section categories">
+      <div class="container">
+        <div class="section-header">
+          <h2>Shop by Category</h2>
+          <a class="see-all" data-nav="catalog">See all →</a>
+        </div>
+        <div class="category-grid">
+          <div class="category-card" data-cat="tvs"><div class="cat-icon">📺</div><h3>TVs</h3><p>OLED, Smart & Digital</p></div>
+          <div class="category-card" data-cat="fridges"><div class="cat-icon">🧊</div><h3>Fridges</h3><p>Side-by-side & Frost-free</p></div>
+          <div class="category-card" data-cat="fans"><div class="cat-icon">💨</div><h3>Fans</h3><p>Wall & Standing</p></div>
+          <div class="category-card" data-cat="cameras"><div class="cat-icon">📷</div><h3>Cameras</h3><p>Security & Network</p></div>
+          <div class="category-card" data-cat="small"><div class="cat-icon">🔌</div><h3>Small Appliances</h3><p>Blenders, ACs & more</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section featured-products">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Products</h2>
+          <a class="see-all" data-nav="catalog">View catalog →</a>
+        </div>
+        <div class="product-grid" id="featuredProducts"></div>
+      </div>
+    </section>
+    <section class="section social-proof">
+      <div class="container">
+        <div class="social-strip">
+          <div class="social-item">
+            <div class="social-icon facebook">f</div>
+            <div><strong>DK Appliances</strong><span>473 Likes on Facebook</span></div>
+          </div>
+          <div class="social-item">
+            <div class="social-icon instagram">📷</div>
+            <div><strong>@dk_appliances1</strong><span>571 Followers on Instagram</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section why-us">
+      <div class="container">
+        <h2>Why Shop With Us</h2>
+        <div class="why-grid">
+          <div class="why-card"><div class="why-icon">🚚</div><h3>Doorstep Delivery</h3><p>We deliver across Kampala and beyond. Cash on delivery available.</p></div>
+          <div class="why-card"><div class="why-icon">💰</div><h3>Unbeatable Prices</h3><p>Quality home appliances and electronics at prices you’ll love.</p></div>
+          <div class="why-card"><div class="why-icon">🕐</div><h3>Open 24 Hours</h3><p>Call or WhatsApp anytime — we’re always ready to help.</p></div>
+          <div class="why-card"><div class="why-icon">✅</div><h3>Trusted Service</h3><p>Hundreds of happy customers on Facebook & Instagram.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== CATALOG ========== -->
+  <div id="page-catalog" class="page">
+    <section class="page-header">
+      <div class="container">
+        <h1>Catalog</h1>
+        <p>All home appliances & electronics — unbeatable prices, cash on delivery.</p>
+      </div>
+    </section>
+    <section class="section catalog-section">
+      <div class="container">
+        <div class="category-tabs" id="categoryTabs">
+          <button class="tab active" data-cat="all">All</button>
+          <button class="tab" data-cat="tvs">TVs</button>
+          <button class="tab" data-cat="fridges">Fridges</button>
+          <button class="tab" data-cat="fans">Fans</button>
+          <button class="tab" data-cat="cameras">Cameras</button>
+          <button class="tab" data-cat="small">Small Appliances</button>
+        </div>
+        <div class="product-grid" id="catalogGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== PRODUCT DETAIL ========== -->
+  <div id="page-product" class="page">
+    <section class="section product-detail">
+      <div class="container">
+        <a class="back-link" data-nav="catalog">← Back to Catalog</a>
+        <div class="product-detail-grid" id="productDetail"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== CART ========== -->
+  <div id="page-cart" class="page">
+    <section class="page-header">
+      <div class="container">
+        <h1>Your Cart</h1>
+        <p>Review items and place your order (demo — no real payment).</p>
+      </div>
+    </section>
+    <section class="section cart-section">
+      <div class="container">
+        <div class="cart-layout">
+          <div class="cart-items" id="cartItems"></div>
+          <aside class="cart-summary">
+            <h3>Order Summary</h3>
+            <div class="summary-row"><span>Subtotal</span><span id="cartSubtotal">UGX 0</span></div>
+            <div class="summary-row"><span>Delivery</span><span>Cash on Delivery</span></div>
+            <div class="summary-row total"><span>Total</span><span id="cartTotal">UGX 0</span></div>
+            <div class="checkout-note">
+              <strong>Payment:</strong> Cash on Delivery available. We’ll confirm your order by phone/WhatsApp.
+            </div>
+            <form id="checkoutForm" class="checkout-form">
+              <h4>Delivery Details</h4>
+              <label>Full Name<input type="text" name="name" required placeholder="Your name" /></label>
+              <label>Phone / WhatsApp<input type="tel" name="phone" required placeholder="+256..." /></label>
+              <label>Delivery Address<textarea name="address" rows="3" required placeholder="Street, area, Kampala..."></textarea></label>
+              <label class="radio-label"><input type="radio" name="payment" value="cod" checked /> Cash on Delivery</label>
+              <button type="submit" class="btn btn-primary btn-block">Place Order (Demo)</button>
+            </form>
+            <p class="demo-disclaimer">This is a frontend demo. No order is actually submitted or charged.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== CONTACT ========== -->
+  <div id="page-contact" class="page">
+    <section class="page-header">
+      <div class="container">
+        <h1>Contact & Location</h1>
+        <p>Open 24 hours · Call or WhatsApp anytime</p>
+      </div>
+    </section>
+    <section class="section contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="info-block">
+              <div class="info-icon">📍</div>
+              <div>
+                <h3>Address</h3>
+                <p>7 Buganda Rd, Kampala, Uganda<br>Kooki Tower, Level 6, Shop Number 647</p>
+              </div>
+            </div>
+            <div class="info-block">
+              <div class="info-icon">🕐</div>
+              <div>
+                <h3>Hours</h3>
+                <p><span class="open-now">Open now</span> · Open 24 hours</p>
+              </div>
+            </div>
+            <div class="info-block">
+              <div class="info-icon">📞</div>
+              <div>
+                <h3>Phone / WhatsApp</h3>
+                <p><a href="tel:+256702671069">+256 702 671 069</a></p>
+              </div>
+            </div>
+            <div class="info-block">
+              <div class="info-icon">✉️</div>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:danielkato587@gmail.com">danielkato587@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <a href="tel:+256702671069" class="btn btn-primary">Call Now</a>
+              <a href="https://wa.me/256702671069" target="_blank" rel="noopener" class="btn btn-whatsapp-lg">WhatsApp</a>
+            </div>
+            <div class="about-block">
+              <h3>About DK Appliances</h3>
+              <p>Enjoy a variety of quality products — all home appliances and a wide range of electronics at unbeatable prices. Doorstep deliveries, cash on delivery available. For orders and enquiries inbox/call +256 702 671 069. Look forward to unlimited discounts and amazing service.</p>
+            </div>
+          </div>
+          <div class="map-placeholder">
+            <div class="map-frame">
+              <div class="map-content">
+                <div class="map-pin">📍</div>
+                <p><strong>DK Appliances</strong></p>
+                <p>Kooki Tower, Level 6<br>7 Buganda Rd, Kampala</p>
+                <p class="map-note">Map placeholder — near Sheraton Kampala Hotel & Kampala Capital City Authority</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <strong>DK Appliances</strong>
+        <p>Quality home appliances & electronics at unbeatable prices.</p>
+        <p class="address">7 Buganda Rd, Kooki Tower Level 6, Shop 647<br>Kampala, Uganda</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a data-nav="home">Home</a>
+        <a data-nav="catalog">Catalog</a>
+        <a data-nav="contact">Contact & Location</a>
+        <a data-nav="cart">Cart</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <a href="tel:+256702671069">+256 702 671 069</a>
+        <a href="mailto:danielkato587@gmail.com">danielkato587@gmail.com</a>
+        <p>Open 24 hours</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 DK Appliances. Demo frontend only — no real transactions.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+/* ===== Data ===== */
+const PRODUCTS = [
+  { id: "lg-oled-tv", name: "LG OLED TV AI ThinQ", shortName: "LG OLED TV AI ThinQ", category: "tvs", price: 8000000, description: "Brand new LG OLED TV 55\". Stunning picture quality with AI ThinQ smart features. Perfect for movies and sports.", image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&h=400&fit=crop", badge: "Featured" },
+  { id: "samsung-frame-55", name: "The Frame Samsung 55\"", shortName: "The Frame Samsung 55\"", category: "tvs", price: 5000000, description: "Samsung The Frame 55\" – art mode when off, stunning QLED when on. Lifestyle TV for modern homes.", image: "https://images.unsplash.com/photo-1593784991095-a20506947072?w=600&h=400&fit=crop", badge: null },
+  { id: "hisense-32-tv", name: "Hisense 32\" Digital TV", shortName: "Hisense 32\" digital tv", category: "tvs", price: 700000, description: "32\" digital satellite TV with clear picture. Great entry-level TV for bedrooms or small living rooms.", image: "https://images.unsplash.com/photo-1461151304267-38535e780cf4?w=600&h=400&fit=crop", badge: null },
+  { id: "hisense-ac-9000", name: "Hisense 9000BTU Portable AC", shortName: "Hisense 9000btu portable AC", category: "small", price: 1850000, description: "Portable air conditioner 9000 BTU. Easy to move between rooms. Ideal for apartments and offices.", image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=400&fit=crop", badge: null },
+  { id: "hikvision-dome", name: "HikVision Network Dome Camera", shortName: "HIK VISION NETWORK...", category: "cameras", price: 450000, description: "HikVision fixed dome network camera H.265+. Reliable security camera for home or business.", image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&h=400&fit=crop", badge: null },
+  { id: "chiq-560l", name: "Chiq 560L Side-by-Side Fridge", shortName: "Chiq 560l fridge", category: "fridges", price: 3200000, description: "Chiq 560L side-by-side frost-free fridge. Large capacity, modern design, energy efficient.", image: "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=600&h=400&fit=crop", badge: null },
+  { id: "hoffman-blender", name: "Hoffman's Commercial Blender", shortName: "Hoffmans commercial blender", category: "small", price: 380000, description: "Commercial blender with 4500W motor. Powerful performance for smoothies, juices and more.", image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=600&h=400&fit=crop", badge: null },
+  { id: "sonashi-wall-fan", name: "Sonashi Wall Fan", shortName: "Sonashi wall fan", category: "fans", price: 185000, description: "Sonashi wall fan with remote control. Quiet, powerful airflow. Easy wall mounting.", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop", badge: null },
+  { id: "lg-smart-fridge", name: "LG Smart Fridge Side-by-Side", shortName: "LG smart fridge", category: "fridges", price: 6500000, description: "LG side-by-side smart fridge. WiFi connectivity, spacious compartments, premium finish.", image: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&h=400&fit=crop", badge: "Premium" }
+];
+
+function formatUGX(amount) { return "UGX " + amount.toLocaleString("en-UG"); }
+function getProductById(id) { return PRODUCTS.find(p => p.id === id); }
+function getProductsByCategory(cat) {
+  if (!cat || cat === "all") return PRODUCTS;
+  return PRODUCTS.filter(p => p.category === cat);
+}
+
+/* ===== Cart ===== */
+const CART_KEY = "dk_appliances_cart";
+function getCart() { try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch { return []; } }
+function saveCart(cart) { localStorage.setItem(CART_KEY, JSON.stringify(cart)); updateCartCount(); }
+function addToCart(productId, qty = 1) {
+  const cart = getCart();
+  const existing = cart.find(i => i.id === productId);
+  if (existing) existing.qty += qty; else cart.push({ id: productId, qty });
+  saveCart(cart);
+  showToast("Added to cart");
+}
+function removeFromCart(productId) { saveCart(getCart().filter(i => i.id !== productId)); }
+function updateQty(productId, qty) {
+  const cart = getCart();
+  const item = cart.find(i => i.id === productId);
+  if (!item) return;
+  if (qty <= 0) removeFromCart(productId); else { item.qty = qty; saveCart(cart); }
+}
+function getCartCount() { return getCart().reduce((s, i) => s + i.qty, 0); }
+function getCartTotal() {
+  return getCart().reduce((s, i) => { const p = getProductById(i.id); return s + (p ? p.price * i.qty : 0); }, 0);
+}
+function updateCartCount() {
+  const el = document.getElementById("cartCount");
+  if (el) el.textContent = getCartCount();
+}
+function showToast(msg) {
+  let toast = document.querySelector(".toast");
+  if (!toast) { toast = document.createElement("div"); toast.className = "toast"; document.body.appendChild(toast); }
+  toast.textContent = msg;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 2200);
+}
+
+/* ===== Navigation (SPA) ===== */
+function showPage(name, productId) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  const page = document.getElementById("page-" + name);
+  if (page) page.classList.add("active");
+  document.querySelectorAll(".nav-link").forEach(l => {
+    l.classList.toggle("active", l.dataset.nav === name || (name === "product" && l.dataset.nav === "catalog"));
+  });
+  document.getElementById("mainNav").classList.remove("open");
+  document.getElementById("menuToggle").classList.remove("open");
+  window.scrollTo(0, 0);
+  if (name === "home") renderFeatured();
+  if (name === "catalog") renderCatalog(window._currentCat || "all");
+  if (name === "product" && productId) renderProductDetail(productId);
+  if (name === "cart") renderCart();
+}
+
+/* ===== Product cards ===== */
+function productCardHTML(p) {
+  return `
+    <article class="product-card">
+      <div class="product-image-wrap" data-product="${p.id}">
+        <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='https://placehold.co/600x400/1a1a2e/e0e0e0?text=Product'" />
+        ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ""}
+      </div>
+      <div class="product-info">
+        <a class="product-name" data-product="${p.id}">${p.shortName || p.name}</a>
+        <p class="product-desc">${p.description.slice(0, 60)}...</p>
+        <div class="product-footer">
+          <span class="product-price">${formatUGX(p.price)}</span>
+          <button class="add-btn" data-id="${p.id}" aria-label="Add to cart">+</button>
+        </div>
+      </div>
+    </article>`;
+}
+
+function renderFeatured() {
+  const grid = document.getElementById("featuredProducts");
+  if (!grid) return;
+  grid.innerHTML = PRODUCTS.slice(0, 6).map(productCardHTML).join("");
+  bindProductClicks(grid);
+}
+
+function renderCatalog(cat) {
+  window._currentCat = cat || "all";
+  const grid = document.getElementById("catalogGrid");
+  const items = getProductsByCategory(window._currentCat);
+  grid.innerHTML = items.length ? items.map(productCardHTML).join("") : `<p class="empty-msg">No products in this category yet.</p>`;
+  bindProductClicks(grid);
+  document.querySelectorAll("#categoryTabs .tab").forEach(t => {
+    t.classList.toggle("active", t.dataset.cat === window._currentCat);
+  });
+}
+
+function bindProductClicks(container) {
+  container.querySelectorAll("[data-product]").forEach(el => {
+    el.addEventListener("click", () => showPage("product", el.dataset.product));
+  });
+  container.querySelectorAll(".add-btn").forEach(btn => {
+    btn.addEventListener("click", e => { e.stopPropagation(); addToCart(btn.dataset.id); });
+  });
+}
+
+function renderProductDetail(id) {
+  const container = document.getElementById("productDetail");
+  const p = getProductById(id);
+  if (!p) {
+    container.innerHTML = `<p>Product not found. <a data-nav="catalog" style="color:var(--primary);cursor:pointer">Back to catalog</a></p>`;
+    return;
+  }
+  document.title = p.name + " | DK Appliances";
+  container.innerHTML = `
+    <div class="detail-image">
+      <img src="${p.image}" alt="${p.name}" onerror="this.src='https://placehold.co/800x500/1a1a2e/e0e0e0?text=Product'" />
+    </div>
+    <div class="detail-info">
+      <span class="detail-category">${p.category === "small" ? "Small Appliances" : p.category}</span>
+      <h1>${p.name}</h1>
+      <p class="detail-price">${formatUGX(p.price)}</p>
+      <p class="detail-desc">${p.description}</p>
+      <div class="delivery-note"><strong>✓ Cash on delivery available</strong> · Doorstep delivery in Kampala</div>
+      <div class="qty-row">
+        <label>Quantity</label>
+        <div class="qty-control">
+          <button type="button" class="qty-btn" id="qtyMinus">−</button>
+          <input type="number" id="qtyInput" value="1" min="1" max="99" />
+          <button type="button" class="qty-btn" id="qtyPlus">+</button>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg" id="addToCartDetail">Add to Cart</button>
+      <a href="https://wa.me/256702671069?text=${encodeURIComponent("Hi DK Appliances, I'm interested in " + p.name)}" target="_blank" rel="noopener" class="btn btn-outline btn-lg">Enquire on WhatsApp</a>
+    </div>`;
+  let qty = 1;
+  const input = document.getElementById("qtyInput");
+  document.getElementById("qtyMinus").onclick = () => { qty = Math.max(1, qty - 1); input.value = qty; };
+  document.getElementById("qtyPlus").onclick = () => { qty = Math.min(99, qty + 1); input.value = qty; };
+  input.onchange = () => { qty = Math.max(1, Math.min(99, parseInt(input.value) || 1)); input.value = qty; };
+  document.getElementById("addToCartDetail").onclick = () => addToCart(p.id, qty);
+}
+
+function renderCart() {
+  const container = document.getElementById("cartItems");
+  const cart = getCart();
+  if (!cart.length) {
+    container.innerHTML = `<div class="empty-cart"><p>Your cart is empty.</p><a class="btn btn-primary" data-nav="catalog">Browse Catalog</a></div>`;
+    document.getElementById("cartSubtotal").textContent = formatUGX(0);
+    document.getElementById("cartTotal").textContent = formatUGX(0);
+    container.querySelector("[data-nav]")?.addEventListener("click", () => showPage("catalog"));
+    return;
+  }
+  container.innerHTML = cart.map(item => {
+    const p = getProductById(item.id);
+    if (!p) return "";
+    return `
+      <div class="cart-item" data-id="${p.id}">
+        <img src="${p.image}" alt="${p.name}" onerror="this.src='https://placehold.co/120x80/1a1a2e/e0e0e0?text=Item'" />
+        <div class="cart-item-info">
+          <a data-product="${p.id}">${p.name}</a>
+          <p class="cart-item-price">${formatUGX(p.price)}</p>
+          <div class="qty-control small">
+            <button type="button" class="qty-btn cart-qty-minus">−</button>
+            <span class="cart-qty">${item.qty}</span>
+            <button type="button" class="qty-btn cart-qty-plus">+</button>
+          </div>
+        </div>
+        <div class="cart-item-right">
+          <span class="cart-item-total">${formatUGX(p.price * item.qty)}</span>
+          <button type="button" class="remove-btn" aria-label="Remove">✕</button>
+        </div>
+      </div>`;
+  }).join("");
+  container.querySelectorAll(".cart-item").forEach(row => {
+    const id = row.dataset.id;
+    row.querySelector(".cart-qty-minus").onclick = () => {
+      const item = getCart().find(i => i.id === id);
+      updateQty(id, (item?.qty || 1) - 1); renderCart();
+    };
+    row.querySelector(".cart-qty-plus").onclick = () => {
+      const item = getCart().find(i => i.id === id);
+      updateQty(id, (item?.qty || 0) + 1); renderCart();
+    };
+    row.querySelector(".remove-btn").onclick = () => { removeFromCart(id); renderCart(); };
+    row.querySelector("[data-product]")?.addEventListener("click", () => showPage("product", id));
+  });
+  const total = getCartTotal();
+  document.getElementById("cartSubtotal").textContent = formatUGX(total);
+  document.getElementById("cartTotal").textContent = formatUGX(total);
+}
+
+/* ===== Init ===== */
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartCount();
+  renderFeatured();
+
+  document.getElementById("menuToggle").addEventListener("click", () => {
+    document.getElementById("mainNav").classList.toggle("open");
+    document.getElementById("menuToggle").classList.toggle("open");
+  });
+
+  document.body.addEventListener("click", e => {
+    const nav = e.target.closest("[data-nav]");
+    if (nav) { e.preventDefault(); showPage(nav.dataset.nav); }
+    const cat = e.target.closest("[data-cat]");
+    if (cat && cat.classList.contains("category-card")) {
+      window._currentCat = cat.dataset.cat;
+      showPage("catalog");
+    }
+  });
+
+  document.getElementById("categoryTabs")?.addEventListener("click", e => {
+    const btn = e.target.closest(".tab");
+    if (btn) renderCatalog(btn.dataset.cat);
+  });
+
+  document.getElementById("checkoutForm")?.addEventListener("submit", e => {
+    e.preventDefault();
+    if (!getCart().length) { showToast("Cart is empty"); return; }
+    showToast("Order placed (demo only) — we’ll contact you!");
+    localStorage.removeItem(CART_KEY);
+    updateCartCount();
+    setTimeout(() => { renderCart(); e.target.reset(); }, 800);
+  });
+});
+  </script>
+</body>
+</html>
