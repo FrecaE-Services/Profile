@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machine World Uganda | Kampala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1A1C1E;
+    --bg-soft:#232628;
+    --card:#2B2F32;
+    --yellow:#F2B705;
+    --yellow-deep:#D19E00;
+    --steel:#9AA3A8;
+    --text:#F1F1EE;
+    --line:#3A3F42;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Work Sans',sans-serif;
+    font-weight:300;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    color:var(--text);
+    line-height:1.15;
+    letter-spacing:0.3px;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  .hazard{
+    height:6px;
+    background:repeating-linear-gradient(45deg,var(--yellow),var(--yellow) 14px,#1A1C1E 14px,#1A1C1E 28px);
+  }
+
+  header{padding:18px 0;border-bottom:1px solid var(--line);}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'Oswald',sans-serif;font-size:1.25rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+  .brand span{color:var(--yellow);}
+  .header-cta{
+    background:var(--yellow);
+    color:#1A1C1E;
+    padding:10px 18px;
+    font-size:0.8rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+  }
+
+  .hero{padding:0;position:relative;}
+  .hero-img{aspect-ratio:16/9;position:relative;}
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(26,28,30,0.2) 0%,rgba(26,28,30,0.94) 88%);
+  }
+  .hero-content{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:32px 24px 36px;
+  }
+  .hero-content .wrap{padding:0;}
+  .hero-tag{
+    display:inline-block;
+    background:var(--yellow);
+    color:#1A1C1E;
+    font-size:0.72rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    padding:5px 12px;
+    margin-bottom:14px;
+  }
+  .hero-content h1{font-size:2.2rem;max-width:14ch;margin-bottom:14px;}
+  .hero-content p{color:var(--steel);font-size:0.92rem;max-width:42ch;margin-bottom:22px;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-yellow{
+    background:var(--yellow);
+    color:#1A1C1E;
+    padding:13px 22px;
+    font-size:0.85rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+  }
+  .btn-outline{
+    border:1px solid var(--text);
+    padding:13px 22px;
+    font-size:0.85rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+  }
+
+  .strip{
+    background:var(--bg-soft);
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .strip .wrap{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    font-size:0.8rem;color:var(--steel);
+  }
+  .strip strong{color:var(--yellow);}
+
+  .section{padding:52px 0 8px;}
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    flex-wrap:wrap;gap:14px;margin-bottom:28px;
+    border-bottom:2px solid var(--yellow);
+    padding-bottom:14px;
+  }
+  .section-head h2{font-size:1.7rem;}
+  .section-head span{font-size:0.78rem;color:var(--steel);text-transform:uppercase;letter-spacing:0.5px;}
+
+  .products{padding:0 0 56px;}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    overflow:hidden;
+  }
+  .card-img{aspect-ratio:1/1;position:relative;}
+  .card-badge{
+    position:absolute;top:0;left:0;
+    background:var(--yellow);color:#1A1C1E;
+    font-size:0.68rem;font-weight:700;text-transform:uppercase;
+    padding:5px 10px;letter-spacing:0.3px;
+  }
+  .card-body{padding:14px 16px 16px;}
+  .card-body h3{font-size:0.98rem;margin-bottom:6px;letter-spacing:0.2px;}
+  .card-desc{font-size:0.8rem;color:var(--steel);margin-bottom:10px;}
+  .card-price{font-size:0.92rem;color:var(--yellow);font-weight:600;font-family:'Work Sans',sans-serif;}
+  .card-price small{display:block;color:var(--steel);font-weight:300;font-size:0.68rem;margin-top:2px;text-transform:none;letter-spacing:0;}
+  .card-cta{
+    margin-top:12px;display:inline-block;
+    font-size:0.78rem;color:var(--text);
+    border-bottom:1px solid var(--yellow);padding-bottom:1px;
+    text-transform:uppercase;letter-spacing:0.3px;
+  }
+
+  .services{
+    background:var(--bg-soft);
+    padding:52px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px;}
+  .service-item h3{font-size:1rem;color:var(--yellow);margin-bottom:8px;}
+  .service-item p{font-size:0.85rem;color:var(--steel);}
+
+  footer{padding:44px 0 32px;}
+  .footer-grid{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:22px;
+    padding-bottom:22px;border-bottom:1px solid var(--line);
+  }
+  .footer-grid h3{font-size:1.1rem;margin-bottom:8px;}
+  .footer-grid p{font-size:0.85rem;color:var(--steel);}
+  .footer-bottom{
+    padding-top:18px;font-size:0.75rem;color:var(--steel);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  .wa-float{
+    position:fixed;bottom:22px;right:22px;
+    background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px -6px rgba(0,0,0,0.45);z-index:60;
+  }
+  .wa-float svg{width:28px;height:28px;fill:#fff;}
+
+  @media (max-width:760px){
+    .hero-content h1{font-size:1.8rem;}
+    .grid{grid-template-columns:1fr 1fr;}
+    .service-grid{grid-template-columns:1fr;}
+    .strip .wrap{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hazard"></div>
+<header>
+  <div class="wrap">
+    <div class="brand">Machine <span>World</span> Uganda</div>
+    <a class="header-cta" href="https://wa.me/256752815403?text=Hi%20Machine%20World%2C%20I%27d%20like%20to%20enquire%20about%20a%20machine" target="_blank">Enquire</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1738593892001-ffc50b177eb9?w=1200&auto=format&fit=crop&q=80" alt="Welding sparks flying in an industrial workshop">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="wrap">
+        <span class="hero-tag">Quality Is Priority</span>
+        <h1>Machines That Get The Job Done.</h1>
+        <p>Brand new and used generators, compressors, water pumps, welding machines, and agricultural equipment — plus repair and maintenance you can trust.</p>
+        <div class="hero-actions">
+          <a class="btn-yellow" href="https://wa.me/256752815403?text=Hi%20Machine%20World%2C%20I%27d%20like%20to%20enquire%20about%20a%20machine" target="_blank">Chat on WhatsApp</a>
+          <a class="btn-outline" href="#catalog">View Catalog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div>📍 <strong>William Street,</strong> Arua Park Plaza, opp. Stanbic Bank</div>
+    <div>📞 <strong>0752 815403</strong></div>
+    <div>🕗 Open 8:00 AM – 6:00 PM</div>
+  </div>
+</div>
+
+<section class="section" id="catalog">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Machines & Equipment</h2>
+      <span>New · Used · Repairs</span>
+    </div>
+  </div>
+</section>
+
+<section class="products">
+  <div class="wrap">
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-badge">Heavy Duty</span>
+          <img src="https://images.unsplash.com/photo-1768085091650-e8e89ef57b76?w=700&auto=format&fit=crop&q=80" alt="Heavy duty construction equipment">
+        </div>
+        <div class="card-body">
+          <h3>Double Drum Roller</h3>
+          <p class="card-desc">Heavy duty roller for road & site work</p>
+          <div class="card-price">UGX 18,500,000
+            <small>Sample price — confirm with real menu</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256752815403?text=Hi%2C%20I%27m%20interested%20in%20the%20Double%20Drum%20Roller" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-badge">In Stock</span>
+          <img src="https://images.unsplash.com/photo-1637640125496-31852f042a60?w=700&auto=format&fit=crop&q=80" alt="Concrete mixer equipment">
+        </div>
+        <div class="card-body">
+          <h3>Concrete Mixer (1 Bag)</h3>
+          <p class="card-desc">Heavy duty, built for daily site use</p>
+          <div class="card-price">UGX 10,000,000
+            <small>Sample price — confirm with real menu</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256752815403?text=Hi%2C%20I%27m%20interested%20in%20the%20Concrete%20Mixer" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1637640125496-31852f042a60?w=700&auto=format&fit=crop&q=80&sat=-20" alt="100 litre air compressor">
+        </div>
+        <div class="card-body">
+          <h3>100L Air Compressor</h3>
+          <p class="card-desc">Reliable power for workshops & garages</p>
+          <div class="card-price">UGX 1,500,000
+            <small>Sample price — confirm with real menu</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256752815403?text=Hi%2C%20I%27m%20interested%20in%20the%20100L%20Air%20Compressor" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-badge">All Types</span>
+          <img src="https://images.unsplash.com/photo-1738593892001-ffc50b177eb9?w=700&auto=format&fit=crop&q=80" alt="Portable welding machine in use">
+        </div>
+        <div class="card-body">
+          <h3>Portable Welding Machine</h3>
+          <p class="card-desc">All types of welding machines available</p>
+          <div class="card-price">Contact for price
+            <small>Sample price — confirm with real menu</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256752815403?text=Hi%2C%20I%27m%20interested%20in%20a%20Portable%20Welding%20Machine" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What We Do</h2>
+      <span>Sales · Repairs · Advice</span>
+    </div>
+    <div class="service-grid">
+      <div class="service-item">
+        <h3>Brand New Machines</h3>
+        <p>Generators, water pumps, agricultural machines, air compressors, and car washing machines.</p>
+      </div>
+      <div class="service-item">
+        <h3>Buy & Sell Used</h3>
+        <p>We deal in buying and selling used machines — fair valuations, honest condition checks.</p>
+      </div>
+      <div class="service-item">
+        <h3>Repairs & Advice</h3>
+        <p>We repair machines and offer guidance on maintenance and correct operation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Machine World Uganda</h3>
+        <p>Quality is priority. New and used machines, generators, and equipment for work sites across Kampala.</p>
+      </div>
+      <div>
+        <h3>Visit / Contact</h3>
+        <p>William Street, Arua Park Plaza, opp. Stanbic Bank, Kampala<br>
+        Call/WhatsApp: 0752 815403<br>
+        Email: gabrielssenyonga343@gmail.com<br>
+        Open Mon–Sat, 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Machine World Uganda</span>
+      <span>Site by FRECA E-SERVICES</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/256752815403?text=Hi%20Machine%20World%2C%20I%27d%20like%20to%20enquire%20about%20a%20machine" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.94 9.94 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.82 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39.002.56.01.18.008.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.26.13.43.19.5.3.07.11.07.62-.17 1.3z"/></svg>
+</a>
+
+</body>
+</html>

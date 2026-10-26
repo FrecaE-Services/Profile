@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interior Experts | Home & Office Furniture Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6F0E7;
+    --card:#FFFFFF;
+    --walnut:#4A3226;
+    --walnut-deep:#33221A;
+    --brass:#B8874E;
+    --text-soft:#7A6A5C;
+    --line:#E4D8C8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--walnut-deep);
+    font-family:'DM Sans',sans-serif;
+    font-weight:400;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'DM Serif Display',serif;
+    font-weight:400;
+    color:var(--walnut-deep);
+    line-height:1.15;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  header{padding:22px 0;border-bottom:1px solid var(--line);}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-family:'DM Serif Display',serif;font-size:1.4rem;}
+  .brand span{color:var(--brass);}
+  .header-cta{
+    background:var(--walnut-deep);
+    color:#fff;
+    padding:10px 20px;
+    border-radius:2px;
+    font-size:0.82rem;
+  }
+
+  .hero{padding:56px 0 48px;}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center;}
+  .hero-kicker{
+    color:var(--brass);font-size:0.85rem;letter-spacing:0.5px;
+    font-style:italic;margin-bottom:16px;font-family:'DM Serif Display',serif;
+  }
+  .hero h1{font-size:2.6rem;margin-bottom:18px;}
+  .hero p{color:var(--text-soft);font-size:1rem;max-width:44ch;margin-bottom:28px;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-brass{
+    background:var(--brass);color:#fff;
+    padding:14px 26px;border-radius:2px;font-size:0.9rem;font-weight:500;
+  }
+  .btn-outline{
+    border:1px solid var(--walnut-deep);color:var(--walnut-deep);
+    padding:14px 26px;border-radius:2px;font-size:0.9rem;
+  }
+  .hero-image{
+    aspect-ratio:4/5;border-radius:2px;overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 28px 56px -24px rgba(51,34,26,0.3);
+  }
+
+  .strip{background:var(--walnut-deep);color:var(--cream);padding:14px 0;}
+  .strip .wrap{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    font-size:0.82rem;
+  }
+  .strip strong{color:var(--brass);}
+
+  .section{padding:56px 0 8px;}
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    flex-wrap:wrap;gap:16px;margin-bottom:30px;
+  }
+  .section-head h2{font-size:1.9rem;}
+  .section-head p{color:var(--text-soft);font-size:0.9rem;max-width:38ch;}
+
+  .products{padding:0 0 60px;}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:2px;overflow:hidden;}
+  .card-img{aspect-ratio:1/1;position:relative;}
+  .card-badge{
+    position:absolute;top:10px;left:10px;
+    background:var(--brass);color:#fff;
+    font-size:0.68rem;font-weight:600;padding:4px 10px;border-radius:2px;
+  }
+  .card-body{padding:16px 18px 18px;}
+  .card-body h3{font-size:1.15rem;margin-bottom:6px;}
+  .card-desc{font-size:0.82rem;color:var(--text-soft);margin-bottom:10px;}
+  .card-price{font-size:0.92rem;color:var(--walnut);font-weight:600;font-family:'DM Sans',sans-serif;}
+  .card-price small{display:block;color:var(--text-soft);font-weight:400;font-size:0.7rem;margin-top:2px;}
+  .card-cta{
+    margin-top:12px;display:inline-block;font-size:0.8rem;
+    color:var(--walnut-deep);border-bottom:1px solid var(--brass);padding-bottom:1px;
+  }
+
+  .services{
+    background:var(--walnut-deep);
+    color:var(--cream);
+    padding:52px 0;
+  }
+  .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px;}
+  .service-item{
+    border:1px solid #5C4636;padding:16px 18px;border-radius:2px;
+  }
+  .service-item h3{font-size:1rem;color:var(--brass);margin-bottom:4px;font-family:'DM Sans',sans-serif;font-weight:600;}
+  .service-item p{font-size:0.82rem;color:#D4C6B8;}
+
+  footer{padding:44px 0 32px;}
+  .footer-grid{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:22px;
+    padding-bottom:22px;border-bottom:1px solid var(--line);
+  }
+  .footer-grid h3{font-size:1.2rem;margin-bottom:8px;}
+  .footer-grid p{font-size:0.85rem;color:var(--text-soft);}
+  .footer-bottom{
+    padding-top:18px;font-size:0.76rem;color:var(--text-soft);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  .wa-float{
+    position:fixed;bottom:22px;right:22px;
+    background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px -6px rgba(0,0,0,0.35);z-index:60;
+  }
+  .wa-float svg{width:28px;height:28px;fill:#fff;}
+
+  @media (max-width:760px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-image{order:-1;aspect-ratio:16/10;}
+    .hero h1{font-size:2.1rem;}
+    .grid{grid-template-columns:1fr 1fr;}
+    .service-grid{grid-template-columns:1fr;}
+    .strip .wrap{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Interior <span>Experts</span></div>
+    <a class="header-cta" href="https://wa.me/256704390644?text=Hi%20Interior%20Experts%2C%20I%27d%20like%20to%20enquire%20about%20furniture" target="_blank">Get a Quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="hero-kicker">Home & Office Furniture Workshop</div>
+      <h1>Ordinary is boring. Our furniture isn't.</h1>
+      <p>Custom-made kitchen cabinets, TV units, sofas, dining tables, and wardrobes — built in our own workshop for homes and offices across Kampala.</p>
+      <div class="hero-actions">
+        <a class="btn-brass" href="https://wa.me/256704390644?text=Hi%20Interior%20Experts%2C%20I%27d%20like%20to%20enquire%20about%20furniture" target="_blank">Chat on WhatsApp</a>
+        <a class="btn-outline" href="#work">View Our Work</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1594026112499-ac6e20b2c480?w=900&auto=format&fit=crop&q=80" alt="Solid wood TV unit in a modern living room">
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div>📞 <strong>0704 390644 / 0708 133151</strong></div>
+    <div>🪵 <strong>Custom Furniture Workshop</strong></div>
+    <div>✦ Home & Office</div>
+  </div>
+</div>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Our Work</h2>
+      <p>A look at what we've built — every piece can be customised to your space.</p>
+    </div>
+  </div>
+</section>
+
+<section class="products">
+  <div class="wrap">
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-badge">440K</span>
+          <img src="https://images.unsplash.com/photo-1594026112499-ac6e20b2c480?w=700&auto=format&fit=crop&q=80" alt="Floating TV unit with wall storage">
+        </div>
+        <div class="card-body">
+          <h3>Floating TV Unit</h3>
+          <p class="card-desc">1.6m wall-mounted unit with storage</p>
+          <div class="card-price">UGX 440,000
+            <small>Real price from catalog</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256704390644?text=Hi%2C%20I%27m%20interested%20in%20the%20Floating%20TV%20Unit" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1682888818620-94875adf5bb9?w=700&auto=format&fit=crop&q=80" alt="Modern kitchen cabinets">
+        </div>
+        <div class="card-body">
+          <h3>Modern Kitchen Cabinets</h3>
+          <p class="card-desc">Custom-built to your kitchen's size</p>
+          <div class="card-price">Contact for price
+            <small>Sample price — confirm with real menu</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256704390644?text=Hi%2C%20I%27m%20interested%20in%20Kitchen%20Cabinets" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&auto=format&fit=crop&q=80" alt="Green sofa set">
+        </div>
+        <div class="card-body">
+          <h3>Sofa Sets</h3>
+          <p class="card-desc">High density foam — durable and affordable</p>
+          <div class="card-price">Contact for price
+            <small>Sample price — confirm with real menu</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256704390644?text=Hi%2C%20I%27m%20interested%20in%20a%20Sofa%20Set" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-badge">Free Delivery</span>
+          <img src="https://images.unsplash.com/photo-1682888818620-94875adf5bb9?w=700&auto=format&fit=crop&q=80&sat=-30" alt="Dining table set">
+        </div>
+        <div class="card-body">
+          <h3>Dining Tables</h3>
+          <p class="card-desc">Durable and affordable, free delivery</p>
+          <div class="card-price">Contact for price
+            <small>Sample price — confirm with real menu</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256704390644?text=Hi%2C%20I%27m%20interested%20in%20a%20Dining%20Table" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="section-head" style="border-bottom:none;">
+      <h2 style="color:#fff;">What We Build</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-item">
+        <h3>Floating TV Stands</h3>
+        <p>Custom sizes, wall-mounted or freestanding.</p>
+      </div>
+      <div class="service-item">
+        <h3>Fabric & Wooden Beds</h3>
+        <p>Bedroom furniture built to your taste.</p>
+      </div>
+      <div class="service-item">
+        <h3>Wardrobes & Kitchen Cabinets</h3>
+        <p>Fitted storage for every room.</p>
+      </div>
+      <div class="service-item">
+        <h3>Sofa Repair & Custom Orders</h3>
+        <p>Sleek chairs, sofa repair, and anything custom-made.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Interior Experts</h3>
+        <p>Home and office furniture workshop. Ordinary is boring — our products are not.</p>
+      </div>
+      <div>
+        <h3>Get In Touch</h3>
+        <p>Call / WhatsApp: 0704 390644 / 0708 133151<br>
+        Custom furniture, made in our own workshop</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Interior Experts</span>
+      <span>Site by FRECA E-SERVICES</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/256704390644?text=Hi%20Interior%20Experts%2C%20I%27d%20like%20to%20enquire%20about%20furniture" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.94 9.94 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.82 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39.002.56.01.18.008.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.26.13.43.19.5.3.07.11.07.62-.17 1.3z"/></svg>
+</a>
+
+</body>
+</html>

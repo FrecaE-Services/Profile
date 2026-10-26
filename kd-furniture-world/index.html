@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KD Furniture World Ltd — Custom Office &amp; Home Furniture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161210;
+    --charcoal:#221C17;
+    --charcoal-soft:#2C241D;
+    --walnut:#6B4226;
+    --walnut-deep:#40270F;
+    --copper:#CC8034;
+    --copper-soft:#E8A85C;
+    --cream:#F4ECDF;
+    --cream-dim:#E7DBC4;
+    --brass:#BFA05A;
+    --ok:#5E8B5A;
+    --shadow: 0 24px 50px -24px rgba(20,15,10,0.55);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Archivo', sans-serif;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin:0;
+    text-transform:uppercase;
+  }
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  ul{ list-style:none; margin:0; padding:0; }
+  button{ font-family:inherit; cursor:pointer; border:none; background:none; }
+
+  .wrap{ max-width:1200px; margin:0 auto; padding:0 28px; }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.76rem;
+    font-weight:600;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--copper);
+  }
+  .eyebrow::before{ content:''; width:22px; height:2px; background:var(--copper); display:inline-block; }
+
+  /* ---------- corner bracket signature ---------- */
+  .bracketed{ position:relative; }
+  .bracketed::before, .bracketed::after,
+  .bracketed .bk-tl, .bracketed .bk-br{ }
+  .corners span{
+    position:absolute;
+    width:22px; height:22px;
+    border-color:var(--copper-soft);
+    z-index:3;
+  }
+  .corners .c-tl{ top:10px; left:10px; border-top:2.5px solid; border-left:2.5px solid; }
+  .corners .c-br{ bottom:10px; right:10px; border-bottom:2.5px solid; border-right:2.5px solid; }
+
+  .dim-tag{
+    position:absolute; z-index:4;
+    top:14px; right:14px;
+    background:var(--ink);
+    color:var(--copper-soft);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    font-weight:600;
+    letter-spacing:0.04em;
+    padding:6px 12px;
+    border:1px solid rgba(204,128,52,0.5);
+  }
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 26px;
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:0.86rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  }
+  .btn svg{ width:17px; height:17px; fill:currentColor; }
+  .btn-primary{
+    background:var(--copper);
+    color:var(--ink);
+    box-shadow:0 14px 26px -12px rgba(204,128,52,0.65);
+  }
+  .btn-primary:hover{ background:var(--copper-soft); transform:translateY(-2px); }
+  .btn-ghost{
+    border:1.5px solid rgba(244,236,223,0.4);
+    color:var(--cream);
+  }
+  .btn-ghost:hover{ background:rgba(244,236,223,0.1); }
+  .btn-dark{
+    border:1.5px solid var(--ink);
+    color:var(--ink);
+  }
+  .btn-dark:hover{ background:var(--ink); color:var(--cream); }
+
+  /* ---------- floating whatsapp ---------- */
+  .wa-float{
+    position:fixed; right:22px; bottom:22px; z-index:60;
+    width:60px; height:60px; border-radius:50%;
+    background:var(--copper);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 12px 28px -8px rgba(204,128,52,0.75);
+    animation:pulse 2.6s ease-in-out infinite;
+  }
+  .wa-float svg{ width:28px; height:28px; fill:var(--ink); }
+  @keyframes pulse{ 0%,100%{transform:scale(1);} 50%{transform:scale(1.07);} }
+  @media (prefers-reduced-motion: reduce){ .wa-float{animation:none;} }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(22,18,16,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(244,236,223,0.08);
+  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:16px 0; color:var(--cream); }
+  .logo{ display:flex; align-items:center; gap:10px; }
+  .logo .mark{ font-size:1.15rem; font-weight:900; letter-spacing:0.01em; color:var(--cream); }
+  .logo .mark em{ font-style:normal; color:var(--copper-soft); }
+  .logo .tag{ font-family:'IBM Plex Mono', monospace; font-size:0.62rem; color:var(--brass); letter-spacing:0.14em; border:1px solid rgba(191,160,90,0.5); padding:2px 6px; }
+
+  .nav-links{ display:flex; gap:32px; font-size:0.84rem; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; }
+  .nav-links a{ position:relative; padding-bottom:4px; color:rgba(244,236,223,0.85); }
+  .nav-links a::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--copper); transition:width .25s; }
+  .nav-links a:hover::after{ width:100%; }
+
+  .nav-cta{ display:flex; align-items:center; gap:14px; }
+  .open-badge{
+    display:flex; align-items:center; gap:6px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem; letter-spacing:0.06em;
+    color:var(--ok);
+    padding:6px 10px;
+    border:1px solid rgba(94,139,90,0.5);
+  }
+  .open-badge svg{ width:12px; height:12px; fill:var(--ok); }
+  .menu-toggle{ display:none; width:32px; height:32px; position:relative; }
+  .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after{
+    content:''; position:absolute; left:5px; right:5px; height:2px; background:var(--cream);
+  }
+  .menu-toggle span{ top:15px; } .menu-toggle span::before{ top:-7px; } .menu-toggle span::after{ top:7px; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--cream);
+    padding:88px 0 70px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(244,236,223,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244,236,223,0.05) 1px, transparent 1px);
+    background-size:44px 44px;
+    mask-image:radial-gradient(ellipse 80% 60% at 30% 30%, black 40%, transparent 90%);
+  }
+  .hero-grid{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:1.05fr 0.95fr;
+    gap:56px; align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4.4vw, 3.6rem);
+    line-height:1.02;
+    margin:18px 0 20px;
+    max-width:14ch;
+  }
+  .hero h1 .accent{ color:var(--copper-soft); }
+  .hero p{
+    color:rgba(244,236,223,0.72);
+    font-size:1.02rem;
+    line-height:1.7;
+    max-width:46ch;
+    margin-bottom:30px;
+  }
+  .hero-btns{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:34px; }
+  .hero-trust{
+    display:flex; flex-wrap:wrap; gap:22px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.76rem;
+    color:rgba(244,236,223,0.6);
+    border-top:1px solid rgba(244,236,223,0.14);
+    padding-top:20px;
+  }
+  .hero-trust li{ display:flex; align-items:center; gap:8px; }
+  .hero-trust svg{ width:14px; height:14px; fill:var(--copper-soft); }
+
+  .hero-visual{ position:relative; }
+  .hero-img{
+    position:relative;
+    aspect-ratio:4/5;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .hero-img img{ width:100%; height:100%; object-fit:cover; }
+
+  /* ---------- marquee strip ---------- */
+  .strip{
+    background:var(--copper);
+    color:var(--ink);
+    padding:14px 0;
+    overflow:hidden;
+    white-space:nowrap;
+    border-top:1px solid rgba(22,18,16,0.15);
+    border-bottom:1px solid rgba(22,18,16,0.15);
+  }
+  .strip-track{
+    display:inline-flex;
+    gap:36px;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:0.82rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    animation: marquee 26s linear infinite;
+  }
+  .strip-track span{ display:inline-flex; align-items:center; gap:36px; }
+  .strip-track span::after{ content:'•'; }
+  @keyframes marquee{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  @media (prefers-reduced-motion: reduce){ .strip-track{ animation:none; } }
+
+  /* ---------- about ---------- */
+  .about{ padding:96px 0 84px; background:var(--cream); }
+  .about-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center; }
+  .about-visual{ position:relative; aspect-ratio:4/5; overflow:hidden; box-shadow:var(--shadow); }
+  .about-visual img{ width:100%; height:100%; object-fit:cover; }
+  .about h2{ font-size:clamp(1.8rem, 3vw, 2.5rem); margin:16px 0 20px; line-height:1.08; }
+  .about p{ color:#514639; font-size:1.02rem; line-height:1.75; max-width:52ch; }
+
+  .about-info{ margin-top:30px; display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .info-card{
+    background:var(--charcoal);
+    color:var(--cream);
+    padding:20px;
+    border-left:3px solid var(--copper);
+  }
+  .info-card .label{ font-family:'IBM Plex Mono', monospace; font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--copper-soft); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+  .info-card .label svg{ width:14px; height:14px; fill:var(--copper-soft); }
+  .info-card .value{ font-weight:600; font-size:0.98rem; }
+  .info-card a:hover{ color:var(--copper-soft); }
+
+  /* ---------- products ---------- */
+  .products{ background:var(--ink); padding:96px 0 100px; color:var(--cream); }
+  .products-head{ max-width:640px; margin:0 auto 54px; text-align:center; }
+  .products-head h2{ font-size:clamp(1.9rem, 3.4vw, 2.7rem); margin:16px 0 14px; }
+  .products-head p{ color:rgba(244,236,223,0.65); font-size:1rem; line-height:1.6; }
+
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .p-card{
+    background:var(--charcoal);
+    border:1px solid rgba(244,236,223,0.08);
+    display:flex; flex-direction:column;
+    transition:transform .3s ease, border-color .3s ease;
+  }
+  .p-card:hover{ transform:translateY(-6px); border-color:rgba(204,128,52,0.4); }
+  .p-img{ position:relative; aspect-ratio:5/4; overflow:hidden; }
+  .p-img img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .p-card:hover .p-img img{ transform:scale(1.06); }
+
+  .save-tag{
+    position:absolute; z-index:4; top:14px; left:14px;
+    background:var(--ok); color:var(--ink);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem; font-weight:700;
+    padding:5px 10px;
+  }
+  .p-body{ padding:22px; display:flex; flex-direction:column; gap:10px; flex:1; }
+  .p-body h3{ font-size:1.02rem; letter-spacing:0.01em; }
+  .p-body .desc{ color:rgba(244,236,223,0.6); font-size:0.86rem; line-height:1.55; flex:1; }
+  .price-row{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .price-now{ font-family:'IBM Plex Mono', monospace; font-weight:600; color:var(--copper-soft); font-size:1.02rem; }
+  .price-old{ font-family:'IBM Plex Mono', monospace; color:rgba(244,236,223,0.4); font-size:0.82rem; text-decoration:line-through; }
+
+  .p-order{
+    margin-top:8px;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:12px 16px;
+    background:var(--copper);
+    color:var(--ink);
+    font-family:'Archivo', sans-serif;
+    font-weight:700; font-size:0.78rem; letter-spacing:0.04em; text-transform:uppercase;
+    transition:background .2s ease;
+  }
+  .p-order svg{ width:15px; height:15px; fill:currentColor; }
+  .p-order:hover{ background:var(--copper-soft); }
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    position:relative;
+    background:var(--walnut-deep);
+    color:var(--cream);
+    padding:90px 0;
+    text-align:center;
+    overflow:hidden;
+  }
+  .cta-band::before{
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 15% 25%, rgba(204,128,52,0.18), transparent 42%),
+      radial-gradient(circle at 85% 75%, rgba(204,128,52,0.14), transparent 42%);
+  }
+  .cta-band .inner{ position:relative; z-index:2; max-width:620px; margin:0 auto; }
+  .cta-band h2{ font-size:clamp(1.9rem, 3.6vw, 2.7rem); margin:16px 0 18px; line-height:1.1; }
+  .cta-band p{ color:rgba(244,236,223,0.78); font-size:1.02rem; margin-bottom:32px; }
+  .cta-btns{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+  /* ---------- footer ---------- */
+  footer{ background:var(--ink); color:rgba(244,236,223,0.7); padding:64px 0 28px; }
+  .footer-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:48px; padding-bottom:38px; border-bottom:1px solid rgba(244,236,223,0.1); }
+  .footer-grid h3{ color:var(--cream); font-size:0.72rem; letter-spacing:0.12em; margin-bottom:18px; font-family:'IBM Plex Mono', monospace; text-transform:uppercase; font-weight:600; }
+  .foot-logo{ font-family:'Archivo', sans-serif; font-weight:900; font-size:1.3rem; color:var(--cream); text-transform:uppercase; margin-bottom:10px; }
+  .foot-logo em{ font-style:normal; color:var(--copper-soft); }
+  .footer-grid p{ font-size:0.9rem; line-height:1.7; max-width:32ch; }
+  .footer-grid li{ font-size:0.9rem; margin-bottom:12px; display:flex; gap:10px; align-items:flex-start; }
+  .footer-grid li svg{ width:15px; height:15px; fill:var(--copper-soft); flex:0 0 15px; margin-top:2px; }
+  .footer-grid a:hover{ color:var(--copper-soft); }
+  .foot-bottom{ padding-top:24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:0.8rem; color:rgba(244,236,223,0.4); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 940px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-visual{ order:-1; max-width:420px; margin:0 auto; }
+    .about-grid{ grid-template-columns:1fr; }
+    .about-visual{ order:-1; max-width:420px; margin:0 auto; }
+    .product-grid{ grid-template-columns:repeat(2,1fr); }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 700px){
+    .nav-links{
+      position:fixed; top:64px; left:0; right:0;
+      background:var(--ink);
+      flex-direction:column; padding:20px 28px 26px; gap:18px;
+      border-bottom:1px solid rgba(244,236,223,0.1);
+      transform:translateY(-130%); transition:transform .3s ease;
+    }
+    .nav-links.open{ transform:translateY(0); }
+    .menu-toggle{ display:block; }
+    .open-badge{ display:none; }
+    .about-info{ grid-template-columns:1fr; }
+    .product-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; gap:30px; }
+    .nav .btn-primary span{ display:none; }
+    .nav .btn-primary{ padding:12px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="wa-float" href="https://wa.me/256742656321?text=Hi%20KD%20Furniture%20World!%20I%27d%20like%20to%20place%20an%20order." target="_blank" aria-label="Order on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 8.1 8.11c0 4.48-3.63 8.11-8.1 8.11a8 8 0 0 1-4.1-1.13l-.3-.17-3.12.82.83-3.04-.19-.31a8.03 8.03 0 0 1-1.23-4.28c0-4.48 3.63-8.11 8.11-8.11m-4.65 4.16c-.18 0-.47.07-.71.33-.24.26-.93.9-.93 2.2 0 1.3.95 2.55 1.08 2.73.13.18 1.85 2.94 4.55 4.01 2.25.9 2.71.72 3.2.68.49-.04 1.58-.64 1.8-1.27.22-.62.22-1.15.15-1.27-.07-.11-.25-.18-.53-.31-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.18-1.35-.81-.72-1.35-1.6-1.51-1.88-.16-.27-.02-.42.12-.56.13-.13.27-.32.4-.48.13-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.51-.86-2.06-.22-.5-.45-.44-.61-.44h-.02"/></svg>
+</a>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <span class="mark">KD <em>FURNITURE</em> WORLD</span>
+      <span class="tag">LTD</span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="open-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>OPEN 24 HOURS</span>
+      <a class="btn btn-primary" href="https://wa.me/256742656321?text=Hi%20KD%20Furniture%20World!%20I%27d%20like%20to%20place%20an%20order." target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+        <span>Order</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Lakeside College, Luzira · Open 24 Hours</span>
+      <h1>Furniture built to <span class="accent">outlast the room</span></h1>
+      <p>KD Furniture World Ltd designs and builds custom office and home furniture — TV stands, boardroom tables, workstations, reception desks and executive tables — made strong, wide, and durable for the space you actually work in.</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="https://wa.me/256742656321?text=Hi%20KD%20Furniture%20World!%20I%27d%20like%20to%20place%20an%20order." target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+          <span>Order on WhatsApp</span>
+        </a>
+        <a class="btn btn-ghost" href="tel:+256742656321">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg>
+          <span>Call Now</span>
+        </a>
+      </div>
+      <ul class="hero-trust">
+        <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m1 10.6 4 2.4-.75 1.25L11 13V6h1.5z"/></svg>Open 24 hours</li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg>Lakeside College, Luzira</li>
+        <li><svg viewBox="0 0 24 24"><path d="M22 5.9a8.1 8.1 0 0 1-2.36.65 4.12 4.12 0 0 0 1.8-2.27 8.2 8.2 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.74A11.65 11.65 0 0 1 3.4 4.7a4.1 4.1 0 0 0 1.27 5.47 4.07 4.07 0 0 1-1.86-.51v.05a4.1 4.1 0 0 0 3.29 4.02 4.1 4.1 0 0 1-1.85.07 4.11 4.11 0 0 0 3.83 2.85A8.23 8.23 0 0 1 2 18.4a11.6 11.6 0 0 0 6.29 1.84c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.35-.01-.53A8.3 8.3 0 0 0 22 5.9"/></svg>Custom builds welcome</li>
+      </ul>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img bracketed">
+        <div class="corners"><span class="c-tl"></span><span class="c-br"></span></div>
+        <span class="dim-tag mono">CUSTOM BUILD</span>
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80" alt="Executive reception desk in a wood-panelled office">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>TV Stands</span><span>Boardroom Tables</span><span>Workstations</span><span>Reception Desks</span><span>Executive Tables</span><span>Custom Builds</span>
+    <span>TV Stands</span><span>Boardroom Tables</span><span>Workstations</span><span>Reception Desks</span><span>Executive Tables</span><span>Custom Builds</span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual bracketed">
+      <div class="corners"><span class="c-tl"></span><span class="c-br"></span></div>
+      <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=80" alt="Craftsman finishing a wood furniture piece">
+    </div>
+    <div>
+      <span class="eyebrow">Who We Are</span>
+      <h2>Built on-site, built to spec, built to last</h2>
+      <p>KD Furniture World Ltd designs and installs custom office and home furniture — from six-seater workstations to executive reception desks — measured, cut and finished for your exact space near Lakeside College, Luzira. We're open around the clock to take your order.</p>
+
+      <div class="about-info">
+        <div class="info-card">
+          <div class="label"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg>Location</div>
+          <div class="value">Lakeside College, Luzira</div>
+        </div>
+        <div class="info-card">
+          <div class="label"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg>Call / WhatsApp</div>
+          <div class="value"><a href="tel:+256742656321">+256 742 656 321</a></div>
+        </div>
+        <div class="info-card">
+          <div class="label"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m1 10.6 4 2.4-.75 1.25L11 13V6h1.5z"/></svg>Hours</div>
+          <div class="value">Open 24 hours</div>
+        </div>
+        <div class="info-card">
+          <div class="label"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4zm4.4 2.9a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2m0 2a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2m5.3-3.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4"/></svg>Instagram</div>
+          <div class="value"><a href="https://instagram.com/kimera.kato" target="_blank">@kimera.kato</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="products-head">
+      <span class="eyebrow">The Catalog</span>
+      <h2>Made-to-measure furniture</h2>
+      <p>Tap "Order" on any piece to chat with us on WhatsApp — send your room dimensions and we'll quote you directly.</p>
+    </div>
+
+    <div class="product-grid">
+
+      <div class="p-card">
+        <div class="p-img">
+          <span class="save-tag">SAVE 20%</span>
+          <span class="dim-tag mono">2.4M</span>
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=80" alt="Modern wood TV stand">
+        </div>
+        <div class="p-body">
+          <h3>TV Stands</h3>
+          <p class="desc">2.4-metre TV stands built for your living room — solid wood finish, custom sizes on request.</p>
+          <div class="price-row">
+            <span class="price-now mono">UGX 800,000</span>
+            <span class="price-old mono">UGX 1,000,000</span>
+          </div>
+          <a class="p-order" href="https://wa.me/256742656321?text=Hi%20KD%20Furniture%20World!%20I%27d%20like%20to%20order%20a%20TV%20Stand%20(2.4m).%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-img">
+          <span class="save-tag">SAVE 10%</span>
+          <span class="dim-tag mono">BOARDROOM</span>
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=80" alt="Wide conference room table">
+        </div>
+        <div class="p-body">
+          <h3>Boardroom / Conference Table</h3>
+          <p class="desc">Very wide and strong, built for your boardroom or conference space.</p>
+          <div class="price-row">
+            <span class="price-now mono">UGX 2,700,000</span>
+            <span class="price-old mono">UGX 3,000,000</span>
+          </div>
+          <a class="p-order" href="https://wa.me/256742656321?text=Hi%20KD%20Furniture%20World!%20I%27d%20like%20to%20order%20a%20Boardroom%20%2F%20Conference%20Table.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-img">
+          <span class="save-tag">SAVE 8%</span>
+          <span class="dim-tag mono">6-SEATER</span>
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=80" alt="Six-seater office workstation">
+        </div>
+        <div class="p-body">
+          <h3>Workstations</h3>
+          <p class="desc">Six-seater working stations, built solid for busy open-plan offices.</p>
+          <div class="price-row">
+            <span class="price-now mono">UGX 2,300,000</span>
+            <span class="price-old mono">UGX 2,500,000</span>
+          </div>
+          <a class="p-order" href="https://wa.me/256742656321?text=Hi%20KD%20Furniture%20World!%20I%27d%20like%20to%20order%20a%20Six-Seater%20Workstation.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-img">
+          <span class="save-tag">SAVE 20%</span>
+          <span class="dim-tag mono">RECEPTION</span>
+          <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=700&q=80" alt="Executive wood reception desk">
+        </div>
+        <div class="p-body">
+          <h3>Executive Reception Desk</h3>
+          <p class="desc">Very durable and comfortable — the first impression your office deserves.</p>
+          <div class="price-row">
+            <span class="price-now mono">UGX 1,200,000</span>
+            <span class="price-old mono">UGX 1,500,000</span>
+          </div>
+          <a class="p-order" href="https://wa.me/256742656321?text=Hi%20KD%20Furniture%20World!%20I%27d%20like%20to%20order%20an%20Executive%20Reception%20Desk.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-img">
+          <span class="dim-tag mono">1.6M</span>
+          <img src="https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=700&q=80" alt="Executive office desk">
+        </div>
+        <div class="p-body">
+          <h3>Executive Tables</h3>
+          <p class="desc">1.6-metre executive office desks, finished to order for your workspace.</p>
+          <div class="price-row">
+            <span class="price-now mono">Contact for price</span>
+          </div>
+          <a class="p-order" href="https://wa.me/256742656321?text=Hi%20KD%20Furniture%20World!%20I%27d%20like%20to%20order%20an%20Executive%20Table%20(1.6m).%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-img">
+          <span class="dim-tag mono">CUSTOM</span>
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=700&q=80" alt="Custom furniture workshop build">
+        </div>
+        <div class="p-body">
+          <h3>Custom Furniture</h3>
+          <p class="desc">Got a space that needs something specific? Send your measurements — we build to order.</p>
+          <div class="price-row">
+            <span class="price-now mono">Free quote</span>
+          </div>
+          <a class="p-order" href="https://wa.me/256742656321?text=Hi%20KD%20Furniture%20World!%20I%27d%20like%20a%20quote%20for%20a%20custom%20furniture%20piece." target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="wrap inner">
+    <span class="eyebrow">Ready When You Are</span>
+    <h2>Send us your measurements — we'll build it right</h2>
+    <p>Open 24 hours at Lakeside College, Luzira. Message us on WhatsApp with your space and budget for a free quote.</p>
+    <div class="cta-btns">
+      <a class="btn btn-primary" href="https://wa.me/256742656321?text=Hi%20KD%20Furniture%20World!%20I%27d%20like%20to%20place%20an%20order." target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+        <span>Chat on WhatsApp</span>
+      </a>
+      <a class="btn btn-ghost" href="tel:+256742656321">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg>
+        <span>Call +256 742 656 321</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-logo">KD <em>Furniture</em> World Ltd</div>
+        <p>Custom-built office and home furniture near Lakeside College, Luzira — solid, wide, and made to fit your space.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg><span>Lakeside College, Luzira</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg><a href="tel:+256742656321">+256 742 656 321</a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m1 10.6 4 2.4-.75 1.25L11 13V6h1.5z"/></svg><span>Open 24 hours</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.88v-6.99H7.9V12h2.5V9.8c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.2.19 2.2.19v2.43h-1.24c-1.22 0-1.6.76-1.6 1.54V12h2.72l-.44 2.89h-2.28v6.99A10 10 0 0 0 22 12"/></svg><span>KD Furniture World — Facebook</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2"/></svg><a href="https://instagram.com/kimera.kato" target="_blank">@kimera.kato — Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 KD Furniture World Ltd. All rights reserved.</span>
+      <span>Handcrafted in Luzira, Uganda.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
+
+</body>
+</html>
