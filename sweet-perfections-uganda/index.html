@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Perfections Uganda — Customized Cakes &amp; Pastries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF3E6;
+    --cream-deep:#F3E5D2;
+    --white:#FFFFFF;
+    --pink:#EBB3C4;
+    --pink-soft:#F6DCE4;
+    --red:#A5293B;
+    --red-deep:#7C1E2C;
+    --green:#3E5B45;
+    --green-deep:#2A4030;
+    --ink:#2C2420;
+    --ink-soft:#6B5D53;
+    --shadow: 0 20px 40px -20px rgba(44,36,32,0.35);
+    --radius: 18px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3, .display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  ul{ list-style:none; margin:0; padding:0; }
+  button{ font-family:inherit; cursor:pointer; border:none; }
+
+  .eyebrow{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:0.95rem;
+    color:var(--red);
+    letter-spacing:0.02em;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:26px; height:1px;
+    background:var(--red);
+    display:inline-block;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- WhatsApp floating button ---------- */
+  .wa-float{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:60;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:var(--green);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 26px -6px rgba(42,64,48,0.55);
+    animation: floatPulse 2.8s ease-in-out infinite;
+  }
+  .wa-float svg{ width:28px; height:28px; fill:var(--white); }
+  @keyframes floatPulse{
+    0%,100%{ transform:scale(1); }
+    50%{ transform:scale(1.06); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .wa-float{ animation:none; }
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(251,243,230,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid rgba(44,36,32,0.08);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 0;
+  }
+  .logo{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+  }
+  .logo .mark{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.4rem;
+    color:var(--red);
+  }
+  .logo .tag{
+    font-size:0.68rem;
+    letter-spacing:0.18em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+  .nav-links{
+    display:flex;
+    gap:34px;
+    font-size:0.92rem;
+    font-weight:500;
+  }
+  .nav-links a{
+    position:relative;
+    padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:'';
+    position:absolute; left:0; bottom:0;
+    width:0%; height:2px;
+    background:var(--red);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:12px 22px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:0.9rem;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary{
+    background:var(--green);
+    color:var(--white);
+    box-shadow:0 12px 24px -10px rgba(42,64,48,0.55);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 16px 28px -10px rgba(42,64,48,0.6); }
+  .btn-outline{
+    border:1.5px solid var(--red);
+    color:var(--red);
+    background:transparent;
+  }
+  .btn-outline:hover{ background:var(--red); color:var(--white); }
+  .btn svg{ width:17px; height:17px; fill:currentColor; }
+
+  .nav-cta{ display:flex; align-items:center; gap:16px; }
+  .menu-toggle{
+    display:none;
+    background:none;
+    width:34px; height:34px;
+    position:relative;
+  }
+  .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after{
+    content:'';
+    position:absolute; left:6px; right:6px; height:2px; background:var(--ink);
+  }
+  .menu-toggle span{ top:16px; }
+  .menu-toggle span::before{ top:-7px; }
+  .menu-toggle span::after{ top:7px; }
+
+  /* ---------- Hero / Slider ---------- */
+  .hero{
+    position:relative;
+    height:88vh;
+    min-height:560px;
+    overflow:hidden;
+  }
+  .slider{
+    position:absolute; inset:0;
+  }
+  .slide{
+    position:absolute; inset:0;
+    opacity:0;
+    transition:opacity 1.2s ease;
+  }
+  .slide.active{ opacity:1; }
+  .slide img{
+    width:100%; height:100%; object-fit:cover;
+  }
+  .slide::after{
+    content:'';
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(44,30,24,0.35) 0%, rgba(30,20,16,0.35) 45%, rgba(20,14,12,0.72) 100%);
+  }
+
+  .hero-content{
+    position:relative;
+    z-index:5;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:var(--white);
+    padding:0 24px;
+  }
+  .hero-content .eyebrow{ color:var(--pink); }
+  .hero-content .eyebrow::before{ background:var(--pink); }
+  .hero-content h1{
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    line-height:1.02;
+    margin:18px 0 20px;
+    max-width:16ch;
+  }
+  .hero-content h1 em{
+    font-style:italic;
+    color:var(--pink-soft);
+  }
+  .hero-content p{
+    max-width:46ch;
+    font-size:1.08rem;
+    color:rgba(255,255,255,0.88);
+    margin-bottom:34px;
+    line-height:1.6;
+  }
+  .hero-btns{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
+  .hero .btn-outline{ border-color:rgba(255,255,255,0.7); color:var(--white); }
+  .hero .btn-outline:hover{ background:var(--white); color:var(--ink); }
+
+  .slider-nav{
+    position:absolute; z-index:6;
+    top:50%; transform:translateY(-50%);
+    width:46px; height:46px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.16);
+    border:1px solid rgba(255,255,255,0.4);
+    color:var(--white);
+    display:flex; align-items:center; justify-content:center;
+    transition: background .2s ease;
+  }
+  .slider-nav:hover{ background:rgba(255,255,255,0.32); }
+  .slider-nav.prev{ left:22px; }
+  .slider-nav.next{ right:22px; }
+  .slider-nav svg{ width:20px; height:20px; fill:var(--white); }
+
+  .slider-dots{
+    position:absolute; z-index:6;
+    bottom:36px; left:50%; transform:translateX(-50%);
+    display:flex; gap:10px;
+  }
+  .slider-dots button{
+    width:9px; height:9px; border-radius:50%;
+    background:rgba(255,255,255,0.45);
+    transition: all .25s ease;
+  }
+  .slider-dots button.active{
+    background:var(--pink);
+    width:26px; border-radius:6px;
+  }
+
+  /* scallop divider — signature piped-icing edge */
+  .scallop{
+    position:relative;
+    display:block;
+    height:26px;
+    width:100%;
+    margin-top:-1px;
+  }
+  .scallop-cream{
+    background: radial-gradient(circle at 14px 0, transparent 14px, var(--cream) 15px) 0 -14px / 28px 28px repeat-x;
+  }
+  .scallop-white{
+    background: radial-gradient(circle at 14px 0, transparent 14px, var(--white) 15px) 0 -14px / 28px 28px repeat-x;
+  }
+  .scallop-green{
+    background: radial-gradient(circle at 14px 0, transparent 14px, var(--green-deep) 15px) 0 -14px / 28px 28px repeat-x;
+  }
+
+  /* ---------- About / intro ---------- */
+  .about{
+    padding:100px 0 80px;
+    background:var(--cream);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:64px;
+    align-items:center;
+  }
+  .about h2{
+    font-size:clamp(2rem, 3.4vw, 2.9rem);
+    margin:16px 0 22px;
+    line-height:1.1;
+  }
+  .about p{
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    line-height:1.75;
+    max-width:52ch;
+  }
+  .about-info{
+    margin-top:32px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .info-row{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+  }
+  .info-row .icon{
+    width:40px; height:40px; flex:0 0 40px;
+    border-radius:50%;
+    background:var(--pink-soft);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .info-row .icon svg{ width:18px; height:18px; fill:var(--red); }
+  .info-row .label{ font-size:0.72rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-soft); }
+  .info-row .value{ font-weight:600; font-size:1rem; }
+
+  .about-visual{
+    position:relative;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    aspect-ratio:4/5;
+  }
+  .about-visual img{ width:100%; height:100%; object-fit:cover; }
+  .about-badge{
+    position:absolute;
+    left:-26px; bottom:26px;
+    background:var(--red);
+    color:var(--white);
+    padding:20px 24px;
+    border-radius:14px;
+    box-shadow:0 16px 30px -12px rgba(124,30,44,0.55);
+    max-width:220px;
+  }
+  .about-badge .num{ font-family:'Fraunces', serif; font-size:2.1rem; font-weight:700; line-height:1; }
+  .about-badge .cap{ font-size:0.78rem; margin-top:6px; color:rgba(255,255,255,0.85); }
+
+  /* ---------- Menu ---------- */
+  .menu{
+    background:var(--white);
+    padding:90px 0 100px;
+  }
+  .menu-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 56px;
+  }
+  .menu-head h2{
+    font-size:clamp(2rem, 3.6vw, 2.9rem);
+    margin:16px 0 14px;
+  }
+  .menu-head p{ color:var(--ink-soft); font-size:1.02rem; line-height:1.6; }
+
+  .menu-filter{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:44px;
+  }
+  .chip{
+    padding:9px 18px;
+    border-radius:999px;
+    font-size:0.82rem;
+    font-weight:600;
+    background:var(--cream);
+    color:var(--ink-soft);
+    border:1px solid transparent;
+    transition:all .2s ease;
+  }
+  .chip.active, .chip:hover{
+    background:var(--green);
+    color:var(--white);
+  }
+
+  .menu-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .card{
+    background:var(--cream);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 12px 26px -18px rgba(44,36,32,0.4);
+    transition: transform .3s ease, box-shadow .3s ease;
+    display:flex;
+    flex-direction:column;
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 22px 34px -18px rgba(44,36,32,0.45);
+  }
+  .card-img{
+    aspect-ratio:5/4;
+    overflow:hidden;
+    position:relative;
+  }
+  .card-img img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .card:hover .card-img img{ transform:scale(1.06); }
+  .card-tag{
+    position:absolute; top:14px; left:14px;
+    background:rgba(255,255,255,0.92);
+    color:var(--red);
+    font-size:0.68rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    padding:6px 11px;
+    border-radius:999px;
+  }
+  .card-body{
+    padding:20px 22px 22px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    flex:1;
+  }
+  .card-body h3{
+    font-size:1.18rem;
+    font-weight:600;
+  }
+  .card-body .price{
+    color:var(--red);
+    font-weight:600;
+    font-size:0.9rem;
+  }
+  .card-body .desc{
+    color:var(--ink-soft);
+    font-size:0.88rem;
+    line-height:1.5;
+    flex:1;
+  }
+  .card-order{
+    margin-top:6px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.84rem;
+    font-weight:700;
+    color:var(--green-deep);
+    align-self:flex-start;
+    padding:10px 16px;
+    border-radius:999px;
+    background:var(--pink-soft);
+    transition: background .2s ease, color .2s ease;
+  }
+  .card-order svg{ width:15px; height:15px; fill:currentColor; }
+  .card-order:hover{ background:var(--green); color:var(--white); }
+
+  /* ---------- CTA banner ---------- */
+  .cta-banner{
+    position:relative;
+    background:var(--green-deep);
+    color:var(--white);
+    padding:90px 0;
+    text-align:center;
+    overflow:hidden;
+  }
+  .cta-banner::before{
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 12% 20%, rgba(235,179,196,0.16), transparent 40%),
+      radial-gradient(circle at 88% 80%, rgba(235,179,196,0.14), transparent 40%);
+  }
+  .cta-banner .inner{ position:relative; z-index:2; max-width:640px; margin:0 auto; }
+  .cta-banner .eyebrow{ color:var(--pink); }
+  .cta-banner .eyebrow::before{ background:var(--pink); }
+  .cta-banner h2{
+    font-size:clamp(2rem, 4vw, 3rem);
+    margin:16px 0 18px;
+    line-height:1.12;
+  }
+  .cta-banner p{
+    color:rgba(255,255,255,0.82);
+    font-size:1.05rem;
+    margin-bottom:34px;
+  }
+  .cta-banner .btn-primary{
+    background:var(--red);
+    box-shadow:0 14px 28px -10px rgba(165,41,59,0.6);
+    padding:16px 30px;
+    font-size:1rem;
+  }
+  .cta-banner .btn-primary:hover{ background:var(--red-deep); }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,0.72);
+    padding:64px 0 28px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:48px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-grid h3{
+    color:var(--white);
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    margin-bottom:18px;
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+  }
+  .foot-logo{ font-family:'Fraunces', serif; font-weight:700; font-size:1.5rem; color:var(--pink-soft); margin-bottom:10px; }
+  .footer-grid p{ font-size:0.92rem; line-height:1.7; max-width:34ch; }
+  .footer-grid li{ font-size:0.92rem; margin-bottom:12px; display:flex; gap:10px; align-items:flex-start; }
+  .footer-grid li svg{ width:16px; height:16px; fill:var(--pink-soft); flex:0 0 16px; margin-top:2px; }
+  .footer-grid a:hover{ color:var(--pink-soft); }
+  .foot-bottom{
+    padding-top:26px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:0.82rem;
+    color:rgba(255,255,255,0.45);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px){
+    .about-grid{ grid-template-columns:1fr; }
+    .about-visual{ order:-1; max-width:420px; margin:0 auto; }
+    .menu-grid{ grid-template-columns:repeat(2, 1fr); }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 700px){
+    .nav-links{
+      position:fixed; top:68px; left:0; right:0;
+      background:var(--cream);
+      flex-direction:column;
+      padding:20px 28px 26px;
+      gap:18px;
+      border-bottom:1px solid rgba(44,36,32,0.08);
+      transform:translateY(-130%);
+      transition:transform .3s ease;
+    }
+    .nav-links.open{ transform:translateY(0); }
+    .menu-toggle{ display:block; }
+    .nav .btn-primary span{ display:none; }
+    .nav .btn-primary{ padding:12px; }
+    .menu-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; gap:32px; }
+    .slider-nav{ width:38px; height:38px; }
+    .about-badge{ left:16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating WhatsApp button -->
+<a class="wa-float" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20place%20a%20cake%20order." target="_blank" aria-label="Order on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 8.1 8.11c0 4.48-3.63 8.11-8.1 8.11a8 8 0 0 1-4.1-1.13l-.3-.17-3.12.82.83-3.04-.19-.31a8.03 8.03 0 0 1-1.23-4.28c0-4.48 3.63-8.11 8.11-8.11m-4.65 4.16c-.18 0-.47.07-.71.33-.24.26-.93.9-.93 2.2 0 1.3.95 2.55 1.08 2.73.13.18 1.85 2.94 4.55 4.01 2.25.9 2.71.72 3.2.68.49-.04 1.58-.64 1.8-1.27.22-.62.22-1.15.15-1.27-.07-.11-.25-.18-.53-.31-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.18-1.35-.81-.72-1.35-1.6-1.51-1.88-.16-.27-.02-.42.12-.56.13-.13.27-.32.4-.48.13-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.51-.86-2.06-.22-.5-.45-.44-.61-.44h-.02"/></svg>
+</a>
+
+<!-- Header -->
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <span class="mark">Sweet Perfections</span>
+      <span class="tag">Uganda</span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20place%20a%20cake%20order." target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 8.1 8.11c0 4.48-3.63 8.11-8.1 8.11a8 8 0 0 1-4.1-1.13l-.3-.17-3.12.82.83-3.04-.19-.31a8.03 8.03 0 0 1-1.23-4.28c0-4.48 3.63-8.11 8.11-8.11m-4.65 4.16c-.18 0-.47.07-.71.33-.24.26-.93.9-.93 2.2 0 1.3.95 2.55 1.08 2.73.13.18 1.85 2.94 4.55 4.01 2.25.9 2.71.72 3.2.68.49-.04 1.58-.64 1.8-1.27.22-.62.22-1.15.15-1.27-.07-.11-.25-.18-.53-.31-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.18-1.35-.81-.72-1.35-1.6-1.51-1.88-.16-.27-.02-.42.12-.56.13-.13.27-.32.4-.48.13-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.51-.86-2.06-.22-.5-.45-.44-.61-.44h-.02"/></svg>
+        <span>Order on WhatsApp</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero slider -->
+<section class="hero" id="home">
+  <div class="slider" id="slider">
+    <div class="slide active"><img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=1600&q=80" alt="Elegant tiered wedding cake"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80" alt="Decorated celebration cake"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1607478900766-efe13248b125?auto=format&fit=crop&w=1600&q=80" alt="Pink birthday cake"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1621303840128-73d9d1af0868?auto=format&fit=crop&w=1600&q=80" alt="Cake slice on a plate"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=1600&q=80" alt="Fresh baked cake"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&fit=crop&w=1600&q=80" alt="Pastel cupcakes"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1600&q=80" alt="White floral wedding cake"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?auto=format&fit=crop&w=1600&q=80" alt="Rustic layered cake"></div>
+  </div>
+
+  <button class="slider-nav prev" id="prevBtn" aria-label="Previous slide">
+    <svg viewBox="0 0 24 24"><path d="M15.5 4.5 8 12l7.5 7.5 1.4-1.4L10.8 12l6.1-6.1z"/></svg>
+  </button>
+  <button class="slider-nav next" id="nextBtn" aria-label="Next slide">
+    <svg viewBox="0 0 24 24"><path d="M8.5 4.5 16 12l-7.5 7.5-1.4-1.4L13.2 12 7.1 5.9z"/></svg>
+  </button>
+  <div class="slider-dots" id="sliderDots"></div>
+
+  <div class="hero-content">
+    <span class="eyebrow">Ttula–Kawempe, Uganda</span>
+    <h1>Cakes baked to make your <em>celebration</em> unforgettable</h1>
+    <p>We bake customized cakes and pastries. We find purpose in making your celebration memorable with authentic, tasty cakes — from birthdays to weddings.</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20place%20a%20cake%20order." target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 8.1 8.11c0 4.48-3.63 8.11-8.1 8.11a8 8 0 0 1-4.1-1.13l-.3-.17-3.12.82.83-3.04-.19-.31a8.03 8.03 0 0 1-1.23-4.28c0-4.48 3.63-8.11 8.11-8.11m-4.65 4.16c-.18 0-.47.07-.71.33-.24.26-.93.9-.93 2.2 0 1.3.95 2.55 1.08 2.73.13.18 1.85 2.94 4.55 4.01 2.25.9 2.71.72 3.2.68.49-.04 1.58-.64 1.8-1.27.22-.62.22-1.15.15-1.27-.07-.11-.25-.18-.53-.31-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.18-1.35-.81-.72-1.35-1.6-1.51-1.88-.16-.27-.02-.42.12-.56.13-.13.27-.32.4-.48.13-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.51-.86-2.06-.22-.5-.45-.44-.61-.44h-.02"/></svg>
+        <span>Order on WhatsApp</span>
+      </a>
+      <a class="btn btn-outline" href="#menu">View Menu</a>
+    </div>
+  </div>
+</section>
+<span class="scallop scallop-cream"></span>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2>Authentic, tasty cakes for every milestone</h2>
+      <p>Sweet Perfections Uganda bakes customized cakes and pastries for the moments that matter — birthdays, weddings, graduations, baptisms and everything in between. Every order is handmade to order, so your cake is as unique as the celebration itself.</p>
+
+      <div class="about-info">
+        <div class="info-row">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg></span>
+          <div>
+            <div class="label">Location</div>
+            <div class="value">Ttula – Kawempe, Uganda</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg></span>
+          <div>
+            <div class="label">Call / WhatsApp</div>
+            <div class="value">+256 777 104 513</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2m0 2v.01L12 12l8-5.99V6H4m16 12V8.24l-8 6-8-6V18h16"/></svg></span>
+          <div>
+            <div class="label">Email</div>
+            <div class="value">tashaolwen123@gmail.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-visual">
+      <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=900&q=80" alt="Baker decorating a customized cake">
+      <div class="about-badge">
+        <div class="num">100%</div>
+        <div class="cap">Customized to your celebration — every cake made to order</div>
+      </div>
+    </div>
+  </div>
+</section>
+<span class="scallop scallop-white"></span>
+
+<!-- Menu -->
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="menu-head">
+      <span class="eyebrow">The Menu</span>
+      <h2>Something sweet for every occasion</h2>
+      <p>Tap "Order" on any item to chat with us directly on WhatsApp — tell us your flavor, size and date, and we'll take it from there.</p>
+    </div>
+
+    <div class="menu-filter">
+      <span class="chip active">All</span>
+      <span class="chip">Birthdays</span>
+      <span class="chip">Weddings</span>
+      <span class="chip">Seasonal</span>
+      <span class="chip">Everyday</span>
+    </div>
+
+    <div class="menu-grid">
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-tag">Bestseller</span>
+          <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?auto=format&fit=crop&w=700&q=80" alt="Birthday cake">
+        </div>
+        <div class="card-body">
+          <h3>Birthday Cakes</h3>
+          <div class="price">80,000 – 200,000 UGX</div>
+          <p class="desc">Custom-designed birthday cakes in any flavor, color and theme you like.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20Birthday%20Cake.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80" alt="Gift hamper with flowers">
+        </div>
+        <div class="card-body">
+          <h3>Gift Hampers</h3>
+          <div class="price">From 150,000 UGX</div>
+          <p class="desc">Comes with a bouquet, mini treats and a personalized note — a full gift experience.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20Gift%20Hamper.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80" alt="Banana cake loaf">
+        </div>
+        <div class="card-body">
+          <h3>Cake Loafs</h3>
+          <div class="price">From 25,000 UGX</div>
+          <p class="desc">Banana cake loaf and other everyday flavors, baked fresh for pick-up or delivery.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20Cake%20Loaf.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-tag">Kids</span>
+          <img src="https://images.unsplash.com/photo-1601979031925-424e53b6caaa?auto=format&fit=crop&w=700&q=80" alt="Kids character cake">
+        </div>
+        <div class="card-body">
+          <h3>Kid's Character Cakes</h3>
+          <div class="price">From 80,000 UGX</div>
+          <p class="desc">Their favorite cartoon or superhero, recreated in cake — a guaranteed showstopper.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20Kid%27s%20Character%20Cake.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-tag">Popular</span>
+          <img src="https://images.unsplash.com/photo-1622480916113-9000ac49b79d?auto=format&fit=crop&w=700&q=80" alt="Budget friendly wedding cake">
+        </div>
+        <div class="card-body">
+          <h3>Budget-Friendly Wedding Cakes</h3>
+          <div class="price">Ask for a quote</div>
+          <p class="desc">Elegant wedding cakes designed to fit real budgets, without cutting on beauty.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20Budget-Friendly%20Wedding%20Cake.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-tag">Premium</span>
+          <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=700&q=80" alt="Wedding and traditional introduction cake">
+        </div>
+        <div class="card-body">
+          <h3>Wedding &amp; Traditional Cakes</h3>
+          <div class="price">700,000 UGX &amp; above</div>
+          <p class="desc">Multi-tier centerpieces for weddings and traditional introduction ceremonies.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20Wedding%20%26%20Traditional%20Cake.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1621303954908-907159247fc8?auto=format&fit=crop&w=700&q=80" alt="Pink cupcakes in a box">
+        </div>
+        <div class="card-body">
+          <h3>Cupcakes</h3>
+          <div class="price">30,000 UGX / half dozen</div>
+          <p class="desc">Soft, moist cupcakes in a range of flavors — perfect for parties and favors.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20Cupcakes.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=700&q=80" alt="Slice of cake">
+        </div>
+        <div class="card-body">
+          <h3>Cake Slices</h3>
+          <div class="price">25,000 UGX</div>
+          <p class="desc">Just want a taste? Order a single slice — other flavors available on request.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20Cake%20Slice.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-tag">Custom</span>
+          <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?auto=format&fit=crop&w=700&q=80" alt="Custom themed cake">
+        </div>
+        <div class="card-body">
+          <h3>Customized Theme Cakes</h3>
+          <div class="price">Ask for a quote</div>
+          <p class="desc">Travel-themed, hobby-themed or fully bespoke — tell us your idea and we'll bake it.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20Customized%20Theme%20Cake.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-tag">Seasonal</span>
+          <img src="https://images.unsplash.com/photo-1543158181-1274e5362710?auto=format&fit=crop&w=700&q=80" alt="Christmas cake">
+        </div>
+        <div class="card-body">
+          <h3>Christmas Cakes</h3>
+          <div class="price">80,000 UGX &amp; above</div>
+          <p class="desc">Festive designs to sweeten your Christmas table and holiday gatherings.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20Christmas%20Cake.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-tag">Seasonal</span>
+          <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=700&q=80" alt="New Year celebration cake">
+        </div>
+        <div class="card-body">
+          <h3>New Year Cakes</h3>
+          <div class="price">80,000 UGX &amp; above</div>
+          <p class="desc">Ring in the new year with a cake as bright and bold as your celebration.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20New%20Year%20Cake.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-tag">Milestone</span>
+          <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?auto=format&fit=crop&w=700&q=80" alt="Graduation cake">
+        </div>
+        <div class="card-body">
+          <h3>Graduation Cakes</h3>
+          <div class="price">80,000 UGX &amp; above</div>
+          <p class="desc">Celebrate the achievement with a cake that carries their name and their moment.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20Graduation%20Cake.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <span class="card-tag">Milestone</span>
+          <img src="https://images.unsplash.com/photo-1602351447937-745cb720612f?auto=format&fit=crop&w=700&q=80" alt="Baptism or christening cake">
+        </div>
+        <div class="card-body">
+          <h3>Baptism &amp; Christening Cakes</h3>
+          <div class="price">80,000 UGX &amp; above</div>
+          <p class="desc">Soft, delicate designs to mark this special day for your little one.</p>
+          <a class="card-order" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20order%20a%20Baptism%20%2F%20Christening%20Cake.%20Can%20you%20tell%20me%20more%3F" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA banner -->
+<section class="cta-banner" id="contact">
+  <div class="wrap inner">
+    <span class="eyebrow">Let's Bake Something Sweet</span>
+    <h2>Tell us your date, flavor &amp; design — we'll handle the rest</h2>
+    <p>Chat with Sweet Perfections Uganda on WhatsApp for quotes, availability and delivery in Kampala &amp; around Ttula-Kawempe.</p>
+    <a class="btn btn-primary" href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20place%20a%20cake%20order." target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2"/></svg>
+      <span>Chat on WhatsApp</span>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-logo">Sweet Perfections Ug</div>
+        <p>Customized cakes and pastries, baked to make every celebration memorable — authentic, tasty, made just for you.</p>
+      </div>
+      <div>
+        <h3>Visit &amp; Contact</h3>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg>
+            <span>Ttula – Kawempe, Uganda</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1z"/></svg>
+            <a href="tel:+256777104513">+256 777 104 513</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2m0 2v.01L12 12l8-5.99V6H4m16 12V8.24l-8 6-8-6V18h16"/></svg>
+            <a href="mailto:tashaolwen123@gmail.com">tashaolwen123@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Order</h3>
+        <ul>
+          <li><a href="#menu">Browse the menu</a></li>
+          <li><a href="https://wa.me/256777104513?text=Hi%20Sweet%20Perfections%20Uganda!%20I%27d%20like%20to%20place%20a%20cake%20order." target="_blank">Order on WhatsApp</a></li>
+          <li><a href="tel:+256777104513">Call to order</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Sweet Perfections Uganda. All rights reserved.</span>
+      <span>Baked with love in Kampala.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Menu chip filter (visual only demo — highlights active chip)
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+    });
+  });
+
+  // Hero slider
+  const slides = document.querySelectorAll('.slide');
+  const dotsWrap = document.getElementById('sliderDots');
+  let current = 0;
+  let timer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    if (i === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = dotsWrap.querySelectorAll('button');
+
+  function goTo(i){
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (i + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  function next(){ goTo(current + 1); }
+  function prev(){ goTo(current - 1); }
+
+  function startAutoplay(){
+    timer = setInterval(next, 5000);
+  }
+  function stopAutoplay(){
+    clearInterval(timer);
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => { next(); stopAutoplay(); startAutoplay(); });
+  document.getElementById('prevBtn').addEventListener('click', () => { prev(); stopAutoplay(); startAutoplay(); });
+
+  const heroEl = document.querySelector('.hero');
+  heroEl.addEventListener('mouseenter', stopAutoplay);
+  heroEl.addEventListener('mouseleave', startAutoplay);
+
+  startAutoplay();
+</script>
+
+</body>
+</html>

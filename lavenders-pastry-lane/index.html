@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lavender's Pastry Lane | A Taste of a Divine Touch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F8F6EF;
+    --card:#FFFFFF;
+    --sage:#5F6E52;
+    --sage-deep:#47543C;
+    --gold:#B4914E;
+    --ink:#2E2B24;
+    --ink-soft:#75705F;
+    --line:#E4DFCF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    font-weight:400;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    color:var(--ink);
+    line-height:1.15;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .leaf{color:var(--sage);}
+
+  header{padding:22px 0;border-bottom:1px solid var(--line);}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:8px;font-family:'Fraunces',serif;font-size:1.35rem;font-weight:600;}
+  .header-cta{
+    background:var(--sage-deep);
+    color:#fff;
+    padding:10px 20px;
+    border-radius:2px;
+    font-size:0.82rem;
+  }
+
+  .hero{padding:56px 0 48px;}
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:44px;
+    align-items:center;
+  }
+  .hero-kicker{
+    color:var(--sage-deep);
+    font-size:0.8rem;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .hero h1{font-size:2.7rem;margin-bottom:18px;font-style:italic;}
+  .hero p{color:var(--ink-soft);font-size:1rem;max-width:44ch;margin-bottom:26px;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-sage{
+    background:var(--sage-deep);
+    color:#fff;
+    padding:14px 26px;
+    border-radius:2px;
+    font-size:0.9rem;
+  }
+  .btn-outline{
+    border:1px solid var(--ink);
+    padding:14px 26px;
+    border-radius:2px;
+    font-size:0.9rem;
+  }
+  .hero-image{
+    aspect-ratio:4/5;
+    border-radius:2px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 26px 52px -22px rgba(46,43,36,0.25);
+  }
+
+  .strip{
+    background:var(--sage-deep);
+    color:#F3F1E6;
+    padding:14px 0;
+  }
+  .strip .wrap{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    font-size:0.82rem;
+  }
+  .strip strong{color:var(--gold);font-weight:600;}
+
+  .section{padding:56px 0 8px;}
+  .section-head{
+    text-align:center;
+    margin-bottom:32px;
+  }
+  .section-head h2{font-size:2rem;font-style:italic;}
+  .section-head p{color:var(--ink-soft);font-size:0.92rem;margin-top:8px;}
+
+  .products{padding:0 0 60px;}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .card-img{aspect-ratio:1/1;}
+  .card-body{padding:16px 18px 18px;}
+  .card-body h3{font-size:1.15rem;margin-bottom:6px;font-style:italic;}
+  .card-desc{font-size:0.82rem;color:var(--ink-soft);margin-bottom:10px;}
+  .card-price{font-size:0.92rem;color:var(--sage-deep);font-weight:600;}
+  .card-price small{display:block;color:var(--ink-soft);font-weight:400;font-size:0.7rem;margin-top:2px;}
+  .card-cta{
+    margin-top:12px;display:inline-block;
+    font-size:0.8rem;color:var(--ink);
+    border-bottom:1px solid var(--gold);padding-bottom:1px;
+  }
+
+  .bonus{
+    background:var(--card);
+    border:1px dashed var(--gold);
+    border-radius:2px;
+    padding:22px 24px;
+    margin:8px 0 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .bonus h3{font-size:1.1rem;font-style:italic;margin-bottom:4px;}
+  .bonus p{font-size:0.85rem;color:var(--ink-soft);}
+  .bonus a{
+    background:var(--gold);
+    color:#2E2B24;
+    padding:11px 20px;
+    border-radius:2px;
+    font-size:0.82rem;
+    font-weight:600;
+    white-space:nowrap;
+  }
+
+  .about{
+    background:var(--sage);
+    color:#F3F1E6;
+    padding:52px 0;
+  }
+  .about .wrap{max-width:620px;text-align:center;}
+  .about-kicker{font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;color:#D9E0C9;margin-bottom:14px;}
+  .about h2{color:#fff;font-size:1.7rem;font-style:italic;margin-bottom:14px;}
+  .about p{font-size:0.94rem;color:#E4E7D8;}
+
+  footer{padding:44px 0 32px;}
+  .footer-grid{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:22px;
+    padding-bottom:22px;border-bottom:1px solid var(--line);
+  }
+  .footer-grid h3{font-size:1.2rem;font-style:italic;margin-bottom:6px;}
+  .footer-grid p{font-size:0.85rem;color:var(--ink-soft);}
+  .footer-bottom{
+    padding-top:18px;font-size:0.76rem;color:var(--ink-soft);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  .wa-float{
+    position:fixed;bottom:22px;right:22px;
+    background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px -6px rgba(0,0,0,0.35);z-index:60;
+  }
+  .wa-float svg{width:28px;height:28px;fill:#fff;}
+
+  @media (max-width:760px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-image{order:-1;aspect-ratio:16/10;}
+    .hero h1{font-size:2.1rem;}
+    .grid{grid-template-columns:1fr 1fr;}
+    .strip .wrap{flex-direction:column;}
+    .bonus{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="leaf">✦</span> Lavender's Pastry Lane</div>
+    <a class="header-cta" href="https://wa.me/256782793220?text=Hi%20Lavender%27s%20Pastry%20Lane%2C%20I%27d%20like%20to%20order%20a%20cake" target="_blank">Order Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="hero-kicker">Kiwayule · Ssebowa Road · Countrywide Delivery</div>
+      <h1>A taste of a divine touch.</h1>
+      <p>Handcrafted cakes for every celebration — waffer paper finishes, kids' fondant designs, elegant rosettes, and custom themes, baked with care and delivered anywhere in Uganda.</p>
+      <div class="hero-actions">
+        <a class="btn-sage" href="https://wa.me/256782793220?text=Hi%20Lavender%27s%20Pastry%20Lane%2C%20I%27d%20like%20to%20order%20a%20cake" target="_blank">Order on WhatsApp</a>
+        <a class="btn-outline" href="#cakes">View Cakes</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1638871894014-047605c91c16?w=900&auto=format&fit=crop&q=80" alt="Elegant tiered cake with floral detail">
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div>📍 <strong>Kiwayule,</strong> Ssebowa Road</div>
+    <div>💬 <strong>+256 782 793220</strong></div>
+    <div>🚚 Deliveries countrywide</div>
+  </div>
+</div>
+
+<section class="section" id="cakes">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Our Cakes</h2>
+      <p>From simple celebrations to full themed showstoppers — every cake is made to order.</p>
+    </div>
+  </div>
+</section>
+
+<section class="products">
+  <div class="wrap">
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1638871894014-047605c91c16?w=700&auto=format&fit=crop&q=80" alt="Waffer paper finished cake with floral detail">
+        </div>
+        <div class="card-body">
+          <h3>Waffer Paper Cakes</h3>
+          <p class="card-desc">Delicate waffer paper finish, made to order</p>
+          <div class="card-price">From UGX 120,000
+            <small>Sample price — confirm with real menu</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256782793220?text=Hi%2C%20I%27m%20interested%20in%20a%20Waffer%20Paper%20Cake" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1600653155864-88227b5b64b0?w=700&auto=format&fit=crop&q=80" alt="Colourful kids fondant cake">
+        </div>
+        <div class="card-body">
+          <h3>Kids Fondant Cakes</h3>
+          <p class="card-desc">Fun fondant designs, any theme</p>
+          <div class="card-price">From UGX 100,000
+            <small>Sample price — confirm with real menu</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256782793220?text=Hi%2C%20I%27m%20interested%20in%20a%20Kids%20Fondant%20Cake" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1713774788222-78dde5aa19ff?w=700&auto=format&fit=crop&q=80" alt="Simple pink rosette cake">
+        </div>
+        <div class="card-body">
+          <h3>Ladies Simple Cakes</h3>
+          <p class="card-desc">Rosette finish, understated and elegant</p>
+          <div class="card-price">From UGX 60,000
+            <small>Sample price — confirm with real menu</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256782793220?text=Hi%2C%20I%27m%20interested%20in%20a%20Ladies%20Simple%20Cake" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1600653155864-88227b5b64b0?w=700&auto=format&fit=crop&q=80&sat=-10" alt="Two tiered themed kids cake">
+        </div>
+        <div class="card-body">
+          <h3>2-Tiered Kids Themed Cakes</h3>
+          <p class="card-desc">A full showstopper for the big birthdays</p>
+          <div class="card-price">From UGX 200,000
+            <small>Sample price — confirm with real menu</small>
+          </div>
+          <a class="card-cta" href="https://wa.me/256782793220?text=Hi%2C%20I%27m%20interested%20in%20a%202-Tiered%20Kids%20Themed%20Cake" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bonus">
+      <div>
+        <h3>Chocolate & More Recipes</h3>
+        <p>A recipe book with chocolate treats and more — ask about it on WhatsApp.</p>
+      </div>
+      <a href="https://wa.me/256782793220?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Chocolate%20%26%20More%20recipe%20book" target="_blank">Ask About It</a>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="about-kicker">Meet Lavender</div>
+    <h2>Baked by Alice Riziki Lavender</h2>
+    <p>Proud participant at the Kampala Cake Fair 2026 — bringing a divine touch to every celebration, one cake at a time.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Lavender's Pastry Lane</h3>
+        <p>A taste of a divine touch. Custom cakes for birthdays, kids, and every occasion in between.</p>
+      </div>
+      <div>
+        <h3>Order / Contact</h3>
+        <p>Kiwayule, along Ssebowa Road<br>
+        WhatsApp / Call: +256 782 793220<br>
+        Deliveries available countrywide</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Lavender's Pastry Lane</span>
+      <span>Site by FRECA E-SERVICES</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/256782793220?text=Hi%20Lavender%27s%20Pastry%20Lane%2C%20I%27d%20like%20to%20order%20a%20cake" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.94 9.94 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.82 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.19-1.58-1.19-3.01 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39.002.56.01.18.008.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.26.13.43.19.5.3.07.11.07.62-.17 1.3z"/></svg>
+</a>
+
+</body>
+</html>
