@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FRECA E-SERVICES | Your Business’s Health Center</title>
-  <meta name="description" content="FRECA E-SERVICES builds Interactive WhatsApp Repliers, shopping websites, and business tools for Ugandan businesses. Clear UGX prices, monthly care plans, and a screenshot-first 50/50 WhatsApp workflow. Based in Uganda, working remotely.">
+  <meta name="description" content="FRECA E-SERVICES builds Interactive WhatsApp Repliers, shopping websites, and business tools for Ugandan businesses. Clear UGX prices, two website-management choices, and a screenshot-first 50/50 WhatsApp workflow with flexible Mobile Money installments. Based in Uganda, working remotely.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="FRECA E-SERVICES">
   <meta property="og:title" content="FRECA E-SERVICES | Your Business’s Health Center">
-  <meta property="og:description" content="Interactive WhatsApp Repliers, shopping websites, and business tools with clear UGX prices. Screenshot-first delivery: you approve screenshots, then pay 50/50 on WhatsApp.">
+  <meta property="og:description" content="Interactive WhatsApp Repliers and shopping websites with clear UGX prices. We can manage the site for you, or you can run a private Owner Admin Dashboard. Screenshot-first 50/50 delivery, plus flexible Mobile Money installments after the live preview.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_UG">
   
@@ -541,6 +541,19 @@
     .trust-step p { font-size: 0.8rem; line-height: 1.55; color: rgba(248,250,252,0.74); }
     .trust-step a { color: #6EE7B7; font-weight: 700; }
     .trust-step strong { color: white; }
+    .pay-note {
+      position: relative;
+      margin-top: 1.1rem;
+      padding: 0.95rem 1rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(110,231,183,0.35);
+      color: rgba(248,250,252,0.82);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+    .pay-note strong { color: white; }
+    .pay-note a { color: #6EE7B7; font-weight: 700; }
     @media (max-width: 900px) {
       .trust-steps { grid-template-columns: 1fr 1fr; }
     }
@@ -1744,7 +1757,7 @@
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
             </div>
             <h3 class="service-title">WhatsApp Shopping Websites &amp; Catalogs</h3>
-            <p class="service-desc">Mobile-first shopping pages, digital menus, and product catalogs with a free lifetime link and no monthly hosting fee. Pair one with an Interactive WhatsApp Replier when you want customers answered even while you are away.</p>
+            <p class="service-desc">Mobile-first shopping pages, digital menus, and product catalogs. Option 1 — we manage everything (UGX 150,000–200,000, zero monthly hosting; send new photos and prices on WhatsApp). Option 2 — a private Owner Admin Dashboard you run from your phone (UGX 280,000). Pair one with an Interactive WhatsApp Replier when you want customers answered even while you are away.</p>
             <a href="#problems" class="service-link">Discuss this area →</a>
           </article>
           <article class="service-card reveal">
@@ -1797,7 +1810,7 @@
         <div class="section-header reveal">
           <span class="section-label">Quick-Start Packages</span>
           <h2 class="section-title">Clear Ugandan Prices. Optional Monthly Care.</h2>
-          <p class="section-desc">Every package below is priced in UGX. You see screenshots before the first payment, and monthly care is optional — you only add it when you want us to keep prices, stock, or menus up to date.</p>
+          <p class="section-desc">Every package below is priced in UGX. You see screenshots before the first payment. Shopping websites have two management choices, and if the full cash is not ready after the live preview, flexible Mobile Money installments are available.</p>
         </div>
         <div class="packages-grid">
           <article class="package-card featured span-2 reveal">
@@ -1833,29 +1846,40 @@
             </div>
           </article>
 
-          <article class="package-card reveal">
+          <article class="package-card span-2 reveal" id="website-management">
             <div>
-              <span class="package-badge">48–72 hour turnaround</span>
-              <h3 class="service-title">WhatsApp Shopping Website &amp; Catalog Sprint</h3>
-              <p class="pkg-price"><strong>UGX 150,000 – 200,000</strong><span>one-time</span></p>
-              <p class="service-desc" style="margin-bottom:0.5rem;">A mobile shopping page, digital menu, or product catalog with a free lifetime link and zero monthly hosting fee.</p>
-              <ul class="package-list">
-                <li>Free lifetime link for WhatsApp, Instagram, TikTok, and Google</li>
-                <li>Zero monthly hosting fee on this sprint</li>
-                <li>1-tap WhatsApp ordering so customers send a clear order</li>
-              </ul>
-              <div class="addon-box">
-                <p class="addon-label">Optional add-ons</p>
-                <ul>
-                  <li><strong>Done-For-You Monthly Price Updates &amp; 2 Promo Flyers</strong> — UGX 25,000/month</li>
-                  <li><strong>Pro Website + Self-Service Admin Dashboard</strong> — UGX 250,000 – 350,000 + UGX 20,000/mo cloud database sync</li>
-                </ul>
+              <span class="package-badge">Who manages the website?</span>
+              <h3 class="service-title">Two Website Management Options</h3>
+              <p class="service-desc" style="margin-bottom:0.85rem;">A mobile shopping page, digital menu, or product catalog with a free lifetime link, 1-tap WhatsApp ordering, and a 48–72 hour turnaround. Choose who keeps prices and stock current.</p>
+              <div class="wa-options">
+                <div class="wa-option">
+                  <h4>Option 1 — We Manage Everything for You</h4>
+                  <p class="pkg-price"><strong>UGX 150,000 – 200,000</strong><span>one-time · lower price</span></p>
+                  <p>Zero monthly hosting fees. When you get new stock or change a price, send the photo and the new price on WhatsApp <a href="https://wa.me/256726978988">+256 726 978988</a> and we update the website.</p>
+                  <ul class="package-list">
+                    <li><strong>UGX 10,000 – 15,000</strong> per update</li>
+                    <li>or <strong>UGX 25,000/month</strong> for unlimited updates all month</li>
+                  </ul>
+                  <div class="pkg-actions">
+                    <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20Option%201%20%E2%80%94%20We%20Manage%20Everything%20for%20You%20%28UGX%20150%2C000%E2%80%93200%2C000%20one-time%2C%20zero%20monthly%20hosting%29.%20I%20will%20send%20photos%20and%20new%20prices%20on%20WhatsApp.%20Updates%20are%20UGX%2010%2C000%E2%80%9315%2C000%20each%2C%20or%20UGX%2025%2C000%2Fmonth%20for%20unlimited%20updates." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request Option 1</a>
+                    <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Option 1 — We Manage Everything (UGX 150,000–200,000)" data-prob="I want to simplify customer inquiries or ordering">Select in Form</button>
+                  </div>
+                </div>
+                <div class="wa-option">
+                  <h4>Option 2 — Self-Managed Owner Admin Dashboard</h4>
+                  <p class="pkg-price"><strong>UGX 280,000</strong><span>one-time · higher price</span></p>
+                  <p>Includes a private password-protected Owner Admin Dashboard. Upload new products, edit prices, and mark items sold out anytime from your phone, with no per-edit fee.</p>
+                  <ul class="package-list">
+                    <li>You manage stock and prices yourself</li>
+                    <li>No charge each time you edit</li>
+                  </ul>
+                  <div class="pkg-actions">
+                    <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20Option%202%20%E2%80%94%20the%20Self-Managed%20Owner%20Admin%20Dashboard%20%28UGX%20280%2C000%29%20so%20I%20can%20upload%20products%2C%20edit%20prices%2C%20and%20mark%20items%20sold%20out%20from%20my%20phone." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request Option 2</a>
+                    <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Option 2 — Self-Managed Owner Admin Dashboard (UGX 280,000)" data-prob="I want to simplify customer inquiries or ordering">Select in Form</button>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="pkg-actions">
-                <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%27m%20interested%20in%20the%20WhatsApp%20Shopping%20Website%20%26%20Catalog%20Sprint%20%28UGX%20150%2C000%E2%80%93200%2C000%2C%20free%20lifetime%20link%2C%20zero%20monthly%20hosting%29%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request on WhatsApp</a>
-                <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="WhatsApp Shopping Website & Catalog Sprint" data-prob="I want to simplify customer inquiries or ordering">Select in Form</button>
-              </div>
           </article>
 
           <article class="package-card reveal">
@@ -1863,11 +1887,11 @@
               <span class="package-badge">Website + replier</span>
               <h3 class="service-title">Website + Interactive WhatsApp Replier Bundle</h3>
               <p class="pkg-price"><strong>UGX 220,000 – 300,000</strong><span>setup together</span></p>
-              <p class="service-desc" style="margin-bottom:0.5rem;">The shopping website and an Interactive WhatsApp Replier, scoped as one job so customers can browse and get answers.</p>
+              <p class="service-desc" style="margin-bottom:0.5rem;">Option 1 (we manage the website) plus an Interactive WhatsApp Replier, scoped as one job so customers can browse and get answers. The Owner Admin Dashboard (UGX 280,000) is priced on its own.</p>
               <ul class="package-list">
-                <li>WhatsApp shopping website or catalog</li>
+                <li>Managed shopping website or catalog (Option 1)</li>
                 <li>Numbered-Menu or Smart AI replier setup included in this range</li>
-                <li>Smart AI managed updates stay UGX 30,000/month if you choose Option B</li>
+                <li>Smart AI managed updates stay UGX 30,000/month if you choose the Smart AI replier</li>
               </ul>
             </div>
             <div class="pkg-actions">
@@ -1957,6 +1981,7 @@
               <p>When everything is 100% approved, clear the remaining 50% and receive your permanent live link. A custom .com or .co.ug domain can be connected at the registrar’s annual rate.</p>
             </li>
           </ol>
+          <p class="pay-note">After you review the live preview link, if you do not have the full cash right away, flexible installments are available in addition to the standard 50/50: <strong>25% weekly</strong>, <strong>50% monthly</strong>, or <strong>10% every 2 days</strong>, by Mobile Money to <a href="tel:+256758991506">0758 991506</a> — <strong>FREDRICK MUGAMBE</strong>.</p>
         </aside>
       </div>
     </section>
@@ -2123,7 +2148,7 @@
         <div class="section-header reveal">
           <span class="section-label">How it works</span>
           <h2 class="section-title">Screenshot-First. Half Now, Half When You Approve.</h2>
-          <p class="section-desc">Four remote steps on WhatsApp. You never pay blind, and you never need to sit in Kampala traffic for a meeting. If a package is the wrong fit, we say so before any design starts.</p>
+          <p class="section-desc">Four remote steps on WhatsApp. You never pay blind, and you never need to sit in Kampala traffic for a meeting. If the full cash is not ready after the live preview, you can switch the balance to a Mobile Money installment plan. If a package is the wrong fit, we say so before any design starts.</p>
         </div>
         <div class="process-steps">
           <div class="process-step reveal">
@@ -2147,6 +2172,7 @@
             <p class="process-desc">Once everything is 100% approved, clear the remaining 50% balance and receive your permanent live link. Custom .com or .co.ug domains can also be connected at the registrar’s annual rate.</p>
           </div>
         </div>
+        <p class="pay-note">Flexible installment plans sit alongside the standard 50/50. After you review the live preview link, if you do not have the full cash right away, pay <strong>25% weekly</strong>, <strong>50% monthly</strong>, or <strong>10% every 2 days</strong> by Mobile Money to <a href="tel:+256758991506">0758 991506</a> — <strong>FREDRICK MUGAMBE</strong>.</p>
       </div>
     </section>
 
@@ -2383,11 +2409,15 @@
           </div>
           <div class="faq-item">
             <button class="faq-q" type="button">What do the packages cost in UGX?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-            <div class="faq-a"><div class="faq-a-inner">Numbered-Menu WhatsApp Replier UGX 60,000. Smart AI WhatsApp Replier UGX 50,000 setup + UGX 30,000/month. Shopping website and catalog sprint UGX 150,000–200,000 (free lifetime link, no monthly hosting). Optional care: price updates and 2 promo flyers UGX 25,000/month, or a Pro website with a self-service admin dashboard at UGX 250,000–350,000 plus UGX 20,000/month cloud sync. Website + replier bundle UGX 220,000–300,000. Studio photo and ad pack UGX 60,000–100,000 after 1 free watermarked sample. Credibility and tender kit UGX 120,000–200,000. Stock tracker or custom web app UGX 250,000–500,000+.</div></div>
+            <div class="faq-a"><div class="faq-a-inner">Numbered-Menu WhatsApp Replier UGX 60,000. Smart AI WhatsApp Replier UGX 50,000 setup + UGX 30,000/month. Website Option 1 — We Manage Everything: UGX 150,000–200,000 one-time, zero monthly hosting, then UGX 10,000–15,000 per WhatsApp update or UGX 25,000/month for unlimited updates. Website Option 2 — Self-Managed Owner Admin Dashboard: UGX 280,000, with no per-edit fee. Website + replier bundle UGX 220,000–300,000. Studio photo and ad pack UGX 60,000–100,000 after 1 free watermarked sample. Credibility and tender kit UGX 120,000–200,000. Stock tracker or custom web app UGX 250,000–500,000+.</div></div>
           </div>
           <div class="faq-item">
             <button class="faq-q" type="button">How does the Screenshot-First 50/50 payment work?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-            <div class="faq-a"><div class="faq-a-inner">You never pay blind, and you do not need a meeting in Kampala. 1) Send 3–5 photos and prices on WhatsApp (+256 726 978988). We send screenshots first. 2) When you love them, pay the first 50% by Mobile Money to 0758 991506 — FREDRICK MUGAMBE. 3) We send a clickable preview link so you can test it and request changes. 4) After 100% approval, pay the remaining 50% and receive your permanent live link. Custom .com or .co.ug domains can be connected at the registrar’s annual rate.</div></div>
+            <div class="faq-a"><div class="faq-a-inner">You never pay blind, and you do not need a meeting in Kampala. 1) Send 3–5 photos and prices on WhatsApp (+256 726 978988). We send screenshots first. 2) When you love them, pay the first 50% by Mobile Money to 0758 991506 — FREDRICK MUGAMBE. 3) We send a clickable preview link so you can test it and request changes. 4) After 100% approval, pay the remaining 50% and receive your permanent live link. Custom .com or .co.ug domains can be connected at the registrar’s annual rate. If you do not have the full cash right away after reviewing that live preview, you can use a flexible installment plan instead: 25% weekly, 50% monthly, or 10% every 2 days, still by Mobile Money to 0758 991506 — FREDRICK MUGAMBE.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Who manages the website?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+            <div class="faq-a"><div class="faq-a-inner">Two choices. Option 1 — We Manage Everything for You is the lower price: UGX 150,000–200,000 one-time, with zero monthly hosting fees. Whenever you get new stock or change a price, send the photo and the new price on WhatsApp (+256 726 978988) and we update the site for UGX 10,000–15,000 per update, or UGX 25,000/month for unlimited updates all month. Option 2 — Self-Managed Owner Admin Dashboard is the higher price: UGX 280,000. It includes a private password-protected Owner Admin Dashboard so you can upload new products, edit prices, and mark items sold out anytime from your phone, without paying per edit.</div></div>
           </div>
           <div class="faq-item">
             <button class="faq-q" type="button">What kinds of digital solutions do you provide?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
@@ -2419,7 +2449,7 @@
           </div>
           <div class="faq-item">
             <button class="faq-q" type="button">How is a project scoped and quoted?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-            <div class="faq-a"><div class="faq-a-inner">Quick-Start packages have published UGX prices on this page. For anything outside those packages, we explain the scope, deliverables, cost, and timeline before you decide. Paid delivery follows the Screenshot-First 50/50 steps: screenshots first, then a 50% Mobile Money deposit, a preview link, and the final 50% only after you approve.</div></div>
+            <div class="faq-a"><div class="faq-a-inner">Quick-Start packages have published UGX prices on this page. For anything outside those packages, we explain the scope, deliverables, cost, and timeline before you decide. Paid delivery follows the Screenshot-First 50/50 steps: screenshots first, then a 50% Mobile Money deposit, a preview link, and the final 50% only after you approve. After the live preview, businesses that do not have the full cash right away can pay 25% weekly, 50% monthly, or 10% every 2 days to 0758 991506 — FREDRICK MUGAMBE.</div></div>
           </div>
           <div class="faq-item">
             <button class="faq-q" type="button">How long does a project take?<svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
@@ -2507,15 +2537,16 @@
                   <optgroup label="Quick-Start Packages">
                     <option value="Numbered-Menu WhatsApp Replier">Option A — Numbered-Menu WhatsApp Replier (UGX 60,000)</option>
                     <option value="Smart AI WhatsApp Replier">Option B — Smart AI WhatsApp Replier (UGX 50,000 + UGX 30,000/mo)</option>
-                    <option value="WhatsApp Shopping Website & Catalog Sprint">WhatsApp Shopping Website &amp; Catalog Sprint (UGX 150,000–200,000)</option>
+                    <option value="Option 1 — We Manage Everything (UGX 150,000–200,000)">Option 1 — We Manage Everything (UGX 150,000–200,000)</option>
+                    <option value="Option 2 — Self-Managed Owner Admin Dashboard (UGX 280,000)">Option 2 — Owner Admin Dashboard (UGX 280,000)</option>
                     <option value="Website + Interactive WhatsApp Replier Bundle">Website + Interactive WhatsApp Replier Bundle (UGX 220,000–300,000)</option>
                     <option value="Studio Product Photo & Ad Makeover Pack">Studio Product Photo &amp; Ad Makeover Pack (UGX 60,000–100,000)</option>
                     <option value="Business Credibility & Tender Kit">Business Credibility &amp; Tender Kit (UGX 120,000–200,000)</option>
                     <option value="Smart Operations / Stock & Sales Tracker or Custom Web App">Stock &amp; Sales Tracker or Custom Web App (UGX 250,000–500,000+)</option>
                   </optgroup>
-                  <optgroup label="Monthly Care Plans">
-                    <option value="Done-For-You Monthly Price Updates & 2 Promo Flyers">Monthly Price Updates &amp; 2 Promo Flyers (UGX 25,000/mo)</option>
-                    <option value="Pro Website + Self-Service Admin Dashboard">Pro Website + Admin Dashboard (UGX 250,000–350,000 + UGX 20,000/mo)</option>
+                  <optgroup label="Website Updates">
+                    <option value="Per-update website changes (UGX 10,000–15,000)">Per-update website changes (UGX 10,000–15,000)</option>
+                    <option value="Unlimited website updates (UGX 25,000/month)">Unlimited website updates (UGX 25,000/month)</option>
                   </optgroup>
                   <optgroup label="Custom Capabilities">
                     <option value="Business Website / Online Store">Business Website / Online Store</option>
@@ -2781,7 +2812,7 @@
         'I need a better way to track stock, sales, or business records': 'Possible approaches may include automated spreadsheets, simple tracking systems, or custom tools.',
         'I want to reduce repetitive administrative work': 'Possible approaches may include templates, digital forms, automated calculations, or workflow tools.',
         'I need better promotional content or advertisements': 'Possible approaches may include creative graphics, short videos, product imagery, scripts, or campaign materials.',
-        'I want to improve my website or online presence': 'Possible approaches may include redesign, clearer structure, better content, mobile improvements, or a new site.',
+        'I want to improve my website or online presence': 'A shopping website has two management choices. Option 1 — We Manage Everything is UGX 150,000–200,000 (zero monthly hosting; send the photo and new price on WhatsApp for UGX 10,000–15,000 per update, or UGX 25,000/month unlimited). Option 2 — a password-protected Owner Admin Dashboard is UGX 280,000, so you can upload products, edit prices, and mark items sold out from your phone with no per-edit fee.',
         'I need a custom application or digital system': 'Possible approaches may include a custom web application, internal portal, or specialised workflow tool — after confirming simpler options are not sufficient.',
         'I want to explore chatbots or AI-assisted workflows': 'Possible approaches may include FAQ assistants or information tools configured around your content. Complex questions should still reach a person.',
         'I need help with SEO, copywriting, or business content': 'Possible approaches may include clearer page titles and descriptions, service or product copy, or basic search-friendly structure. Rankings cannot be guaranteed.',
@@ -2925,35 +2956,45 @@
       const GO_FORM = { label: 'Open the Find a Solution form', go: '#problems' };
       const GO_PACKAGES = { label: 'See UGX packages', go: '#packages' };
 
-      const DEFAULT_CHIPS = ['WhatsApp Auto-Repliers', 'UGX prices', 'Monthly Care Plans', 'Screenshot-First payment', 'Contact details'];
-      const START_CHIPS = ['WhatsApp Auto-Repliers', 'Different from the WhatsApp greeting?', 'UGX prices', 'Monthly Care Plans', 'Screenshot-First payment'];
+      const DEFAULT_CHIPS = ['Who manages the website?', 'UGX prices', 'Installment plans', 'WhatsApp Auto-Repliers', 'Screenshot-First payment'];
+      const START_CHIPS = ['Who manages the website?', 'Installment plans', 'UGX prices', 'WhatsApp Auto-Repliers', 'Screenshot-First payment'];
 
       /* knowledgeBase — built-in Ekkaris guide. Answers UGX prices, repliers, care plans, and the Screenshot-First workflow with no server. */
       const knowledgeBase = [
         { id: 'greet', label: 'a greeting', w: 0.6,
           k: ['hello', 'hi', 'hey', 'howdy', 'hola', 'greetings', 'good morning', 'good afternoon', 'good evening', 'how are you', 'whats up'],
-          reply: 'Hello! I’m Ekkaris, the FRECA E-SERVICES assistant. Ask me about Interactive WhatsApp Repliers, how they differ from the basic WhatsApp greeting, UGX prices, Monthly Care Plans, or the Screenshot-First payment.',
+          reply: 'Hello! I’m Ekkaris, the FRECA E-SERVICES assistant. Ask me who manages the website, about UGX prices, flexible installment plans, Interactive WhatsApp Repliers, or the Screenshot-First payment.',
           chips: START_CHIPS },
         { id: 'replier', label: 'Interactive WhatsApp Repliers', q: 'WhatsApp Auto-Repliers', w: 1.25,
           k: ['replier', 'repliers', 'auto replier', 'auto reply', 'auto replies', 'whatsapp replier', 'whatsapp auto', 'interactive whatsapp', 'numbered menu', 'number menu', 'smart ai', 'option a', 'option b', 'price list', 'size 42', 'boda delivery'],
           reply: 'An **Interactive WhatsApp Replier** answers customers inside WhatsApp while you are busy. Unlike the standard WhatsApp \'Thank you for contacting us\' message that stops after one line, our Interactive WhatsApp Repliers actually answer your customers\' real questions about prices, stock, delivery fees, and location 24/7 while you\'re busy.\n\n**Option A — Numbered-Menu WhatsApp Replier: UGX 60,000** one-time. Customers get a menu: Reply 1 for Price List, 2 for Location & Hours, 3 for Delivery Fees, 4 to Order. Each future menu edit is **UGX 15,000**.\n**Option B — Smart AI WhatsApp Replier: UGX 50,000** setup + **UGX 30,000/month**. It answers natural questions (“Do you have size 42?”, “How much is boda delivery to Entebbe?”) and includes unlimited monthly price and stock updates.',
           acts: () => [GO_PACKAGES, { label: 'See it under Services', go: '#services' }, waPrefill('Option A on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option A — the Numbered-Menu WhatsApp Replier (UGX 60,000 one-time setup).'), waPrefill('Option B on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option B — the Smart AI WhatsApp Replier (UGX 50,000 setup + UGX 30,000/month).')],
-          chips: ['Different from the WhatsApp greeting?', 'UGX prices', 'Monthly Care Plans'] },
+          chips: ['Who manages the website?', 'UGX prices', 'Installment plans'] },
         { id: 'greetingdiff', label: 'how a replier differs from the WhatsApp greeting', q: 'Different from the WhatsApp greeting?', w: 1.35,
           k: ['whatsapp greeting', 'default greeting', 'basic greeting', 'thank you for contacting', 'auto message', 'one line', 'stops after', 'different from', 'differs from', 'unlike the', 'away message', 'greeting message', 'basic whatsapp', 'default whatsapp', 'standard whatsapp'],
           reply: 'Unlike the standard WhatsApp \'Thank you for contacting us\' message that stops after one line, our Interactive WhatsApp Repliers actually answer your customers\' real questions about prices, stock, delivery fees, and location 24/7 while you\'re busy.\n\nThe basic Business greeting sends one line and then waits for you. A replier keeps answering.\n• **Option A — Numbered Menu:** UGX 60,000 one-time. Reply 1 for Price List, 2 for Location & Hours, 3 for Delivery Fees, 4 to Order. Later edits are UGX 15,000.\n• **Option B — Smart AI:** UGX 50,000 setup + UGX 30,000/month, with unlimited price and stock updates.',
           acts: () => [GO_PACKAGES, waPrefill('Option A on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option A — the Numbered-Menu WhatsApp Replier (UGX 60,000 one-time setup).'), waPrefill('Option B on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option B — the Smart AI WhatsApp Replier (UGX 50,000 setup + UGX 30,000/month).')],
-          chips: ['WhatsApp Auto-Repliers', 'UGX prices', 'Screenshot-First payment'] },
+          chips: ['Who manages the website?', 'UGX prices', 'Installment plans'] },
+        { id: 'manage', label: 'who manages the website', q: 'Who manages the website?', w: 1.6,
+          k: ['who manages the website', 'who manages', 'who will manage', 'manage the website', 'manages the website', 'website management', 'management option', 'management options', 'we manage everything', 'we manage', 'self managed', 'self-managed', 'owner admin', 'admin dashboard', 'owner dashboard', 'password protected', 'password-protected', 'sold out', 'per update', 'per change', 'per edit', 'upload new products', 'edit prices', 'zero monthly hosting', 'hosting fee'],
+          reply: 'There are **two website management options**.\n\n**Option 1 — We Manage Everything for You (lower price): UGX 150,000 – 200,000** one-time. Zero monthly hosting fees. Whenever the business gets new stock or changes a price, send the photo and the new price on WhatsApp (**+256 726 978988**) and we update the website for **UGX 10,000 – 15,000 per update**, or **UGX 25,000/month** for unlimited updates all month.\n\n**Option 2 — Self-Managed Owner Admin Dashboard (higher price): UGX 280,000**. This includes a private password-protected Owner Admin Dashboard so the owner can upload new products, edit prices, and mark items sold out anytime from their phone, without paying per edit.',
+          acts: () => [{ label: 'See both options', go: '#website-management' }, waPrefill('Option 1 on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option 1 — We Manage Everything for You (UGX 150,000–200,000 one-time, zero monthly hosting). Updates are UGX 10,000–15,000 each, or UGX 25,000/month for unlimited updates.'), waPrefill('Option 2 on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option 2 — the Self-Managed Owner Admin Dashboard (UGX 280,000) so I can upload products, edit prices, and mark items sold out from my phone.')],
+          chips: ['UGX prices', 'Installment plans', 'Screenshot-First payment'] },
+        { id: 'installment', label: 'flexible installment plans', q: 'Installment plans', w: 1.55,
+          k: ['installment', 'installments', 'instalment', 'instalments', 'payment plan', 'payment plans', 'flexible payment', 'pay weekly', 'weekly payment', '25 weekly', '50 monthly', 'every 2 days', 'every two days', 'full cash', 'dont have the cash', 'dont have the full', 'cannot pay', 'cant pay', 'pay in parts', 'pay slowly', 'balance in parts', 'mobile money plan'],
+          reply: 'The standard payment is still **Screenshot-First 50/50**. After you review the live preview link, if the business does not have the full cash right away, Freca E-Services offers flexible installment plans:\n• **25% weekly**\n• **50% monthly**\n• **10% every 2 days**\n\nAll installments are paid by Mobile Money to **0758 991506 — FREDRICK MUGAMBE**.',
+          acts: () => [{ label: 'See how payment works', go: '#how-it-works' }, waPrefill('Ask about installments', 'Hello FRECA E-SERVICES, I have reviewed the live preview and I would like a flexible installment plan: 25% weekly, 50% monthly, or 10% every 2 days, via Mobile Money to 0758 991506 — FREDRICK MUGAMBE.')],
+          chips: ['Screenshot-First payment', 'Who manages the website?', 'UGX prices'] },
         { id: 'care', label: 'Monthly Care Plans', q: 'Monthly Care Plans', w: 1.25,
-          k: ['monthly care', 'care plan', 'care plans', 'monthly', 'per month', 'a month', 'price update', 'price updates', 'promo flyer', 'promo flyers', 'unlimited update', 'admin dashboard', 'cloud database', 'hosting fee', 'self service', 'self-service'],
-          reply: 'Monthly care is optional. You can stop at the one-time setup.\n• **Smart AI WhatsApp Replier:** UGX 30,000/month, with unlimited price and stock updates (setup is UGX 50,000).\n• **Numbered-Menu edits**, only when you ask: UGX 15,000 each. There is no monthly fee on Option A.\n• **Done-For-You Monthly Price Updates & 2 Promo Flyers:** UGX 25,000/month, for a shopping website.\n• **Pro Website + Self-Service Admin Dashboard:** UGX 250,000–350,000 to build, then UGX 20,000/month for cloud database sync.\n\nThe catalog sprint itself has a free lifetime link and zero monthly hosting fee.',
-          acts: () => [GO_PACKAGES, waPrefill('Monthly care on WhatsApp', 'Hello FRECA E-SERVICES, I would like to ask about Monthly Care Plans (UGX 30,000/month Smart AI, UGX 25,000/month price updates and 2 flyers, or the Pro admin dashboard).'), waPrefill('Pro website on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in the Pro Website + Self-Service Admin Dashboard (UGX 250,000–350,000 + UGX 20,000/month cloud database sync).')],
-          chips: ['UGX prices', 'WhatsApp Auto-Repliers', 'Screenshot-First payment'] },
+          k: ['monthly care', 'care plan', 'care plans', 'monthly', 'per month', 'a month', 'price update', 'price updates', 'unlimited update', 'unlimited updates'],
+          reply: 'Ongoing care depends on what you bought.\n• **Smart AI WhatsApp Replier:** UGX 30,000/month, with unlimited price and stock updates (setup is UGX 50,000).\n• **Numbered-Menu edits**, only when you ask: UGX 15,000 each. There is no monthly fee on Option A.\n• **Website Option 1 — We Manage Everything:** UGX 150,000–200,000 one-time and zero monthly hosting. Send the photo and new price on WhatsApp (+256 726 978988). Each update is **UGX 10,000–15,000**, or **UGX 25,000/month** for unlimited updates all month.\n• **Website Option 2 — Owner Admin Dashboard:** UGX 280,000. You upload products, edit prices, and mark items sold out yourself, with no per-edit fee.',
+          acts: () => [GO_PACKAGES, { label: 'Who manages the website?', go: '#website-management' }, waPrefill('Website updates on WhatsApp', 'Hello FRECA E-SERVICES, I would like Option 1 website updates: UGX 10,000–15,000 per change, or UGX 25,000/month for unlimited updates.')],
+          chips: ['Who manages the website?', 'UGX prices', 'Installment plans'] },
         { id: 'workflow', label: 'the Screenshot-First payment workflow', q: 'Screenshot-First payment', w: 1.3,
           k: ['screenshot', 'screenshots', 'screenshot first', '50 50', 'fifty', 'deposit', 'mobile money', 'momo', 'preview link', 'final balance', 'pay blind', 'fredrick', 'mugambe', 'first 50', 'remaining 50', 'how do i pay', 'payment', 'kampala', 'never pay'],
-          reply: 'You never pay blind, and you do not need to sit in Kampala traffic for a meeting. The Screenshot-First 50/50 workflow is:\n1. **Screenshots first.** Send 3–5 product or service photos and prices on WhatsApp (+256 726 978988). We build the layout and send screenshots for your confirmation.\n2. **First 50% deposit.** When you love the screenshots, pay half by Mobile Money to **0758 991506 — FREDRICK MUGAMBE**.\n3. **Preview link.** We send a clickable link so you can test it on your phone and request adjustments.\n4. **Final 50% and launch.** After 100% approval, pay the balance and receive your permanent live link. A custom .com or .co.ug domain can be connected at the registrar’s annual rate.',
+          reply: 'You never pay blind, and you do not need to sit in Kampala traffic for a meeting. The Screenshot-First 50/50 workflow is:\n1. **Screenshots first.** Send 3–5 product or service photos and prices on WhatsApp (+256 726 978988). We build the layout and send screenshots for your confirmation.\n2. **First 50% deposit.** When you love the screenshots, pay half by Mobile Money to **0758 991506 — FREDRICK MUGAMBE**.\n3. **Preview link.** We send a clickable link so you can test it on your phone and request adjustments.\n4. **Final 50% and launch.** After 100% approval, pay the balance and receive your permanent live link. A custom .com or .co.ug domain can be connected at the registrar’s annual rate.\n\nIf you do not have the full cash right away after that live preview, you can use installments instead: **25% weekly**, **50% monthly**, or **10% every 2 days**, still to **0758 991506 — FREDRICK MUGAMBE**.',
           acts: () => [{ label: 'See the 4 steps', go: '#how-it-works' }, waPrefill('Start with screenshots', 'Hello FRECA E-SERVICES, I want to start the Screenshot-First workflow. I will send 3–5 product photos and prices in this chat.')],
-          chips: ['UGX prices', 'WhatsApp Auto-Repliers', 'Monthly Care Plans'] },
+          chips: ['Installment plans', 'Who manages the website?', 'UGX prices'] },
         { id: 'identity', label: 'who I am', q: 'Who are you?',
           k: ['who are you', 'what are you', 'your name', 'are you a bot', 'are you human', 'are you real', 'are you ai', 'are you a robot', 'ekkaris', 'who made you', 'who built you'],
           reply: 'I’m **Ekkaris**, the website assistant for FRECA E-SERVICES. I’m an automated assistant, not a person, so for anything detailed or specific to your business I’ll point you to the team on WhatsApp.',
@@ -2966,8 +3007,8 @@
         { id: 'services', label: 'our services', q: 'What services do you offer?',
           k: ['services', 'service', 'offer', 'capabilities', 'solutions', 'treatments', 'what can you do', 'help with', 'provide'],
           reply: 'These are the main services, with published UGX prices:\n• **Interactive WhatsApp Repliers** — Numbered Menu UGX 60,000, or Smart AI UGX 50,000 + UGX 30,000/month. This is not the one-line “Thank you for contacting us” greeting.\n• **WhatsApp Shopping Website & Catalog Sprint** — UGX 150,000–200,000 (free lifetime link, no monthly hosting)\n• **Website + Replier bundle** — UGX 220,000–300,000\n• **Studio Product Photo & Ad Makeover** — UGX 60,000–100,000 (1 free watermarked sample first)\n• **Business Credibility & Tender Kit** — UGX 120,000–200,000\n• **Stock & sales tracker or custom web app** — UGX 250,000–500,000+',
-          more: 'Optional monthly care: price updates and 2 promo flyers at UGX 25,000/month, or a Pro website with a self-service admin dashboard at UGX 250,000–350,000 plus UGX 20,000/month cloud sync.',
-          acts: () => [{ label: 'See Services', go: '#services' }, GO_PACKAGES], chips: ['WhatsApp Auto-Repliers', 'UGX prices', 'Monthly Care Plans'] },
+          more: 'Shopping websites have two management choices. **Option 1 — We Manage Everything** is UGX 150,000–200,000 (zero monthly hosting; UGX 10,000–15,000 per WhatsApp update, or UGX 25,000/month unlimited). **Option 2 — Owner Admin Dashboard** is UGX 280,000, so the owner edits products and prices from their phone with no per-edit fee.',
+          acts: () => [{ label: 'See Services', go: '#services' }, GO_PACKAGES], chips: ['Who manages the website?', 'UGX prices', 'Installment plans'] },
         { id: 'branding', label: 'branding and documents', q: 'Do you do branding and documents?',
           k: ['logo', 'logos', 'branding', 'brand', 'identity', 'flyer', 'flyers', 'business card', 'business cards', 'catalogue', 'catalogues', 'catalog', 'company profile', 'cv', 'cvs', 'resume', 'quotation', 'quotations', 'invoice', 'invoices', 'document', 'documents', 'graphic design', 'graphics'],
           reply: 'Yes. The **Business Credibility & Tender Kit** is UGX 120,000–200,000 and includes a Company Profile PDF, Letterhead, and Invoice/Quotation templates. We also handle logos, flyers, business cards, catalogues, and CVs when you need them.',
@@ -2978,8 +3019,8 @@
           acts: () => [{ label: 'Discuss this area', go: '#problems' }], chips: DEFAULT_CHIPS },
         { id: 'website', label: 'websites', q: 'Can you build my website?',
           k: ['website', 'web site', 'landing page', 'ecommerce', 'e-commerce', 'online shop', 'online store', 'portfolio', 'menu', 'booking page', 'redesign', 'mobile friendly', 'online presence', 'webpage'],
-          reply: 'Yes. A **WhatsApp Shopping Website & Catalog Sprint** is UGX 150,000–200,000 one-time, with a free lifetime link and zero monthly hosting fee. It is usually ready in 48–72 hours.\n\nOptional care: **Done-For-You Monthly Price Updates & 2 Promo Flyers** at UGX 25,000/month, or a **Pro Website + Self-Service Admin Dashboard** at UGX 250,000–350,000 plus UGX 20,000/month cloud database sync.\n\nA **Website + Interactive WhatsApp Replier bundle** is UGX 220,000–300,000. If you choose the Smart AI replier, UGX 30,000/month for managed updates stays separate. We can’t promise search rankings or sales.',
-          acts: () => [GO_PACKAGES, waPrefill('Website sprint on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in the WhatsApp Shopping Website & Catalog Sprint (UGX 150,000–200,000).')], chips: ['Monthly Care Plans', 'WhatsApp Auto-Repliers', 'UGX prices'] },
+          reply: 'Yes. A shopping website is usually ready in **48–72 hours**, and you choose who manages it.\n\n**Option 1 — We Manage Everything for You: UGX 150,000 – 200,000** one-time, with a free lifetime link and zero monthly hosting fees. Send the photo and new price on WhatsApp (+256 726 978988). We update the site for **UGX 10,000 – 15,000 per update**, or **UGX 25,000/month** for unlimited updates all month.\n\n**Option 2 — Self-Managed Owner Admin Dashboard: UGX 280,000**. A private password-protected dashboard lets the owner upload new products, edit prices, and mark items sold out from their phone, with no per-edit fee.\n\nA **Website + Interactive WhatsApp Replier bundle** is UGX 220,000–300,000. If you choose the Smart AI replier, UGX 30,000/month for managed updates stays separate. We can’t promise search rankings or sales.',
+          acts: () => [{ label: 'Who manages the website?', go: '#website-management' }, waPrefill('Website on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in a shopping website. Please tell me about Option 1 (UGX 150,000–200,000, we manage updates) and Option 2 (UGX 280,000 Owner Admin Dashboard).')], chips: ['Who manages the website?', 'Installment plans', 'UGX prices'] },
         { id: 'webapp', label: 'web applications and custom systems', q: 'Can you build a custom system?',
           k: ['web app', 'web application', 'application', 'custom system', 'custom app', 'order management', 'inventory', 'booking system', 'dashboard', 'crm', 'portal', 'internal tool', 'custom forms', 'software', 'system for'],
           reply: 'Yes. A **stock and sales tracker or custom web app** is UGX 250,000–500,000+, depending on how much the job needs. Simpler trackers are often enough, so we check that before building a larger app.',
@@ -2992,15 +3033,15 @@
           k: ['ai', 'chatbot', 'chatbots', 'chat bot', 'ai assistant', 'ai tools', 'artificial intelligence', 'faq bot', 'virtual assistant', 'ai workflow'],
           reply: 'For answers **inside WhatsApp**, use an Interactive WhatsApp Replier — not the basic one-line greeting.\n• **Option A — Numbered Menu:** UGX 60,000 one-time (UGX 15,000 per later menu edit).\n• **Option B — Smart AI:** UGX 50,000 setup + UGX 30,000/month, including unlimited price and stock updates. It can answer “Do you have size 42?” or “How much is boda delivery to Entebbe?”\n\nEkkaris on this website is a separate on-page guide. A person should still handle unusual questions.',
           more: 'The numbered menu is the simpler option. Choose Smart AI when customers ask in their own words instead of picking 1, 2, 3, or 4.',
-          acts: () => [GO_PACKAGES, waPrefill('Smart AI on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option B — the Smart AI WhatsApp Replier (UGX 50,000 setup + UGX 30,000/month).')], chips: ['Different from the WhatsApp greeting?', 'Monthly Care Plans', 'UGX prices'] },
+          acts: () => [GO_PACKAGES, waPrefill('Smart AI on WhatsApp', 'Hello FRECA E-SERVICES, I am interested in Option B — the Smart AI WhatsApp Replier (UGX 50,000 setup + UGX 30,000/month).')], chips: ['Who manages the website?', 'Installment plans', 'UGX prices'] },
         { id: 'seo', label: 'SEO and copywriting', q: 'Do you help with SEO?',
           k: ['seo', 'copywriting', 'copywriter', 'content strategy', 'search engine', 'google ranking', 'rank', 'ranking', 'keywords'],
           reply: 'Yes. We can help with SEO fundamentals such as clear page titles and descriptions and search-friendly structure, plus copywriting and content strategy. Search rankings depend on many factors and can’t be guaranteed.',
           acts: () => [{ label: 'Discuss SEO or content', go: '#problems' }], chips: DEFAULT_CHIPS },
         { id: 'process', label: 'how we work', q: 'How does the process work?',
           k: ['process', 'how we work', 'how does it work', 'how do you work', 'steps', 'method', 'methodology', 'approach', 'procedure', 'diagnose', 'diagnosis'],
-          reply: 'Paid work follows the **Screenshot-First 50/50** steps on WhatsApp. You never pay blind, and you do not need a meeting in Kampala.\n1. **Screenshots first.** Send 3–5 photos and prices to +256 726 978988. We send screenshots before any payment.\n2. **First 50%.** When you love the screenshots, pay half by Mobile Money to **0758 991506 — FREDRICK MUGAMBE**.\n3. **Preview link.** Test the clickable link on your phone and request changes.\n4. **Final 50%.** After 100% approval, pay the balance and get your permanent live link. Custom .com or .co.ug domains connect at the registrar’s annual rate.',
-          acts: () => [{ label: 'See the 4 steps', go: '#how-it-works' }, waPrefill('Start with screenshots', 'Hello FRECA E-SERVICES, I want to start the Screenshot-First workflow. I will send 3–5 product photos and prices in this chat.')], chips: ['Screenshot-First payment', 'UGX prices', 'WhatsApp Auto-Repliers'] },
+          reply: 'Paid work follows the **Screenshot-First 50/50** steps on WhatsApp. You never pay blind, and you do not need a meeting in Kampala.\n1. **Screenshots first.** Send 3–5 photos and prices to +256 726 978988. We send screenshots before any payment.\n2. **First 50%.** When you love the screenshots, pay half by Mobile Money to **0758 991506 — FREDRICK MUGAMBE**.\n3. **Preview link.** Test the clickable link on your phone and request changes.\n4. **Final 50%.** After 100% approval, pay the balance and get your permanent live link. Custom .com or .co.ug domains connect at the registrar’s annual rate.\n\nAfter that preview, if you do not have the full cash right away, installments are **25% weekly**, **50% monthly**, or **10% every 2 days** to the same Mobile Money number.',
+          acts: () => [{ label: 'See the 4 steps', go: '#how-it-works' }, waPrefill('Start with screenshots', 'Hello FRECA E-SERVICES, I want to start the Screenshot-First workflow. I will send 3–5 product photos and prices in this chat.')], chips: ['Installment plans', 'Who manages the website?', 'UGX prices'] },
         { id: 'onlyweb', label: 'whether you only build websites', q: 'Do you only build websites?',
           k: ['only build websites', 'only websites', 'just websites', 'do you only', 'only do websites', 'website only'],
           reply: 'No. Websites are one possible treatment among many. Depending on what we learn, we may offer advice, design work, documents, content, automation, a simple system or another digital approach. Sometimes advice is enough; sometimes the best next step is outside our scope.',
@@ -3011,31 +3052,31 @@
           acts: () => [GO_FORM], chips: ['I have a problem in my business', 'How can I get started?'] },
         { id: 'price', label: 'UGX prices', q: 'UGX prices', offer: true,
           k: ['price', 'prices', 'pricing', 'cost', 'costs', 'how much', 'quote', 'package', 'packages', 'quick start', 'sprint', 'fee', 'fees', 'charge', 'rates', 'budget', 'expensive', 'cheap', 'afford', 'ugx', 'ugx prices', 'shilling', 'shillings', 'catalog sprint', 'shopping website', 'tender kit', '150 000', '60 000', '220 000'],
-          reply: 'Published prices in Ugandan shillings:\n• **Numbered-Menu WhatsApp Replier** — UGX 60,000 one-time (UGX 15,000 per later menu edit)\n• **Smart AI WhatsApp Replier** — UGX 50,000 setup + UGX 30,000/month, unlimited price and stock updates\n• **Shopping website & catalog sprint** (48–72h) — UGX 150,000–200,000. Free lifetime link, zero monthly hosting\n• **Monthly price updates + 2 promo flyers** — UGX 25,000/month\n• **Pro website + self-service admin** — UGX 250,000–350,000 + UGX 20,000/month cloud sync\n• **Website + replier bundle** — UGX 220,000–300,000\n• **Studio photo & ad pack** — UGX 60,000–100,000, after 1 free watermarked sample\n• **Credibility & tender kit** — UGX 120,000–200,000\n• **Stock tracker or custom web app** — UGX 250,000–500,000+\n\nYou approve screenshots before the first 50% deposit.',
-          more: 'The Smart AI monthly plan and the website care plans are optional. Option A, the numbered menu, has no monthly fee.',
+          reply: 'Published prices in Ugandan shillings:\n• **Numbered-Menu WhatsApp Replier** — UGX 60,000 one-time (UGX 15,000 per later menu edit)\n• **Smart AI WhatsApp Replier** — UGX 50,000 setup + UGX 30,000/month, unlimited price and stock updates\n• **Option 1 — We Manage Everything** — UGX 150,000–200,000 one-time. Zero monthly hosting. Updates are UGX 10,000–15,000 each, or UGX 25,000/month unlimited\n• **Option 2 — Owner Admin Dashboard** — UGX 280,000. You edit products, prices, and sold-out status from your phone, with no per-edit fee\n• **Website + replier bundle** — UGX 220,000–300,000\n• **Studio photo & ad pack** — UGX 60,000–100,000, after 1 free watermarked sample\n• **Credibility & tender kit** — UGX 120,000–200,000\n• **Stock tracker or custom web app** — UGX 250,000–500,000+\n\nYou approve screenshots before the first 50% deposit. After the live preview, installments can be 25% weekly, 50% monthly, or 10% every 2 days.',
+          more: 'Option 1 is the lower website price: we update the site when you send a photo and the new price on WhatsApp. Option 2 is higher because the password-protected dashboard is included, and later edits are free.',
           acts: () => [GO_PACKAGES, waPrefill('Ask about a package', 'Hello FRECA E-SERVICES, I was reading your UGX packages and I would like a recommendation for my business.')],
-          offerActs: () => [GO_PACKAGES, GO_FORM, waPrefill('Ask about a package', 'Hello FRECA E-SERVICES, I was reading your UGX packages and I would like a recommendation for my business.')], chips: ['WhatsApp Auto-Repliers', 'Monthly Care Plans', 'Screenshot-First payment'] },
+          offerActs: () => [GO_PACKAGES, GO_FORM, waPrefill('Ask about a package', 'Hello FRECA E-SERVICES, I was reading your UGX packages and I would like a recommendation for my business.')], chips: ['Who manages the website?', 'Installment plans', 'Screenshot-First payment'] },
         { id: 'time', label: 'timelines', q: 'How long does a project take?',
           k: ['how long', 'timeline', 'duration', 'deadline', 'how soon', 'turnaround', 'how fast', 'delivery time', 'how many days', 'how many weeks', 'quickly'],
           reply: 'A **WhatsApp Shopping Website & Catalog Sprint** is usually ready in **48–72 hours** once we have your photos and prices. A numbered-menu or Smart AI replier is typically a few days. Photo packs and tender kits are quick. Stock trackers and custom web apps take longer and are timed in the quote.',
           acts: () => [waPrefill('Ask about timing', 'Hello FRECA E-SERVICES, I would like a timing estimate for my project.')], chips: ['UGX prices', 'Screenshot-First payment', 'WhatsApp Auto-Repliers'] },
         { id: 'contact', label: 'contact details', q: 'Contact details',
           k: ['contact', 'reach', 'whatsapp', 'phone', 'call', 'email', 'mail', 'number', 'talk to someone', 'speak to', 'human', 'real person', 'the team', 'address'],
-          reply: 'Send photos, prices, and project questions on WhatsApp: **+256 726 978 988**.\n\nMobile Money deposits (the 50/50 payments) go to **0758 991506 — FREDRICK MUGAMBE**. That number can also reach the team.\n\nEmail: fredrickstads@gmail.com',
+          reply: 'Send photos, prices, and project questions on WhatsApp: **+256 726 978 988**. That is also where Option 1 clients send a new product photo and price for a website update.\n\nMobile Money for the 50/50 payments and for installment plans (25% weekly, 50% monthly, or 10% every 2 days) goes to **0758 991506 — FREDRICK MUGAMBE**. That number can also reach the team.\n\nEmail: fredrickstads@gmail.com',
           acts: () => [waPrefill('WhatsApp 0726 978 988', 'Hello FRECA E-SERVICES, I was chatting with Ekkaris and I would like to talk about a project.'), { label: 'Alt: 0758 991 506', wa: true, href: 'https://wa.me/' + WA_ALT }, { label: 'Email', href: 'mailto:fredrickstads@gmail.com' }], chips: ['Screenshot-First payment', 'UGX prices', 'WhatsApp Auto-Repliers'] },
         { id: 'start', label: 'getting started', q: 'How can I get started?',
           k: ['get started', 'start', 'begin', 'how do i start', 'hire', 'order', 'work with you', 'work with us', 'next step', 'proceed', 'sign up', 'engage'],
-          reply: 'Send **3–5 product or service photos and your prices** on WhatsApp (+256 726 978988). We build a first layout and send **screenshots before any payment**. When you love them, the first 50% goes by Mobile Money to 0758 991506 — FREDRICK MUGAMBE. You only pay the last 50% after you approve the live preview.',
+          reply: 'Send **3–5 product or service photos and your prices** on WhatsApp (+256 726 978988). We build a first layout and send **screenshots before any payment**. When you love them, the first 50% goes by Mobile Money to 0758 991506 — FREDRICK MUGAMBE. You pay the last 50% after you approve the live preview. If the full cash is not ready then, installments are 25% weekly, 50% monthly, or 10% every 2 days to the same number.',
           acts: () => [waPrefill('Start on WhatsApp', 'Hello FRECA E-SERVICES, I want to start. I will send 3–5 product photos and prices in this chat.'), { label: 'See the 4 steps', go: '#how-it-works' }], chips: ['Screenshot-First payment', 'UGX prices', 'WhatsApp Auto-Repliers'] },
         { id: 'location', label: 'where we are based', q: 'Where are you based?',
           k: ['where are you', 'where is freca', 'location', 'located', 'based', 'uganda', 'ugandan', 'remote', 'remotely', 'office', 'visit', 'in person', 'meet'],
-          reply: 'FRECA E-SERVICES is based in Uganda and works remotely. You do not need to sit in Kampala traffic for a meeting. Send photos and prices on WhatsApp, approve screenshots, then pay 50/50 by Mobile Money.',
+          reply: 'FRECA E-SERVICES is based in Uganda and works remotely. You do not need to sit in Kampala traffic for a meeting. Send photos and prices on WhatsApp, approve screenshots, then pay 50/50 by Mobile Money — or, after the live preview, 25% weekly, 50% monthly, or 10% every 2 days to 0758 991506 — FREDRICK MUGAMBE.',
           acts: () => [waAct('Message on WhatsApp')], chips: ['Contact details', 'How can I get started?'] },
         { id: 'support', label: 'after-launch support', q: 'Do you offer support after launch?',
           k: ['support', 'maintenance', 'maintain', 'after launch', 'after-launch', 'updates', 'update', 'ongoing', 'aftercare'],
-          reply: 'Yes. Optional **Monthly Care Plans** keep a live project current:\n• Smart AI replier updates — UGX 30,000/month (unlimited price and stock changes)\n• Numbered-menu edits when you ask — UGX 15,000 each, no monthly fee\n• Website price updates and 2 promo flyers — UGX 25,000/month\n• Pro admin dashboard cloud sync — UGX 20,000/month after the build\n\nThe catalog sprint link itself has no monthly hosting fee.',
-          acts: () => [GO_PACKAGES, waPrefill('Ask about monthly care', 'Hello FRECA E-SERVICES, I would like to ask about a Monthly Care Plan.')],
-          chips: ['Monthly Care Plans', 'UGX prices', 'WhatsApp Auto-Repliers'] },
+          reply: 'Yes. What you pay after launch depends on the option you chose:\n• Smart AI replier updates — UGX 30,000/month (unlimited price and stock changes)\n• Numbered-menu edits when you ask — UGX 15,000 each, no monthly fee\n• **Website Option 1:** zero monthly hosting. Send the photo and new price on WhatsApp (+256 726 978988). **UGX 10,000–15,000 per update**, or **UGX 25,000/month** for unlimited updates\n• **Website Option 2:** the UGX 280,000 Owner Admin Dashboard has no per-edit fee. You change products, prices, and sold-out status yourself',
+          acts: () => [{ label: 'Who manages the website?', go: '#website-management' }, waPrefill('Ask about updates', 'Hello FRECA E-SERVICES, I would like to ask about website updates: UGX 10,000–15,000 per change, or UGX 25,000/month unlimited, or the UGX 280,000 Owner Admin Dashboard.')],
+          chips: ['Who manages the website?', 'UGX prices', 'Installment plans'] },
         { id: 'guarantee', label: 'guarantees', q: 'Do you guarantee results?',
           k: ['guarantee', 'guaranteed', 'promise', 'results', 'sure to', 'increase sales', 'more sales', 'ensure'],
           reply: 'We can’t guarantee outcomes such as search rankings or sales, because they depend on many factors. What we do commit to is careful listening, a clear scope and honest advice before any paid work begins.',
@@ -3362,7 +3403,7 @@
       }
 
       function greet() {
-        addEkkarisMsg('Hi! I’m **Ekkaris**, the FRECA E-SERVICES assistant. I can explain **Interactive WhatsApp Repliers** (and how they differ from the one-line WhatsApp greeting), **UGX prices**, **Monthly Care Plans**, and the **Screenshot-First 50/50** payment.', false);
+        addEkkarisMsg('Hi! I’m **Ekkaris**, the FRECA E-SERVICES assistant. I can explain **who manages the website**, **UGX prices**, **installment plans**, **Interactive WhatsApp Repliers**, and the **Screenshot-First 50/50** payment.', false);
         setChips(START_CHIPS);
         scrollDown();
       }
