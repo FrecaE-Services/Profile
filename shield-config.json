@@ -1,0 +1,198 @@
+{
+  "default_preview_hours": 72,
+  "freca_wa": "256726978988",
+  "momo_number": "0758 991506",
+  "momo_name": "FREDRICK MUGAMBE",
+  "portfolio_url": "https://frecae-services.github.io/Profile/",
+  "sites": {
+    "cake-bond-uganda": {
+      "name": "Cake Bond Uganda",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256758193701",
+      "tier": "standard"
+    },
+    "ria-cakes": {
+      "name": "Ria Cakes and Pastries Uganda",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256701233274",
+      "tier": "standard"
+    },
+    "cuppies-cake-boutique": {
+      "name": "Cuppies Cake Boutique",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256786978063",
+      "tier": "standard"
+    },
+    "dk-appliances": {
+      "name": "DK Appliances",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256702671069",
+      "tier": "ecommerce"
+    },
+    "cakeness-ug": {
+      "name": "Cakeness Ug",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256726978988",
+      "tier": "standard"
+    },
+    "freca-cakes": {
+      "name": "FRECA CAKES",
+      "status": "portfolio",
+      "paid_percent": 100,
+      "unlock_stage": 4,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256726978988",
+      "tier": "standard"
+    },
+    "flashie-scents": {
+      "name": "Flashie_Scents",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256786804364",
+      "tier": "standard"
+    },
+    "interior-experts": {
+      "name": "Interior Experts",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256704390644",
+      "tier": "standard"
+    },
+    "kd-furniture-world": {
+      "name": "KD Furniture World Ltd",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256742656321",
+      "tier": "standard"
+    },
+    "lavenders-pastry-lane": {
+      "name": "Lavender's Pastry Lane",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256782793220",
+      "tier": "standard"
+    },
+    "machine-world-uganda": {
+      "name": "Machine World Uganda",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256752815403",
+      "tier": "standard"
+    },
+    "sweet-perfections-uganda": {
+      "name": "Sweet Perfections Uganda",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256777104513",
+      "tier": "standard"
+    },
+    "xander-gadgets-mbarara": {
+      "name": "Xander Gadgets Mbarara",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256781626315",
+      "tier": "ecommerce"
+    },
+    "nasser-road-quality-printers": {
+      "name": "Nasser Road Quality Printer's",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256704149494",
+      "tier": "standard"
+    },
+    "edwigs-eating-point-entebbe": {
+      "name": "Edwig's Eating Point",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256755432546",
+      "tier": "standard"
+    },
+    "kimu-hardware-seeta": {
+      "name": "Kimu Hardware",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T06:00:00Z",
+      "owner_wa": "256782577686",
+      "tier": "standard"
+    },
+    "spare-parts-ug-kiseka": {
+      "name": "SPARE PARTS UG, Kiseka",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T08:00:00Z",
+      "owner_wa": "256774188097",
+      "tier": "ecommerce"
+    },
+    "the-attic-salon-mukono": {
+      "name": "The Attic Salon, Mukono",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T08:00:00Z",
+      "owner_wa": "256706619764",
+      "tier": "standard"
+    },
+    "deniva-shoppers-gulu": {
+      "name": "Deniva Shoppers Gulu",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T08:00:00Z",
+      "owner_wa": "256783860259",
+      "tier": "ecommerce"
+    },
+    "mbarara-furniture-showroom": {
+      "name": "Mbarara Furniture Show Room",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T08:00:00Z",
+      "owner_wa": "256772441856",
+      "tier": "standard"
+    },
+    "the-shoe-rack-ug": {
+      "name": "The Shoe Rack Ug",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-27T08:00:00Z",
+      "owner_wa": "256700812716",
+      "tier": "standard"
+    }
+  }
+}
