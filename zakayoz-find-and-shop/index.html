@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZAKAYOZ — Find It For Me | Shop & Product Sourcing Uganda</title>
+  <meta name="description" content="Can't find a product in Uganda? ZAKAYOZ sources anything for you or delivers straight from our verified Kampala catalog — Phones, Laptops, TVs, Solar, Appliances & more." />
+  <link rel="icon" href="https://res.cloudinary.com/shggimsv/image/upload/v1789563131/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#171A3A',
+            cyan: '#00B8C8',
+            coral: '#FF6B61',
+            surface: '#F6F8FB'
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: #171A3A; background: #FFFFFF; }
+    h1, h2, h3, h4, .font-display { font-family: 'Space Grotesk', sans-serif; }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-white text-navy">
+  <!-- Top Delivery Banner -->
+  <div class="bg-navy text-white text-xs sm:text-sm py-2 px-4 text-center font-medium border-b border-white/10">
+    <span class="inline-flex items-center gap-2">
+      <span class="h-2 w-2 rounded-full bg-cyan animate-pulse"></span>
+      <span id="delivery-banner-text">Zakayoz can arrange delivery — exact charge depends on your location and order</span>
+      <a href="#find" onclick="navigate('find')" class="underline text-cyan ml-2 font-semibold">Can't see it? Find It For Me →</a>
+    </span>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-navy text-white shadow-lg border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <a href="#home" onclick="navigate('home')" class="flex items-center gap-3 shrink-0">
+        <img src="https://res.cloudinary.com/shggimsv/image/upload/v1789563131/logo.jpg" alt="ZAKAYOZ" class="h-10 w-10 rounded-lg object-cover bg-white p-0.5 border border-cyan/40" />
+        <div>
+          <div class="font-display font-bold text-lg tracking-wider leading-none">ZAKAYOZ</div>
+          <div class="text-[11px] text-cyan font-semibold tracking-wide">FIND IT FOR ME</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#home" onclick="navigate('home')" class="hover:text-cyan transition">Home</a>
+        <a href="#shop" onclick="navigate('shop')" class="hover:text-cyan transition">Shop</a>
+        <a href="#find" onclick="navigate('find')" class="px-3 py-1.5 rounded-full bg-coral text-white font-semibold hover:opacity-95 transition">Find It For Me</a>
+        <a href="#about" onclick="navigate('about')" class="hover:text-cyan transition">About</a>
+        <a href="#contact" onclick="navigate('contact')" class="hover:text-cyan transition">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button onclick="navigate('cart')" class="relative inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-sm font-semibold transition">
+          <i data-lucide="shopping-cart" class="w-4 h-4 text-cyan"></i>
+          <span class="hidden sm:inline">Cart</span>
+          <span id="cart-badge" class="px-1.5 py-0.5 text-xs rounded-full bg-coral text-white font-bold">0</span>
+        </button>
+        <button onclick="navigate('admin')" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-white/20 hover:bg-white/10 text-xs font-semibold transition" title="Admin Dashboard">
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-cyan"></i>
+          <span class="hidden sm:inline">Admin</span>
+        </button>
+        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-white/10">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy border-t border-white/10 px-4 py-3 space-y-2 text-sm">
+      <a href="#home" onclick="navigate('home');toggleMobileMenu()" class="block py-2 hover:text-cyan">Home</a>
+      <a href="#shop" onclick="navigate('shop');toggleMobileMenu()" class="block py-2 hover:text-cyan">Shop Catalog</a>
+      <a href="#find" onclick="navigate('find');toggleMobileMenu()" class="block py-2 text-coral font-bold">Find It For Me (Custom Sourcing)</a>
+      <a href="#about" onclick="navigate('about');toggleMobileMenu()" class="block py-2 hover:text-cyan">About ZAKAYOZ</a>
+      <a href="#contact" onclick="navigate('contact');toggleMobileMenu()" class="block py-2 hover:text-cyan">Contact Us</a>
+      <a href="#admin" onclick="navigate('admin');toggleMobileMenu()" class="block py-2 text-cyan">Admin Dashboard</a>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="app-content" class="flex-1"></main>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/256709792936?text=Hello%20ZAKAYOZ%2C%20I%20would%20like%20to%20inquire%20about%20a%20product." target="_blank" rel="noopener"
+     class="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 bg-[#25D366] text-white font-bold text-sm px-4 py-3 rounded-full shadow-xl hover:scale-105 transition">
+    <i data-lucide="message-circle" class="w-5 h-5"></i>
+    <span>WhatsApp Us</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="bg-navy text-white mt-16 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="space-y-3">
+        <div class="flex items-center gap-3">
+          <img src="https://res.cloudinary.com/shggimsv/image/upload/v1789563131/logo.jpg" alt="ZAKAYOZ" class="h-11 w-11 rounded-lg object-cover bg-white p-0.5" />
+          <div>
+            <div class="font-display font-bold text-lg">ZAKAYOZ</div>
+            <div class="text-xs text-cyan font-semibold">You Need It. We Find It.</div>
+          </div>
+        </div>
+        <p class="text-sm text-white/75 leading-relaxed">
+          Uganda's personal product sourcing &amp; online shopping partner. Buy straight from our verified catalog or tell us what you need and we'll find it for you at the best price.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-display font-bold text-sm uppercase tracking-wider text-cyan mb-3">Quick Links</h4>
+        <ul class="space-y-2 text-sm text-white/80">
+          <li><a href="#home" onclick="navigate('home')" class="hover:text-cyan">Home</a></li>
+          <li><a href="#shop" onclick="navigate('shop')" class="hover:text-cyan">Browse Shop</a></li>
+          <li><a href="#find" onclick="navigate('find')" class="hover:text-cyan">Find It For Me</a></li>
+          <li><a href="#about" onclick="navigate('about')" class="hover:text-cyan">About Us</a></li>
+          <li><a href="#contact" onclick="navigate('contact')" class="hover:text-cyan">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-display font-bold text-sm uppercase tracking-wider text-cyan mb-3">Top Categories</h4>
+        <ul id="footer-categories" class="space-y-2 text-sm text-white/80"></ul>
+      </div>
+      <div>
+        <h4 class="font-display font-bold text-sm uppercase tracking-wider text-cyan mb-3">Direct Contact</h4>
+        <ul class="space-y-2 text-sm text-white/80">
+          <li>WhatsApp / Call: <a href="tel:0709792936" class="text-cyan font-semibold">0709 792936</a></li>
+          <li>Kampala &amp; Countrywide Delivery</li>
+          <li>Pay on Delivery / Mobile Money</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-4 text-center text-xs text-white/60">
+      &copy; 2026 ZAKAYOZ — Find It For Me. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const SUPABASE_URL = "https://gcooxmqoptdzmtohgnwx.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_iYtBhC_V6c-8vFazLtitFg_PhFVcou9";
+    const WHATSAPP_NUM = "256709792936";
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    let state = {
+      view: 'home',
+      categories: [],
+      products: [],
+      labels: [],
+      deliveryInfo: 'Zakayoz can arrange delivery — exact charge depends on your location and order',
+      selectedCategory: 'all',
+      selectedCondition: 'all',
+      searchQuery: '',
+      activeProductId: null,
+      cart: JSON.parse(localStorage.getItem('zakayoz_cart_v1') || '[]'),
+      user: null,
+      isAdmin: false
+    };
+
+    const CONDITION_LABELS = {
+      brand_new: 'Brand New',
+      refurbished: 'Refurbished',
+      used: 'Used'
+    };
+    const STOCK_LABELS = {
+      in_stock: 'In Stock',
+      out_of_stock: 'Out of Stock'
+    };
+
+    function formatUGX(n) {
+      return 'UGX ' + Number(n || 0).toLocaleString();
+    }
+
+    function saveCart() {
+      localStorage.setItem('zakayoz_cart_v1', JSON.stringify(state.cart));
+      const count = state.cart.reduce((s, i) => s + i.qty, 0);
+      document.getElementById('cart-badge').textContent = count;
+    }
+
+    function addToCart(productId, qty = 1) {
+      const p = state.products.find(x => x.id === productId);
+      if (!p) return;
+      const existing = state.cart.find(x => x.productId === productId);
+      if (existing) existing.qty += qty;
+      else state.cart.push({
+        productId: p.id,
+        name: p.name,
+        price: Number(p.price),
+        image: (p.product_images && p.product_images[0] && p.product_images[0].image_url) || '',
+        qty
+      });
+      saveCart();
+      alert(p.name + ' added to your cart!');
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    async function loadStoreData() {
+      const [catRes, prodRes, lblRes, setRes] = await Promise.all([
+        sb.from('categories').select('*').order('created_at', { ascending: true }),
+        sb.from('products').select('*, categories(id,name), product_images(id,image_url,sort_order), product_labels(label_id, labels(id,name,color))').eq('active', true).order('created_at', { ascending: false }),
+        sb.from('labels').select('*').order('name'),
+        sb.from('site_settings').select('*').eq('id', 1).maybeSingle()
+      ]);
+      state.categories = catRes.data || [];
+      state.products = prodRes.data || [];
+      state.labels = lblRes.data || [];
+      if (setRes.data && setRes.data.delivery_info) {
+        state.deliveryInfo = setRes.data.delivery_info;
+        document.getElementById('delivery-banner-text').textContent = state.deliveryInfo;
+      }
+      renderFooterCategories();
+      render();
+    }
+
+    function renderFooterCategories() {
+      const el = document.getElementById('footer-categories');
+      if (!el) return;
+      el.innerHTML = state.categories.slice(0, 6).map(c =>
+        `<li><a href="#shop" onclick="filterByCategory('${c.id}')" class="hover:text-cyan">${c.name}</a></li>`
+      ).join('');
+    }
+
+    function filterByCategory(catId) {
+      state.selectedCategory = catId;
+      navigate('shop');
+    }
+
+    function openProduct(id) {
+      state.activeProductId = id;
+      navigate('product');
+    }
+
+    function navigate(view) {
+      state.view = view;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      render();
+    }
+
+    function renderProductCard(p) {
+      const img = (p.product_images && p.product_images[0] && p.product_images[0].image_url) || 'https://res.cloudinary.com/shggimsv/image/upload/v1789563131/logo.jpg';
+      const labels = (p.product_labels || []).map(pl => pl.labels).filter(Boolean);
+      const discount = p.original_price && Number(p.original_price) > Number(p.price)
+        ? Math.round(((Number(p.original_price) - Number(p.price)) / Number(p.original_price)) * 100)
+        : 0;
+      return `
+        <div class="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+          <div class="relative aspect-square bg-surface overflow-hidden cursor-pointer" onclick="openProduct('${p.id}')">
+            <img src="${img}" alt="${p.name.replace(/"/g, '&quot;')}" class="w-full h-full object-contain p-3 group-hover:scale-105 transition duration-300" />
+            <div class="absolute top-2.5 left-2.5 flex flex-wrap gap-1.5">
+              ${labels.map(l => `<span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold text-white shadow" style="background:${l.color || '#00B8C8'}">${l.name}</span>`).join('')}
+              ${discount > 0 ? `<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-coral text-white">-${discount}%</span>` : ''}
+            </div>
+            <span class="absolute bottom-2.5 right-2.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-navy/85 text-white">
+              ${CONDITION_LABELS[p.condition] || p.condition}
+            </span>
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between gap-3">
+            <div>
+              <div class="text-xs font-semibold text-cyan uppercase tracking-wide">${(p.categories && p.categories.name) || p.brand || 'ZAKAYOZ'}</div>
+              <h3 onclick="openProduct('${p.id}')" class="font-display font-bold text-base text-navy mt-1 line-clamp-2 cursor-pointer hover:text-cyan transition">${p.name}</h3>
+              <p class="text-xs text-slate-600 mt-1 line-clamp-2">${p.description || ''}</p>
+            </div>
+            <div class="pt-2 border-t border-slate-100">
+              <div class="flex items-baseline gap-2">
+                <span class="font-display font-bold text-lg text-navy">${formatUGX(p.price)}</span>
+                ${p.original_price ? `<span class="text-xs text-slate-400 line-through">${formatUGX(p.original_price)}</span>` : ''}
+              </div>
+              <div class="mt-3 grid grid-cols-2 gap-2">
+                <button onclick="addToCart('${p.id}')" class="px-3 py-2 rounded-xl bg-navy text-white text-xs font-bold hover:bg-navy/90 transition">Add to Cart</button>
+                <a href="https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent('Hello ZAKAYOZ, I want to order: ' + p.name + ' (' + formatUGX(p.price) + ')')}" target="_blank"
+                   class="px-3 py-2 rounded-xl bg-cyan text-navy text-xs font-bold text-center hover:opacity-90 transition">Order via WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderHome() {
+      const featured = state.products.filter(p => p.featured).slice(0, 8);
+      const list = featured.length ? featured : state.products.slice(0, 8);
+      return `
+        <!-- Hero -->
+        <section class="bg-navy text-white relative overflow-hidden">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 md:py-20 grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-7 space-y-5">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-cyan text-xs font-bold tracking-wide uppercase">
+                Uganda's Smart Shop &amp; Personal Product Finder
+              </span>
+              <h1 class="font-display font-bold text-3xl sm:text-5xl leading-tight">
+                Buy From Our Verified Catalog — Or Tell Us <span class="text-cyan">“Find It For Me.”</span>
+              </h1>
+              <p class="text-white/80 text-base sm:text-lg max-w-2xl leading-relaxed">
+                From smartphones, laptops, Hisense Smart TVs, and solar kits to custom imports — shop ready-to-deliver items below or send us a sourcing request and let ZAKAYOZ track it down at the best price in Uganda.
+              </p>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <button onclick="navigate('shop')" class="px-6 py-3.5 rounded-xl bg-cyan text-navy font-display font-bold text-sm hover:opacity-95 transition shadow-lg">
+                  Browse Ready Stock →
+                </button>
+                <button onclick="navigate('find')" class="px-6 py-3.5 rounded-xl bg-coral text-white font-display font-bold text-sm hover:opacity-95 transition shadow-lg">
+                  Can't Find Something? Request It
+                </button>
+              </div>
+            </div>
+            <div class="md:col-span-5 bg-white/5 border border-white/15 rounded-3xl p-6 space-y-4">
+              <div class="flex items-center gap-3">
+                <img src="https://res.cloudinary.com/shggimsv/image/upload/v1789563131/logo.jpg" class="h-14 w-14 rounded-2xl object-cover bg-white p-1" />
+                <div>
+                  <div class="font-display font-bold text-xl">How ZAKAYOZ Works</div>
+                  <div class="text-xs text-cyan">Fast, Transparent &amp; Reliable</div>
+                </div>
+              </div>
+              <div class="space-y-3 text-sm">
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                  <strong class="text-cyan">1. Shop Direct:</strong> Pick any in-stock item, add to cart, and checkout with Cash on Delivery or Mobile Money.
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                  <strong class="text-coral">2. Find It For Me:</strong> Need a specific model, spare part, appliance, or car? Submit your budget &amp; photo — we source and quote you fast.
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+                  <strong class="text-cyan">3. Doorstep Delivery:</strong> Arranged across Kampala and upcountry Uganda.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+          <div class="flex items-end justify-between mb-6">
+            <div>
+              <h2 class="font-display font-bold text-2xl sm:text-3xl text-navy">Shop by Category</h2>
+              <p class="text-sm text-slate-600">Tap any category to filter available inventory</p>
+            </div>
+            <button onclick="navigate('shop')" class="text-sm font-bold text-cyan hover:underline">View All →</button>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            ${state.categories.map(c => `
+              <div onclick="filterByCategory('${c.id}')" class="group cursor-pointer bg-surface hover:bg-navy hover:text-white rounded-2xl p-4 border border-slate-200 transition flex flex-col items-center text-center">
+                <div class="h-20 w-20 rounded-xl bg-white p-2 flex items-center justify-center overflow-hidden mb-3 shadow-sm">
+                  ${c.image_url ? `<img src="${c.image_url}" alt="${c.name}" class="w-full h-full object-contain group-hover:scale-110 transition" />` : `<span class="font-bold text-navy">${c.name[0]}</span>`}
+                </div>
+                <span class="font-display font-bold text-sm">${c.name}</span>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+          <div class="flex items-end justify-between mb-6">
+            <div>
+              <h2 class="font-display font-bold text-2xl sm:text-3xl text-navy">Featured Deals &amp; Ready Stock</h2>
+              <p class="text-sm text-slate-600">Verified quality electronics, appliances, solar &amp; fashion in Uganda</p>
+            </div>
+            <button onclick="navigate('shop')" class="text-sm font-bold text-cyan hover:underline">Full Catalog →</button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            ${list.map(renderProductCard).join('')}
+          </div>
+        </section>
+
+        <!-- Find It For Me CTA Banner -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+          <div class="bg-gradient-to-r from-navy to-slate-900 text-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-2 max-w-2xl">
+              <span class="text-xs font-bold uppercase tracking-wider text-cyan">Custom Product Sourcing Service</span>
+              <h3 class="font-display font-bold text-2xl sm:text-3xl">Looking for an item not listed in our shop?</h3>
+              <p class="text-white/80 text-sm sm:text-base">Tell us the exact brand, model, or budget — our Kampala sourcing team will find it from trusted wholesalers or import partners and send you photos &amp; pricing on WhatsApp.</p>
+            </div>
+            <button onclick="navigate('find')" class="shrink-0 px-6 py-4 rounded-xl bg-coral text-white font-display font-bold text-sm hover:opacity-95 transition shadow-lg">
+              Submit a “Find It For Me” Request →
+            </button>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderShop() {
+      const filtered = state.products.filter(p => {
+        if (state.selectedCategory !== 'all' && p.category_id !== state.selectedCategory) return false;
+        if (state.selectedCondition !== 'all' && p.condition !== state.selectedCondition) return false;
+        if (state.searchQuery.trim()) {
+          const q = state.searchQuery.toLowerCase();
+          return (p.name || '').toLowerCase().includes(q) || (p.description || '').toLowerCase().includes(q) || (p.brand || '').toLowerCase().includes(q);
+        }
+        return true;
+      });
+      return `
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+            <div>
+              <h1 class="font-display font-bold text-3xl text-navy">Shop ZAKAYOZ Catalog</h1>
+              <p class="text-sm text-slate-600">${filtered.length} verified items ready to order</p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <input type="text" placeholder="Search phone, laptop, TV, solar..." value="${state.searchQuery.replace(/"/g, '&quot;')}"
+                     oninput="state.searchQuery=this.value;render()"
+                     class="px-4 py-2.5 rounded-xl border border-slate-300 text-sm w-64 focus:outline-none focus:border-cyan" />
+              <select onchange="state.selectedCategory=this.value;render()" class="px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm bg-white">
+                <option value="all" ${state.selectedCategory === 'all' ? 'selected' : ''}>All Categories</option>
+                ${state.categories.map(c => `<option value="${c.id}" ${state.selectedCategory === c.id ? 'selected' : ''}>${c.name}</option>`).join('')}
+              </select>
+              <select onchange="state.selectedCondition=this.value;render()" class="px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm bg-white">
+                <option value="all" ${state.selectedCondition === 'all' ? 'selected' : ''}>All Conditions</option>
+                <option value="brand_new" ${state.selectedCondition === 'brand_new' ? 'selected' : ''}>Brand New</option>
+                <option value="refurbished" ${state.selectedCondition === 'refurbished' ? 'selected' : ''}>Refurbished</option>
+                <option value="used" ${state.selectedCondition === 'used' ? 'selected' : ''}>Used</option>
+              </select>
+            </div>
+          </div>
+          ${filtered.length === 0 ? `
+            <div class="bg-surface rounded-2xl p-12 text-center space-y-4">
+              <div class="font-display font-bold text-xl">No matching product in stock right now</div>
+              <p class="text-sm text-slate-600 max-w-md mx-auto">Don't worry — our team can source it for you! Use our "Find It For Me" service and we'll locate it fast.</p>
+              <button onclick="navigate('find')" class="px-5 py-3 rounded-xl bg-coral text-white font-bold text-sm">Request This Item →</button>
+            </div>
+          ` : `
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+              ${filtered.map(renderProductCard).join('')}
+            </div>
+          `}
+        </section>
+      `;
+    }
+
+    function renderProductDetail() {
+      const p = state.products.find(x => x.id === state.activeProductId) || state.products[0];
+      if (!p) return renderShop();
+      const img = (p.product_images && p.product_images[0] && p.product_images[0].image_url) || 'https://res.cloudinary.com/shggimsv/image/upload/v1789563131/logo.jpg';
+      return `
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+          <button onclick="navigate('shop')" class="text-sm font-semibold text-cyan hover:underline mb-6 inline-flex items-center gap-1">← Back to Shop</button>
+          <div class="grid md:grid-cols-2 gap-8 bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+            <div class="bg-surface rounded-2xl p-6 flex items-center justify-center">
+              <img src="${img}" alt="${p.name}" class="max-h-96 object-contain" />
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-navy text-white">${CONDITION_LABELS[p.condition] || p.condition}</span>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">${STOCK_LABELS[p.stock_status] || 'In Stock'}</span>
+              </div>
+              <h1 class="font-display font-bold text-2xl sm:text-3xl text-navy">${p.name}</h1>
+              <div class="text-xs font-semibold text-slate-500">Brand: <span class="text-navy">${p.brand || 'Verified'}</span></div>
+              <div class="flex items-baseline gap-3">
+                <span class="font-display font-bold text-3xl text-navy">${formatUGX(p.price)}</span>
+                ${p.original_price ? `<span class="text-base text-slate-400 line-through">${formatUGX(p.original_price)}</span>` : ''}
+              </div>
+              <p class="text-sm text-slate-700 leading-relaxed">${p.description || ''}</p>
+              <div class="p-3.5 rounded-xl bg-surface text-xs text-slate-700 border border-slate-200">
+                <strong>Delivery Info:</strong> ${state.deliveryInfo}
+              </div>
+              <div class="flex flex-wrap gap-3 pt-3">
+                <button onclick="addToCart('${p.id}')" class="flex-1 px-6 py-3.5 rounded-xl bg-navy text-white font-display font-bold text-sm hover:opacity-95">Add to Cart</button>
+                <a href="https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent('Hello ZAKAYOZ, I would like to buy: ' + p.name + ' (' + formatUGX(p.price) + ')')}" target="_blank"
+                   class="flex-1 px-6 py-3.5 rounded-xl bg-cyan text-navy font-display font-bold text-sm text-center hover:opacity-95">Buy on WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderFindItForMe() {
+      return `
+        <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+          <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-coral/15 text-coral text-xs font-bold uppercase">ZAKAYOZ Signature Service</span>
+              <h1 class="font-display font-bold text-3xl text-navy mt-2">Find It For Me — Custom Product Sourcing</h1>
+              <p class="text-sm text-slate-600 mt-1">Tell us what you need (electronics, spare parts, home appliances, fashion, or vehicles) and our team will locate it and quote you on WhatsApp.</p>
+            </div>
+            <form onsubmit="submitFindRequest(event)" class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Your Name *</label>
+                  <input id="f-name" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm" placeholder="e.g. Mukasa David" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-600 mb-1">WhatsApp / Phone Number *</label>
+                  <input id="f-phone" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm" placeholder="e.g. 0772 123456" />
+                </div>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Item You Want Us to Find *</label>
+                  <input id="f-item" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm" placeholder="e.g. Samsung S23 Ultra 256GB / Generator" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Estimated Budget (UGX)</label>
+                  <input id="f-budget" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm" placeholder="e.g. UGX 1,800,000" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Exact Specifications / Condition Preference *</label>
+                <textarea id="f-desc" required rows="4" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm" placeholder="Describe color, storage, condition (Brand New or UK Used), and delivery location..."></textarea>
+              </div>
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-coral text-white font-display font-bold text-sm hover:opacity-95 shadow-lg">
+                Send Sourcing Request &amp; Open WhatsApp →
+              </button>
+            </form>
+          </div>
+        </section>
+      `;
+    }
+
+    async function submitFindRequest(e) {
+      e.preventDefault();
+      const name = document.getElementById('f-name').value.trim();
+      const phone = document.getElementById('f-phone').value.trim();
+      const item_name = document.getElementById('f-item').value.trim();
+      const budget = document.getElementById('f-budget').value.trim();
+      const description = document.getElementById('f-desc').value.trim();
+      await sb.from('find_requests').insert({
+        id: crypto.randomUUID(),
+        name, phone, whatsapp: phone, item_name, budget: budget || null, description
+      });
+      const text = `Hello ZAKAYOZ! *Find It For Me Request*\n• Name: ${name}\n• Phone: ${phone}\n• Item: ${item_name}\n• Budget: ${budget || 'Flexible'}\n• Details: ${description}`;
+      window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(text)}`, '_blank');
+      alert('Your request has been logged! Opening WhatsApp to connect with ZAKAYOZ directly.');
+    }
+
+    function renderCart() {
+      const total = state.cart.reduce((s, i) => s + i.price * i.qty, 0);
+      return `
+        <section class="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+          <h1 class="font-display font-bold text-3xl text-navy mb-6">Your Shopping Cart</h1>
+          ${state.cart.length === 0 ? `
+            <div class="bg-surface rounded-2xl p-10 text-center space-y-4">
+              <p class="text-slate-600">Your cart is currently empty.</p>
+              <button onclick="navigate('shop')" class="px-5 py-2.5 rounded-xl bg-navy text-white text-sm font-bold">Browse Products</button>
+            </div>
+          ` : `
+            <div class="space-y-4">
+              ${state.cart.map((item, idx) => `
+                <div class="flex items-center justify-between gap-4 bg-white p-4 rounded-2xl border border-slate-200">
+                  <div class="flex items-center gap-4">
+                    <img src="${item.image}" class="h-16 w-16 rounded-xl object-contain bg-surface p-1" />
+                    <div>
+                      <div class="font-display font-bold text-navy">${item.name}</div>
+                      <div class="text-xs text-slate-500">${formatUGX(item.price)} each</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="text-sm font-bold">Qty: ${item.qty}</span>
+                    <button onclick="state.cart.splice(${idx},1);saveCart();render()" class="text-xs text-coral font-bold">Remove</button>
+                  </div>
+                </div>
+              `).join('')}
+              <div class="bg-surface p-6 rounded-2xl border border-slate-200 space-y-4">
+                <div class="flex justify-between font-display font-bold text-xl">
+                  <span>Subtotal</span>
+                  <span>${formatUGX(total)}</span>
+                </div>
+                <p class="text-xs text-slate-600">${state.deliveryInfo}</p>
+                <form onsubmit="submitOrder(event)" class="grid sm:grid-cols-2 gap-3 pt-2">
+                  <input id="o-name" required placeholder="Your Full Name *" class="px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white" />
+                  <input id="o-phone" required placeholder="Phone / WhatsApp Number *" class="px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white" />
+                  <input id="o-loc" required placeholder="Delivery Area / Street in Uganda *" class="sm:col-span-2 px-4 py-2.5 rounded-xl border border-slate-300 text-sm bg-white" />
+                  <button type="submit" class="sm:col-span-2 py-3.5 rounded-xl bg-cyan text-navy font-display font-bold text-sm">
+                    Place Order &amp; Confirm on WhatsApp →
+                  </button>
+                </form>
+              </div>
+            </div>
+          `}
+        </section>
+      `;
+    }
+
+    async function submitOrder(e) {
+      e.preventDefault();
+      const customer_name = document.getElementById('o-name').value.trim();
+      const phone = document.getElementById('o-phone').value.trim();
+      const location = document.getElementById('o-loc').value.trim();
+      const subtotal = state.cart.reduce((s, i) => s + i.price * i.qty, 0);
+      const orderId = crypto.randomUUID();
+      await sb.from('orders').insert({
+        id: orderId, customer_name, phone, whatsapp: phone, location,
+        payment_method: 'pay_on_delivery', delivery_option: 'request_delivery', subtotal
+      });
+      const lines = state.cart.map(i => `• ${i.name} x${i.qty} — ${formatUGX(i.price * i.qty)}`).join('\n');
+      const msg = `Hello ZAKAYOZ! *New Order*\n${lines}\n*Total:* ${formatUGX(subtotal)}\n*Name:* ${customer_name}\n*Phone:* ${phone}\n*Location:* ${location}`;
+      state.cart = [];
+      saveCart();
+      window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(msg)}`, '_blank');
+      render();
+    }
+
+    function renderAbout() {
+      return `
+        <section class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-6">
+          <h1 class="font-display font-bold text-3xl sm:text-4xl text-navy">About ZAKAYOZ — “You Need It. We Find It.”</h1>
+          <p class="text-slate-700 leading-relaxed">
+            ZAKAYOZ is a Ugandan online shopping and personal product sourcing platform built around one simple promise: whether you are shopping for a smartphone, laptop, Smart TV, home blender, solar power kit, or a specialized item hard to track down in Kampala, we either have it ready in our catalog or we source it directly for you.
+          </p>
+          <div class="grid sm:grid-cols-3 gap-4 pt-4">
+            <div class="p-5 rounded-2xl bg-surface border border-slate-200">
+              <div class="font-display font-bold text-navy mb-1">Verified Quality</div>
+              <p class="text-xs text-slate-600">Every item is inspected before dispatch so you get genuine specifications and reliable performance.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-surface border border-slate-200">
+              <div class="font-display font-bold text-navy mb-1">Personal Sourcing</div>
+              <p class="text-xs text-slate-600">Our "Find It For Me" team checks trusted wholesale and import networks across Kampala, Dubai, and the UK.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-surface border border-slate-200">
+              <div class="font-display font-bold text-navy mb-1">Convenient Delivery</div>
+              <p class="text-xs text-slate-600">Fast doorstep delivery arranged across Kampala, Wakiso, Entebbe, and upcountry towns.</p>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderContact() {
+      return `
+        <section class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-6">
+          <h1 class="font-display font-bold text-3xl text-navy">Contact ZAKAYOZ</h1>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="p-6 rounded-2xl bg-surface border border-slate-200 space-y-3">
+              <div class="font-display font-bold text-lg">Direct WhatsApp &amp; Phone</div>
+              <p class="text-sm text-slate-600">Call or WhatsApp our team anytime for instant order confirmation or product sourcing quotes:</p>
+              <div class="text-xl font-display font-bold text-navy">0709 792936</div>
+              <a href="https://wa.me/${WHATSAPP_NUM}" target="_blank" class="inline-block px-5 py-2.5 rounded-xl bg-cyan text-navy font-bold text-xs">Chat on WhatsApp →</a>
+            </div>
+            <div class="p-6 rounded-2xl bg-surface border border-slate-200 space-y-3">
+              <div class="font-display font-bold text-lg">Delivery Coverage</div>
+              <p class="text-sm text-slate-600">${state.deliveryInfo}</p>
+              <p class="text-xs text-slate-500">Same-day delivery within Greater Kampala and safe bus/courier dispatch countrywide.</p>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderAdmin() {
+      if (!state.isAdmin) {
+        return `
+          <section class="max-w-md mx-auto px-4 py-14">
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-sm space-y-5">
+              <div class="flex items-center gap-3">
+                <img src="https://res.cloudinary.com/shggimsv/image/upload/v1789563131/logo.jpg" class="h-12 w-12 rounded-xl object-cover" />
+                <div>
+                  <h1 class="font-display font-bold text-xl text-navy">ZAKAYOZ Admin Login</h1>
+                  <p class="text-xs text-slate-500">Protected Store &amp; Inventory Dashboard</p>
+                </div>
+              </div>
+              <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Admin Email</label>
+                  <input id="adm-email" type="email" required value="zakayoz2026@gmail.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Admin Password</label>
+                  <input id="adm-pass" type="password" required placeholder="Enter admin password" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm" />
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-navy text-white font-display font-bold text-sm">Sign In to Dashboard</button>
+              </form>
+            </div>
+          </section>
+        `;
+      }
+      return `
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="font-display font-bold text-2xl text-navy">ZAKAYOZ Store Admin Dashboard</h1>
+              <p class="text-xs text-slate-500">Signed in as ${state.user.email} — Manage products, categories, prices &amp; stock</p>
+            </div>
+            <button onclick="sb.auth.signOut();state.isAdmin=false;state.user=null;render()" class="px-4 py-2 rounded-xl border border-slate-300 text-xs font-bold">Sign Out</button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="p-4 rounded-2xl bg-surface border border-slate-200">
+              <div class="text-xs text-slate-500">Active Products</div>
+              <div class="font-display font-bold text-2xl">${state.products.length}</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-surface border border-slate-200">
+              <div class="text-xs text-slate-500">Categories</div>
+              <div class="font-display font-bold text-2xl">${state.categories.length}</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-surface border border-slate-200">
+              <div class="text-xs text-slate-500">Labels</div>
+              <div class="font-display font-bold text-2xl">${state.labels.length}</div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+            <div class="p-4 border-b border-slate-200 font-display font-bold">Live Inventory (${state.products.length} items)</div>
+            <div class="divide-y divide-slate-100">
+              ${state.products.map(p => `
+                <div class="p-4 flex items-center justify-between gap-4">
+                  <div class="flex items-center gap-3">
+                    <img src="${(p.product_images && p.product_images[0] && p.product_images[0].image_url) || ''}" class="h-12 w-12 rounded-lg object-contain bg-surface p-1" />
+                    <div>
+                      <div class="font-bold text-sm">${p.name}</div>
+                      <div class="text-xs text-slate-500">${formatUGX(p.price)} • ${p.brand || ''} • ${CONDITION_LABELS[p.condition] || p.condition}</div>
+                    </div>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">${STOCK_LABELS[p.stock_status] || p.stock_status}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    async function handleAdminLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('adm-email').value.trim();
+      const password = document.getElementById('adm-pass').value;
+      const { data, error } = await sb.auth.signInWithPassword({ email, password });
+      if (error) { alert('Login failed: ' + error.message); return; }
+      const { data: role } = await sb.from('user_roles').select('role').eq('user_id', data.user.id).eq('role', 'admin').maybeSingle();
+      if (!role) { alert('Account does not have admin role.'); return; }
+      state.user = data.user;
+      state.isAdmin = true;
+      render();
+    }
+
+    function render() {
+      const root = document.getElementById('app-content');
+      if (state.view === 'home') root.innerHTML = renderHome();
+      else if (state.view === 'shop') root.innerHTML = renderShop();
+      else if (state.view === 'product') root.innerHTML = renderProductDetail();
+      else if (state.view === 'find') root.innerHTML = renderFindItForMe();
+      else if (state.view === 'cart') root.innerHTML = renderCart();
+      else if (state.view === 'about') root.innerHTML = renderAbout();
+      else if (state.view === 'contact') root.innerHTML = renderContact();
+      else if (state.view === 'admin') root.innerHTML = renderAdmin();
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    saveCart();
+    loadStoreData();
+  </script>
+</body>
+</html>
