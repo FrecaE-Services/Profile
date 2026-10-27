@@ -9,29 +9,41 @@
 :root{--bg:#3B1D0B;--bg2:#7A3410;--acc:#FFB238;--acc2:#C2560E;--paper:#FBF4EA;--ink:#2A160A;--muted:#6D5B4E;--wa:#25D366}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55}
 a{color:inherit;text-decoration:none}h1,h2,h3{font-family:'Fraunces',sans-serif;margin:0;line-height:1.15}
-.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
 header{position:sticky;top:0;z-index:40;background:var(--bg);color:#fff;border-bottom:3px solid var(--acc)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:10px}
 .logo{font-family:'Fraunces',sans-serif;font-weight:800;font-size:1.08rem;letter-spacing:.01em}.logo em{font-style:normal;color:var(--acc)}
 .logo small{display:block;font-family:Inter;font-weight:500;font-size:.68rem;opacity:.75;letter-spacing:.04em}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:700;font-size:.92rem;transition:transform .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:700;font-size:.92rem;transition:transform .15s,box-shadow .15s}
 .btn:active{transform:scale(.97)}.btn svg{width:18px;height:18px;fill:currentColor}
 .wa{background:var(--wa);color:#06331a}.nav .wa{padding:9px 13px;font-size:.8rem}
 .ghost{border:1.5px solid rgba(255,255,255,.45);color:#fff}
-.hero{background:linear-gradient(160deg,var(--bg) 0%,var(--bg2) 100%);color:#fff;padding:38px 0 46px;position:relative;overflow:hidden}
-.hero:after{content:'';position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:var(--acc);opacity:.13}
+.hero{background:linear-gradient(160deg,var(--bg) 0%,var(--bg2) 100%);color:#fff;padding:38px 0 48px;position:relative;overflow:hidden}
+.hero:after{content:'';position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:var(--acc);opacity:.13;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:center}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.08fr .92fr;gap:36px}}
 .tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:5px 11px;border-radius:99px;font-size:.74rem;font-weight:600;letter-spacing:.04em;margin-bottom:14px}
-.hero h1{font-size:clamp(1.9rem,7vw,3.2rem);font-weight:800}.hero h1 em{font-style:normal;color:var(--acc)}
-.hero p{opacity:.9;max-width:560px;margin:14px 0 22px;font-size:1rem}
+.hero h1{font-size:clamp(1.9rem,6.2vw,3.15rem);font-weight:800}.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p{opacity:.92;max-width:560px;margin:14px 0 22px;font-size:1rem}
 .cta{display:flex;flex-wrap:wrap;gap:10px}
-.loc{margin-top:20px;font-size:.85rem;opacity:.85;display:flex;gap:6px;align-items:flex-start}
-section{padding:42px 0}.sec-h{margin-bottom:20px}.sec-h span{color:var(--acc2);font-weight:700;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase}
-.sec-h h2{font-size:clamp(1.45rem,5vw,2.1rem);margin-top:6px}.sec-h p{color:var(--muted);margin:8px 0 0}
-.grid{display:grid;grid-template-columns:1fr;gap:14px}@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}@media(min-width:960px){.grid{grid-template-columns:1fr 1fr 1fr}}
-.card{background:#fff;border-radius:16px;padding:18px;box-shadow:0 10px 26px -18px rgba(0,0,0,.35);border:1px solid rgba(0,0,0,.06);display:flex;flex-direction:column}
-.card .ico{font-size:1.7rem;width:48px;height:48px;border-radius:12px;background:var(--paper);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
-.card h3{font-size:1.06rem}.card p{color:var(--muted);font-size:.9rem;margin:6px 0 10px;flex:1}
-.price{font-weight:800;color:var(--acc2);font-size:.95rem}.card small{color:var(--muted);font-size:.72rem;margin-top:2px}.card .btn{margin-top:12px}
+.loc{margin-top:20px;font-size:.85rem;opacity:.88;display:flex;gap:6px;align-items:flex-start}
+.hero-media{position:relative;border-radius:18px;overflow:hidden;border:2px solid rgba(255,255,255,.18);box-shadow:0 22px 48px -18px rgba(0,0,0,.55);aspect-ratio:16/10;background:rgba(0,0,0,.25)}
+.hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-badge{position:absolute;left:12px;bottom:12px;right:12px;background:rgba(15,18,24,.82);backdrop-filter:blur(8px);color:#fff;padding:10px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.16);display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.78rem}
+.hero-badge strong{color:var(--acc);font-weight:700}
+section{padding:44px 0}.sec-h{margin-bottom:22px}.sec-h span{color:var(--acc2);font-weight:700;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase}
+.sec-h h2{font-size:clamp(1.45rem,5vw,2.15rem);margin-top:6px}.sec-h p{color:var(--muted);margin:8px 0 0}
+.grid{display:grid;grid-template-columns:1fr;gap:18px}@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}@media(min-width:960px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 12px 28px -18px rgba(0,0,0,.35);border:1px solid rgba(0,0,0,.07);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 34px -16px rgba(0,0,0,.42)}
+.card-media{position:relative;aspect-ratio:16/10;background:var(--paper);overflow:hidden}
+.card-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.card:hover .card-media img{transform:scale(1.04)}
+.ico-badge{position:absolute;top:10px;left:10px;width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-size:1.25rem;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.price-pill{position:absolute;bottom:10px;right:10px;background:var(--bg);color:#fff;font-weight:700;font-size:.73rem;padding:5px 10px;border-radius:99px;border:1px solid rgba(255,255,255,.18);box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.card-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.06rem}.card p{color:var(--muted);font-size:.89rem;margin:6px 0 11px;flex:1}
+.price{font-weight:800;color:var(--acc2);font-size:.95rem}.card small{color:var(--muted);font-size:.72rem;margin-top:2px;display:block}.card .btn{margin-top:12px;width:100%}
 .band{background:var(--bg);color:#fff}.band .sec-h p{color:rgba(255,255,255,.75)}.band .sec-h span{color:var(--acc)}
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
 .steps li{display:flex;gap:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:16px;border-radius:14px}
@@ -42,28 +54,76 @@ section{padding:42px 0}.sec-h{margin-bottom:20px}.sec-h span{color:var(--acc2);f
 .contact{background:#fff;border-radius:18px;padding:22px;box-shadow:0 10px 26px -18px rgba(0,0,0,.35)}.contact p{margin:6px 0}
 .wa-float{position:fixed;right:16px;bottom:16px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -6px rgba(37,211,102,.7)}.wa-float svg{width:30px;height:30px;fill:#fff}
 footer{background:var(--bg);color:rgba(255,255,255,.8);padding:26px 0 90px;font-size:.84rem;text-align:center}footer a{color:var(--acc);font-weight:700}
-.note{font-size:.75rem;color:var(--muted);margin-top:14px}
+.note{font-size:.78rem;color:var(--muted);margin-top:14px}
+.photo-note{margin-top:16px;padding:12px 15px;border-radius:12px;background:#fff;border:1px dashed var(--acc2);font-size:.8rem;color:var(--ink)}
+.photo-note strong{color:var(--acc2)}
 </style></head><body>
 <header><div class="wrap nav"><div class="logo">EDWIG'S <em>EATING POINT</em><small>Serumaga Road · Entebbe</small></div>
 <a class="btn wa" href="https://wa.me/256755432546?text=Hi%20Edwig%27s%20Eating%20Point%21%20I%20found%20you%20online%20and%20would%20like%20to%20see%20today%27s%20menu%20and%20order%20take-away." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg><span>WhatsApp</span></a></div></header>
-<section class="hero"><div class="wrap"><span class="tag">🍲 Home-style food in Entebbe since 2019</span><h1>Home-style food, <em>ready to take away.</em></h1><p>Local and continental dishes at moderate prices. Order ahead on WhatsApp and pick up from Plot 7 Serumaga Road — or sit in with us.</p>
+<section class="hero"><div class="wrap hero-grid">
+<div><span class="tag">🍲 Home-style food in Entebbe since 2019</span><h1>Home-style food, <em>ready to take away.</em></h1><p>Local and continental dishes at moderate prices. Order ahead on WhatsApp and pick up from Plot 7 Serumaga Road — or sit in with us.</p>
 <div class="cta"><a class="btn wa" href="https://wa.me/256755432546?text=Hi%20Edwig%27s%20Eating%20Point%21%20I%20found%20you%20online%20and%20would%20like%20to%20see%20today%27s%20menu%20and%20order%20take-away." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg><span>See today&#x27;s menu on WhatsApp</span></a><a class="btn ghost" href="#shop">What we serve</a></div>
-<div class="loc">📍 <span>Plot 7 Serumaga Road, Entebbe</span></div></div></section>
+<div class="loc">📍 <span>Plot 7 Serumaga Road, Entebbe</span></div></div>
+<div class="hero-media"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Freshly prepared home-style local and continental dishes at Edwig&#x27;s Eating Point Entebbe" fetchpriority="high"><div class="hero-badge"><span><strong>Edwig&#x27;s Eating Point</strong> · Verified Preview</span><span>Tap any item below to order</span></div></div>
+</div></section>
 <section id="shop"><div class="wrap"><div class="sec-h"><span>Our kitchen</span><h2>What we serve</h2><p>Our menu changes daily — tap a section to get today&#x27;s dishes and prices on WhatsApp.</p></div>
 <div class="grid">
-<article class="card"><div class="ico">🍛</div><h3>Local dishes</h3><p>Home-style Ugandan food, cooked fresh.</p>
-<div class="price">Ask for today&#x27;s menu</div>
-<a class="btn wa" href="https://wa.me/256755432546?text=Hi%20Edwig%27s%20Eating%20Point%21%20I%20saw%20your%20website.%20I%20am%20interested%20in%3A%20Local%20dishes.%20What%27s%20on%20the%20menu%20today%20and%20how%20much%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg><span>Order / Ask on WhatsApp</span></a></article>
-<article class="card"><div class="ico">🍝</div><h3>Continental dishes</h3><p>Continental favourites prepared the home-style way.</p>
-<div class="price">Ask for today&#x27;s menu</div>
-<a class="btn wa" href="https://wa.me/256755432546?text=Hi%20Edwig%27s%20Eating%20Point%21%20I%20saw%20your%20website.%20I%20am%20interested%20in%3A%20Continental%20dishes.%20What%27s%20on%20the%20menu%20today%20and%20how%20much%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg><span>Order / Ask on WhatsApp</span></a></article>
-<article class="card"><div class="ico">🥡</div><h3>Take-away orders</h3><p>Order ahead on WhatsApp and pick up without waiting.</p>
-<div class="price">Moderate prices — ask</div>
-<a class="btn wa" href="https://wa.me/256755432546?text=Hi%20Edwig%27s%20Eating%20Point%21%20I%20saw%20your%20website.%20I%20am%20interested%20in%3A%20Take-away%20orders.%20What%27s%20on%20the%20menu%20today%20and%20how%20much%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg><span>Order / Ask on WhatsApp</span></a></article>
-<article class="card"><div class="ico">🪑</div><h3>Sit-in</h3><p>A small, cosy sitting area for up to 8 people.</p>
-<div class="price">Walk in</div>
-<a class="btn wa" href="https://wa.me/256755432546?text=Hi%20Edwig%27s%20Eating%20Point%21%20I%20saw%20your%20website.%20I%20am%20interested%20in%3A%20Sit-in.%20What%27s%20on%20the%20menu%20today%20and%20how%20much%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg><span>Order / Ask on WhatsApp</span></a></article>
-</div><p class="note">Menu and prices are confirmed on WhatsApp each day.</p></div></section>
+<article class="card">
+<div class="card-media">
+  <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Home-style Ugandan local dishes and rich stews" loading="lazy">
+  <span class="ico-badge" aria-hidden="true">🍛</span>
+  <span class="price-pill">Ask for today&#x27;s menu</span>
+</div>
+<div class="card-body">
+  <h3>Local dishes</h3>
+  <p>Home-style Ugandan food, cooked fresh.</p>
+  <div class="price">Ask for today&#x27;s menu</div>
+  <a class="btn wa" href="https://wa.me/256755432546?text=Hi%20Edwig%27s%20Eating%20Point%21%20I%20saw%20your%20website.%20I%20am%20interested%20in%3A%20Local%20dishes.%20What%27s%20on%20the%20menu%20today%20and%20how%20much%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg><span>Order / Ask on WhatsApp</span></a>
+</div>
+</article>
+<article class="card">
+<div class="card-media">
+  <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Grilled chicken, pasta and continental dishes" loading="lazy">
+  <span class="ico-badge" aria-hidden="true">🍝</span>
+  <span class="price-pill">Ask for today&#x27;s menu</span>
+</div>
+<div class="card-body">
+  <h3>Continental dishes</h3>
+  <p>Continental favourites prepared the home-style way.</p>
+  <div class="price">Ask for today&#x27;s menu</div>
+  <a class="btn wa" href="https://wa.me/256755432546?text=Hi%20Edwig%27s%20Eating%20Point%21%20I%20saw%20your%20website.%20I%20am%20interested%20in%3A%20Continental%20dishes.%20What%27s%20on%20the%20menu%20today%20and%20how%20much%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg><span>Order / Ask on WhatsApp</span></a>
+</div>
+</article>
+<article class="card">
+<div class="card-media">
+  <img src="https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Hot packed take-away meal boxes ready for pick-up" loading="lazy">
+  <span class="ico-badge" aria-hidden="true">🥡</span>
+  <span class="price-pill">Moderate prices — ask</span>
+</div>
+<div class="card-body">
+  <h3>Take-away orders</h3>
+  <p>Order ahead on WhatsApp and pick up without waiting.</p>
+  <div class="price">Moderate prices — ask</div>
+  <a class="btn wa" href="https://wa.me/256755432546?text=Hi%20Edwig%27s%20Eating%20Point%21%20I%20saw%20your%20website.%20I%20am%20interested%20in%3A%20Take-away%20orders.%20What%27s%20on%20the%20menu%20today%20and%20how%20much%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg><span>Order / Ask on WhatsApp</span></a>
+</div>
+</article>
+<article class="card">
+<div class="card-media">
+  <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Cosy sit-in dining table setting" loading="lazy">
+  <span class="ico-badge" aria-hidden="true">🪑</span>
+  <span class="price-pill">Walk in</span>
+</div>
+<div class="card-body">
+  <h3>Sit-in</h3>
+  <p>A small, cosy sitting area for up to 8 people.</p>
+  <div class="price">Walk in</div>
+  <a class="btn wa" href="https://wa.me/256755432546?text=Hi%20Edwig%27s%20Eating%20Point%21%20I%20saw%20your%20website.%20I%20am%20interested%20in%3A%20Sit-in.%20What%27s%20on%20the%20menu%20today%20and%20how%20much%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg><span>Order / Ask on WhatsApp</span></a>
+</div>
+</article>
+</div>
+<p class="note">Menu and prices are confirmed on WhatsApp each day.</p>
+<div class="photo-note">📸 <strong>Owner Preview Note:</strong> Sample product photos shown for preview — send us 3–5 photos of your actual stock on WhatsApp and we swap them in immediately.</div>
+</div></section>
 <section class="band"><div class="wrap"><div class="sec-h"><span>How it works</span><h2>Pre-order in 3 taps</h2><p>Skip the wait at the counter.</p></div><ul class="steps"><li><span class="n">1</span><div><b>Ask for today&#x27;s menu</b><p>Tap any button — we send today&#x27;s dishes and prices.</p></div></li><li><span class="n">2</span><div><b>Place your order</b><p>Tell us what you want and your pick-up time.</p></div></li><li><span class="n">3</span><div><b>Pick up hot</b><p>Collect from Plot 7 Serumaga Road, Entebbe.</p></div></li></ul></div></section>
 <section><div class="wrap"><div class="sec-h"><span>Good to know</span><h2>Good to know</h2></div><ul class="facts"><li><b>Serving Entebbe since</b><span>2019</span></li><li><b>Style</b><span>Home-style local &amp; continental food</span></li><li><b>Mostly take-away</b><span>Small sitting area for 8</span></li><li><b>Sunday</b><span>Closed</span></li></ul></div></section>
 <section id="contact" style="padding-top:0"><div class="wrap"><div class="contact"><h2 style="font-size:1.4rem">Find &amp; reach us</h2>
