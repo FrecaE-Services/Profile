@@ -193,6 +193,168 @@
       "created_at": "2026-10-27T08:00:00Z",
       "owner_wa": "256700812716",
       "tier": "standard"
+    },
+    "cakes-village-kampala": {
+      "name": "Cakes Village Kampala",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256752464491",
+      "tier": "standard"
+    },
+    "sweetly-defined-kisaasi": {
+      "name": "Sweetly Defined Bakery",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256780322777",
+      "tier": "standard"
+    },
+    "nsambya-furniture-workshop": {
+      "name": "Nsambya Furniture Workshop Uganda",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256705912755",
+      "tier": "ecommerce"
+    },
+    "dorech-bridals-kampala": {
+      "name": "Dorech Bridals Kampala",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256787317403",
+      "tier": "standard"
+    },
+    "bloven-decor-and-cakes": {
+      "name": "Bloven Decor & Cakes",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256782278880",
+      "tier": "standard"
+    },
+    "rugumayo-beauty-wakiso": {
+      "name": "Rugumayo Beauty & Hair Studio",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256777232292",
+      "tier": "standard"
+    },
+    "tyler-salon-entebbe": {
+      "name": "Tyler Salon Nkumba Entebbe",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256746116443",
+      "tier": "standard"
+    },
+    "allins-glitz-glamor-entebbe": {
+      "name": "Allins Glitz & Glamor Boutique",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256756449993",
+      "tier": "ecommerce"
+    },
+    "mghoi-makeup-gifts-entebbe": {
+      "name": "Mghoi Makeup & Gift Shop",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256771639882",
+      "tier": "standard"
+    },
+    "km2-real-furniture-kira": {
+      "name": "KM2 Real Furniture Kira",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256775543567",
+      "tier": "ecommerce"
+    },
+    "cakely-uganda-kyaliwajjala": {
+      "name": "Cakely Uganda (Kyaliwajjala \u2013 Kira)",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256703692310",
+      "tier": "standard"
+    },
+    "mwesigwa-super-furniture-namugongo": {
+      "name": "Mwesigwa Super Furniture",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256783857206",
+      "tier": "ecommerce"
+    },
+    "rizah-events-hire-namugongo": {
+      "name": "Rizah Function & Hire Services",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256753223559",
+      "tier": "standard"
+    },
+    "kura-furniture-seeta-mukono": {
+      "name": "Kura Furniture Seeta Mukono",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256785197226",
+      "tier": "ecommerce"
+    },
+    "bk-furniture-mukono": {
+      "name": "BK Furniture Mukono",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256775725204",
+      "tier": "standard"
+    },
+    "timo-furniture-jinja": {
+      "name": "Timo Furniture Workshop Jinja",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256770957199",
+      "tier": "ecommerce"
+    },
+    "daytoday-discount-centre-mbarara": {
+      "name": "DayToDay Discount Centre Mbarara",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256774060222",
+      "tier": "ecommerce"
+    },
+    "christ-group-hardware-gulu": {
+      "name": "Christ Group General Hardware Gulu",
+      "status": "preview",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256783783749",
+      "tier": "ecommerce"
     }
   }
 }
