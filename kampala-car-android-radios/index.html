@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kampala Car Android Radios &amp; Auto Sound Hub</title>
+  <meta name="description" content="9 and 10 inch car Android radios, custom-fit screens, reverse cameras, Pioneer JBL Sony bass, and interior LED kits in Kampala. Order on WhatsApp +256 754 973303." />
+  <meta name="theme-color" content="#070b12" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@560;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070b12;
+      --panel: #10161f;
+      --panel-2: #161e2a;
+      --line: rgba(90, 180, 255, 0.22);
+      --text: #e8f1fb;
+      --muted: #9aabc0;
+      --blue: #3ec6ff;
+      --blue-2: #1a7dff;
+      --wa: #25d366;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 0;
+      overflow-x: hidden;
+      font-family: Manrope, system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 420px at 100% -10%, rgba(26, 125, 255, 0.28), transparent 55%),
+        radial-gradient(700px 380px at -10% 18%, rgba(62, 198, 255, 0.12), transparent 50%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 7px),
+        linear-gradient(180deg, #0c121b 0%, var(--bg) 38%, #05070c 100%);
+      line-height: 1.5;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; color: inherit; }
+    h1, h2, h3 { font-family: Outfit, sans-serif; margin: 0; line-height: 1.12; letter-spacing: -0.03em; }
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(7, 11, 18, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .mark {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      border-radius: 12px;
+      background:
+        linear-gradient(160deg, rgba(62,198,255,0.2), transparent 55%),
+        repeating-linear-gradient(135deg, #1a2433 0 3px, #0d141e 3px 6px);
+      border: 1px solid var(--line);
+      box-shadow: inset 0 0 0 1px rgba(62,198,255,0.15), 0 0 18px rgba(62,198,255,0.25);
+      position: relative;
+    }
+    .mark:before, .mark:after {
+      content: "";
+      position: absolute;
+      left: 9px;
+      right: 9px;
+      height: 3px;
+      border-radius: 99px;
+      background: var(--blue);
+      box-shadow: 0 0 10px var(--blue);
+    }
+    .mark:before { top: 15px; }
+    .mark:after { top: 24px; opacity: 0.55; }
+    .brand strong { display: block; font-family: Outfit, sans-serif; font-size: 0.98rem; font-weight: 800; }
+    .brand em { display: block; font-style: normal; color: var(--blue); font-size: 0.75rem; font-weight: 700; }
+    .name-note {
+      margin: 0;
+      padding: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    .name-note strong { color: var(--blue); font-weight: 700; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 11px 16px;
+      border-radius: 12px;
+      border: 0;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .btn svg { width: 18px; height: 18px; fill: currentColor; flex: 0 0 18px; }
+    .wa { background: var(--wa); color: #04210f; }
+    .ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+    .nav .btn { padding: 9px 12px; min-height: 42px; font-size: 0.82rem; }
+    .hero { padding: 36px 0 18px; }
+    .hero-grid { display: grid; gap: 22px; align-items: center; }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(62, 198, 255, 0.08);
+      color: var(--blue);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    h1 { font-size: clamp(2rem, 8vw, 3.4rem); max-width: 16ch; }
+    h1 span { color: var(--blue); }
+    .lede { color: #c5d4e6; max-width: 58ch; margin: 12px 0 18px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 10px; }
+    .cta .btn { flex: 1 1 210px; }
+    .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; padding: 0; list-style: none; }
+    .facts li {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .hero-media {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      aspect-ratio: 16 / 10;
+      box-shadow: 0 24px 50px rgba(0,0,0,0.45), 0 0 0 1px rgba(62,198,255,0.08);
+    }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-media figcaption {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      margin: 0;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(6, 10, 16, 0.78);
+      border: 1px solid rgba(62,198,255,0.25);
+      font-size: 0.78rem;
+    }
+    .hero-media strong { color: var(--blue); }
+    section { padding: 28px 0; }
+    .sec-h { margin-bottom: 16px; }
+    .sec-h p { margin: 8px 0 0; color: var(--muted); }
+    h2 { font-size: clamp(1.5rem, 4vw, 2.15rem); }
+    .grid { display: grid; gap: 14px; }
+    .card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(180deg, rgba(22, 30, 42, 0.96), rgba(10, 14, 20, 0.96));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .card-media { aspect-ratio: 16 / 10; background: #0b1018; }
+    .card-media img { width: 100%; height: 100%; object-fit: cover; }
+    .card-body { padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 0; }
+    .card h3 { font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+    .price { color: var(--blue); font-weight: 800; font-size: 1rem; }
+    .card .btn { width: 100%; margin-top: auto; }
+    .fit {
+      background:
+        linear-gradient(180deg, rgba(26,125,255,0.12), rgba(7,11,18,0.2)),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 8px);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 0 40px rgba(26, 125, 255, 0.08);
+    }
+    .filters { display: grid; gap: 10px; }
+    label { display: grid; gap: 6px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); min-width: 0; }
+    select, input {
+      width: 100%;
+      min-width: 0;
+      min-height: 48px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #0b1119;
+      outline: none;
+    }
+    select:focus, input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(62,198,255,0.16); }
+    .preview {
+      margin: 12px 0;
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(5, 8, 12, 0.72);
+      border: 1px dashed rgba(62,198,255,0.4);
+      color: #d5e6f6;
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+    .preview b { display: block; margin-bottom: 4px; color: var(--blue); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; }
+    .hint { color: #ffb4b4; font-size: 0.82rem; margin: 8px 0 0; }
+    .steps { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
+    .steps li {
+      padding: 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .steps b { color: var(--blue); }
+    .contact {
+      border-radius: 18px;
+      padding: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+    .contact p { margin: 8px 0; }
+    .contact a { color: var(--blue); font-weight: 800; }
+    .wa-float {
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 40;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--wa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+    }
+    .wa-float svg { width: 30px; height: 30px; fill: #04210f; }
+    footer { padding: 10px 0 96px; color: var(--muted); font-size: 0.82rem; text-align: center; }
+    footer a { color: var(--blue); font-weight: 800; }
+    @media (min-width: 720px) {
+      .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 28px; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .filters { grid-template-columns: 1fr 1.2fr 0.7fr; }
+      .steps { grid-template-columns: repeat(3, 1fr); }
+      .cta .btn { flex: 0 0 auto; }
+    }
+    @media (min-width: 980px) {
+      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <svg hidden>
+    <symbol id="wa-icon" viewBox="0 0 24 24">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/>
+    </symbol>
+  </svg>
+
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#top">
+          <span class="mark" aria-hidden="true"></span>
+          <span>
+            <strong>Kampala Car Android Radios</strong>
+            <em>&amp; Auto Sound Hub</em>
+          </span>
+        </a>
+        <a class="btn wa" href="https://wa.me/256754973303?text=Hello%20Kampala%20Car%20Android%20Radios%20%26%20Auto%20Sound%20Hub%2C%20I%20want%20to%20order%20a%20car%20Android%20screen%20or%20sound%20kit." target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#wa-icon"></use></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+      <p class="name-note">Preview name. <strong>We can customize this top logo and shop name to your exact business name in about 2 minutes.</strong></p>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">Kampala · Android screens &amp; car audio</p>
+          <h1>A bigger screen. <span>Cleaner sound.</span></h1>
+          <p class="lede">Full-touch car Android radios, custom fascia frames for the Toyotas and Subarus on Kampala roads, night-vision cameras, and bass that fills the cabin. One tap sends the order to WhatsApp.</p>
+          <div class="cta">
+            <a class="btn wa" href="https://wa.me/256754973303?text=Hello%20Kampala%20Car%20Android%20Radios%20%26%20Auto%20Sound%20Hub%2C%20I%20want%20a%20screen%20and%20sound%20quote%20for%20my%20car." target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#wa-icon"></use></svg>
+              <span>Order on WhatsApp</span>
+            </a>
+            <a class="btn ghost" href="#fit">Find your screen fit</a>
+          </div>
+          <ul class="facts">
+            <li>Wireless CarPlay &amp; Android Auto</li>
+            <li>GPS, YouTube &amp; Bluetooth</li>
+            <li>+256 754 973303</li>
+          </ul>
+        </div>
+        <figure class="hero-media">
+          <img src="https://images.unsplash.com/photo-1740170629592-fc4540363e2b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Dark car cabin with a large centre screen and electric-blue ambient light along the dashboard" fetchpriority="high" />
+          <figcaption><strong>Dashboard look</strong> · screens, fascia frames, and interior light</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="shop">
+      <div class="wrap">
+        <div class="sec-h">
+          <h2>Screens, cameras &amp; sound</h2>
+          <p>Prices are in Ugandan shillings. Tap Order on WhatsApp and we confirm stock, fascia, and fitting for your car.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1610647752706-3bb12232b3ab?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Full-touch car screen showing a navigation map in a dark dashboard" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>9" &amp; 10" Full Touch Car Android Radios (2GB+32GB / 4GB+64GB with Wireless Apple CarPlay &amp; Android Auto, GPS, YouTube &amp; Bluetooth)</h3>
+              <p>Two memory options. Wireless Apple CarPlay and Android Auto, GPS, YouTube, and Bluetooth on a 9 or 10 inch touch panel.</p>
+              <div class="price">UGX 350,000 – UGX 550,000</div>
+              <a class="btn wa" href="https://wa.me/256754973303?text=Hello%20Kampala%20Car%20Android%20Radios%20%26%20Auto%20Sound%20Hub%2C%20I%20want%20to%20order%20a%209%22%20or%2010%22%20full%20touch%20car%20Android%20radio%20%282GB%2B32GB%20or%204GB%2B64GB%2C%20wireless%20CarPlay%20%26%20Android%20Auto%29.%20Price%20range%20on%20the%20page%3A%20UGX%20350%2C000%20%E2%80%93%20UGX%20550%2C000." target="_blank" rel="noopener">
+                <svg aria-hidden="true"><use href="#wa-icon"></use></svg>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Driver's view of a car dashboard, steering wheel, and centre radio bay" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Toyota Harrier / Prado / Premio / Wish / Noah / Subaru Custom Fit Android Screens + Fascia Frame</h3>
+              <p>Screen and fascia shaped for Harrier, Prado, Premio, Wish, Noah, and common Subaru dashes, so the unit sits in the original opening.</p>
+              <div class="price">UGX 420,000</div>
+              <a class="btn wa" href="https://wa.me/256754973303?text=Hello%20Kampala%20Car%20Android%20Radios%20%26%20Auto%20Sound%20Hub%2C%20I%20want%20the%20Toyota%20Harrier%20%2F%20Prado%20%2F%20Premio%20%2F%20Wish%20%2F%20Noah%20%2F%20Subaru%20custom%20fit%20Android%20screen%20plus%20fascia%20frame.%20Price%20on%20the%20page%3A%20UGX%20420%2C000." target="_blank" rel="noopener">
+                <svg aria-hidden="true"><use href="#wa-icon"></use></svg>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Rear of a car at night with the tail lamps lit, the view a reverse camera covers" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>AHD Night-Vision Reverse Cameras &amp; 360° Bird-View Dash Cam Kits</h3>
+              <p>AHD night-vision reverse cameras, and 360° bird-view kits when you want every side of the car on the new screen.</p>
+              <div class="price">UGX 85,000 – UGX 220,000</div>
+              <a class="btn wa" href="https://wa.me/256754973303?text=Hello%20Kampala%20Car%20Android%20Radios%20%26%20Auto%20Sound%20Hub%2C%20I%20want%20an%20AHD%20night-vision%20reverse%20camera%20or%20a%20360%20bird-view%20dash%20cam%20kit.%20Price%20range%20on%20the%20page%3A%20UGX%2085%2C000%20%E2%80%93%20UGX%20220%2C000." target="_blank" rel="noopener">
+                <svg aria-hidden="true"><use href="#wa-icon"></use></svg>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Black JBL speaker, standing in for car subwoofers and component audio" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Pioneer / JBL / Sony Car Subwoofers, Under-Seat Active Bass &amp; Component Speakers</h3>
+              <p>Boot subwoofers, slim under-seat active bass, and component speakers from Pioneer, JBL, and Sony. We match the box to your boot space.</p>
+              <div class="price">UGX 280,000 – UGX 480,000</div>
+              <a class="btn wa" href="https://wa.me/256754973303?text=Hello%20Kampala%20Car%20Android%20Radios%20%26%20Auto%20Sound%20Hub%2C%20I%20want%20Pioneer%2C%20JBL%2C%20or%20Sony%20car%20subwoofers%2C%20under-seat%20active%20bass%2C%20or%20component%20speakers.%20Price%20range%20on%20the%20page%3A%20UGX%20280%2C000%20%E2%80%93%20UGX%20480%2C000." target="_blank" rel="noopener">
+                <svg aria-hidden="true"><use href="#wa-icon"></use></svg>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Car front in the dark with electric-blue LED light bars" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3>Car Ambient LED Interior Lighting, Steering Wheel Controls &amp; Keyless Push-Start Alarms</h3>
+              <p>Cabin ambient LED strips, steering-wheel control pads for the new radio, and keyless push-start alarm kits.</p>
+              <div class="price">UGX 120,000 – UGX 250,000</div>
+              <a class="btn wa" href="https://wa.me/256754973303?text=Hello%20Kampala%20Car%20Android%20Radios%20%26%20Auto%20Sound%20Hub%2C%20I%20want%20car%20ambient%20LED%20interior%20lighting%2C%20steering%20wheel%20controls%2C%20or%20a%20keyless%20push-start%20alarm.%20Price%20range%20on%20the%20page%3A%20UGX%20120%2C000%20%E2%80%93%20UGX%20250%2C000." target="_blank" rel="noopener">
+                <svg aria-hidden="true"><use href="#wa-icon"></use></svg>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="fit">
+      <div class="wrap">
+        <div class="fit">
+          <div class="sec-h">
+            <h2>Find Your Car's Screen Fit</h2>
+            <p>Pick the make, type the model, and enter the year. The button opens WhatsApp to +256 754 973303 with that car already written in the message.</p>
+          </div>
+          <div class="filters">
+            <label>Make
+              <select id="fit-make">
+                <option value="">Choose make</option>
+                <option>Toyota</option>
+                <option>Subaru</option>
+                <option>Mercedes</option>
+                <option>BMW</option>
+                <option>Honda</option>
+                <option>Nissan</option>
+              </select>
+            </label>
+            <label>Model
+              <input id="fit-model" list="fit-models" placeholder="Harrier" autocomplete="off" />
+              <datalist id="fit-models"></datalist>
+            </label>
+            <label>Year
+              <input id="fit-year" inputmode="numeric" maxlength="4" placeholder="2016" />
+            </label>
+          </div>
+          <p class="preview" id="fit-preview"><b>WhatsApp message</b><span id="fit-preview-text">Choose the make, type the model, and enter the year.</span></p>
+          <a class="btn wa" id="fit-go" href="#fit">
+            <svg aria-hidden="true"><use href="#wa-icon"></use></svg>
+            <span>Check this screen fit on WhatsApp</span>
+          </a>
+          <p class="hint" id="fit-hint" hidden>Add the make, model, and a year from 1990 to 2026 so the message names your car.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-h">
+          <h2>How an order moves</h2>
+        </div>
+        <ol class="steps">
+          <li><b>1. Send the car</b><p>Use the screen-fit filter or an Order on WhatsApp button. Include the model and year.</p></li>
+          <li><b>2. We confirm the fascia</b><p>We reply with the frame that fits, the memory option, and today’s price.</p></li>
+          <li><b>3. Fitting in Kampala</b><p>Agree the kit on WhatsApp, then book installation. Call +256 754 973303 if you are already at the shop.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="contact">
+          <h2>Kampala Car Android Radios &amp; Auto Sound Hub</h2>
+          <p>Kampala. Ask on WhatsApp for the workshop pin and today’s opening hours.</p>
+          <p>Phone &amp; WhatsApp: <a href="tel:+256754973303">+256 754 973303</a></p>
+          <div class="cta">
+            <a class="btn wa" href="https://wa.me/256754973303?text=Hello%20Kampala%20Car%20Android%20Radios%20%26%20Auto%20Sound%20Hub%2C%20please%20share%20the%20workshop%20location%20and%20today%27s%20hours." target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#wa-icon"></use></svg>
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="wa-float" href="https://wa.me/256754973303?text=Hello%20Kampala%20Car%20Android%20Radios%20%26%20Auto%20Sound%20Hub%2C%20I%20want%20to%20order%20a%20screen%20or%20sound%20kit." target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+    <svg aria-hidden="true"><use href="#wa-icon"></use></svg>
+  </a>
+
+  <footer>
+    <div class="wrap">
+      <p>Kampala Car Android Radios &amp; Auto Sound Hub · +256 754 973303</p>
+      <p>Built by <a href="https://frecae-services.github.io/Profile/" target="_blank" rel="noopener">Freca E-Services</a> — websites and WhatsApp ordering for Ugandan businesses.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var models = {
+        Toyota: ["Harrier", "Prado", "Premio", "Wish", "Noah", "Vitz", "Hilux", "Ipsum", "Fielder", "Mark X", "RAV4", "Alphard"],
+        Subaru: ["Forester", "Impreza", "Legacy", "Outback", "XV"],
+        Mercedes: ["C-Class", "E-Class", "GLC", "ML", "GLE"],
+        BMW: ["3 Series", "5 Series", "X3", "X5", "X1"],
+        Honda: ["Fit", "CR-V", "Accord", "Vezel", "Civic"],
+        Nissan: ["X-Trail", "Note", "Tiida", "Patrol", "Juke"]
+      };
+      var makeEl = document.getElementById("fit-make");
+      var modelEl = document.getElementById("fit-model");
+      var yearEl = document.getElementById("fit-year");
+      var listEl = document.getElementById("fit-models");
+      var previewEl = document.getElementById("fit-preview-text");
+      var linkEl = document.getElementById("fit-go");
+      var hintEl = document.getElementById("fit-hint");
+
+      function message(make, model, year) {
+        return "Hello Kampala Car Android Radios & Auto Sound Hub, please check the Android screen that fits my " + make + " " + model + ", year " + year + ". Confirm the fascia frame, stock, and price.";
+      }
+
+      function sync() {
+        var make = makeEl.value;
+        var model = modelEl.value.trim().replace(/\s+/g, " ");
+        var year = yearEl.value.trim();
+        var options = models[make] || [];
+        listEl.innerHTML = options.map(function (item) {
+          return "<option value=\"" + item.replace(/"/g, "") + "\"></option>";
+        }).join("");
+        var yearOk = /^(19|20)\d{2}$/.test(year) && Number(year) >= 1990 && Number(year) <= 2026;
+        if (make && model && yearOk) {
+          var text = message(make, model, year);
+          previewEl.textContent = text;
+          linkEl.href = "https://wa.me/256754973303?text=" + encodeURIComponent(text);
+          hintEl.hidden = true;
+        } else {
+          previewEl.textContent = "Choose the make, type the model, and enter the year.";
+          linkEl.href = "#fit";
+        }
+      }
+
+      makeEl.addEventListener("change", sync);
+      modelEl.addEventListener("input", sync);
+      yearEl.addEventListener("input", sync);
+      linkEl.addEventListener("click", function (event) {
+        if (linkEl.getAttribute("href") === "#fit") {
+          event.preventDefault();
+          hintEl.hidden = false;
+          if (!makeEl.value) makeEl.focus();
+          else if (!modelEl.value.trim()) modelEl.focus();
+          else yearEl.focus();
+        }
+      });
+      sync();
+    })();
+  </script>
+  <script src="../shield.js" data-site-slug="kampala-car-android-radios" defer></script>
+</body>
+</html>
