@@ -572,9 +572,33 @@
       overflow-wrap: break-word;
       word-wrap: break-word;
     }
+    .ad-videos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin: 0.35rem 0 0.85rem;
+    }
+    .ad-video { min-width: 0; max-width: 100%; }
+    .ad-video video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      background: #0B1426;
+    }
+    .ad-video figcaption {
+      margin-top: 0.45rem;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--gray-600);
+      overflow-wrap: break-word;
+    }
+    .project-img.logo-stage { background: #fff; }
+    .project-img.logo-stage img { object-fit: contain; padding: 1.35rem; background: #fff; }
     @media (max-width: 768px) {
       .section { padding: 3.25rem 0; }
-      .packages-grid, .wa-options, .trust-steps { grid-template-columns: minmax(0, 1fr); }
+      .packages-grid, .wa-options, .trust-steps, .ad-videos { grid-template-columns: minmax(0, 1fr); }
       .package-card.span-2 { grid-column: auto; }
       .package-card { padding: 1.25rem 1rem; border-radius: 16px; }
       .wa-option { padding: 1rem 0.9rem; }
@@ -825,8 +849,12 @@
     .projects { background: var(--off-white); }
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.4rem;
+    }
+    .projects-grid.featured-stores {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-bottom: 1.4rem;
     }
     .project-card {
       background: white;
@@ -1542,7 +1570,7 @@
       .hero { padding: 7.5rem 0 4rem; min-height: auto; }
       
       
-      .services-grid, .why-grid, .projects-grid { grid-template-columns: 1fr; }
+      .services-grid, .why-grid, .projects-grid, .projects-grid.featured-stores { grid-template-columns: minmax(0, 1fr); }
       .process-steps { grid-template-columns: 1fr; gap: 1.4rem; }
       .process-step:not(:last-child)::after { display: none; }
       .process-step {
@@ -1786,9 +1814,9 @@
             <div class="service-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
             </div>
-            <h3 class="service-title">AI Product Photography &amp; Scroll-Stopping Video Ads</h3>
-            <p class="service-desc">Transform simple phone photos of your products, food, fashion, or premises into studio-grade commercial visuals, promotional reels, voiceover video ads, and high-converting social campaigns.</p>
-            <a href="#problems" class="service-link">Discuss this area →</a>
+            <h3 class="service-title">Professional AI &amp; 3D Video Adverts</h3>
+            <p class="service-desc">Custom 30-second promotional videos in every style — Realistic AI Presenters, 3D, and animation — made for WhatsApp Status, TikTok, and Instagram/Meta Ads. Watch the sample players in Quick-Start Packages.</p>
+            <a href="#video-adverts" class="service-link">Watch the sample videos →</a>
           </article>
           <article class="service-card reveal">
             <div class="service-icon">
@@ -1940,6 +1968,33 @@
                     <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Full E-Commerce Store — Self-Managed Full Admin Dashboard (UGX 350,000–450,000)" data-prob="I want to simplify customer inquiries or ordering">Select in Form</button>
                   </div>
                 </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="package-card span-2 reveal" id="video-adverts">
+            <div>
+              <span class="package-badge">Professional AI &amp; 3D Video Adverts</span>
+              <h3 class="service-title">Professional AI &amp; 3D Video Adverts</h3>
+              <p class="service-desc" style="margin-bottom:0.85rem;">Freca E-Services creates custom 30-second promotional videos in all styles — from Realistic AI Presenters to 3D &amp; Animations — for WhatsApp Status, TikTok, and Instagram/Meta Ads. Play the two samples below, then tell us the product and the style you want.</p>
+              <div class="ad-videos">
+                <figure class="ad-video">
+                  <video controls playsinline preload="metadata" src="https://res.cloudinary.com/wfibkvxg/video/upload/v1793145340/jamppc9svsuu1vid787d.mp4" title="30-second AI Spokesperson and 3D Video Advert"></video>
+                  <figcaption>30-second AI Spokesperson &amp; 3D Video Advert</figcaption>
+                </figure>
+                <figure class="ad-video">
+                  <video controls playsinline preload="metadata" src="https://res.cloudinary.com/wfibkvxg/video/upload/v1793140139/xeqpmksvtstsax0bjjmp.mp4" title="39-second Smart WhatsApp Replier Video Ad"></video>
+                  <figcaption>39-second Smart WhatsApp Replier Video Ad</figcaption>
+                </figure>
+              </div>
+              <ul class="package-list">
+                <li>Realistic AI presenters, 3D product scenes, and animated explainers</li>
+                <li>Edited for WhatsApp Status, TikTok, and Instagram/Meta Ads</li>
+                <li>Your script, your product, and your brand — usually about 30 seconds</li>
+              </ul>
+              <div class="pkg-actions">
+                <a href="https://wa.me/256726978988?text=Hello%20FRECA%20E-SERVICES%2C%20I%20watched%20the%20AI%20Spokesperson%20and%20Smart%20WhatsApp%20Replier%20sample%20videos.%20I%20would%20like%20a%20custom%2030-second%20promotional%20video%20%28Realistic%20AI%20Presenter%2C%203D%2C%20or%20animation%29%20for%20WhatsApp%20Status%2C%20TikTok%2C%20or%20Instagram%2FMeta%20Ads." target="_blank" rel="noopener" class="btn btn-primary btn-sm">Request a 30-second video</a>
+                <button type="button" class="btn btn-secondary btn-sm pkg-select-btn" data-pkg="Professional AI & 3D Video Adverts" data-prob="I need better promotional content or advertisements">Select in Form</button>
               </div>
             </div>
           </article>
@@ -2290,7 +2345,37 @@
         <div class="section-header reveal">
           <span class="section-label">Live Demos &amp; Blueprints</span>
           <h2 class="section-title">Live Client Demos &amp; Ready-to-Deploy Blueprints</h2>
-          <p class="section-desc">Explore live interactive websites built for Ugandan businesses alongside our core operational blueprints — ready to be customized with your branding, products, and WhatsApp flow in days.</p>
+          <p class="section-desc">Start with the live Full E-Commerce Online Stores, then browse the other Ugandan business sites and ready-to-deploy blueprints.</p>
+        </div>
+        <div class="projects-grid featured-stores">
+          <article class="project-card reveal">
+            <div class="project-img logo-stage">
+              <img src="https://res.cloudinary.com/wfibkvxg/image/upload/v1785603448/logo_ammdcg.jpg" alt="Pearl Engineering and Appliance Store logo" loading="lazy">
+              <span class="project-cat">Live .com · Full E-Commerce</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Pearl Engineering &amp; Appliances Store</h3>
+              <p class="project-desc">Live client store on its own .com, with 68+ solar, borehole pump, security, and car-accessory products, sized and supplied from Kampala.</p>
+              <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+                <a href="https://pearlengineeringandappliancesstore.com/" target="_blank" rel="noopener" class="project-link">View Live Store ↗</a>
+                <a href="#ecommerce-stores" class="project-link" style="color:var(--gray-500);font-weight:500;">Build similar →</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-img logo-stage">
+              <img src="https://res.cloudinary.com/shggimsv/image/upload/v1789563131/logo.jpg" alt="ZAKAYOZ Find It For Me logo" loading="lazy">
+              <span class="project-cat">Live Demo · Full E-Commerce</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">ZAKAYOZ — "Find It For Me" &amp; Online Store</h3>
+              <p class="project-desc">Full multi-category store plus a custom product-sourcing platform: customers shop the catalog or ask ZAKAYOZ to find an item for them.</p>
+              <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+                <a href="https://frecae-services.github.io/Profile/zakayoz-find-and-shop/" target="_blank" rel="noopener" class="project-link">View Live Store ↗</a>
+                <a href="#ecommerce-stores" class="project-link" style="color:var(--gray-500);font-weight:500;">Build similar →</a>
+              </div>
+            </div>
+          </article>
         </div>
         <div class="projects-grid">
           <article class="project-card reveal">
@@ -2814,6 +2899,7 @@
                     <option value="Full E-Commerce Store — Managed by Freca E-Services (UGX 250,000)">Full E-Commerce Store — Managed by Freca E-Services (UGX 250,000)</option>
                     <option value="Full E-Commerce Store — Self-Managed Full Admin Dashboard (UGX 350,000–450,000)">Full E-Commerce Store — Self-Managed Admin Dashboard (UGX 350,000–450,000)</option>
                     <option value="Website + Interactive WhatsApp Replier Bundle">Website + Interactive WhatsApp Replier Bundle (UGX 220,000–300,000)</option>
+                    <option value="Professional AI & 3D Video Adverts">Professional AI &amp; 3D Video Adverts</option>
                     <option value="Studio Product Photo & Ad Makeover Pack">Studio Product Photo &amp; Ad Makeover Pack (UGX 60,000–100,000)</option>
                     <option value="Business Credibility & Tender Kit">Business Credibility &amp; Tender Kit (UGX 120,000–200,000)</option>
                     <option value="Smart Operations / Stock & Sales Tracker or Custom Web App">Stock &amp; Sales Tracker or Custom Web App (UGX 250,000–500,000+)</option>
@@ -3289,8 +3375,9 @@
           acts: () => [{ label: 'Discuss this area', go: '#problems' }], chips: DEFAULT_CHIPS },
         { id: 'content', label: 'marketing content and creative', q: 'Do you make video ads?',
           k: ['video', 'videos', 'video ad', 'video ads', 'advert', 'adverts', 'advertisement', 'ads', 'short video', 'editing', 'voiceover', 'voiceovers', 'script', 'social media', 'product image', 'product images', 'photo', 'photos', 'marketing copy', 'promo', 'promotional', 'promotion'],
-          reply: 'The **Studio Product Photo & Ad Makeover Pack** is UGX 60,000–100,000. You get **1 free watermarked sample first**, then studio-style product photos, flyers, and WhatsApp or Instagram ad cards. Short video ads can be scoped with the same pack.',
-          acts: () => [{ label: 'Discuss this area', go: '#problems' }], chips: DEFAULT_CHIPS },
+          reply: '**Professional AI & 3D Video Adverts** are custom promotional videos, usually about 30 seconds, in any style from Realistic AI Presenters to 3D and animation. They are made for WhatsApp Status, TikTok, and Instagram/Meta Ads. Two samples are on this page: a 30-second AI Spokesperson & 3D Video Advert, and a 39-second Smart WhatsApp Replier Video Ad.\n\nThe **Studio Product Photo & Ad Makeover Pack** is still UGX 60,000–100,000, with 1 free watermarked sample, then studio photos, flyers, and ad cards.',
+          acts: () => [{ label: 'Watch the sample videos', go: '#video-adverts' }, waPrefill('Request a 30-second video', 'Hello FRECA E-SERVICES, I watched the sample videos and I would like a custom 30-second promotional video for WhatsApp Status, TikTok, or Instagram/Meta Ads.')],
+          chips: ['UGX prices', 'Who manages the website?', 'Installment plans'] },
         { id: 'website', label: 'websites', q: 'Can you build my website?',
           k: ['website', 'web site', 'landing page', 'ecommerce', 'e-commerce', 'online shop', 'online store', 'portfolio', 'menu', 'booking page', 'redesign', 'mobile friendly', 'online presence', 'webpage', 'showcase', 'standard website'],
           reply: 'Yes! Websites are usually ready in **48–72 hours** with zero monthly hosting fees, and we offer two tiers with two management options:\n\n**1. Standard Business / Service / Showcase Websites:**\n• **Managed by Freca E-Services:** **UGX 150,000** one-time (zero monthly hosting; **UGX 10,000 – 15,000** per future WhatsApp update or **UGX 25,000/month** unlimited updates).\n• **Self-Managed (with Owner Admin Dashboard):** **UGX 280,000** one-time (owner logs in from their phone to upload photos & edit prices anytime).\n\n**2. Full E-Commerce Online Stores (multi-category cart & checkout stores):**\n• **Managed by Freca E-Services:** **UGX 250,000** one-time (we handle all product/price updates when sent on WhatsApp for **UGX 10,000 – 15,000** per update or **UGX 25,000/month** unlimited).\n• **Self-Managed E-Commerce (with Full Owner Admin Dashboard):** **UGX 350,000 – 450,000** depending on catalog size & features (owner manages products, categories, stock, and prices directly from their phone).\n\nAll options support our flexible installments (**25% weekly**, **50% monthly**, or **10% every 2 days**).',
@@ -3361,7 +3448,7 @@
           acts: () => [{ label: 'Why choose us', go: '#why' }], chips: ['How does the process work?', 'How can I get started?'] },
         { id: 'work', label: 'live demos and examples of work', q: 'Can I see examples of your work?',
           k: ['portfolio', 'examples', 'example', 'projects', 'past work', 'previous work', 'samples', 'sample', 'clients', 'concepts', 'case study', 'case studies', 'live demo', 'demos'],
-          reply: 'Yes! In our **Live Demos & Blueprints** section you can explore 24 live Ugandan business websites we built — including **Xander Gadgets Mbarara**, **Nasser Road Quality Printers**, **Edwig\'s Eating Point Entebbe**, **Kimu Hardware Seeta**, **SPARE PARTS UG Kiseka**, **The Attic Salon Mukono**, **Deniva Shoppers Gulu**, **Mbarara Furniture Show Room**, **The Shoe Rack Ug**, **Reshan Cakes**, **Sweet Cake Impressions**, **Unique Fashions**, **DK Appliances**, **Cake Bond Uganda**, **FRECA CAKES**, **Cakeness Ug**, **Ria Cakes & Pastries**, **Cuppies Cake Boutique**, **Flashie_Scents**, **Interior Experts**, **KD Furniture World Ltd**, **Lavender\'s Pastry Lane**, **Machine World Uganda**, and **Sweet Perfections Uganda** — alongside our ready-to-deploy blueprints.',
+          reply: 'Yes! Start with the live Full E-Commerce stores: **Pearl Engineering & Appliances Store** (pearlengineeringandappliancesstore.com — 68+ solar, borehole pump, security, and car-accessory products) and **ZAKAYOZ — Find It For Me & Online Store**. Then explore the other live Ugandan business websites we built — including **Xander Gadgets Mbarara**, **Nasser Road Quality Printers**, **Edwig\'s Eating Point Entebbe**, **Kimu Hardware Seeta**, **SPARE PARTS UG Kiseka**, **The Attic Salon Mukono**, **Deniva Shoppers Gulu**, **Mbarara Furniture Show Room**, **The Shoe Rack Ug**, **Reshan Cakes**, **Sweet Cake Impressions**, **Unique Fashions**, **DK Appliances**, **Cake Bond Uganda**, **FRECA CAKES**, **Cakeness Ug**, **Ria Cakes & Pastries**, **Cuppies Cake Boutique**, **Flashie_Scents**, **Interior Experts**, **KD Furniture World Ltd**, **Lavender\'s Pastry Lane**, **Machine World Uganda**, and **Sweet Perfections Uganda** — alongside our ready-to-deploy blueprints.',
           acts: () => [{ label: 'See Live Demos & Work', go: '#projects' }, { label: 'Quick-Start Packages', go: '#packages' }], chips: ['What Quick-Start packages do you have?', 'How does the process work?', 'How can I get started?'] },
         { id: 'watch', label: 'the animations', q: 'What are the animations?',
           k: ['watch', 'animation', 'animations', 'animated', 'explainer', 'demo', 'see it in action', 'motion'],
