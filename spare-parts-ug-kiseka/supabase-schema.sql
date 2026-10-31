@@ -1,7 +1,7 @@
 -- SPARE PARTS UG store schema (run once in Supabase SQL Editor)
 -- Admin = the Supabase Auth user with this email:
 create or replace function public.sparepartsug_is_admin() returns boolean
-language sql stable as $$ select coalesce(lower(auth.jwt()->>'email'),'') = 'sparepartsug112@gmail.com' $$;
+language sql stable set search_path = '' as $$ select coalesce(lower(auth.jwt()->>'email'),'') = 'sparepartsug112@gmail.com' $$;
 
 create table if not exists public.sparepartsug_categories(
   slug text primary key, name text not null, sort int default 0, hidden boolean default false);

@@ -10,3 +10,6 @@ The store works today in **preview mode**: it shows the built-in catalogue, chec
 5. Deploy `index.html`, `assets/`, `admin/` to GitHub Pages. Admin: `/spare-parts-ug-kiseka/admin/`.
 
 Images upload to Cloudinary (cloud `lgjllewt`, unsigned preset `frecary`).
+
+## Status (Nov 1, 2026)
+Connected to Supabase project `ztmmsfrpkuldqmwghhoe` (eu-central-1, org FrecaE-Services). Schema + seed loaded, admin user created (auto-confirmed), public sign-ups disabled. `assets/config.js` holds the project URL and the public publishable key only.
