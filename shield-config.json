@@ -151,9 +151,9 @@
     },
     "spare-parts-ug-kiseka": {
       "name": "SPARE PARTS UG, Kiseka",
-      "status": "preview",
-      "paid_percent": 0,
-      "unlock_stage": 0,
+      "status": "active_paid",
+      "paid_percent": 29,
+      "unlock_stage": 4,
       "created_at": "2026-10-27T08:00:00Z",
       "owner_wa": "256774188097",
       "tier": "ecommerce"
