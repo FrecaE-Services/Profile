@@ -88,9 +88,11 @@
 
   /* Hero */
   .hero{padding:0;border-bottom:1px solid var(--line);position:relative;}
-  .hero-img{aspect-ratio:16/8;position:relative;}
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,16,18,0.25) 0%,rgba(16,16,18,0.95) 88%);}
-  .hero-content{position:absolute;left:0;right:0;bottom:0;padding:30px 20px 32px;}
+  .hero{scroll-margin-top:72px;}
+  .hero-img{position:relative;min-height:clamp(340px,50vw,560px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;}
+  .hero-img > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+  .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(16,16,18,0.25) 0%,rgba(16,16,18,0.95) 88%);}
+  .hero-content{position:relative;z-index:2;padding:56px 20px 32px;}
   .hero-content .wrap{padding:0;}
   .hero-tag{
     display:inline-block;background:var(--red);color:#fff;
@@ -147,11 +149,15 @@
   .why-item h3{font-size:0.95rem;color:var(--red);margin-bottom:6px;text-transform:none;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:0;}
   .why-item p{font-size:0.82rem;color:var(--steel);}
 
-  footer{padding:40px 0 30px;}
+  footer{padding:40px 0 96px;}
   .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-bottom:20px;border-bottom:1px solid var(--line);}
   .footer-grid h3{font-size:1.1rem;margin-bottom:8px;}
   .footer-grid p{font-size:0.82rem;color:var(--steel);text-transform:none;}
   .footer-bottom{padding-top:16px;font-size:0.74rem;color:var(--steel);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  .footer-bottom .admin-link{color:var(--steel);opacity:0.55;font-size:0.7rem;text-decoration:none;}
+  .footer-bottom .admin-link:hover{opacity:1;color:#fff;}
+  .signature{display:block;text-align:center;margin-top:18px;font-size:11px;letter-spacing:0.3px;color:var(--steel);opacity:0.45;text-decoration:none;text-transform:none;}
+  .signature:hover{opacity:0.8;}
 
   /* Cart drawer */
   .cart-overlay{
@@ -197,6 +203,7 @@
     .why-grid{grid-template-columns:1fr;}
     .strip .wrap{flex-direction:column;}
     .hero-content h1{font-size:1.7rem;}
+    .hero-content{padding:36px 20px 28px;}
   }
 
   .announce{background:var(--red);color:#fff;text-align:center;font-size:0.78rem;font-weight:600;padding:7px 12px;}
@@ -341,8 +348,9 @@
     </div>
     <div class="footer-bottom">
       <span data-s="footer">© 2026 Spare Parts UG</span>
-      <span>Site by FRECA E-SERVICES</span>
+      <a class="admin-link" href="./admin/" rel="nofollow">Staff login</a>
     </div>
+    <a class="signature" href="https://wa.me/256726978988" target="_blank" rel="noopener">Website by Freca E-Services · +256 726 978988</a>
   </div>
 </footer>
 
