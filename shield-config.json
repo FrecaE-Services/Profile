@@ -1,5 +1,6 @@
 {
   "default_preview_hours": 72,
+  "showcase_seconds": 180,
   "freca_wa": "256726978988",
   "momo_number": "0758 991506",
   "momo_name": "FREDRICK MUGAMBE",
@@ -7,7 +8,7 @@
   "sites": {
     "cake-bond-uganda": {
       "name": "Cake Bond Uganda",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -16,7 +17,7 @@
     },
     "ria-cakes": {
       "name": "Ria Cakes and Pastries Uganda",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -25,7 +26,7 @@
     },
     "cuppies-cake-boutique": {
       "name": "Cuppies Cake Boutique",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -34,7 +35,7 @@
     },
     "dk-appliances": {
       "name": "DK Appliances",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -43,7 +44,7 @@
     },
     "cakeness-ug": {
       "name": "Cakeness Ug",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -61,7 +62,7 @@
     },
     "flashie-scents": {
       "name": "Flashie_Scents",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -70,7 +71,7 @@
     },
     "interior-experts": {
       "name": "Interior Experts",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -79,7 +80,7 @@
     },
     "kd-furniture-world": {
       "name": "KD Furniture World Ltd",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -88,7 +89,7 @@
     },
     "lavenders-pastry-lane": {
       "name": "Lavender's Pastry Lane",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -97,7 +98,7 @@
     },
     "machine-world-uganda": {
       "name": "Machine World Uganda",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -106,7 +107,7 @@
     },
     "sweet-perfections-uganda": {
       "name": "Sweet Perfections Uganda",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -115,7 +116,7 @@
     },
     "xander-gadgets-mbarara": {
       "name": "Xander Gadgets Mbarara",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -124,7 +125,7 @@
     },
     "nasser-road-quality-printers": {
       "name": "Nasser Road Quality Printer's",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -133,7 +134,7 @@
     },
     "edwigs-eating-point-entebbe": {
       "name": "Edwig's Eating Point",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -142,7 +143,7 @@
     },
     "kimu-hardware-seeta": {
       "name": "Kimu Hardware",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -160,7 +161,7 @@
     },
     "the-attic-salon-mukono": {
       "name": "The Attic Salon, Mukono",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T08:00:00Z",
@@ -169,7 +170,7 @@
     },
     "deniva-shoppers-gulu": {
       "name": "Deniva Shoppers Gulu",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T08:00:00Z",
@@ -178,7 +179,7 @@
     },
     "mbarara-furniture-showroom": {
       "name": "Mbarara Furniture Show Room",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T08:00:00Z",
@@ -187,7 +188,7 @@
     },
     "the-shoe-rack-ug": {
       "name": "The Shoe Rack Ug",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T08:00:00Z",
@@ -196,7 +197,7 @@
     },
     "cakes-village-kampala": {
       "name": "Cakes Village Kampala",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -205,7 +206,7 @@
     },
     "sweetly-defined-kisaasi": {
       "name": "Sweetly Defined Bakery",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -214,7 +215,7 @@
     },
     "nsambya-furniture-workshop": {
       "name": "Nsambya Furniture Workshop Uganda",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -223,7 +224,7 @@
     },
     "dorech-bridals-kampala": {
       "name": "Dorech Bridals Kampala",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -232,7 +233,7 @@
     },
     "bloven-decor-and-cakes": {
       "name": "Bloven Decor & Cakes",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -241,7 +242,7 @@
     },
     "rugumayo-beauty-wakiso": {
       "name": "Rugumayo Beauty & Hair Studio",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -250,7 +251,7 @@
     },
     "tyler-salon-entebbe": {
       "name": "Tyler Salon Nkumba Entebbe",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -259,7 +260,7 @@
     },
     "allins-glitz-glamor-entebbe": {
       "name": "Allins Glitz & Glamor Boutique",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -268,7 +269,7 @@
     },
     "mghoi-makeup-gifts-entebbe": {
       "name": "Mghoi Makeup & Gift Shop",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -277,7 +278,7 @@
     },
     "km2-real-furniture-kira": {
       "name": "KM2 Real Furniture Kira",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -286,7 +287,7 @@
     },
     "cakely-uganda-kyaliwajjala": {
       "name": "Cakely Uganda (Kyaliwajjala \u2013 Kira)",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -295,7 +296,7 @@
     },
     "mwesigwa-super-furniture-namugongo": {
       "name": "Mwesigwa Super Furniture",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -304,7 +305,7 @@
     },
     "rizah-events-hire-namugongo": {
       "name": "Rizah Function & Hire Services",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -313,7 +314,7 @@
     },
     "kura-furniture-seeta-mukono": {
       "name": "Kura Furniture Seeta Mukono",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -322,7 +323,7 @@
     },
     "bk-furniture-mukono": {
       "name": "BK Furniture Mukono",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -331,7 +332,7 @@
     },
     "timo-furniture-jinja": {
       "name": "Timo Furniture Workshop Jinja",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -340,7 +341,7 @@
     },
     "daytoday-discount-centre-mbarara": {
       "name": "DayToDay Discount Centre Mbarara",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -349,7 +350,7 @@
     },
     "christ-group-hardware-gulu": {
       "name": "Christ Group General Hardware Gulu",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T06:20:00Z",
@@ -358,7 +359,7 @@
     },
     "kampala-car-android-radios": {
       "name": "Kampala Car Android Radios & Auto Sound Hub",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T11:00:00Z",
@@ -367,7 +368,7 @@
     },
     "anns-cookout-kampala": {
       "name": "Ann's Cookout",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-28T12:03:00Z",
