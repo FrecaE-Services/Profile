@@ -2,12 +2,15 @@
  * Freca E-Services — 72-Hour Preview Shield, Progressive Part-by-Part Installment Unlock,
  * & In-Page Instant Mobile Money Activation System
  * Central control via shield-config.json + deterministic 6-digit Instant Unlock Codes
+ * Status "showcase": evergreen sample mode (no expiry date). Site is viewable for
+ * showcase_seconds (default 180) per visit, then the Freca E-Services page appears.
  */
 (function () {
   "use strict";
 
   var FALLBACK_CONFIG = {
   "default_preview_hours": 72,
+  "showcase_seconds": 180,
   "freca_wa": "256726978988",
   "momo_number": "0758 991506",
   "momo_name": "FREDRICK MUGAMBE",
@@ -15,7 +18,7 @@
   "sites": {
     "cake-bond-uganda": {
       "name": "Cake Bond Uganda",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -24,7 +27,7 @@
     },
     "ria-cakes": {
       "name": "Ria Cakes and Pastries Uganda",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -33,7 +36,7 @@
     },
     "cuppies-cake-boutique": {
       "name": "Cuppies Cake Boutique",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -42,7 +45,7 @@
     },
     "dk-appliances": {
       "name": "DK Appliances",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -51,7 +54,7 @@
     },
     "cakeness-ug": {
       "name": "Cakeness Ug",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -69,7 +72,7 @@
     },
     "flashie-scents": {
       "name": "Flashie_Scents",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -78,7 +81,7 @@
     },
     "interior-experts": {
       "name": "Interior Experts",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -87,7 +90,7 @@
     },
     "kd-furniture-world": {
       "name": "KD Furniture World Ltd",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -96,7 +99,7 @@
     },
     "lavenders-pastry-lane": {
       "name": "Lavender's Pastry Lane",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -105,7 +108,7 @@
     },
     "machine-world-uganda": {
       "name": "Machine World Uganda",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -114,7 +117,7 @@
     },
     "sweet-perfections-uganda": {
       "name": "Sweet Perfections Uganda",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -123,7 +126,7 @@
     },
     "xander-gadgets-mbarara": {
       "name": "Xander Gadgets Mbarara",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -132,7 +135,7 @@
     },
     "nasser-road-quality-printers": {
       "name": "Nasser Road Quality Printer's",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -141,7 +144,7 @@
     },
     "edwigs-eating-point-entebbe": {
       "name": "Edwig's Eating Point",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -150,7 +153,7 @@
     },
     "kimu-hardware-seeta": {
       "name": "Kimu Hardware",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T06:00:00Z",
@@ -168,7 +171,7 @@
     },
     "the-attic-salon-mukono": {
       "name": "The Attic Salon, Mukono",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T08:00:00Z",
@@ -177,7 +180,7 @@
     },
     "deniva-shoppers-gulu": {
       "name": "Deniva Shoppers Gulu",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T08:00:00Z",
@@ -186,7 +189,7 @@
     },
     "mbarara-furniture-showroom": {
       "name": "Mbarara Furniture Show Room",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T08:00:00Z",
@@ -195,12 +198,192 @@
     },
     "the-shoe-rack-ug": {
       "name": "The Shoe Rack Ug",
-      "status": "preview",
+      "status": "showcase",
       "paid_percent": 0,
       "unlock_stage": 0,
       "created_at": "2026-10-27T08:00:00Z",
       "owner_wa": "256700812716",
       "tier": "standard"
+    },
+    "cakes-village-kampala": {
+      "name": "Cakes Village Kampala",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256752464491",
+      "tier": "standard"
+    },
+    "sweetly-defined-kisaasi": {
+      "name": "Sweetly Defined Bakery",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256780322777",
+      "tier": "standard"
+    },
+    "nsambya-furniture-workshop": {
+      "name": "Nsambya Furniture Workshop Uganda",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256705912755",
+      "tier": "ecommerce"
+    },
+    "dorech-bridals-kampala": {
+      "name": "Dorech Bridals Kampala",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256787317403",
+      "tier": "standard"
+    },
+    "bloven-decor-and-cakes": {
+      "name": "Bloven Decor & Cakes",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256782278880",
+      "tier": "standard"
+    },
+    "rugumayo-beauty-wakiso": {
+      "name": "Rugumayo Beauty & Hair Studio",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256777232292",
+      "tier": "standard"
+    },
+    "tyler-salon-entebbe": {
+      "name": "Tyler Salon Nkumba Entebbe",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256746116443",
+      "tier": "standard"
+    },
+    "allins-glitz-glamor-entebbe": {
+      "name": "Allins Glitz & Glamor Boutique",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256756449993",
+      "tier": "ecommerce"
+    },
+    "mghoi-makeup-gifts-entebbe": {
+      "name": "Mghoi Makeup & Gift Shop",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256771639882",
+      "tier": "standard"
+    },
+    "km2-real-furniture-kira": {
+      "name": "KM2 Real Furniture Kira",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256775543567",
+      "tier": "ecommerce"
+    },
+    "cakely-uganda-kyaliwajjala": {
+      "name": "Cakely Uganda (Kyaliwajjala \u2013 Kira)",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256703692310",
+      "tier": "standard"
+    },
+    "mwesigwa-super-furniture-namugongo": {
+      "name": "Mwesigwa Super Furniture",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256783857206",
+      "tier": "ecommerce"
+    },
+    "rizah-events-hire-namugongo": {
+      "name": "Rizah Function & Hire Services",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256753223559",
+      "tier": "standard"
+    },
+    "kura-furniture-seeta-mukono": {
+      "name": "Kura Furniture Seeta Mukono",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256785197226",
+      "tier": "ecommerce"
+    },
+    "bk-furniture-mukono": {
+      "name": "BK Furniture Mukono",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256775725204",
+      "tier": "standard"
+    },
+    "timo-furniture-jinja": {
+      "name": "Timo Furniture Workshop Jinja",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256770957199",
+      "tier": "ecommerce"
+    },
+    "daytoday-discount-centre-mbarara": {
+      "name": "DayToDay Discount Centre Mbarara",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256774060222",
+      "tier": "ecommerce"
+    },
+    "christ-group-hardware-gulu": {
+      "name": "Christ Group General Hardware Gulu",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T06:20:00Z",
+      "owner_wa": "256783783749",
+      "tier": "ecommerce"
+    },
+    "kampala-car-android-radios": {
+      "name": "Kampala Car Android Radios & Auto Sound Hub",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T11:00:00Z",
+      "owner_wa": "256754973303",
+      "tier": "ecommerce"
+    },
+    "anns-cookout-kampala": {
+      "name": "Ann's Cookout",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-10-28T12:03:00Z",
+      "owner_wa": "256741402547",
+      "tier": "ecommerce"
     }
   }
 };
@@ -321,6 +504,8 @@
     config: FALLBACK_CONFIG,
     site: null,
     timerId: null,
+    showcaseTimerId: null,
+    showcaseEndsAt: 0,
     interceptorBound: false,
     selectedPkg: "standard_managed",
     selectedMode: "weekly_25",
@@ -335,6 +520,10 @@
 
     if (st === "portfolio") {
       return { status: "portfolio", paid_percent: 100, unlock_stage: 4 };
+    }
+    // Evergreen sample mode: no date expiry, site viewable for a few minutes per visit
+    if (st === "showcase" && paid < 25) {
+      return { status: "showcase", paid_percent: 0, unlock_stage: 0 };
     }
     if (st === "paused_installment") {
       return { status: "paused_installment", paid_percent: paid, unlock_stage: 0 };
@@ -388,7 +577,7 @@
       }
     } catch (e) {}
 
-    // Support URL query override for testing: ?shield_status=installment_25 | installment_50 | installment_75 | active_paid | expired | paused_installment | preview
+    // Support URL query override for testing: ?shield_status=showcase | installment_25 | installment_50 | installment_75 | active_paid | expired | paused_installment | preview
     try {
       var params = new URLSearchParams(window.location.search);
       var override = params.get("shield_status");
@@ -696,6 +885,20 @@
               '<span>Floating WhatsApp, Maps &amp; Catalog Live • <strong>Clear final 25% to remove owner bar</strong></span>' +
             '</div>' +
             '<button type="button" class="fs-banner-btn" id="fs-banner-activate-btn">💳 Clear Final 25%</button>' +
+          '</div>' +
+        '</div>'
+      );
+    }
+
+    if (site.status === "showcase") {
+      return (
+        '<div class="fs-banner" role="region" aria-label="Sample Website Notice">' +
+          '<div class="fs-banner-inner">' +
+            '<div class="fs-banner-text">' +
+              '<span>✨ <strong>Sample Website</strong> for ' + bizName + ' by Freca E-Services</span>' +
+              '<span>• Free viewing time <span class="fs-timer" id="fs-countdown-text">03:00</span></span>' +
+            '</div>' +
+            '<button type="button" class="fs-banner-btn" id="fs-banner-activate-btn">⚡ Get This Website</button>' +
           '</div>' +
         '</div>'
       );
@@ -1044,6 +1247,119 @@
     if (closeX && modal) closeX.addEventListener("click", function () { modal.classList.remove("fs-open"); });
   }
 
+  function getShowcaseSeconds(site, cfg) {
+    var n = Number(site && site.showcase_seconds);
+    if (!n || isNaN(n) || n <= 0) n = Number(cfg && cfg.showcase_seconds);
+    if (!n || isNaN(n) || n <= 0) n = 180;
+    return n;
+  }
+
+  function formatMinSec(ms) {
+    var totalSec = Math.max(0, Math.ceil(ms / 1000));
+    var m = Math.floor(totalSec / 60);
+    var s = totalSec % 60;
+    return (m < 10 ? "0" + m : String(m)) + ":" + (s < 10 ? "0" + s : String(s));
+  }
+
+  function clearShowcaseTimer() {
+    if (state.showcaseTimerId) {
+      clearInterval(state.showcaseTimerId);
+      state.showcaseTimerId = null;
+    }
+  }
+
+  function renderShowcaseEndScreen(site, cfg) {
+    clearShowcaseTimer();
+    if (state.timerId) {
+      clearInterval(state.timerId);
+      state.timerId = null;
+    }
+    var root = ensureRoot();
+    var bizName = escapeHtml(site.name || "Your Business");
+    var momoNum = escapeHtml((cfg && cfg.momo_number) || "0758 991506");
+    var momoName = escapeHtml((cfg && cfg.momo_name) || "FREDRICK MUGAMBE");
+    var portfolioUrl = escapeHtml((cfg && cfg.portfolio_url) || "https://frecae-services.github.io/Profile/");
+    var frecaWa = (cfg && cfg.freca_wa) || "256726978988";
+    var waUrl =
+      "https://wa.me/" +
+      frecaWa +
+      "?text=" +
+      encodeURIComponent(
+        "Hi Freca E-Services! I have just viewed the sample website for " +
+          (site.name || "my business") +
+          " and I would like to get it live."
+      );
+
+    document.body.style.overflow = "hidden";
+    root.innerHTML =
+      '<div class="fs-full-lock" role="alertdialog" aria-modal="true" id="fs-showcase-end">' +
+        '<div class="fs-lock-card">' +
+          '<div class="fs-lock-icon">✨</div>' +
+          '<span class="fs-lock-sub">' + bizName + '</span>' +
+          '<h1>You have just viewed a sample website by Freca E-Services</h1>' +
+          '<p>This design for <strong>' + bizName + '</strong> is ready to go live with your own link, so your customers can see your products and order on WhatsApp any time.</p>' +
+          '<div class="fs-lock-pricing">' +
+            '<div>✅ <strong>Standard Websites:</strong> UGX 150,000 (Managed) or UGX 280,000 (Self-Managed Dashboard)</div>' +
+            '<div>✅ <strong>Full E-Commerce Stores:</strong> UGX 250,000 (Managed) or UGX 350,000 (Self-Managed)</div>' +
+            '<div>💳 <strong>Flexible Installments:</strong> 10% every 2 days, 25% weekly, or 50% monthly</div>' +
+            '<div>📲 <strong>Mobile Money:</strong> ' + momoNum + ' (' + momoName + ')</div>' +
+          '</div>' +
+          '<div class="fs-lock-btns">' +
+            '<a class="fs-btn-primary" href="' + escapeHtml(waUrl) + '" target="_blank" rel="noopener">💬 Chat with Freca E-Services on WhatsApp (+256 726 978988)</a>' +
+            '<button type="button" class="fs-btn-outline-light" id="fs-showcase-open-checkout">⚡ See Packages &amp; Pay Installment</button>' +
+            '<a class="fs-btn-outline-light" href="' + portfolioUrl + '" target="_blank" rel="noopener">🌐 View Freca E-Services Portfolio</a>' +
+            '<button type="button" class="fs-btn-outline-light" id="fs-showcase-replay">🔁 View the Sample Again</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      renderModalHtml(site, cfg);
+
+    updateCheckoutCalculations();
+    var btn = document.getElementById("fs-showcase-open-checkout");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        openCheckoutModal("Get " + (site.name || "this website") + " live with your first installment or full payment.");
+      });
+    }
+    var replay = document.getElementById("fs-showcase-replay");
+    if (replay) {
+      replay.addEventListener("click", function () {
+        window.location.reload();
+      });
+    }
+    var modal = document.getElementById("fs-preview-modal");
+    var closeBtn = document.getElementById("fs-modal-close-btn");
+    var closeX = document.getElementById("fs-modal-x-btn");
+    if (closeBtn && modal) closeBtn.addEventListener("click", function () { modal.classList.remove("fs-open"); });
+    if (closeX && modal) closeX.addEventListener("click", function () { modal.classList.remove("fs-open"); });
+  }
+
+  function startShowcase(site, cfg) {
+    // Timer runs per page visit; keep the same end time if config is re-applied (fallback -> remote)
+    if (!state.showcaseEndsAt) {
+      state.showcaseEndsAt = Date.now() + getShowcaseSeconds(site, cfg) * 1000;
+    }
+    var endsAt = state.showcaseEndsAt;
+    if (endsAt - Date.now() <= 0) {
+      renderShowcaseEndScreen(site, cfg);
+      return;
+    }
+    document.body.style.overflow = "";
+    renderMainUI(site, cfg);
+    bindInterceptors();
+    var tick = function () {
+      var rem = endsAt - Date.now();
+      if (rem <= 0) {
+        renderShowcaseEndScreen(state.site || site, state.config || cfg);
+        return;
+      }
+      var el = document.getElementById("fs-countdown-text");
+      if (el) el.textContent = formatMinSec(rem);
+    };
+    tick();
+    state.showcaseTimerId = setInterval(tick, 1000);
+  }
+
   function renderPausedInstallmentScreen(site, cfg) {
     if (state.timerId) {
       clearInterval(state.timerId);
@@ -1156,6 +1472,12 @@
     if (state.timerId) {
       clearInterval(state.timerId);
       state.timerId = null;
+    }
+    clearShowcaseTimer();
+
+    if (status === "showcase") {
+      startShowcase(state.site, state.config);
+      return;
     }
 
     if (status === "active_paid" || status === "portfolio" || stage >= 4) {
