@@ -384,6 +384,51 @@
       "created_at": "2026-10-28T12:03:00Z",
       "owner_wa": "256741402547",
       "tier": "ecommerce"
+    },
+    "marianah-tourist-hotel-kamwenge": {
+      "name": "Marianah Tourist Hotel",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-02T20:11:00Z",
+      "owner_wa": "256772205060",
+      "tier": "standard"
+    },
+    "hotel-maria-grant-jinja": {
+      "name": "Hotel Maria Grant",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-02T20:11:00Z",
+      "owner_wa": "256757918697",
+      "tier": "standard"
+    },
+    "free-zone-hotel-gulu": {
+      "name": "Free Zone Hotel",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-02T20:11:00Z",
+      "owner_wa": "256789099748",
+      "tier": "standard"
+    },
+    "yevrah-guest-house-arua": {
+      "name": "Yevrah Guest House & Restaurant",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-02T20:11:00Z",
+      "owner_wa": "256787973141",
+      "tier": "standard"
+    },
+    "motel-tuku-masindi": {
+      "name": "Motel Tuku",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-02T20:11:00Z",
+      "owner_wa": "256779326621",
+      "tier": "standard"
     }
   }
 };
