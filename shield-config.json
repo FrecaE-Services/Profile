@@ -491,6 +491,15 @@
       "created_at": "2026-11-03T09:45:00Z",
       "owner_wa": "256775618824",
       "tier": "ecommerce"
+    },
+    "bourbon-pizza-junction-kampala": {
+      "name": "Bourbon Pizza Junction",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-03T09:43:00Z",
+      "owner_wa": "256752224442",
+      "tier": "website"
     }
   }
 }
