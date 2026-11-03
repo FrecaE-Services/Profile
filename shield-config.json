@@ -455,6 +455,33 @@
       "created_at": "2026-11-03T07:32:00Z",
       "owner_wa": "256758286036",
       "tier": "standard"
+    },
+    "nak-pharmacy-masaka": {
+      "name": "Nak Pharmacy",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-03T09:25:00Z",
+      "owner_wa": "256773006672",
+      "tier": "standard"
+    },
+    "alizaak-pharmacy-masaka": {
+      "name": "Alizaak Pharmacy",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-03T09:25:00Z",
+      "owner_wa": "256772674336",
+      "tier": "standard"
+    },
+    "spela-pharmacy-mbarara": {
+      "name": "Spela Pharmacy",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-03T09:25:00Z",
+      "owner_wa": "256701151562",
+      "tier": "standard"
     }
   }
 }
