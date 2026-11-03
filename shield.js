@@ -429,6 +429,42 @@
       "created_at": "2026-11-02T20:11:00Z",
       "owner_wa": "256779326621",
       "tier": "standard"
+    },
+    "green-olive-pizzeria-kampala": {
+      "name": "Green Olive Pizzeria",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-03T07:32:00Z",
+      "owner_wa": "256702766729",
+      "tier": "standard"
+    },
+    "eco-shamba-cafe-mbale": {
+      "name": "Eco Shamba Café",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-03T07:32:00Z",
+      "owner_wa": "256702328085",
+      "tier": "standard"
+    },
+    "new-life-restaurant-gulu": {
+      "name": "New Life Restaurant",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-03T07:32:00Z",
+      "owner_wa": "256701081022",
+      "tier": "standard"
+    },
+    "dimmys-food-court-mubende": {
+      "name": "Dimmys Food Court",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-03T07:32:00Z",
+      "owner_wa": "256758286036",
+      "tier": "standard"
     }
   }
 };
