@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Massah Guesthouse — concept sample | Abim, Uganda</title>
+  <meta name="description" content="Concept sample for Massah Guesthouse in Abim, Uganda. 15 rooms. Most guests book by phone. Call or WhatsApp +256 772 845735 and ask for current rates. Photographs are illustrative stock images, not the guesthouse.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#6d2c22">
+  <meta property="og:title" content="Massah Guesthouse — concept sample, Abim">
+  <meta property="og:description" content="A concept sample by Freca E-Services for Massah Guesthouse in Abim, Uganda. 15 rooms. Ask for current rates on +256 772 845735. Photos are illustrative, not the property.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_UG">
+  <meta property="og:image" content="https://frecae-services.github.io/Profile/massah-guesthouse/images/hero-guest-room.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="images/hero-guest-room.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Massah Guesthouse","telephone":"+256772845735","numberOfRooms":15,"address":{"@type":"PostalAddress","addressLocality":"Abim","addressCountry":"UG"}}</script>
+  <style>
+    :root {
+      --bg: #f3ecdf;
+      --card: #fffaf3;
+      --ink: #241910;
+      --muted: #5e534a;
+      --clay: #8d3d2f;
+      --clay-deep: #6d2c22;
+      --sand: #e7d3b8;
+      --line: #e3d4c2;
+      --leaf: #234036;
+      --wa: #12824a;
+      --radius: 22px;
+      --head: "Fraunces", Georgia, serif;
+      --body: "Outfit", system-ui, sans-serif;
+      --shield-h: 0px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--body);
+      background:
+        radial-gradient(1200px 480px at 100% -10%, rgba(141, 61, 47, 0.08), transparent 55%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      font-size: 1.05rem;
+      padding-bottom: calc(5.4rem + env(safe-area-inset-bottom));
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--clay); outline-offset: 3px; }
+    .skip {
+      position: absolute;
+      left: 0.75rem;
+      top: 0.75rem;
+      background: #fff;
+      color: var(--ink);
+      padding: 0.6rem 0.9rem;
+      border-radius: 10px;
+      z-index: 50;
+      transform: translateY(-160%);
+    }
+    .skip:focus { transform: none; }
+    .wrap { width: min(1080px, calc(100% - 1.5rem)); margin-inline: auto; }
+    .top {
+      position: sticky;
+      top: var(--shield-h);
+      z-index: 30;
+      background: color-mix(in srgb, var(--bg) 90%, white);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .top .wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .brand { text-decoration: none; line-height: 1.05; }
+    .brand strong {
+      font-family: var(--head);
+      font-size: 1.35rem;
+      font-weight: 640;
+      display: block;
+    }
+    .brand span {
+      display: block;
+      margin-top: 0.15rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .nav { display: none; gap: 1.25rem; font-weight: 600; }
+    .nav a { text-decoration: none; }
+    .nav a:hover { color: var(--clay-deep); }
+    .head-call { display: none; }
+    .notice {
+      margin: 0.65rem auto 0;
+      background: #fff6ea;
+      border: 1px solid #e7c8a4;
+      color: #5a3418;
+      border-radius: 16px;
+      padding: 0.6rem 0.8rem;
+      font-size: 0.9rem;
+    }
+    .notice strong { color: var(--clay-deep); }
+    .hero { padding: 0.85rem 0 1.2rem; }
+    .hero-grid { display: grid; gap: 0; }
+    .hero-photo {
+      position: relative;
+      border-radius: 26px 26px 0 0;
+      overflow: hidden;
+      background: #d9cbb8;
+    }
+    .hero-photo img { width: 100%; height: 38vw; max-height: 520px; min-height: 168px; object-fit: cover; }
+    .photo-tag {
+      position: absolute;
+      left: 0.7rem;
+      bottom: 0.7rem;
+      background: rgba(36, 25, 16, 0.88);
+      color: #fffaf3;
+      font-size: 0.75rem;
+      font-weight: 650;
+      letter-spacing: 0.02em;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+    }
+    .hero-copy {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-top: 0;
+      border-radius: 0 0 26px 26px;
+      padding: 1.2rem 1.05rem 1.25rem;
+      box-shadow: 0 18px 40px -32px rgba(36, 25, 16, 0.7);
+    }
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--clay);
+      margin: 0 0 0.4rem;
+    }
+    h1, h2 { font-family: var(--head); font-weight: 640; letter-spacing: -0.02em; line-height: 1.08; margin: 0; }
+    h1 { font-size: clamp(2.4rem, 10vw, 4.4rem); }
+    .place { margin: 0.45rem 0 0; font-weight: 650; color: var(--leaf); }
+    .lede { color: var(--muted); margin: 0.8rem 0 0; max-width: 38rem; }
+    .ctas { display: none; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.1rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 48px;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 2px solid transparent;
+    }
+    .btn svg { width: 1.15rem; height: 1.15rem; flex: none; }
+    .btn-call { background: var(--ink); color: #fffaf3; }
+    .btn-wa { background: var(--wa); color: #fff; }
+    .btn-ghost { background: transparent; border-color: var(--clay); color: var(--clay-deep); }
+    .btn:hover { filter: brightness(1.05); }
+    .head-call { display: none; }
+    section { padding: 2.4rem 0; scroll-margin-top: calc(var(--shield-h, 0px) + 76px); }
+    .sec-head { max-width: 40rem; margin-bottom: 1.1rem; }
+    .sec-head h2 { font-size: clamp(1.8rem, 5vw, 2.6rem); margin: 0.2rem 0 0.45rem; }
+    .sec-head p { margin: 0; color: var(--muted); }
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .facts li {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 0.95rem 0.9rem 1rem;
+    }
+    .facts b { display: block; font-family: var(--head); font-size: 1.35rem; font-weight: 640; line-height: 1.15; }
+    .facts span { display: block; margin-top: 0.25rem; color: var(--muted); font-size: 0.92rem; }
+    .gal {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+    figure { margin: 0; }
+    .shot {
+      background: var(--card);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #ddd2c3; }
+    figcaption {
+      padding: 0.7rem 0.85rem 0.85rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+    .reach {
+      background: var(--leaf);
+      color: #f6f1e8;
+      border-radius: 26px;
+      padding: 1.3rem 1.05rem 1.25rem;
+    }
+    .reach h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+    .reach p { color: rgba(246, 241, 232, 0.86); }
+    .reach-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1rem; }
+    .reach .btn-ghost { border-color: rgba(255,250,243,0.7); color: #fffaf3; }
+    .phone-line { font-family: var(--head); font-size: clamp(1.6rem, 6vw, 2.2rem); margin: 0.7rem 0 0; }
+    .phone-line a { text-decoration: none; }
+    .credits { font-size: 0.86rem; color: var(--muted); }
+    .credits ul { padding-left: 1.1rem; margin: 0.4rem 0 0; }
+    .credits a { color: var(--clay-deep); }
+    footer {
+      padding: 0.4rem 0 1.2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--ink); font-weight: 700; }
+    .dock {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 35;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom));
+      background: rgba(243, 236, 223, 0.96);
+      border-top: 1px solid var(--line);
+    }
+    .dock .btn { width: 100%; }
+    @media (min-width: 760px) {
+      .gal { grid-template-columns: 1fr 1fr; }
+      .facts { grid-template-columns: repeat(4, 1fr); }
+      .hero-photo img { height: 420px; min-height: 320px; }
+    }
+    @media (min-width: 900px) {
+      body { padding-bottom: 0; }
+      .nav, .head-call, .ctas { display: flex; }
+      .dock { display: none; }
+      .wrap { width: min(1080px, calc(100% - 3rem)); }
+      .hero-grid { grid-template-columns: 1.15fr 0.85fr; align-items: stretch; }
+      .hero-photo, .hero-copy { min-height: 100%; }
+      .hero-photo { border-radius: 28px 0 0 28px; }
+      .hero-photo img { height: 100%; min-height: 460px; }
+      .hero-copy { border-radius: 0 28px 28px 0; border-top: 1px solid var(--line); padding: 2rem 1.6rem; display: flex; flex-direction: column; justify-content: center; }
+      .reach { padding: 2rem 1.8rem; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem; align-items: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="#content">
+        <strong>Massah</strong>
+        <span>Guesthouse · Abim</span>
+      </a>
+      <nav class="nav" aria-label="Page">
+        <a href="#stay">The stay</a>
+        <a href="#photos">Photos</a>
+        <a href="#contact">Call</a>
+      </nav>
+      <a class="btn btn-call head-call" href="tel:+256772845735">Call +256 772 845735</a>
+    </div>
+  </header>
+  <main id="content">
+    <div class="wrap">
+      <p class="notice" role="note"><strong>Concept sample by Freca E-Services.</strong> This is not the official Massah Guesthouse website. The photographs are illustrative stock images from the internet, not pictures of the guesthouse.</p>
+    </div>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-photo">
+          <img src="images/hero-guest-room.jpg" alt="Illustrative sample photo of a twin guest room with mosquito nets. Not a photograph of Massah Guesthouse." width="1920" height="1280" fetchpriority="high">
+          <span class="photo-tag">Illustrative sample photo</span>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Abim, Uganda</p>
+          <h1>Massah Guesthouse</h1>
+          <p class="place">15 rooms</p>
+          <p class="lede">Most guests book by phone. Call or send a WhatsApp message and ask for current rates.</p>
+          <div class="ctas">
+            <a class="btn btn-call" href="tel:+256772845735">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h3l1.5 4-2 1.5a12 12 0 0 0 6 6L17 13l4 1.5V18a2 2 0 0 1-2 2A15 15 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+              Call
+            </a>
+            <a class="btn btn-wa" href="https://wa.me/256772845735?text=Hello%20Massah%20Guesthouse%2C%20I%20would%20like%20to%20ask%20about%20a%20room%20in%20Abim.%20Please%20share%20current%20rates%20and%20availability." target="_blank" rel="noopener">
+              <svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7a.6.6 0 0 0 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.9 1 3.9.8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.3z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stay">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">What is confirmed</p>
+          <h2>A short stay in Abim</h2>
+          <p>Only details confirmed for this sample are shown here. Room rates are shared directly by the guesthouse.</p>
+        </div>
+        <ul class="facts">
+          <li><b>15 rooms</b><span>The guesthouse has fifteen rooms.</span></li>
+          <li><b>Abim</b><span>Abim, Uganda. Exact directions are given when you call.</span></li>
+          <li><b>By phone</b><span>Most guests book by phone.</span></li>
+          <li><b>Rates</b><span>Ask for current rates.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="photos">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow">Gallery</p>
+          <h2>Illustrative room photos</h2>
+          <p>These pictures were taken at other places. They show how a room gallery can look on a page. They are not photographs of Massah Guesthouse, and they are not a list of its rooms.</p>
+        </div>
+        <div class="gal">
+          <figure class="shot">
+            <img src="images/twin-room.jpg" alt="Illustrative sample photo of a guest room with two beds and a bedside lamp. Not a photograph of Massah Guesthouse." width="1920" height="1440" loading="lazy" decoding="async">
+            <figcaption>Illustrative sample photo — not Massah Guesthouse</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="images/double-room.jpg" alt="Illustrative sample photo of a guest room with one large bed. Not a photograph of Massah Guesthouse." width="800" height="600" loading="lazy" decoding="async">
+            <figcaption>Illustrative sample photo — not Massah Guesthouse</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="images/window-room.jpg" alt="Illustrative sample photo of a guest room with a bed beside tall windows. Not a photograph of Massah Guesthouse." width="1920" height="1272" loading="lazy" decoding="async">
+            <figcaption>Illustrative sample photo — not Massah Guesthouse</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="images/lodge-room.jpg" alt="Illustrative sample photo of a guest room with a bed, table, and wooden wardrobe. Not a photograph of Massah Guesthouse." width="1920" height="1275" loading="lazy" decoding="async">
+            <figcaption>Illustrative sample photo — not Massah Guesthouse</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="images/bush-view-room.jpg" alt="Illustrative sample photo of a guest room looking out to trees. Not a photograph of Massah Guesthouse." width="500" height="333" loading="lazy" decoding="async">
+            <figcaption>Illustrative sample photo — not Massah Guesthouse</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="images/hero-guest-room.jpg" alt="Illustrative sample photo of a twin guest room with mosquito nets. Not a photograph of Massah Guesthouse." width="1920" height="1280" loading="lazy" decoding="async">
+            <figcaption>Illustrative sample photo — not Massah Guesthouse</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="reach">
+          <div>
+            <p class="eyebrow" style="color:#e7d3b8">Phone and WhatsApp</p>
+            <h2>Ask for current rates</h2>
+            <p>Message or call Massah Guesthouse about a room in Abim. You can include your dates and how many people are travelling. There is no booking form on this sample.</p>
+            <p class="phone-line"><a href="tel:+256772845735">+256 772 845735</a></p>
+          </div>
+          <div class="reach-actions">
+            <a class="btn btn-call" href="tel:+256772845735">Call the guesthouse</a>
+            <a class="btn btn-wa" href="https://wa.me/256772845735?text=Hello%20Massah%20Guesthouse%2C%20I%20would%20like%20to%20ask%20about%20a%20room%20in%20Abim.%20Please%20share%20current%20rates%20and%20availability." target="_blank" rel="noopener">WhatsApp the guesthouse</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="credits" class="credits">
+      <div class="wrap">
+        <h2>Photo credits</h2>
+        <p>Downloaded for this sample from Wikimedia Commons. Each picture is someone else’s property, used here only as an illustration.</p>
+        <ul>
+          <li>Twin room with mosquito nets — <a href="https://commons.wikimedia.org/wiki/File:Forest_Of_Hope_Guest_House.jpg">Forest of Hope Guest House</a> by Rasse2, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.</li>
+          <li>Two-bed guest room — <a href="https://commons.wikimedia.org/wiki/File:2008-03-06_a_guest_room_of_Grand_Hotel_Kaohsiung.jpg">Grand Hotel Kaohsiung</a> by bizmac, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>.</li>
+          <li>Large-bed guest room — <a href="https://commons.wikimedia.org/wiki/File:Premier-hotel-bedroom_Huehuetenango_Guatemala.jpg">Huehuetenango</a> by Marina Kuperman Villatoro, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>.</li>
+          <li>Room with tall windows — <a href="https://commons.wikimedia.org/wiki/File:Hawthorn_Lodge_Shoobridge_Bedroom_%287%29_%2824704482133%29.jpg">Hawthorn Lodge</a> by eGuide Travel, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>.</li>
+          <li>Room with a wardrobe — <a href="https://commons.wikimedia.org/wiki/File:Mexico-6170_-_Lodge_Bedroom_Uxmal.jpg">Uxmal lodge bedroom</a> by Dennis G. Jarvis, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>.</li>
+          <li>Room looking onto trees — <a href="https://commons.wikimedia.org/wiki/File:Simbavati4.jpg">Simbavati River Lodge</a> by 365 Tours and Safaris, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <p>Concept sample prepared by <a href="https://frecae-services.github.io/Profile/">Freca E-Services</a>. Not the official completed website for Massah Guesthouse.</p>
+      <p>© <span id="yr">2026</span> Massah Guesthouse · Abim, Uganda</p>
+    </div>
+  </footer>
+  <div class="dock" aria-label="Call or WhatsApp">
+    <a class="btn btn-call" href="tel:+256772845735">Call</a>
+    <a class="btn btn-wa" href="https://wa.me/256772845735?text=Hello%20Massah%20Guesthouse%2C%20I%20would%20like%20to%20ask%20about%20a%20room%20in%20Abim.%20Please%20share%20current%20rates%20and%20availability." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <script>
+    (function () {
+      var y = document.getElementById("yr");
+      if (y) y.textContent = String(new Date().getFullYear());
+      var root = document.documentElement;
+      function syncShieldOffset() {
+        var banner = document.querySelector("#freca-shield-root .fs-banner");
+        var h = 0;
+        if (banner) {
+          var bottom = banner.getBoundingClientRect().bottom;
+          if (bottom > 0) h = Math.ceil(bottom);
+        }
+        root.style.setProperty("--shield-h", h + "px");
+      }
+      window.addEventListener("resize", syncShieldOffset);
+      window.addEventListener("scroll", syncShieldOffset, { passive: true });
+      var obs = new MutationObserver(syncShieldOffset);
+      obs.observe(document.body, { childList: true, subtree: true });
+      syncShieldOffset();
+    })();
+  </script>
+  <script src="../shield.js" data-site-slug="massah-guesthouse" defer></script>
+</body>
+</html>
