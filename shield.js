@@ -4,6 +4,8 @@
  * Central control via shield-config.json + deterministic 6-digit Instant Unlock Codes
  * Status "showcase": evergreen sample mode (no expiry date). Site is viewable for
  * showcase_seconds (default 180) per visit, then the Freca E-Services page appears.
+ * A site may set persist_viewing so that same end time is kept in localStorage
+ * across reloads. Sites without the flag still start a fresh visit on each load.
  */
 (function () {
   "use strict";
@@ -510,6 +512,17 @@
       "created_at": "2026-11-03T09:43:00Z",
       "owner_wa": "256752224442",
       "tier": "website"
+    },
+    "massah-guesthouse": {
+      "name": "Massah Guesthouse",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-08T00:20:00Z",
+      "owner_wa": "256772845735",
+      "tier": "standard",
+      "persist_viewing": true,
+      "calm_sample_end": true
     }
   }
 };
@@ -759,6 +772,8 @@
       "#freca-shield-root { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.45; color: #0f172a; box-sizing: border-box; }",
       "#freca-shield-root *, #freca-shield-root *::before, #freca-shield-root *::after { box-sizing: border-box; }",
       ".fs-banner { position: sticky; top: 0; left: 0; right: 0; z-index: 99990; background: linear-gradient(90deg, #0b132b 0%, #1c2541 60%, #0f172a 100%); color: #ffffff; border-bottom: 2px solid #25D366; padding: 9px 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.32); }",
+      ".fs-banner.fs-banner-calm { padding: 8px 12px; }",
+      ".fs-banner.fs-banner-calm .fs-banner-btn { padding: 5px 11px; }",
       ".fs-banner.fs-banner-stage { background: linear-gradient(90deg, #052e16 0%, #14532d 55%, #064e3b 100%); border-bottom-color: #fde047; }",
       ".fs-banner-inner { max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; font-size: 0.81rem; }",
       ".fs-banner-text { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-weight: 500; }",
@@ -886,6 +901,11 @@
     if (stage >= 4 || site.status === "active_paid" || site.status === "portfolio") {
       return { allowed: true };
     }
+    // Opt-in for a concept sample whose phone and WhatsApp links should stay usable.
+    // Other showcase sites keep the usual stage-0 interception.
+    if (site.calm_sample_end && site.status === "showcase") {
+      return { allowed: true };
+    }
 
     var href = String(link.getAttribute("href") || "").toLowerCase();
     var isWa = href.indexOf("wa.me/") !== -1 || href.indexOf("api.whatsapp.com") !== -1 || href.indexOf("whatsapp://") !== -1;
@@ -1011,6 +1031,20 @@
               '<span>Floating WhatsApp, Maps &amp; Catalog Live • <strong>Clear final 25% to remove owner bar</strong></span>' +
             '</div>' +
             '<button type="button" class="fs-banner-btn" id="fs-banner-activate-btn">💳 Clear Final 25%</button>' +
+          '</div>' +
+        '</div>'
+      );
+    }
+
+    if (site.status === "showcase" && site.calm_sample_end) {
+      return (
+        '<div class="fs-banner fs-banner-calm" role="region" aria-label="Sample Website Notice">' +
+          '<div class="fs-banner-inner">' +
+            '<div class="fs-banner-text">' +
+              '<span>✨ <strong>Concept sample</strong> by Freca E-Services</span>' +
+              '<span>• <span class="fs-timer" id="fs-countdown-text" aria-live="off">03:00</span> left</span>' +
+            '</div>' +
+            '<a class="fs-banner-btn" href="https://frecae-services.github.io/Profile/" target="_blank" rel="noopener">Freca E-Services</a>' +
           '</div>' +
         '</div>'
       );
@@ -1208,6 +1242,10 @@
 
   function renderMainUI(site, cfg) {
     var root = ensureRoot();
+    if (site && site.calm_sample_end && site.status === "showcase") {
+      root.innerHTML = renderBannerHtml(site);
+      return;
+    }
     state.selectedPkg = site.tier === "ecommerce" ? "ecom_managed" : "standard_managed";
     if (site.unlock_stage === 1) state.selectedMode = "monthly_50";
     else if (site.unlock_stage === 2) state.selectedMode = "full_100";
@@ -1416,6 +1454,31 @@
           " and I would like to get it live."
       );
 
+    if (site.calm_sample_end) {
+      document.body.style.overflow = "hidden";
+      root.innerHTML =
+        '<div class="fs-full-lock" role="alertdialog" aria-modal="true" aria-labelledby="fs-sample-end-title" id="fs-showcase-end">' +
+          '<div class="fs-lock-card">' +
+            '<div class="fs-lock-icon" aria-hidden="true">✨</div>' +
+            '<span class="fs-lock-sub">Concept sample</span>' +
+            '<h1 id="fs-sample-end-title" tabindex="-1">This sample viewing has ended</h1>' +
+            '<p>You were looking at a concept sample for <strong>' + bizName + '</strong>, prepared by Freca E-Services. It is not the official website.</p>' +
+            '<p>If you would like to talk about a live website, Freca E-Services can take the next step with you.</p>' +
+            '<div class="fs-lock-btns">' +
+              '<a class="fs-btn-primary" href="' + escapeHtml(waUrl) + '" target="_blank" rel="noopener">Chat with Freca E-Services on WhatsApp</a>' +
+              '<a class="fs-btn-outline-light" href="' + portfolioUrl + '" target="_blank" rel="noopener">View the Freca E-Services portfolio</a>' +
+              '<button type="button" class="fs-btn-outline-light" id="fs-showcase-replay">View the sample again</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      bindShowcaseReplay();
+      var calmHeading = document.getElementById("fs-sample-end-title");
+      if (calmHeading && calmHeading.focus) {
+        try { calmHeading.focus(); } catch (e) {}
+      }
+      return;
+    }
+
     document.body.style.overflow = "hidden";
     root.innerHTML =
       '<div class="fs-full-lock" role="alertdialog" aria-modal="true" id="fs-showcase-end">' +
@@ -1447,12 +1510,7 @@
         openCheckoutModal("Get " + (site.name || "this website") + " live with your first installment or full payment.");
       });
     }
-    var replay = document.getElementById("fs-showcase-replay");
-    if (replay) {
-      replay.addEventListener("click", function () {
-        window.location.reload();
-      });
-    }
+    bindShowcaseReplay();
     var modal = document.getElementById("fs-preview-modal");
     var closeBtn = document.getElementById("fs-modal-close-btn");
     var closeX = document.getElementById("fs-modal-x-btn");
@@ -1460,10 +1518,54 @@
     if (closeX && modal) closeX.addEventListener("click", function () { modal.classList.remove("fs-open"); });
   }
 
+  function showcaseEndsKey() {
+    return "freca_showcase_ends_" + state.slug;
+  }
+
+  function readPersistedShowcaseEnd(site) {
+    if (!site || !site.persist_viewing) return 0;
+    try {
+      var n = Number(localStorage.getItem(showcaseEndsKey()));
+      if (!n || isNaN(n)) return 0;
+      return n;
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  function writePersistedShowcaseEnd(site, endsAt) {
+    if (!site || !site.persist_viewing) return;
+    try {
+      localStorage.setItem(showcaseEndsKey(), String(endsAt));
+    } catch (e) {}
+  }
+
+  function clearPersistedShowcaseEnd() {
+    try {
+      localStorage.removeItem(showcaseEndsKey());
+    } catch (e) {}
+  }
+
+  function bindShowcaseReplay() {
+    var replay = document.getElementById("fs-showcase-replay");
+    if (!replay) return;
+    replay.addEventListener("click", function () {
+      clearPersistedShowcaseEnd();
+      window.location.reload();
+    });
+  }
+
   function startShowcase(site, cfg) {
-    // Timer runs per page visit; keep the same end time if config is re-applied (fallback -> remote)
+    // Keep one end time if config is re-applied on the same page (fallback, then remote).
+    // persist_viewing also stores that end time so a reload continues the same visit.
     if (!state.showcaseEndsAt) {
-      state.showcaseEndsAt = Date.now() + getShowcaseSeconds(site, cfg) * 1000;
+      var storedEnd = readPersistedShowcaseEnd(site);
+      if (storedEnd) {
+        state.showcaseEndsAt = storedEnd;
+      } else {
+        state.showcaseEndsAt = Date.now() + getShowcaseSeconds(site, cfg) * 1000;
+        writePersistedShowcaseEnd(site, state.showcaseEndsAt);
+      }
     }
     var endsAt = state.showcaseEndsAt;
     if (endsAt - Date.now() <= 0) {
