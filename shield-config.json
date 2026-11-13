@@ -511,6 +511,16 @@
       "tier": "standard",
       "persist_viewing": true,
       "calm_sample_end": true
+    },
+    "queen16-beauty-empire": {
+      "name": "Queen16 Beauty Empire",
+      "status": "showcase",
+      "paid_percent": 0,
+      "unlock_stage": 0,
+      "created_at": "2026-11-13T08:30:00Z",
+      "owner_wa": "256700888511",
+      "tier": "ecommerce",
+      "calm_sample_end": true
     }
   }
 }
