@@ -1,45 +1,23 @@
-# Queen16 Beauty Empire — going live
+# Queen16 Beauty Empire: live store
 
-The shop works today in **preview mode**. Supabase URL and anon key in `assets/config.js` are blank, so the shelf comes from `assets/products.js`. Search, the bag and WhatsApp checkout already work. The admin stays locked on the public site until the database is connected.
+Live shop: https://frecae-services.github.io/Profile/queen16-beauty-empire/
+Admin: https://frecae-services.github.io/Profile/queen16-beauty-empire/admin/
 
-Photos in `images/` are freely licensed stock (see `image-credits.json`). They illustrate the shelf. They are not photographs of the products in GGS Plaza 2. Prices are a sample shelf and can be revised in the admin, or by editing `assets/products.js` while you are still in preview mode.
+## What is connected
+- **Database:** Supabase project `dubcicwpeprauojkwqin` (queen16-beauty-empire, eu-central-1, free plan). Tables `queen16_categories`, `queen16_subcategories`, `queen16_products`, `queen16_settings`, `queen16_orders`, with row level security on all of them. `supabase-schema.sql` shows the full setup. `supabase-seed-products.sql` is the starting 48 products.
+- **Admin login:** Supabase Auth email + password. The admin email is `queen16beautyempire0@gmail.com`. The password is kept privately by Freca E-Services. Only that account can edit, and other sign-ups are blocked in the database.
+- **Photos:** Cloudinary, cloud `lgjllewt`, unsigned preset `frecary`, folder `queen16-beauty-empire`. Uploading from the admin panel puts photos there.
+- `assets/config.js` holds the project URL and the public publishable key only. Never put a secret or service_role key in this folder.
 
-## 1. Supabase
+## Pay-first checkout (manual Mobile Money)
+1. The customer fills the bag and enters their name, phone and delivery location.
+2. The database prices the bag from the products table and creates an order such as `Q16-1001` with the status **Not paid yet**.
+3. The customer sees the order number, the total and the Mobile Money number (**Site settings → Mobile Money number**, now 0700888511).
+4. After paying, they enter the transaction ID. The order changes to **Waiting for confirmation**, and the WhatsApp button unlocks with the order number, items, total and transaction ID filled in.
+5. In **Admin → Orders**, she checks her MoMo SMS, presses **Mark as Paid**, and later **Mark as Delivered**.
 
-1. Create a free project at https://supabase.com. Pick a region close to Uganda if one is offered.
-2. Open the SQL editor, paste all of `supabase-schema.sql`, and run it. This creates the `queen16_` tables, row level security, and the starting shelf.
-3. Before you run that file, replace `queen16.admin@example.com` inside `queen16_is_admin()` with the real admin email you will use.
-4. Authentication → Users → Add user with that same email and a private password. Tick **Auto Confirm User**.
-5. Authentication → Sign In / Providers → turn **off** “Allow new users to sign up”.
-6. Project Settings → API. Copy the **Project URL** and the **anon public** key into `assets/config.js`:
-   - `SUPABASE_URL`
-   - `SUPABASE_ANON_KEY`
-   - `ADMIN_EMAIL` (the same email as in the SQL function)
-7. Do not put the `service_role` key in this folder. The anon key is safe to publish because the security rules only let the admin change products and orders.
+## Estimated prices
+Products with `price_confirmed = false` show normally on the shop. In the admin they carry an **Estimated price** label, and you can filter to them with "Show only estimated prices". When she edits the price, "Price confirmed" is ticked automatically.
 
-After a refresh, the shop reads products from Supabase. Orders placed on the site are also stored there, and the customer is still sent to WhatsApp to press Send. Admin: `https://frecae-services.github.io/Profile/queen16-beauty-empire/admin/`.
-
-On your own computer, at `http://localhost`, you can sign in with any email and a password of at least 8 characters to try the admin against a copy kept in the browser. That local copy is not the public site.
-
-## 2. Cloudinary (product photos)
-
-Image upload in the admin uses an **unsigned** Cloudinary upload preset. Leave these blank until you have them:
-
-- `CLOUDINARY_CLOUD` — the cloud name
-- `CLOUDINARY_PRESET` — the unsigned upload preset name
-
-Create the preset in the Cloudinary console (Settings → Upload → Upload presets → Unsigned). Restrict it to images if you can. Uploads are stored in the folder `queen16-beauty-empire`.
-
-Until those two values are filled in, the admin will not upload a file. Paste an image link instead, or keep using the photos already in `images/`.
-
-## 3. WhatsApp
-
-Orders open `https://wa.me/256700888511` with the bag, quantities, prices and total. Change the number in the admin (Site settings → WhatsApp number) after Supabase is connected, or in `assets/products.js` → `settings.whatsapp` while you are in preview mode. Use the country code and no plus sign: `256700888511`.
-
-## 4. Publish
-
-The shop is a static folder. GitHub Pages serves it from the `main` branch at:
-
-https://frecae-services.github.io/Profile/queen16-beauty-empire/
-
-The sample timer is the same shield used by the other concept sites (`shield.js`, slug `queen16-beauty-empire`). It is a showcase: visitors can use the shop, including WhatsApp, for a few minutes, then the Freca E-Services sample screen appears.
+## Keep-alive
+Supabase free projects pause after about 7 days with no activity. Open the shop or admin every 3 to 4 days, or upgrade the project.

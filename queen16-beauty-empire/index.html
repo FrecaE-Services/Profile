@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Queen16 Beauty Empire | Skincare, body care and perfume in Kampala</title>
-<meta name="description" content="Queen16 Beauty Empire at GGS Plaza 2, Kampala. Skincare, body care and perfume, priced in UGX. Order on WhatsApp +256 700 888511.">
+<title>Queen16 Beauty Empire | Korean skincare in Kabalagala, Kampala</title>
+<meta name="description" content="Queen16 Beauty Empire, Kabalagala, GGS Plaza Level 2, Shop G28. Korean skincare, facial products, body care and perfumes in UGX. Pay by Mobile Money, order on WhatsApp +256 700 888 511.">
 <meta name="theme-color" content="#10182e">
 <meta property="og:title" content="Queen16 Beauty Empire">
-<meta property="og:description" content="Skincare, body care and perfume at GGS Plaza 2, Kampala. Order on WhatsApp.">
+<meta property="og:description" content="Today Is A Good Day To Pamper Your Skin. Korean skincare in Kabalagala, GGS Plaza Level 2, Shop G28.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_UG">
-<meta property="og:image" content="https://frecae-services.github.io/Profile/queen16-beauty-empire/images/portrait.jpg">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:image" content="https://frecae-services.github.io/Profile/queen16-beauty-empire/assets/og-image.jpg">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -222,6 +224,35 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);b
 @media(max-width:899px){
   .bar .brand{flex:1}
 }
+/* --- Queen16 real store additions --- */
+:root{--pink:#f7dfe4;--pink-2:#fbeef1}
+.brand img.logo{height:46px;width:auto;display:block;filter:invert(1) brightness(1.05)}
+.hero{background:radial-gradient(900px 420px at 85% 0%,rgba(198,161,91,.18),transparent 60%),linear-gradient(180deg,#10182e 0%,#0c1224 100%)}
+.hero-logo{margin:0;background:radial-gradient(circle at 50% 40%,#fff 0%,var(--pink-2) 45%,var(--pink) 100%);border-radius:22px 22px 80px 22px;border:1px solid rgba(232,213,164,.35);display:grid;place-items:center;padding:2rem 1.4rem;min-height:min(68vw,420px);text-align:center}
+.hero-logo img{width:min(62%,400px);height:auto}
+.tile img{object-fit:contain;background:#fff}
+.tile[data-jump="perfumes"] img{object-fit:contain;padding:10px;background:var(--pink-2)}
+.hero-logo p{font-family:var(--serif);font-style:italic;color:var(--navy);font-size:clamp(1.05rem,3.6vw,1.35rem);margin:.9rem 0 0;max-width:28ch}
+@media(min-width:900px){.hero-logo{min-height:520px}.hero-logo img{width:min(78%,420px)}}
+@media(max-width:899px){.hero-logo{min-height:0;padding:1.6rem 1rem}}
+.slogan{font-family:var(--serif);font-style:italic;color:var(--gold-2);font-size:1.15rem;margin:.2rem 0 0}
+.thumbs{display:flex;gap:.4rem;padding:.5rem;overflow-x:auto;background:var(--ivory-2)}
+.thumbs button{flex:none;width:58px;height:58px;padding:0;border:2px solid transparent;border-radius:10px;overflow:hidden;background:#fff;cursor:pointer}
+.thumbs button.on{border-color:var(--gold-deep)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.modal-photo img#mainPhoto{object-fit:contain;background:#fff}
+.card-img img{object-fit:cover}
+.pay-box{background:var(--pink-2);border:1px solid #efcbd3;border-radius:16px;padding:1rem;margin:.8rem 0}
+.pay-box .big{font-family:var(--serif);font-size:2rem;color:var(--navy);line-height:1.1}
+.pay-steps{margin:.4rem 0 0;padding-left:1.2rem;color:var(--muted);font-size:.9rem}
+.pay-steps li{margin:.25rem 0}
+.momo-row{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.copy{border:1px solid var(--navy);background:#fff;border-radius:999px;padding:.4rem .8rem;cursor:pointer;font-size:.82rem}
+.order-no{display:inline-block;background:var(--navy);color:var(--gold-2);border-radius:999px;padding:.2rem .7rem;font-weight:600;letter-spacing:.04em}
+#waOrderBtn{background:#1faa59;color:#fff;width:100%;margin-top:.6rem}
+#waOrderBtn.locked{background:#b9b2a8;cursor:not-allowed}
+.lock-note{font-size:.85rem;color:var(--muted);margin:.4rem 0 0}
+.contact-list a{color:var(--gold-2);display:block;margin:.15rem 0;text-decoration:none}
 </style>
 </head>
 <body>
@@ -230,8 +261,7 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);b
   <div class="wrap bar">
     <button class="menu" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span></button>
     <a class="brand" href="#top">
-      <svg viewBox="0 0 64 48" aria-hidden="true"><path fill="#E8D5A4" d="M6 40 L12 18 L24 30 L32 8 L40 30 L52 18 L58 40Z"/><rect x="8" y="40" width="48" height="5" rx="1" fill="#C6A15B"/><circle cx="12" cy="16" r="3" fill="#E8D5A4"/><circle cx="32" cy="7" r="3.2" fill="#F3E6C4"/><circle cx="52" cy="16" r="3" fill="#E8D5A4"/></svg>
-      <span><strong>Queen 16</strong><small>Beauty Empire</small></span>
+      <img class="logo" src="assets/logo.png" alt="Queen 16 Beauty Empire" width="160" height="46">
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="#shop">Shop</a>
@@ -241,7 +271,7 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);b
     </nav>
     <form class="search" role="search" onsubmit="return false">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input id="searchDesktop" type="search" placeholder="Search serums, oud, lotion…" aria-label="Search the shelf" autocomplete="off">
+      <input id="searchDesktop" type="search" placeholder="Search Anua, serum, sunscreen…" aria-label="Search the shelf" autocomplete="off">
     </form>
     <div class="iconbtns">
       <button class="iconbtn" id="wishBtn" type="button" aria-label="Saved pieces"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 4.6-7 9-7 9z"/></svg><span class="badge" id="wishBadge" hidden>0</span></button>
@@ -251,14 +281,14 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);b
   <div class="wrap search-m">
     <form role="search" onsubmit="return false" style="position:relative">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input id="search" type="search" placeholder="Search serums, oud, lotion…" aria-label="Search the shelf" autocomplete="off">
+      <input id="search" type="search" placeholder="Search Anua, serum, sunscreen…" aria-label="Search the shelf" autocomplete="off">
     </form>
   </div>
   <nav class="nav-panel" id="nav">
     <a href="#shop">Shop the shelf</a>
     <a href="#about">About</a>
     <a href="#why">Why shop with us</a>
-    <a href="#visit">Visit GGS Plaza 2</a>
+    <a href="#visit">Visit us in Kabalagala</a>
   </nav>
 </header>
 
@@ -266,17 +296,17 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);b
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="kicker" data-s="hero_kicker">GGS Plaza 2, Kampala</p>
-        <h1 data-s="hero_title">Care, chosen with a crown.</h1>
+        <p class="kicker" data-s="hero_kicker">Kabalagala · GGS Plaza Level 2 · Shop G28</p>
+        <h1 data-s="hero_title">Today Is A Good Day To Pamper Your Skin</h1>
         <p class="lede" data-s="hero_text"></p>
         <div class="ctas">
           <a class="btn gold" href="#shop">Shop the shelf</a>
-          <a class="btn ghost" data-wa="Hello Queen16 Beauty Empire, I would like to ask about skincare, body care and perfume.">WhatsApp us</a>
+          <a class="btn ghost" data-wa="Hello Queen16 Beauty Empire, I would like to ask about your skincare products.">WhatsApp us</a>
         </div>
       </div>
-      <figure class="hero-frame">
-        <img id="heroImg" src="images/portrait.jpg" alt="Editorial beauty portrait used as an illustrative photograph" fetchpriority="high">
-        <figcaption>Illustrative photograph</figcaption>
+      <figure class="hero-logo">
+        <img src="assets/logo.png" alt="Queen 16 Beauty Empire logo" fetchpriority="high">
+        <p data-s="slogan">An ounce of prevention is worth a pound of cure</p>
       </figure>
     </div>
   </section>
@@ -288,8 +318,8 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);b
       <div class="shop-head">
         <div>
           <p class="kicker">The shelf</p>
-          <h2>Skincare, body care, perfume</h2>
-          <p>Korean-style skincare, body care for Kampala weather, and fragrances for her and for him. Prices are in Ugandan shillings.</p>
+          <h2>Facial products, body care, perfumes</h2>
+          <p>Mainly Korean skincare, plus other trusted brands. Prices are in Ugandan shillings.</p>
         </div>
         <label class="sort">Sort
           <select id="sort" aria-label="Sort products">
@@ -323,12 +353,13 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);b
     <div class="wrap about-grid">
       <div>
         <p class="kicker">About</p>
-        <h2 data-s="about_title">A Kampala counter for the whole ritual</h2>
+        <h2 data-s="about_title">About Queen16 Beauty Empire</h2>
         <p data-s="about"></p>
+        <p class="slogan" style="color:var(--gold-deep)" data-s="slogan"></p>
       </div>
       <div class="about-photos">
-        <img src="images/facial-treatment.jpg" alt="Illustrative photograph of a facial treatment" loading="lazy">
-        <img src="images/mask-avocado.jpg" alt="Illustrative photograph of a face mask" loading="lazy">
+        <img id="aboutImg1" src="assets/logo.png" alt="Products at Queen16 Beauty Empire" loading="lazy">
+        <img id="aboutImg2" src="assets/logo.png" alt="Products at Queen16 Beauty Empire" loading="lazy">
       </div>
     </div>
   </section>
@@ -338,16 +369,27 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);b
       <div class="visit-card">
         <p class="kicker" style="color:var(--gold-2)">Find us</p>
         <h2 data-s="visit_title">Visit or write to us</h2>
-        <p data-s="address">GGS Plaza 2, Kampala, Uganda</p>
-        <a class="phone" id="phoneLink" href="tel:+256700888511">+256 700 888511</a>
+        <p data-s="address">Kabalagala, GGS Plaza Level 2, Shop G28, Kampala</p>
+        <a class="phone" id="phoneLink" href="tel:+256700888511">+256 700 888 511</a>
+        <div class="contact-list">
+          <a id="phone2Link" href="https://wa.me/256771068572" target="_blank" rel="noopener">+256 771 068 572</a>
+          <a id="igLink" href="https://instagram.com/Queen16_beautyempire" target="_blank" rel="noopener">@Queen16_beautyempire</a>
+          <a id="emailLink" href="mailto:queen16beautyempire0@gmail.com">queen16beautyempire0@gmail.com</a>
+        </div>
         <p data-s="hours_note"></p>
         <p data-s="delivery_info"></p>
-        <a class="btn gold" data-wa="Hello Queen16 Beauty Empire, I would like to visit or place an order. GGS Plaza 2.">Message on WhatsApp</a>
+        <a class="btn gold" data-wa="Hello Queen16 Beauty Empire, I would like to visit the shop or place an order.">Message on WhatsApp</a>
       </div>
       <div>
         <p class="kicker">How an order works</p>
-        <h2>Send it on WhatsApp</h2>
-        <p style="color:var(--muted)">Add pieces to your bag, leave your name, phone and where we should deliver, then place the order. WhatsApp opens with the list, the quantities and the total. Nothing is confirmed until you press Send.</p>
+        <h2>Pay first, then send it on WhatsApp</h2>
+        <ol class="pay-steps" style="font-size:1rem">
+          <li>Add products to your bag and press Checkout.</li>
+          <li>Enter your name, phone and delivery location. You get an order number and the total.</li>
+          <li>Pay the total by Mobile Money to <b id="howMomo">0700888511</b>.</li>
+          <li>Enter the transaction ID from your payment SMS.</li>
+          <li>The WhatsApp button unlocks. Send us your order and we confirm your payment.</li>
+        </ol>
       </div>
     </div>
   </section>
@@ -357,9 +399,9 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);b
   <div class="wrap">
     <div class="foot">
       <div>
-        <strong style="font-family:var(--serif);font-size:1.4rem;color:var(--ink)">Queen 16</strong>
+        <strong style="font-family:var(--serif);font-size:1.4rem;color:var(--ink)">Queen 16 Beauty Empire</strong>
         <p data-s="footer" style="margin:.2rem 0"></p>
-        <p class="sample" data-s="sample_note"></p>
+        <p class="sample" data-s="slogan"></p>
       </div>
       <div>
         <a href="./admin/" rel="nofollow">Staff login</a>
@@ -384,19 +426,43 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);b
     <button class="btn gold" id="checkoutBtn" type="button">Checkout</button>
   </div>
   <div class="details" id="detailsView" hidden>
-    <p style="color:var(--muted);margin-top:.6rem">Place order opens WhatsApp with this list. It is sent only when you press Send there.</p>
+    <p style="color:var(--muted);margin-top:.6rem">We pay first: after this step you get an order number and our Mobile Money number.</p>
     <label for="cName">Name</label>
     <input id="cName" type="text" autocomplete="name" required>
     <label for="cPhone">Phone</label>
     <input id="cPhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="07XX XXX XXX" required>
     <label for="cLoc">Delivery location</label>
-    <input id="cLoc" type="text" placeholder="Neighbourhood in Kampala, or pickup at GGS Plaza 2" required>
+    <input id="cLoc" type="text" placeholder="Your area in Kampala, or pick up at the shop" required>
     <label for="cNotes">Notes</label>
     <textarea id="cNotes" placeholder="Gate, time, or a skin concern"></textarea>
     <div class="co-sum" id="coSum"></div>
-    <a class="btn gold" id="placeBtn" href="#">Place order on WhatsApp</a>
+    <button class="btn gold" id="placeBtn" type="button">Continue to payment</button>
     <p class="err" id="coErr" role="status"></p>
     <button class="linkish" id="backBag" type="button">Back to bag</button>
+  </div>
+  <div class="details" id="payView" hidden>
+    <p style="margin:.8rem 0 0">Order number <span class="order-no" id="payOrderNo"></span></p>
+    <div class="pay-box">
+      <div class="kicker">Amount to pay</div>
+      <div class="big" id="payTotal"></div>
+      <div class="kicker" style="margin-top:.8rem">Send by <span id="payNetwork">Mobile Money</span> to</div>
+      <div class="momo-row"><div class="big" id="payMomo"></div><button class="copy" id="copyMomo" type="button">Copy number</button></div>
+      <div id="payMomoName" style="color:var(--muted);font-size:.9rem"></div>
+      <ol class="pay-steps">
+        <li>Pay the exact amount to the number above.</li>
+        <li>Copy the transaction ID from your payment SMS.</li>
+        <li>Enter it below, then send your order on WhatsApp.</li>
+      </ol>
+    </div>
+    <label for="txnId">Transaction ID</label>
+    <input id="txnId" type="text" autocomplete="off" autocapitalize="characters" placeholder="e.g. 12345678901" maxlength="40">
+    <button class="btn ghost dark" id="txnBtn" type="button" style="margin-top:.6rem">Save transaction ID</button>
+    <p class="err" id="payErr" role="status"></p>
+    <a class="btn locked" id="waOrderBtn" href="#" target="_blank" rel="noopener" aria-disabled="true">Send order on WhatsApp</a>
+    <p class="lock-note" id="waLockNote"></p>
+    <div class="co-sum" id="paySum"></div>
+    <p class="fine">We confirm your payment from our Mobile Money messages, then arrange pickup or delivery.</p>
+    <button class="linkish" id="newOrder" type="button">Start a new order</button>
   </div>
 </aside>
 
@@ -406,10 +472,9 @@ input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);b
 <div class="toast" id="toast" role="status"></div>
 
 <script src="assets/config.js"></script>
-<script src="assets/products.js"></script>
+<script src="assets/defaults.js"></script>
 <script src="assets/store.js"></script>
 <script src="assets/shop.js"></script>
-<script src="../shield.js" data-site-slug="queen16-beauty-empire" defer></script>
 <script>
 /* Keep the desktop and mobile search boxes in step. */
 (function(){

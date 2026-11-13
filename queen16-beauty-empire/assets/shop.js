@@ -1,11 +1,11 @@
-/* Queen16 Beauty Empire storefront: search, filters, cart, WhatsApp checkout. */
+/* Queen16 Beauty Empire storefront: search, filters, bag, pay-first Mobile Money checkout, WhatsApp order. */
 (function () {
   const S = window.Q16;
   const esc = S.esc;
   const $ = (id) => document.getElementById(id);
   let settings = S.DEFAULT_SETTINGS;
   let cats = [];
-  let subs = S.subs();
+  let subs = [];
   let products = [];
   let curCat = "all";
   let curSub = "all";
@@ -21,7 +21,7 @@
 
   const waNum = () => String(settings.whatsapp || "256700888511").replace(/\D/g, "");
   const waLink = (t) => "https://wa.me/" + waNum() + "?text=" + encodeURIComponent(t);
-  const imgOf = (p) => (p.images && p.images[0]) || settings.hero_image || "";
+  const imgOf = (p) => (p.images && p.images[0]) || "assets/logo.png";
   const catName = (slug) => ((cats.find((c) => c.slug === slug) || {}).name) || "";
   const subName = (slug) => ((subs.find((s) => s.slug === slug) || {}).name) || "";
   const outOfStock = (p) => p.stock !== null && p.stock !== undefined && p.stock !== "" && Number(p.stock) <= 0;
@@ -49,8 +49,16 @@
     document.querySelectorAll("[data-wa]").forEach((a) => {
       a.href = waLink(a.dataset.wa);
     });
-    const hero = $("heroImg");
-    if (hero && settings.hero_image) hero.src = settings.hero_image;
+    const hm = $("howMomo"); if (hm) hm.textContent = settings.momo_number || "";
+    const feat = products.filter((x) => x.featured && x.images && x.images.length);
+    if (feat[0] && $("aboutImg1")) $("aboutImg1").src = imgOf(feat[0]);
+    if (feat[1] && $("aboutImg2")) $("aboutImg2").src = imgOf(feat[1]);
+    const ig = $("igLink");
+    if (ig && settings.instagram) { ig.textContent = "@" + settings.instagram; ig.href = "https://instagram.com/" + settings.instagram; }
+    const ph2 = $("phone2Link");
+    if (ph2) { ph2.hidden = !settings.phone2_display; ph2.textContent = settings.phone2_display || ""; ph2.href = "https://wa.me/" + String(settings.phone2_display || "").replace(/\D/g, ""); }
+    const em = $("emailLink");
+    if (em) { em.hidden = !settings.email; em.textContent = settings.email || ""; em.href = "mailto:" + (settings.email || ""); }
     const phone = $("phoneLink");
     if (phone) {
       phone.textContent = settings.phone_display || "";
@@ -71,11 +79,8 @@
     ).join("");
   }
   function tileImage(slug) {
-    if (slug === "skincare") return "images/spa-facial.jpg";
-    if (slug === "body") return "images/soap-brush.jpg";
-    if (slug === "perfume") return "images/perfume-dark.jpg";
-    const p = products.find((x) => x.category === slug);
-    return p ? imgOf(p) : settings.hero_image;
+    const p = products.find((x) => x.category === slug && x.featured) || products.find((x) => x.category === slug);
+    return p ? imgOf(p) : "assets/logo.png";
   }
 
   function haystack(p) {
@@ -129,7 +134,7 @@
         "<h3>" + esc(p.name) + "</h3><p>" + esc(p.description) + "</p>" +
         '<div class="buy"><div class="price">' + priceHtml(p) + stock + "</div>" +
         '<button type="button" class="add" data-add="' + esc(p.id) + '"' + (out ? " disabled" : "") + ">" + (out ? "Sold out" : "Add to bag") + "</button></div></div></article>";
-    }).join("") : '<p class="empty">Nothing matches that search. Try a shorter word, or <a data-wa="Hello Queen16 Beauty Empire, I am looking for: ' + esc(query) + '">ask us on WhatsApp</a>.</p>';
+    }).join("") : (!query && !wishOnly && curCat !== "all") ? '<p class="empty"><b>Coming soon.</b> New products in this section will appear here. <a data-wa="Hello Queen16 Beauty Empire, I would like to ask about ' + esc(catName(curCat) || "your products") + '.">Ask us on WhatsApp</a>.</p>' : '<p class="empty">Nothing matches that search. Try a shorter word, or <a data-wa="Hello Queen16 Beauty Empire, I am looking for: ' + esc(query) + '">ask us on WhatsApp</a>.</p>';
     document.querySelectorAll("#productGrid [data-wa]").forEach((a) => { a.href = waLink(a.dataset.wa); });
   }
 
@@ -139,10 +144,10 @@
     if (!p) { closeProduct(false); return; }
     modalQty = 1;
     const out = outOfStock(p);
-    const stockLine = out ? "Sold out for now" : (lowStock(p) ? "Only " + Number(p.stock) + " left" : "In stock at GGS Plaza 2");
+    const stockLine = out ? "Sold out for now" : (lowStock(p) ? "Only " + Number(p.stock) + " left" : "Available at our shop in Kabalagala");
     $("modalCard").innerHTML =
       '<button type="button" class="modal-x" id="modalX" aria-label="Close">×</button>' +
-      '<div class="modal-grid"><div class="modal-photo"><img src="' + esc(imgOf(p)) + '" alt="' + esc(p.name) + '"></div>' +
+      '<div class="modal-grid"><div class="modal-photo"><img id="mainPhoto" src="' + esc(imgOf(p)) + '" alt="' + esc(p.name) + '">' + ((p.images || []).length > 1 ? '<div class="thumbs">' + p.images.map((u, i) => '<button type="button" data-ph="' + esc(u) + '" class="' + (i ? "" : "on") + '" aria-label="Photo ' + (i + 1) + '"><img src="' + esc(u) + '" alt=""></button>').join("") + "</div>" : "") + "</div>" +
       '<div class="modal-copy"><p class="kicker">' + esc(catName(p.category)) + " · " + esc(subName(p.sub)) + "</p>" +
       "<h2>" + esc(p.name) + "</h2><div class=\"price lg\">" + priceHtml(p) + "</div>" +
       '<p class="stock">' + esc(stockLine) + "</p><p class=\"desc\">" + esc(p.description) + "</p>" +
@@ -158,6 +163,8 @@
     }
     $("modalX").onclick = () => closeProduct(true);
     $("modalCard").onclick = (e) => {
+      const ph = e.target.closest("[data-ph]");
+      if (ph) { $("mainPhoto").src = ph.dataset.ph; $("modalCard").querySelectorAll("[data-ph]").forEach((b) => b.classList.toggle("on", b === ph)); return; }
       const q = e.target.closest("[data-mq]");
       if (q) {
         modalQty = Math.max(1, modalQty + Number(q.dataset.mq));
@@ -231,6 +238,7 @@
     $("cartDrawer").setAttribute("aria-hidden", "false");
     lock(true);
     if (step === "details") showDetails();
+    else if (pending() && !totals().count) showPay();
     else showBag();
   }
   function closeCart() {
@@ -247,6 +255,7 @@
     $("bagView").hidden = false;
     $("bagFoot").hidden = false;
     $("detailsView").hidden = true;
+    $("payView").hidden = true;
   }
   function showDetails() {
     if (!totals().count) return;
@@ -255,6 +264,7 @@
     $("bagView").hidden = true;
     $("bagFoot").hidden = true;
     $("detailsView").hidden = false;
+    $("payView").hidden = true;
     const t = totals();
     $("coSum").innerHTML = lines().map(({ c, p }) =>
       "<div><span>" + c.qty + " × " + esc(p.name) + "</span><span>" + S.ugx(p.price * c.qty) + "</span></div>"
@@ -265,61 +275,89 @@
     $("coErr").textContent = "";
   }
 
-  function orderRef() {
-    const d = new Date();
-    const p = (n) => String(n).padStart(2, "0");
-    return "Q16-" + String(d.getFullYear()).slice(2) + p(d.getMonth() + 1) + p(d.getDate()) + "-" + Math.random().toString(36).slice(2, 6).toUpperCase();
-  }
+  /* ---- pay-first checkout ---- */
+  const momoDigits = () => String(settings.momo_number || "").replace(/\D/g, "");
+  function pending() { try { return JSON.parse(localStorage.getItem("q16_pending")) || null; } catch (e) { return null; } }
+  function setPending(o) { if (o) localStorage.setItem("q16_pending", JSON.stringify(o)); else localStorage.removeItem("q16_pending"); }
   function buildMessage(o) {
-    const L = ["*QUEEN16 BEAUTY EMPIRE*", "New order from the website", "Reference: " + o.id, ""];
-    o.items.forEach((it, i) => {
-      const line = S.ugx(it.price);
-      const row = S.ugx(it.price * it.qty);
+    const L = ["*QUEEN16 BEAUTY EMPIRE*", "New website order", "Order number: *" + o.id + "*", ""];
+    (o.items || []).forEach((it, i) => {
       L.push((i + 1) + ". " + it.name);
-      L.push("   " + it.qty + " × " + (line || "UGX —") + "  =  " + (row || "UGX —"));
+      L.push("   " + it.qty + " × " + S.ugx(it.price) + "  =  " + S.ugx(it.price * it.qty));
     });
-    L.push("", "*Subtotal: " + (S.ugx(o.total) || "UGX 0") + "*", "",
-      "*Customer*",
-      "Name: " + o.customer_name,
-      "Phone: " + o.customer_phone,
-      "Delivery: " + o.location);
+    L.push("", "*Total: " + (S.ugx(o.total) || "UGX 0") + "*",
+      "*Paid by Mobile Money to " + (settings.momo_number || "") + "*",
+      "Transaction ID: *" + (o.txn_id || "") + "*", "",
+      "*Customer*", "Name: " + o.customer_name, "Phone: " + o.customer_phone, "Delivery: " + o.location);
     if (o.notes) L.push("Notes: " + o.notes);
-    L.push("", "Please confirm stock and delivery. This order is placed when this message is sent.", "GGS Plaza 2, Kampala");
+    L.push("", "Please confirm my payment and delivery.");
     return L.join("\n");
   }
   window.Q16.buildOrderMessage = buildMessage;
 
-  function placeOrder(ev) {
+  async function placeOrder(ev) {
     if (ev) ev.preventDefault();
     const name = $("cName").value.trim();
     const phone = $("cPhone").value.trim();
     const location = $("cLoc").value.trim();
     const notes = $("cNotes").value.trim();
-    if (!name || !phone || !location) {
-      $("coErr").textContent = "Please add your name, phone number and delivery location.";
-      return;
-    }
-    if (phone.replace(/\D/g, "").length < 9) {
-      $("coErr").textContent = "Please enter a valid phone number.";
-      return;
-    }
-    const o = {
-      id: orderRef(),
-      customer_name: name,
-      customer_phone: phone,
-      location: location,
-      notes: notes,
-      status: "new",
-      items: lines().map(({ c, p }) => ({ id: p.id, name: p.name, qty: c.qty, price: Number(p.price || 0) })),
-      total: totals().total
-    };
+    if (!name || !phone || !location) { $("coErr").textContent = "Please add your name, phone number and delivery location."; return; }
+    if (phone.replace(/\D/g, "").length < 9) { $("coErr").textContent = "Please enter a valid phone number."; return; }
     localStorage.setItem("q16_customer", JSON.stringify({ name, phone, location }));
-    const url = waLink(buildMessage(o));
-    $("placeBtn").href = url;
-    window.__lastOrderUrl = url;
-    $("coErr").textContent = "WhatsApp is opening. The order is sent only when you press Send there.";
-    try { S.createOrder(o); } catch (e) {}
-    window.location.href = url;
+    const btn = $("placeBtn");
+    btn.disabled = true; btn.textContent = "Creating your order…"; $("coErr").textContent = "";
+    try {
+      const items = lines().map(({ c, p }) => ({ id: p.id, qty: c.qty }));
+      const r = await S.placeOrder(items, { name, phone, location, notes });
+      setPending({ id: r.id, token: r.token, total: r.total, items: r.items, customer_name: name, customer_phone: phone, location, notes, txn_id: "" });
+      cart = []; saveCart(); renderCart();
+      showPay();
+    } catch (e) {
+      $("coErr").textContent = e.message || "Could not create the order. Please try again.";
+    } finally {
+      btn.disabled = false; btn.textContent = "Continue to payment";
+    }
+  }
+  function showPay() {
+    const o = pending();
+    if (!o) return showBag();
+    $("cartDrawer").classList.add("step-details");
+    $("drawerTitle").textContent = "Pay for your order";
+    $("bagView").hidden = true; $("bagFoot").hidden = true; $("detailsView").hidden = true; $("payView").hidden = false;
+    $("payOrderNo").textContent = o.id;
+    $("payTotal").textContent = S.ugx(o.total);
+    $("payMomo").textContent = settings.momo_number || "";
+    $("payMomoName").textContent = settings.momo_name ? "Name: " + settings.momo_name : "";
+    $("payNetwork").textContent = settings.momo_network || "Mobile Money";
+    $("paySum").innerHTML = (o.items || []).map((it) => "<div><span>" + it.qty + " × " + esc(it.name) + "</span><span>" + S.ugx(it.price * it.qty) + "</span></div>").join("") +
+      '<div class="tot"><span>Total</span><span>' + S.ugx(o.total) + "</span></div>";
+    $("txnId").value = o.txn_id || "";
+    $("payErr").textContent = "";
+    lockWa(!o.txn_id, o);
+  }
+  function lockWa(locked, o) {
+    const a = $("waOrderBtn");
+    a.classList.toggle("locked", locked);
+    a.setAttribute("aria-disabled", locked ? "true" : "false");
+    a.href = locked ? "#" : waLink(buildMessage(o));
+    $("waLockNote").textContent = locked ? "🔒 The WhatsApp button unlocks after you enter your transaction ID." : "✅ Transaction ID saved. Now send your order on WhatsApp.";
+  }
+  async function submitTxn() {
+    const o = pending(); if (!o) return;
+    const txn = $("txnId").value.trim().toUpperCase();
+    if (txn.replace(/[^A-Z0-9]/g, "").length < 4) { $("payErr").textContent = "Please enter the transaction ID from your Mobile Money SMS."; return; }
+    const b = $("txnBtn"); b.disabled = true; b.textContent = "Saving…"; $("payErr").textContent = "";
+    try {
+      const r = await S.submitTxn(o.id, o.token, txn);
+      o.txn_id = r.txn_id || txn; setPending(o);
+      lockWa(false, o);
+      toast("Transaction ID saved");
+    } catch (e) { $("payErr").textContent = e.message || "Could not save. Please try again."; }
+    finally { b.disabled = false; b.textContent = "Save transaction ID"; }
+  }
+  function copyMomo() {
+    const n = settings.momo_number || "";
+    (navigator.clipboard ? navigator.clipboard.writeText(n) : Promise.reject()).then(() => toast("Number copied"), () => toast(n));
   }
 
   function toggleWish(id) {
@@ -396,6 +434,12 @@
   $("checkoutBtn").addEventListener("click", () => showDetails());
   $("backBag").addEventListener("click", showBag);
   $("placeBtn").addEventListener("click", placeOrder);
+  $("txnBtn").addEventListener("click", submitTxn);
+  $("copyMomo").addEventListener("click", copyMomo);
+  $("waOrderBtn").addEventListener("click", (e) => {
+    if ($("waOrderBtn").classList.contains("locked")) { e.preventDefault(); $("payErr").textContent = "Enter your transaction ID first."; $("txnId").focus(); }
+  });
+  $("newOrder").addEventListener("click", () => { if (!confirm("Start a new order? Make sure you have sent this one on WhatsApp.")) return; setPending(null); showBag(); });
   $("modal").addEventListener("click", (e) => { if (e.target.id === "modal") closeProduct(true); });
   $("menuBtn").addEventListener("click", () => {
     const on = document.body.classList.toggle("nav-open");
@@ -427,8 +471,7 @@
   renderCart();
   (async () => {
     try {
-      [settings, cats, products] = await Promise.all([S.settings(), S.categories(), S.products()]);
-      subs = S.subs();
+      [settings, cats, subs, products] = await Promise.all([S.settings(), S.categories(), S.subs(), S.products()]);
     } catch (e) {
       console.error(e);
       $("productGrid").innerHTML = '<p class="empty">The shelf could not load. Please refresh, or message us on WhatsApp.</p>';
