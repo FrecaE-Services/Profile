@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Queen16 Beauty Empire | Skincare, body care and perfume in Kampala</title>
+<meta name="description" content="Queen16 Beauty Empire at GGS Plaza 2, Kampala. Skincare, body care and perfume, priced in UGX. Order on WhatsApp +256 700 888511.">
+<meta name="theme-color" content="#10182e">
+<meta property="og:title" content="Queen16 Beauty Empire">
+<meta property="og:description" content="Skincare, body care and perfume at GGS Plaza 2, Kampala. Order on WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_UG">
+<meta property="og:image" content="https://frecae-services.github.io/Profile/queen16-beauty-empire/images/portrait.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14110e;
+  --navy:#10182e;
+  --navy-2:#1b2744;
+  --gold:#c6a15b;
+  --gold-2:#e8d5a4;
+  --gold-deep:#8a6830;
+  --ivory:#f4efe6;
+  --ivory-2:#e9e0d1;
+  --paper:#fffcf8;
+  --muted:#6e655b;
+  --line:rgba(20,17,14,.1);
+  --danger:#8d3a3a;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Outfit",system-ui,sans-serif;
+  --header:68px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.55;overflow-x:hidden}
+body.lock{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.05;margin:0}
+.wrap{width:min(1120px,calc(100% - 32px));margin-inline:auto}
+.kicker{font-family:var(--sans);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:500}
+.announce{background:var(--navy);color:var(--gold-2);text-align:center;font-size:.78rem;letter-spacing:.04em;padding:.45rem 1rem}
+header{position:sticky;top:0;z-index:40;background:rgba(16,24,46,.98);color:#f6f1e7;backdrop-filter:blur(12px)}
+.bar{display:flex;align-items:center;gap:.7rem;height:var(--header)}
+.menu{display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(232,213,164,.35);background:transparent;color:var(--gold-2);border-radius:50%;cursor:pointer}
+.menu span,.menu span:before,.menu span:after{display:block;width:16px;height:1.5px;background:currentColor;position:relative}
+.menu span:before,.menu span:after{content:"";position:absolute;left:0}
+.menu span:before{top:-5px}.menu span:after{top:5px}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;min-width:0}
+.brand svg{width:36px;height:28px;flex:none}
+.brand strong{font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.01em;display:block;line-height:1}
+.brand small{display:block;letter-spacing:.22em;text-transform:uppercase;font-size:.58rem;color:var(--gold-2);margin-top:.15rem}
+.nav{display:none}
+.nav a{text-decoration:none;font-size:.92rem;opacity:.88}
+.nav a:hover{color:var(--gold-2)}
+.search{flex:1;display:none;position:relative}
+.search input,.search-m input{width:100%;background:rgba(255,252,248,.08);border:1px solid rgba(232,213,164,.28);border-radius:999px;padding:.7rem 1rem .7rem 2.4rem;color:#fff;outline:none}
+.search input::placeholder,.search-m input::placeholder{color:rgba(246,241,231,.55)}
+.search input:focus,.search-m input:focus{border-color:var(--gold);background:rgba(255,252,248,.12)}
+.search svg,.search-m svg{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
+.iconbtns{margin-left:auto;display:flex;gap:.4rem}
+.iconbtn{position:relative;width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,213,164,.35);background:transparent;color:var(--gold-2);display:grid;place-items:center;cursor:pointer}
+.iconbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6}
+.badge{position:absolute;top:-3px;right:-3px;min-width:18px;height:18px;padding:0 4px;border-radius:99px;background:var(--gold);color:var(--navy);font-size:.68rem;font-weight:600;display:grid;place-items:center}
+.badge[hidden]{display:none !important}
+.search-m{display:block;padding:0 0 .7rem}
+.nav-panel{display:none;background:var(--navy-2);padding:.4rem 1rem 1rem}
+body.nav-open .nav-panel{display:grid}
+.nav-panel a{text-decoration:none;padding:.75rem 0;border-bottom:1px solid rgba(232,213,164,.15);color:var(--gold-2)}
+@media(min-width:900px){
+  .menu,.search-m,.nav-panel{display:none !important}
+  .search{display:block}
+  .nav{display:flex;gap:1.15rem;margin-left:.4rem}
+  .brand strong{font-size:1.5rem}
+}
+.hero{background:radial-gradient(1200px 500px at 80% -10%,rgba(198,161,91,.22),transparent 55%),linear-gradient(180deg,#10182e 0%,#0c1224 100%);color:#f7f2ea;padding:1.6rem 0 2.4rem}
+.hero-grid{display:grid;gap:1.4rem}
+.hero h1{font-size:clamp(2.6rem,10vw,5.1rem);max-width:12ch;color:#fff}
+.hero h1 em{font-style:italic;color:var(--gold-2);font-weight:500}
+.lede{max-width:46ch;color:rgba(247,242,234,.82);font-weight:300;margin:.9rem 0 1.2rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.6rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:48px;padding:.75rem 1.2rem;border-radius:999px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-weight:500}
+.btn.gold{background:var(--gold);color:var(--navy)}
+.btn.gold:hover{background:var(--gold-2)}
+.btn.ghost{border-color:rgba(232,213,164,.5);color:var(--gold-2);background:transparent}
+.btn.ghost.dark{border-color:rgba(16,24,46,.25);color:var(--navy);width:100%}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.hero-frame{position:relative;margin:0}
+.hero-frame img{width:100%;height:min(68vw,460px);object-fit:cover;border-radius:22px 22px 80px 22px;border:1px solid rgba(232,213,164,.35)}
+.hero-frame figcaption{position:absolute;left:12px;bottom:12px;background:rgba(16,24,46,.72);color:var(--gold-2);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .6rem;border-radius:999px}
+@media(min-width:900px){
+  .hero{padding:3.2rem 0 3.6rem}
+  .hero-grid{grid-template-columns:1.05fr .95fr;align-items:center;gap:2.5rem}
+  .hero-frame img{height:520px}
+}
+.tiles{display:grid;gap:.7rem;margin-top:-1.2rem;position:relative;z-index:2}
+.tile{display:grid;grid-template-columns:92px 1fr;gap:.8rem;text-align:left;background:var(--paper);border:0;border-radius:16px;padding:.45rem;cursor:pointer;box-shadow:0 16px 40px -28px rgba(16,24,46,.7)}
+.tile img{width:92px;height:92px;object-fit:cover;border-radius:12px}
+.tile small{letter-spacing:.14em;text-transform:uppercase;font-size:.68rem;color:var(--gold-deep)}
+.tile b{display:block;font-weight:400;font-family:var(--serif);font-size:1.15rem;margin-top:.15rem;line-height:1.2}
+@media(min-width:800px){.tiles{grid-template-columns:repeat(3,1fr);margin-top:-2rem}.tile{grid-template-columns:1fr}.tile img{width:100%;height:160px}}
+.shop{padding:2.2rem 0 1rem}
+.shop-head{display:flex;justify-content:space-between;gap:1rem;align-items:end;flex-wrap:wrap;margin-bottom:.8rem}
+.shop-head h2{font-size:clamp(2rem,6vw,3.2rem)}
+.shop-head p{color:var(--muted);margin:.3rem 0 0;max-width:46ch}
+.sort{display:flex;align-items:center;gap:.45rem;font-size:.85rem;color:var(--muted)}
+.sort select{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:.55rem .8rem;min-height:44px}
+.toolbar{position:sticky;top:var(--header-h,118px);z-index:30;background:rgba(244,239,230,.96);backdrop-filter:blur(10px);padding:.55rem 0 .35rem}
+.chips{display:flex;gap:.45rem;overflow-x:auto;padding-bottom:.4rem;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:transparent;border-radius:999px;padding:.5rem .9rem;min-height:40px;cursor:pointer}
+.chip.slim{font-size:.88rem;min-height:36px}
+.chip.on{background:var(--navy);color:#f6f1e7;border-color:var(--navy)}
+.chip.wish.on{background:var(--gold-deep);border-color:var(--gold-deep)}
+.count{font-size:.82rem;color:var(--muted);margin:.2rem 0 .7rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr);gap:1rem}}
+@media(min-width:1040px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--paper);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(20,17,14,.05);box-shadow:0 14px 30px -26px rgba(16,24,46,.8);cursor:pointer}
+.card-img{position:relative;aspect-ratio:1/1;background:var(--ivory-2)}
+@media(min-width:760px){.card-img{aspect-ratio:4/5}}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card .badge{position:absolute;top:.55rem;left:.55rem;right:auto;background:var(--navy);color:var(--gold-2);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .5rem;border-radius:999px;height:auto;min-width:0}
+.card .badge.out{background:var(--muted);color:#fff}
+.heart{position:absolute;top:.45rem;right:.45rem;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,252,248,.9);display:grid;place-items:center;cursor:pointer}
+.heart svg{width:16px;height:16px;fill:none;stroke:var(--navy);stroke-width:1.6}
+.heart.on svg{fill:var(--gold-deep);stroke:var(--gold-deep)}
+.card-body{padding:.75rem .75rem .85rem;display:flex;flex-direction:column;gap:.3rem;flex:1;min-width:0}
+.card-body .kicker{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-body h3{font-size:1.2rem}
+.card-body p{color:var(--muted);font-size:.82rem;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.buy{margin-top:auto;display:flex;flex-direction:column;gap:.45rem}
+.price{font-weight:500}
+.price s{color:var(--muted);font-weight:400;margin-right:.25rem}
+.price .low,.stock{display:block;color:var(--gold-deep);font-size:.75rem}
+.add{width:100%;min-height:42px;border-radius:999px;border:1px solid var(--navy);background:transparent;cursor:pointer}
+.add:hover,.add:focus-visible{background:var(--navy);color:#fff}
+.add:disabled{opacity:.45;cursor:not-allowed}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:2rem 0}
+.empty a{color:var(--gold-deep)}
+.why,.about,.visit{padding:2.6rem 0}
+.why h2,.about h2,.visit h2{font-size:clamp(2rem,6vw,3rem);margin-bottom:1rem}
+.why-grid{display:grid;gap:.8rem}
+.why-item{background:var(--paper);border-radius:16px;padding:1rem 1.05rem;border-top:2px solid var(--gold)}
+.why-item span{font-family:var(--serif);color:var(--gold);font-size:1.4rem}
+.why-item h3{font-size:1.45rem;margin:.2rem 0 .35rem}
+.why-item p{margin:0;color:var(--muted);font-size:.92rem}
+@media(min-width:800px){.why-grid{grid-template-columns:1fr 1fr}}
+.about-grid,.visit-grid{display:grid;gap:1.2rem}
+.about p{color:var(--muted);white-space:pre-line}
+.about-photos{display:grid;grid-template-columns:1.2fr .8fr;gap:.5rem}
+.about-photos img{width:100%;height:100%;object-fit:cover;border-radius:18px;min-height:180px}
+.about-photos img:first-child{border-radius:18px 18px 18px 70px}
+@media(min-width:860px){.about-grid,.visit-grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:2rem}}
+.visit-card{background:var(--navy);color:#f6f1e7;border-radius:22px;padding:1.3rem 1.2rem}
+.visit-card h2{color:#fff}
+.visit-card p{color:rgba(246,241,231,.78)}
+.visit-card a.phone{font-family:var(--serif);font-size:clamp(1.8rem,6vw,2.4rem);color:var(--gold-2);text-decoration:none;display:inline-block;margin:.2rem 0 .8rem}
+footer{padding:1.4rem 0 5.5rem;color:var(--muted);font-size:.86rem}
+.foot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:1rem}
+.foot a{color:var(--muted)}
+.sample{font-size:.75rem;max-width:68ch;line-height:1.45}
+.signature{display:block;margin-top:1.1rem;text-align:center;font-size:11px;letter-spacing:.04em;color:rgba(110,101,91,.7);text-decoration:none}
+.signature:hover{color:var(--gold-deep)}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:45;width:56px;height:56px;border-radius:50%;background:#1faa59;display:grid;place-items:center;box-shadow:0 12px 24px -10px rgba(0,0,0,.5)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+.overlay{position:fixed;inset:0;background:rgba(10,12,20,.46);z-index:70;display:none}
+.overlay.open{display:block}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(100%,420px);background:var(--paper);z-index:71;transform:translateX(100%);transition:transform .28s ease;display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.drawer-h{display:flex;justify-content:space-between;align-items:center;padding:1rem 1rem .6rem;border-bottom:1px solid var(--line)}
+.drawer-h h3{font-size:1.8rem}
+.x{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:1.3rem}
+.bag,.details{padding:0 1rem 1rem;overflow:auto;flex:1}
+.ci{display:grid;grid-template-columns:64px 1fr auto;gap:.6rem;padding:.75rem 0;border-bottom:1px solid var(--line)}
+.ci img{width:64px;height:80px;object-fit:cover;border-radius:10px}
+.ci-name{font-family:var(--serif);font-size:1.15rem;line-height:1.15}
+.ci-price{color:var(--gold-deep);font-size:.86rem;margin:.15rem 0}
+.rm{background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;align-self:start;font-size:.78rem}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.qty button{width:36px;height:36px;border:0;background:transparent;cursor:pointer}
+.qty span{min-width:1.4rem;text-align:center}
+.drawer-f{padding:.8rem 1rem 1rem;border-top:1px solid var(--line)}
+.subline{display:flex;justify-content:space-between;font-weight:500;margin-bottom:.6rem}
+.drawer-f .btn,.details .btn{width:100%}
+.cart-empty{color:var(--muted);text-align:center;padding:2rem .5rem}
+label{display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:.7rem 0 .25rem}
+input[type=text],input[type=tel],textarea{width:100%;border:1px solid var(--line);background:#fff;border-radius:12px;padding:.75rem .8rem;min-height:48px}
+textarea{min-height:80px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:2px solid rgba(198,161,91,.55);border-color:var(--gold)}
+.co-sum{margin:1rem 0;font-size:.9rem;border-top:1px solid var(--line);padding-top:.6rem}
+.co-sum div{display:flex;justify-content:space-between;gap:.6rem;margin:.25rem 0}
+.co-sum .tot{font-weight:600;margin-top:.45rem}
+.err{color:var(--danger);min-height:1.2em;font-size:.85rem;margin:.4rem 0}
+.linkish{background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;margin-top:.7rem}
+.modal{position:fixed;inset:0;z-index:80;background:rgba(10,12,20,.55);display:none;overflow:auto;padding:0}
+.modal.open{display:grid}
+.modal-card{background:var(--paper);width:min(960px,100%);margin:auto;position:relative;min-height:100%}
+.modal-x{position:absolute;top:.7rem;right:.7rem;z-index:2}
+.modal-grid{display:grid}
+.modal-photo{background:var(--ivory-2)}
+.modal-photo img{width:100%;height:min(70vw,420px);object-fit:cover}
+.modal-copy{padding:1.1rem 1.1rem 1.6rem}
+.modal-copy h2{font-size:clamp(2rem,6vw,3rem);margin:.2rem 0 .4rem}
+.price.lg{font-size:1.2rem}
+.desc{color:var(--muted)}
+.fine{color:var(--muted);font-size:.82rem}
+.pd-actions{display:flex;gap:.5rem;align-items:center;margin:.4rem 0 .7rem}
+.pd-actions .btn{flex:1}
+@media(min-width:800px){
+  .modal{padding:2vh 16px}
+  .modal-card{min-height:0;border-radius:22px;overflow:hidden}
+  .modal-grid{grid-template-columns:1fr 1fr}
+  .modal-photo img{height:100%;min-height:520px}
+}
+.toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%) translateY(8px);background:var(--navy);color:var(--gold-2);padding:.7rem 1rem;border-radius:999px;font-size:.85rem;opacity:0;pointer-events:none;transition:.2s;z-index:90}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:899px){
+  .bar .brand{flex:1}
+}
+</style>
+</head>
+<body>
+<div class="announce" id="announce" hidden></div>
+<header>
+  <div class="wrap bar">
+    <button class="menu" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 64 48" aria-hidden="true"><path fill="#E8D5A4" d="M6 40 L12 18 L24 30 L32 8 L40 30 L52 18 L58 40Z"/><rect x="8" y="40" width="48" height="5" rx="1" fill="#C6A15B"/><circle cx="12" cy="16" r="3" fill="#E8D5A4"/><circle cx="32" cy="7" r="3.2" fill="#F3E6C4"/><circle cx="52" cy="16" r="3" fill="#E8D5A4"/></svg>
+      <span><strong>Queen 16</strong><small>Beauty Empire</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#why">Why us</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <form class="search" role="search" onsubmit="return false">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="searchDesktop" type="search" placeholder="Search serums, oud, lotion…" aria-label="Search the shelf" autocomplete="off">
+    </form>
+    <div class="iconbtns">
+      <button class="iconbtn" id="wishBtn" type="button" aria-label="Saved pieces"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 4.6-7 9-7 9z"/></svg><span class="badge" id="wishBadge" hidden>0</span></button>
+      <button class="iconbtn" id="cartBtn" type="button" aria-label="Open bag"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg><span class="badge" id="cartBadge" hidden>0</span></button>
+    </div>
+  </div>
+  <div class="wrap search-m">
+    <form role="search" onsubmit="return false" style="position:relative">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="search" type="search" placeholder="Search serums, oud, lotion…" aria-label="Search the shelf" autocomplete="off">
+    </form>
+  </div>
+  <nav class="nav-panel" id="nav">
+    <a href="#shop">Shop the shelf</a>
+    <a href="#about">About</a>
+    <a href="#why">Why shop with us</a>
+    <a href="#visit">Visit GGS Plaza 2</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker" data-s="hero_kicker">GGS Plaza 2, Kampala</p>
+        <h1 data-s="hero_title">Care, chosen with a crown.</h1>
+        <p class="lede" data-s="hero_text"></p>
+        <div class="ctas">
+          <a class="btn gold" href="#shop">Shop the shelf</a>
+          <a class="btn ghost" data-wa="Hello Queen16 Beauty Empire, I would like to ask about skincare, body care and perfume.">WhatsApp us</a>
+        </div>
+      </div>
+      <figure class="hero-frame">
+        <img id="heroImg" src="images/portrait.jpg" alt="Editorial beauty portrait used as an illustrative photograph" fetchpriority="high">
+        <figcaption>Illustrative photograph</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="wrap tiles" id="catTiles"></div>
+
+  <section class="shop" id="shop">
+    <div class="wrap">
+      <div class="shop-head">
+        <div>
+          <p class="kicker">The shelf</p>
+          <h2>Skincare, body care, perfume</h2>
+          <p>Korean-style skincare, body care for Kampala weather, and fragrances for her and for him. Prices are in Ugandan shillings.</p>
+        </div>
+        <label class="sort">Sort
+          <select id="sort" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="name">Name</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="toolbar">
+      <div class="wrap">
+        <div class="chips" id="catRow" role="toolbar" aria-label="Categories"></div>
+        <div class="chips" id="subRow" role="toolbar" aria-label="Types"></div>
+        <p class="count" id="resultCount">Loading the shelf…</p>
+      </div>
+    </div>
+    <div class="wrap"><div class="grid" id="productGrid"></div></div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <p class="kicker">The counter</p>
+      <h2 data-s="why_title">Why shop with us</h2>
+      <div class="why-grid" id="whyGrid"></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="kicker">About</p>
+        <h2 data-s="about_title">A Kampala counter for the whole ritual</h2>
+        <p data-s="about"></p>
+      </div>
+      <div class="about-photos">
+        <img src="images/facial-treatment.jpg" alt="Illustrative photograph of a facial treatment" loading="lazy">
+        <img src="images/mask-avocado.jpg" alt="Illustrative photograph of a face mask" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap visit-grid">
+      <div class="visit-card">
+        <p class="kicker" style="color:var(--gold-2)">Find us</p>
+        <h2 data-s="visit_title">Visit or write to us</h2>
+        <p data-s="address">GGS Plaza 2, Kampala, Uganda</p>
+        <a class="phone" id="phoneLink" href="tel:+256700888511">+256 700 888511</a>
+        <p data-s="hours_note"></p>
+        <p data-s="delivery_info"></p>
+        <a class="btn gold" data-wa="Hello Queen16 Beauty Empire, I would like to visit or place an order. GGS Plaza 2.">Message on WhatsApp</a>
+      </div>
+      <div>
+        <p class="kicker">How an order works</p>
+        <h2>Send it on WhatsApp</h2>
+        <p style="color:var(--muted)">Add pieces to your bag, leave your name, phone and where we should deliver, then place the order. WhatsApp opens with the list, the quantities and the total. Nothing is confirmed until you press Send.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <strong style="font-family:var(--serif);font-size:1.4rem;color:var(--ink)">Queen 16</strong>
+        <p data-s="footer" style="margin:.2rem 0"></p>
+        <p class="sample" data-s="sample_note"></p>
+      </div>
+      <div>
+        <a href="./admin/" rel="nofollow">Staff login</a>
+      </div>
+    </div>
+    <a class="signature" href="https://wa.me/256726978988" target="_blank" rel="noopener">Website by Freca E-Services · +256 726 978988</a>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa="Hello Queen16 Beauty Empire, I would like to ask about a product." aria-label="Chat on WhatsApp" href="#">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.14-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.58-1.18-3.02 0-1.44.75-2.13 1.02-2.42.26-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2 .89 2.14.07.15.12.32.02.52-.1.19-.14.31-.28.48-.14.16-.29.37-.42.5-.14.13-.28.28-.12.56.16.27.71 1.17 1.53 1.9.81.72 1.5 1.05 1.72 1.17.28.14.44.12.6-.07.17-.19.69-.8.87-1.07.18-.27.36-.22.6-.13.24.08 1.53.72 1.79.85.26.13.44.2.5.3.07.11.07.63-.17 1.31z"/></svg>
+</a>
+
+<div class="overlay" id="cartOverlay"></div>
+<aside class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping bag">
+  <div class="drawer-h"><h3 id="drawerTitle">Your bag</h3><button class="x" id="cartClose" type="button" aria-label="Close bag">×</button></div>
+  <div class="bag" id="bagView">
+    <div id="cartItems"></div>
+  </div>
+  <div class="drawer-f" id="bagFoot">
+    <div class="subline"><span>Subtotal (<span id="cartCount">0</span>)</span><span id="cartSubtotal">UGX 0</span></div>
+    <button class="btn gold" id="checkoutBtn" type="button">Checkout</button>
+  </div>
+  <div class="details" id="detailsView" hidden>
+    <p style="color:var(--muted);margin-top:.6rem">Place order opens WhatsApp with this list. It is sent only when you press Send there.</p>
+    <label for="cName">Name</label>
+    <input id="cName" type="text" autocomplete="name" required>
+    <label for="cPhone">Phone</label>
+    <input id="cPhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="07XX XXX XXX" required>
+    <label for="cLoc">Delivery location</label>
+    <input id="cLoc" type="text" placeholder="Neighbourhood in Kampala, or pickup at GGS Plaza 2" required>
+    <label for="cNotes">Notes</label>
+    <textarea id="cNotes" placeholder="Gate, time, or a skin concern"></textarea>
+    <div class="co-sum" id="coSum"></div>
+    <a class="btn gold" id="placeBtn" href="#">Place order on WhatsApp</a>
+    <p class="err" id="coErr" role="status"></p>
+    <button class="linkish" id="backBag" type="button">Back to bag</button>
+  </div>
+</aside>
+
+<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Product">
+  <div class="modal-card" id="modalCard"></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="assets/config.js"></script>
+<script src="assets/products.js"></script>
+<script src="assets/store.js"></script>
+<script src="assets/shop.js"></script>
+<script src="../shield.js" data-site-slug="queen16-beauty-empire" defer></script>
+<script>
+/* Keep the desktop and mobile search boxes in step. */
+(function(){
+  var a=document.getElementById('search'), b=document.getElementById('searchDesktop');
+  if(!a||!b) return;
+  function sync(from,to){ if(to.value!==from.value){ to.value=from.value; from.dispatchEvent(new Event('input')); } }
+  b.addEventListener('input', function(){ a.value=b.value; a.dispatchEvent(new Event('input')); });
+  a.addEventListener('input', function(){ if(b.value!==a.value) b.value=a.value; });
+})();
+</script>
+</body>
+</html>
