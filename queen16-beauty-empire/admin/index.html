@@ -3,7 +3,8 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>Admin | Queen16 Beauty Empire</title>
-<link rel="icon" href="../assets/favicon.svg">
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta name="theme-color" content="#10182e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
@@ -28,7 +29,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1
 .row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .muted{color:var(--muted);font-size:.78rem}
 .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.68rem;font-weight:600;text-transform:uppercase;background:var(--soft);border:1px solid var(--line)}
-.pill.new{background:var(--gold);color:var(--navy);border-color:var(--gold)}.pill.confirmed{background:#8a6830}.pill.delivered{background:#1e7d43}.pill.cancelled{background:#444}
+.pill.new{background:var(--gold);color:var(--navy);border-color:var(--gold)}.pill.awaiting_payment{background:#444}.pill.waiting_confirmation{background:var(--gold);color:var(--navy);border-color:var(--gold)}.pill.paid{background:#1e7d43}.pill.delivered{background:#2b5f8a}.pill.cancelled{background:#6e2c32}.pill.est{background:#8a3a5a;border-color:#8a3a5a}.txn{color:var(--gold2);letter-spacing:.04em}
 label{display:block;font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:10px 0 4px}
 input,textarea,select{width:100%;background:#0e1528;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:9px 11px;font-size:.9rem}
 input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold)}
@@ -58,7 +59,7 @@ table{width:100%;border-collapse:collapse;font-size:.8rem}td,th{padding:6px 4px;
 <div class="modal" id="modal"><div class="box" id="modalBox"></div></div>
 <div class="toast" id="toast"></div>
 <script src="../assets/config.js"></script>
-<script src="../assets/products.js"></script>
+<script src="../assets/defaults.js"></script>
 <script src="../assets/store.js"></script>
 <script src="admin.js"></script>
 </body></html>
