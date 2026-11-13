@@ -1,4 +1,4 @@
-/* SPARE PARTS UG data layer: Supabase backend, with a built-in preview fallback. */
+/* SPARE PARTS UG data layer: Supabase backend, with a built-in catalogue fallback. */
 (function(){
 const C = window.SPU_CONFIG || {};
 const T = {p:'sparepartsug_products', c:'sparepartsug_categories', s:'sparepartsug_settings', o:'sparepartsug_orders'};
@@ -44,7 +44,7 @@ const DEFAULT_PRODUCTS = [
 
 let sb = null;
 const live = !!(C.SUPABASE_URL && C.SUPABASE_ANON_KEY);
-// Local preview store: only on localhost (testing) — never on the public site.
+// Local catalogue store: only on localhost — never on the public site.
 const isLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
 const LS = k => 'spu_local_'+k;
 const lget = (k,d) => { try{ const v = JSON.parse(localStorage.getItem(LS(k))); return v==null?d:v; }catch(e){ return d; } };

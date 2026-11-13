@@ -1,6 +1,6 @@
-# SPARE PARTS UG — going live
+# SPARE PARTS UG
 
-The store works today in **preview mode**: it shows the built-in catalogue, checkout still goes to WhatsApp, and the admin is locked. To turn on the admin, saved orders and edits:
+The storefront, WhatsApp checkout, and owner admin run against the connected store database. Operator notes:
 
 1. Create a free Supabase project at https://supabase.com (region: closest to Uganda, e.g. eu-west / af-south if offered).
 2. SQL Editor → paste all of `supabase-schema.sql` → Run. This creates the tables, the security rules (RLS) and the starting products.
