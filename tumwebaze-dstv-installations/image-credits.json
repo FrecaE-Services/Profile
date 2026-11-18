@@ -1,0 +1,29 @@
+[
+  {
+    "file": "images/dish-sky.jpg",
+    "source_title": "Satellite dish in Austria.JPG",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Satellite_dish_in_Austria.JPG",
+    "description": "Sample photo of a plain satellite dish. Not a DSTV or Canal+ product photo.",
+    "creator": "High Contrast",
+    "license": "CC BY 3.0 de",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/de/"
+  },
+  {
+    "file": "images/dish-wall.jpg",
+    "source_title": "Schotelantenne.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Schotelantenne.jpg",
+    "description": "Sample photo of a satellite dish, LNB and cable. Not a DSTV or Canal+ product photo.",
+    "creator": "M.Minderhoud",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "file": "images/decoder.jpg",
+    "source_title": "Digital television HD receiver from TDT with DVB-T2 standard (terrestrial antenna), photographed in Colombia.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Digital_television_HD_receiver_from_TDT_with_DVB-T2_standard_(terrestrial_antenna),_photographed_in_Colombia.jpg",
+    "description": "Sample photo of a generic digital TV decoder. Not a DSTV or Canal+ decoder.",
+    "creator": "JulianVilla26",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  }
+]

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAK JSN — Building glass, mirrors and aluminium windows</title>
+  <meta name="description" content="MAK JSN supplies and fits building glass, mirrors, and aluminium windows and doors. On-site fitting and delivery anywhere in Uganda. Order or ask for a quote on WhatsApp +256 703 703240.">
+  <meta name="theme-color" content="#0c2340">
+  <meta property="og:title" content="MAK JSN — Building glass and aluminium windows">
+  <meta property="og:description" content="Building glass, mirrors, and aluminium windows and doors. Fitting on site. Delivery anywhere in Uganda. WhatsApp +256 703 703240.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_UG">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0c2340;--navy2:#16365c;--blue:#1d5fa8;--silver:#d5dee8;--ice:#f4f7fb;--ink:#122033;--muted:#5c6b7c;--line:rgba(12,35,64,.1);--wa:#128a45}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Outfit,system-ui,sans-serif;background:var(--ice);color:var(--ink);line-height:1.55;font-size:16px}
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:560;line-height:1.12;margin:0}
+    .wrap{width:min(1120px,calc(100% - 32px));margin-inline:auto}
+    header{position:sticky;top:0;z-index:40;background:rgba(12,35,64,.96);color:#fff;backdrop-filter:blur(10px);border-bottom:1px solid rgba(213,222,232,.25)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+    .logo{text-decoration:none;font-weight:700;letter-spacing:.04em}
+    .logo b{font-family:Fraunces,Georgia,serif;font-size:1.15rem;font-weight:700}
+    .logo span{display:block;font-weight:500;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--silver)}
+    .links{display:none;gap:18px;font-size:.92rem;font-weight:600}
+    .links a{text-decoration:none;color:var(--silver)}
+    .links a:hover{color:#fff}
+    @media(min-width:860px){.links{display:flex}}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 16px;border-radius:12px;font-weight:700;text-decoration:none;border:0}
+    .btn svg{width:18px;height:18px;fill:currentColor;flex:none}
+    .wa{background:var(--wa);color:#fff}
+    .wa:hover{background:#0f753a}
+    .ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+    .navy{background:var(--navy);color:#fff}
+    header .wa{min-height:42px;padding:8px 12px;font-size:.86rem}
+    .hero{background:radial-gradient(1200px 420px at 90% -10%,rgba(90,160,220,.35),transparent 55%),linear-gradient(165deg,var(--navy),var(--navy2));color:#fff;padding:36px 0 48px;overflow:hidden}
+    .hero-grid{display:grid;gap:28px;align-items:center}
+    @media(min-width:880px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:40px}.hero{padding:64px 0 72px}}
+    .tag{display:inline-block;border:1px solid rgba(213,222,232,.4);background:rgba(255,255,255,.08);border-radius:99px;padding:6px 12px;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--silver)}
+    .hero h1{font-size:clamp(2rem,7vw,3.4rem);margin:14px 0 12px}
+    .hero h1 em{font-style:normal;color:#b9d7f5}
+    .hero p{margin:0 0 18px;max-width:46ch;color:rgba(255,255,255,.9)}
+    .cta{display:flex;flex-wrap:wrap;gap:10px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;padding:0;list-style:none}
+    .chips li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:99px;padding:6px 10px;font-size:.8rem}
+    .hero-media{position:relative;border-radius:20px;overflow:hidden;min-height:240px;box-shadow:0 24px 50px -28px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.16)}
+    .hero-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10}
+    .hero-cap{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(8,18,32,.78);color:#fff;border-radius:12px;padding:10px 12px;font-size:.78rem;display:flex;justify-content:space-between;gap:10px}
+    .hero-cap strong{color:#d5e8f8}
+    section{padding:48px 0}
+    .sec-h{max-width:640px;margin-bottom:22px}
+    .sec-h span{color:var(--blue);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .sec-h h2{font-size:clamp(1.6rem,4vw,2.3rem);margin-top:6px}
+    .sec-h p{color:var(--muted);margin:8px 0 0}
+    .grid{display:grid;gap:16px}
+    @media(min-width:680px){.grid.products{grid-template-columns:1fr 1fr}}
+    @media(min-width:980px){.grid.products{grid-template-columns:1fr 1fr 1fr}}
+    .card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 16px 30px -24px rgba(12,35,64,.45)}
+    .card-media{position:relative;aspect-ratio:16/10;background:#e7eef5}
+    .card-media img{width:100%;height:100%;object-fit:cover}
+    .swatch{position:relative}
+    .swatch:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.55),transparent 42%,rgba(255,255,255,.18) 70%,transparent)}
+    .swatch:after{content:"";position:absolute;left:8%;right:8%;top:18%;height:18%;border-radius:99px;background:rgba(255,255,255,.28);filter:blur(2px)}
+    .g-blue{background:linear-gradient(155deg,#d7ecff,#3d8ed6 46%,#0d3f78)}
+    .g-clear{background:linear-gradient(155deg,#f7fbff,#c5d7ea 50%,#8ea6bf)}
+    .g-green{background:linear-gradient(155deg,#e5f6ea,#3aaa6a 48%,#0e5a38)}
+    .g-silver{background:linear-gradient(155deg,#fbfcfd,#d5dee8 42%,#8d9bab 78%,#5e6d7e)}
+    .g-neutral{background:linear-gradient(155deg,#f3f6fa,#c9d5e2 55%,#8fa0b3)}
+    .g-brown{background:linear-gradient(155deg,#f3e2cf,#a56a3c 46%,#3e2416)}
+    .price-pill{position:absolute;right:10px;bottom:10px;background:var(--navy);color:#fff;border-radius:99px;padding:5px 10px;font-size:.75rem;font-weight:700}
+    .card-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+    .card h3{font-size:1.15rem}
+    .card p{margin:0;color:var(--muted);font-size:.92rem}
+    .price{color:var(--navy);font-weight:700;font-size:1.02rem}
+    .card .btn{margin-top:auto;width:100%}
+    .band{background:var(--navy);color:#fff}
+    .band .sec-h span{color:#9ec4ea}
+    .band .sec-h p{color:rgba(255,255,255,.78)}
+    .services{display:grid;gap:12px}
+    @media(min-width:760px){.services{grid-template-columns:1fr 1fr}}
+    .services article{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px}
+    .services b{display:block;font-size:1.05rem;margin-bottom:4px}
+    .services p{margin:0;color:rgba(255,255,255,.78);font-size:.92rem}
+    .facts{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    @media(min-width:760px){.facts{grid-template-columns:1fr 1fr}}
+    .facts li{background:#fff;border-left:4px solid var(--blue);border-radius:12px;padding:14px 16px}
+    .facts b{display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+    .gallery{display:grid;gap:12px}
+    @media(min-width:700px){.gallery{grid-template-columns:1.2fr 1fr 1fr}.gallery figure:first-child{grid-row:span 2}}
+    .gallery figure{margin:0;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+    .gallery img{width:100%;height:220px;object-fit:cover}
+    .gallery figure:first-child img{height:100%;min-height:220px;object-fit:contain;background:#0c2340}
+    .gallery figcaption{padding:10px 12px;font-size:.8rem;color:var(--muted)}
+    .contact{background:#fff;border-radius:20px;padding:22px;border:1px solid var(--line);box-shadow:0 16px 30px -24px rgba(12,35,64,.4)}
+    .contact p{margin:8px 0}
+    .note{margin-top:14px;font-size:.82rem;color:var(--muted)}
+    .wa-float{position:fixed;right:16px;bottom:16px;z-index:50;width:58px;height:58px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 24px -8px rgba(18,138,69,.8)}
+    .wa-float svg{width:30px;height:30px;fill:#fff}
+    footer{background:var(--navy);color:rgba(255,255,255,.8);text-align:center;padding:28px 0 96px;font-size:.84rem}
+    footer a{color:#b9d7f5;font-weight:700}
+    footer p{margin:6px 0}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><b>MAK JSN</b><span>Glass · Mirrors · Aluminium</span></a>
+    <nav class="links" aria-label="Page">
+      <a href="#products">Glass</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why us</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20a%20quote%20for%20glass%2C%20mirrors%20or%20aluminium%20windows.">WhatsApp</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Building glass in Uganda</span>
+      <h1>Glass, mirrors and <em>aluminium windows.</em></h1>
+      <p>MAK JSN supplies and fits all types of building glass and mirrors, plus aluminium windows and doors. Fitting is done on site. Delivery is anywhere in Uganda. Prices are wholesale and affordable.</p>
+      <div class="cta">
+        <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20a%20quote%20for%20glass%2C%20mirrors%20or%20aluminium%20windows.">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg>
+          Ask for a quote
+        </a>
+        <a class="btn ghost" href="#products">See prices</a>
+      </div>
+      <ul class="chips">
+        <li>All types of building glass</li>
+        <li>Mirrors</li>
+        <li>Aluminium windows and doors</li>
+        <li>Delivery anywhere in Uganda</li>
+      </ul>
+    </div>
+    <div class="hero-media">
+      <img src="images/windows-house.jpg" alt="Sample photo of a house with large glass windows" width="1400" height="875" fetchpriority="high">
+      <div class="hero-cap"><span><strong>MAK JSN</strong> · sample photo</span><span>Order on WhatsApp</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap">
+    <div class="sec-h">
+      <span>Products and prices</span>
+      <h2>Glass and aluminium from the Jiji shop</h2>
+      <p>These are the listed prices. Send a WhatsApp message to confirm the size you need.</p>
+    </div>
+    <div class="grid products">
+      <article class="card">
+        <div class="card-media swatch g-blue" role="img" aria-label="Blue glass colour"><span class="price-pill">USh 48,000</span></div>
+        <div class="card-body">
+          <h3>Blue Window Glasses</h3>
+          <p>Blue window glasses.</p>
+          <p class="price">USh 48,000</p>
+          <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20to%20order%20Blue%20Window%20Glasses%20(USh%2048%2C000).">Order on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media swatch g-clear" role="img" aria-label="Clear building glass colour"><span class="price-pill">USh 110,000</span></div>
+        <div class="card-body">
+          <h3>Building Glass</h3>
+          <p>Building glass.</p>
+          <p class="price">USh 110,000</p>
+          <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20to%20order%20Building%20Glass%20(USh%20110%2C000).">Order on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media swatch g-green" role="img" aria-label="Green glass colour"><span class="price-pill">USh 95,000</span></div>
+        <div class="card-body">
+          <h3>Green Building Glasses</h3>
+          <p>Green building glasses.</p>
+          <p class="price">USh 95,000</p>
+          <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20to%20order%20Green%20Building%20Glasses%20(USh%2095%2C000).">Order on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media swatch g-neutral" role="img" aria-label="Glass"><span class="price-pill">USh 65,000</span></div>
+        <div class="card-body">
+          <h3>Glasses (Endabirwamu)</h3>
+          <p>Glasses (Endabirwamu).</p>
+          <p class="price">USh 65,000</p>
+          <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20to%20order%20Glasses%20(Endabirwamu)%20(USh%2065%2C000).">Order on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media swatch g-silver" role="img" aria-label="Silver glass colour"><span class="price-pill">USh 98,000</span></div>
+        <div class="card-body">
+          <h3>Silver Window Glass</h3>
+          <p>Silver window glass.</p>
+          <p class="price">USh 98,000</p>
+          <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20to%20order%20Silver%20Window%20Glass%20(USh%2098%2C000).">Order on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media swatch g-neutral" role="img" aria-label="Glass"><span class="price-pill">USh 60,000</span></div>
+        <div class="card-body">
+          <h3>Glasses (Ebirawuli)</h3>
+          <p>Glasses (Ebirawuli).</p>
+          <p class="price">USh 60,000</p>
+          <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20to%20order%20Glasses%20(Ebirawuli)%20(USh%2060%2C000).">Order on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media swatch g-brown" role="img" aria-label="Brown glass colour"><span class="price-pill">USh 120,000</span></div>
+        <div class="card-body">
+          <h3>One Way Brown Glasses</h3>
+          <p>One way brown glasses.</p>
+          <p class="price">USh 120,000</p>
+          <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20to%20order%20One%20Way%20Brown%20Glasses%20(USh%20120%2C000).">Order on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media">
+          <img src="images/sliding-doors.jpg" alt="Sample photo of sliding glass doors" width="1400" height="933" loading="lazy">
+          <span class="price-pill">USh 350,000</span>
+        </div>
+        <div class="card-body">
+          <h3>Aluminium Windows and Doors</h3>
+          <p>Aluminium windows and doors.</p>
+          <p class="price">USh 350,000</p>
+          <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20to%20order%20Aluminium%20Windows%20and%20Doors%20(USh%20350%2C000).">Order on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media">
+          <img src="images/windows-house.jpg" alt="Sample photo of building windows" width="1400" height="875" loading="lazy">
+          <span class="price-pill">USh 60,000</span>
+        </div>
+        <div class="card-body">
+          <h3>Building Window Glasses</h3>
+          <p>Building window glasses.</p>
+          <p class="price">USh 60,000</p>
+          <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20to%20order%20Building%20Window%20Glasses%20(USh%2060%2C000).">Order on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-media">
+          <img src="images/round-mirror.jpg" alt="Sample photo of a round wall mirror" width="1400" height="2097" loading="lazy">
+          <span class="price-pill">USh 125,000–150,000</span>
+        </div>
+        <div class="card-body">
+          <h3>Mirrors and fitting</h3>
+          <p>Mirrors and fitting.</p>
+          <p class="price">From USh 125,000 to USh 150,000</p>
+          <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20mirrors%20and%20fitting%20(from%20USh%20125%2C000%20to%20USh%20150%2C000).">Order on WhatsApp</a>
+        </div>
+      </article>
+    </div>
+    <p class="note">Prices are the ones listed on the <a href="https://jiji.ug/shop/mak-jsn">MAK JSN Jiji shop</a>. Ask on WhatsApp before you pay.</p>
+  </div>
+</section>
+
+<section class="band" id="services">
+  <div class="wrap">
+    <div class="sec-h">
+      <span>Services</span>
+      <h2>Supply, cutting, fitting and delivery</h2>
+      <p>Tell us what you need and where the site is.</p>
+    </div>
+    <div class="services">
+      <article><b>Supply</b><p>Building glass, mirrors, and aluminium windows and doors.</p></article>
+      <article><b>Cutting</b><p>Glass cutting for the size you need.</p></article>
+      <article><b>On-site fitting</b><p>Fitting services on site.</p></article>
+      <article><b>Delivery</b><p>Delivery anywhere in Uganda.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-h">
+      <span>Why choose us</span>
+      <h2>What MAK JSN does</h2>
+    </div>
+    <ul class="facts">
+      <li><b>Building glass and mirrors</b><span>All types of building glass and mirrors.</span></li>
+      <li><b>Aluminium</b><span>Aluminium windows and doors.</span></li>
+      <li><b>Fitting</b><span>Fitting services on site.</span></li>
+      <li><b>Delivery</b><span>Delivery anywhere in Uganda.</span></li>
+      <li><b>Prices</b><span>Wholesale and affordable prices.</span></li>
+      <li><b>WhatsApp</b><span>+256 703 703240 for an order or a quote.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h">
+      <span>Gallery</span>
+      <h2>Glass from the shop, and sample photos</h2>
+      <p>The first photo is from the MAK JSN Jiji shop. The other photos are sample pictures of windows, doors and a mirror.</p>
+    </div>
+    <div class="gallery">
+      <figure>
+        <img src="images/jiji-shop.webp" alt="MAK JSN shop photo showing blue, green, brown and silver glass sheets" width="300" height="300">
+        <figcaption>Photo from the MAK JSN Jiji shop.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/windows-house.jpg" alt="Sample photo of large glass windows on a house" width="1400" height="875" loading="lazy">
+        <figcaption>Sample photo of glass windows.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/sliding-doors.jpg" alt="Sample photo of sliding glass doors" width="1400" height="933" loading="lazy">
+        <figcaption>Sample photo of glass doors.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/round-mirror.jpg" alt="Sample photo of a round mirror" width="1400" height="2097" loading="lazy">
+        <figcaption>Sample photo of a mirror.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Order or ask for a quote</h2>
+      <p>WhatsApp or call <a href="tel:+256703703240">+256 703 703240</a>.</p>
+      <p>Jiji shop: <a href="https://jiji.ug/shop/mak-jsn">jiji.ug/shop/mak-jsn</a></p>
+      <div class="cta" style="margin-top:14px">
+        <a class="btn wa" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20a%20quote%20for%20glass%2C%20mirrors%20or%20aluminium%20windows.">WhatsApp an order or quote</a>
+        <a class="btn navy" href="tel:+256703703240">Call +256 703 703240</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a class="wa-float" href="https://wa.me/256703703240?text=Hi%20MAK%20JSN!%20I%20would%20like%20a%20quote%20for%20glass%2C%20mirrors%20or%20aluminium%20windows." aria-label="WhatsApp MAK JSN">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.02c-.24.68-1.42 1.3-1.95 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.38"/></svg>
+</a>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 MAK JSN. Building glass, mirrors, and aluminium windows and doors.</p>
+    <p>Built by <a href="https://frecae-services.github.io/Profile/">Freca E-Services</a> — websites and WhatsApp ordering for Ugandan businesses.</p>
+    <p>Shop photo from the MAK JSN Jiji listing. Other photos are sample pictures. Credits are in image-credits.json.</p>
+  </div>
+</footer>
+<script src="../shield.js" data-site-slug="mak-jsn-glass-kampala" defer></script>
+</body>
+</html>

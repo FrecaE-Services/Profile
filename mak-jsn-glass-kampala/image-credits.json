@@ -1,0 +1,35 @@
+[
+  {
+    "file": "images/jiji-shop.webp",
+    "source_title": "MAK JSN Jiji shop listing photo",
+    "source_page": "https://jiji.ug/shop/mak-jsn",
+    "description": "Glass sheets at the MAK JSN shop, used on this concept sample for that shop.",
+    "creator": "MAK JSN listing on Jiji",
+    "license": "Seller listing photo"
+  },
+  {
+    "file": "images/windows-house.jpg",
+    "source_page": "https://unsplash.com/photos/1600585154340-be6161a56a0c",
+    "download_url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    "description": "Sample photo of a house with large glass windows. Not the MAK JSN shop.",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license"
+  },
+  {
+    "file": "images/sliding-doors.jpg",
+    "source_page": "https://unsplash.com/photos/1600607687939-ce8a6c25118c",
+    "download_url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+    "description": "Sample photo of sliding glass doors. Not the MAK JSN shop.",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license"
+  },
+  {
+    "file": "images/round-mirror.jpg",
+    "source_title": "Modern wooden vanity with round mirror in minimalistic interior design.jpg",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Modern_wooden_vanity_with_round_mirror_in_minimalistic_interior_design.jpg",
+    "description": "Sample photo of a round mirror. Not the MAK JSN shop.",
+    "creator": "Shixart1985",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0"
+  }
+]
