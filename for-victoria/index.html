@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070a14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="robots" content="noindex, nofollow">
+  <title>For Victoria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --night: #070a14;
+      --paper: #f3e6e0;
+      --dim: #c9b4ae;
+      --rose: #c49a9a;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--night);
+      color: var(--paper);
+      font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      min-height: 100%;
+    }
+    body {
+      overflow: hidden;
+    }
+    body.is-open {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    #sky {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 90% 55% at 50% 115%, rgba(141, 91, 102, 0.42), transparent 58%),
+        radial-gradient(ellipse 50% 40% at 85% -5%, rgba(52, 62, 110, 0.35), transparent 55%),
+        radial-gradient(circle at 18% 12%, rgba(200, 170, 180, 0.08), transparent 32%),
+        linear-gradient(180deg, #070a14 0%, #10172a 42%, #1a1526 68%, #2a1c26 100%);
+    }
+    #glow {
+      position: fixed;
+      left: 50%;
+      bottom: -8%;
+      width: 80%;
+      height: 40%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(180, 120, 130, 0.18), transparent 70%);
+      filter: blur(20px);
+      pointer-events: none;
+      z-index: 1;
+    }
+    canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+    #mute {
+      position: fixed;
+      top: max(14px, env(safe-area-inset-top));
+      right: max(14px, env(safe-area-inset-right));
+      z-index: 30;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(7, 10, 20, 0.25);
+      color: var(--paper);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s ease, background .3s ease;
+    }
+    body.is-open #mute {
+      opacity: 0.7;
+      pointer-events: auto;
+    }
+    #mute:hover, #mute:focus-visible { opacity: 1; background: rgba(7, 10, 20, 0.45); outline: none; }
+    #mute svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    #mute.muted .wave { display: none; }
+    #mute:not(.muted) .off { display: none; }
+
+    #cover {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 24px;
+      background: radial-gradient(ellipse at center, rgba(7, 10, 20, 0.15), rgba(7, 10, 20, 0.35));
+      transition: opacity 1.6s ease, visibility 1.6s ease;
+    }
+    #cover.is-gone {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .kicker {
+      font-size: 0.95rem;
+      letter-spacing: 0.48em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 0 0 0.15em 0.48em;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+    #cover h1 {
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+      font-size: clamp(3.6rem, 18vw, 5.4rem);
+      margin: 0 0 1.35em;
+      line-height: 1;
+      color: var(--paper);
+      text-shadow: 0 0 42px rgba(196, 154, 154, 0.4), 0 0 80px rgba(141, 91, 102, 0.25);
+    }
+    #open-btn {
+      appearance: none;
+      background: transparent;
+      border: 1px solid rgba(243, 230, 224, 0.32);
+      color: var(--paper);
+      padding: 0.78em 1.7em;
+      border-radius: 999px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      cursor: pointer;
+      box-shadow: 0 0 24px rgba(196, 154, 154, 0.12);
+      transition: background .3s ease, border-color .3s ease, transform .3s ease;
+    }
+    #open-btn:hover, #open-btn:focus-visible {
+      background: rgba(243, 230, 224, 0.07);
+      border-color: rgba(243, 230, 224, 0.55);
+      outline: none;
+    }
+    #open-btn:active { transform: scale(0.98); }
+
+    #letter {
+      position: relative;
+      z-index: 3;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 18vh 28px calc(42vh + env(safe-area-inset-bottom));
+      font-size: 19px;
+      line-height: 1.9;
+      font-weight: 400;
+      color: var(--paper);
+    }
+    .para {
+      margin: 0 0 1.85em;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+    .para.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .para.verse {
+      margin: 0 0 0.7em;
+      font-style: italic;
+      font-size: 1.06em;
+      letter-spacing: 0.01em;
+      font-weight: 500;
+    }
+    .para.verse + .para:not(.verse) {
+      margin-top: 2.25em;
+    }
+    .para.closing {
+      margin: 0;
+      font-style: italic;
+      font-size: 1.08em;
+      font-weight: 500;
+      line-height: 1.85;
+    }
+    .para.closing.last {
+      margin-top: 0.55em;
+    }
+    .heart-wrap {
+      margin-top: 4.5em;
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 3s ease;
+    }
+    .heart-wrap.visible { opacity: 1; }
+    .heart {
+      width: 11px;
+      height: 11px;
+      background: var(--rose);
+      transform: rotate(45deg);
+      border-radius: 1px;
+      box-shadow: 0 0 16px rgba(196, 154, 154, 0.7);
+      animation: breathe 4.8s ease-in-out infinite;
+      opacity: 0.7;
+    }
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      background: inherit;
+      border-radius: 50%;
+    }
+    .heart::before { left: -5.5px; top: 0; }
+    .heart::after { left: 0; top: -5.5px; }
+    @keyframes breathe {
+      0%, 100% { opacity: 0.35; filter: blur(0.2px); }
+      50% { opacity: 0.8; filter: blur(0px); }
+    }
+    @media (max-width: 420px) {
+      #letter { font-size: 18px; padding-left: 22px; padding-right: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="sky"></div>
+  <div id="glow"></div>
+  <canvas id="dust"></canvas>
+  <button id="mute" type="button" aria-label="Mute music" title="Mute">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 10v4h3l4 3V7L6 10H3z"/>
+      <g class="wave">
+        <path d="M15 9.5c1.2 1.1 1.2 3.9 0 5"/>
+        <path d="M17.5 7.5c2.2 2 2.2 7 0 9"/>
+      </g>
+      <path class="off" d="M15 9.5l5 5M20 9.5l-5 5"/>
+    </svg>
+  </button>
+
+  <div id="cover">
+    <p class="kicker">For</p>
+    <h1>Victoria</h1>
+    <button id="open-btn" type="button">tap to open</button>
+  </div>
+
+  <main id="letter">
+        <p class="para">Words can’t explain how much I long to hear from you sometimes—to talk to you, to hear your voice, to tell you the little things that happen in my day.</p>
+        <p class="para">Some days, the loneliness becomes almost unbearable. Not because I have no one around me, but because somehow, you’re the one person I wish I could share things with. And then reality reminds me that you aren’t really there.</p>
+        <p class="para">What stings even more is feeling you slowly distance yourself from me. I notice it, even when I pretend I don’t.</p>
+        <p class="para">Most of the time, I never wanted much from you. Sometimes, all I needed was a little warmth, a kind response, a simple feeling that talking to me wasn’t a burden. I’ve done some things simply because I wanted to see you happy, and it stings when those same things are met with annoyance—as though my intentions were something wrong.</p>
+        <p class="para">Deep down, I’m just a lonely person. I’m introverted. I don’t have many people I can truly open up to, and even fewer people I can trust with the parts of my life I rarely show anyone.</p>
+        <p class="para">For a while, I thought maybe that person could be you.</p>
+        <p class="para">I wanted you to be the person I could call when my mind was heavy. The person I could tell the things I couldn’t tell everyone else. The person whose presence could make an ordinary day feel a little less empty.</p>
+        <p class="para">But I’m slowly accepting that you are currently not that person.</p>
+        <p class="para">And maybe that is the part that stings the most—not losing something I had, but realizing that something I quietly hoped for may never exist.</p>
+        <p class="para verse">I’ve gotten used to being alone.</p>
+        <p class="para verse">I’ve learned how to carry the silence.</p>
+        <p class="para verse">I’ve learned how to miss someone without saying it.</p>
+        <p class="para">But sometimes, even after getting used to loneliness, it still stings.</p>
+        <p class="para">Because I really didn’t want much from you.</p>
+        <p class="para">Maybe I just wanted a little place in your world.</p>
+        <p class="para verse closing">And perhaps, even that little bit…</p>
+        <p class="para verse closing last">was already too much to ask.</p>
+        <div class="heart-wrap" id="heart" aria-hidden="true"><div class="heart"></div></div>
+  </main>
+
+  <audio id="bgm" loop preload="auto" playsinline>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    (function () {
+      const cover = document.getElementById("cover");
+      const openBtn = document.getElementById("open-btn");
+      const muteBtn = document.getElementById("mute");
+      const audio = document.getElementById("bgm");
+      const paras = Array.from(document.querySelectorAll(".para"));
+      const heart = document.getElementById("heart");
+      audio.volume = 0;
+
+      function fadeMusicIn() {
+        const target = 0.62;
+        const start = performance.now();
+        const dur = 4200;
+        function step(now) {
+          const t = Math.min(1, (now - start) / dur);
+          const eased = t * t * (3 - 2 * t);
+          audio.volume = target * eased;
+          if (t < 1 && !audio.muted) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      function unlockAndOpen() {
+        const play = audio.play();
+        if (play && play.catch) play.catch(function () {});
+        document.body.classList.add("is-open");
+        cover.classList.add("is-gone");
+        fadeMusicIn();
+        // reveal first lines a moment after the cover lifts
+        setTimeout(observe, 400);
+      }
+
+      function observe() {
+        const io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
+        paras.forEach(function (p) { io.observe(p); });
+
+        const last = paras[paras.length - 1];
+        const ho = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              setTimeout(function () { heart.classList.add("visible"); }, 1200);
+              ho.disconnect();
+            }
+          });
+        }, { threshold: 0.6 });
+        if (last) ho.observe(last);
+
+        // If already in view (top of page), kick first paragraphs
+        paras.slice(0, 2).forEach(function (p, i) {
+          setTimeout(function () { p.classList.add("visible"); }, 700 + i * 700);
+        });
+      }
+
+      openBtn.addEventListener("click", unlockAndOpen);
+      cover.addEventListener("click", function (e) {
+        if (e.target === openBtn) return;
+        // only the button opens, to avoid accidental taps? Brief says tap to open button.
+      });
+
+      muteBtn.addEventListener("click", function () {
+        const muted = !audio.muted;
+        audio.muted = muted;
+        muteBtn.classList.toggle("muted", muted);
+        muteBtn.setAttribute("aria-label", muted ? "Unmute music" : "Mute music");
+        muteBtn.title = muted ? "Unmute" : "Mute";
+        if (!muted && audio.volume === 0) fadeMusicIn();
+      });
+
+      // --- soft stars, drifting motes, faint rain ---
+      const canvas = document.getElementById("dust");
+      const ctx = canvas.getContext("2d");
+      let w = 0, h = 0, stars = [], motes = [], rain = [];
+
+      function resize() {
+        w = canvas.width = window.innerWidth * (window.devicePixelRatio || 1);
+        h = canvas.height = window.innerHeight * (window.devicePixelRatio || 1);
+        canvas.style.width = window.innerWidth + "px";
+        canvas.style.height = window.innerHeight + "px";
+        spawn();
+      }
+      function spawn() {
+        const nStar = Math.min(90, Math.floor((window.innerWidth * window.innerHeight) / 9000));
+        stars = Array.from({ length: nStar }, function () {
+          return {
+            x: Math.random() * w,
+            y: Math.random() * h * 0.75,
+            r: (Math.random() * 1.2 + 0.3) * (window.devicePixelRatio || 1),
+            a: Math.random() * 0.6 + 0.15,
+            tw: Math.random() * 0.8 + 0.2,
+            p: Math.random() * Math.PI * 2
+          };
+        });
+        motes = Array.from({ length: 28 }, function () {
+          return {
+            x: Math.random() * w,
+            y: Math.random() * h,
+            r: (Math.random() * 1.6 + 0.5) * (window.devicePixelRatio || 1),
+            s: (0.04 + Math.random() * 0.08) * (window.devicePixelRatio || 1),
+            a: Math.random() * 0.18 + 0.05,
+            drift: (Math.random() - 0.5) * 0.05
+          };
+        });
+        rain = Array.from({ length: 36 }, function () {
+          return {
+            x: Math.random() * w,
+            y: Math.random() * h,
+            l: (8 + Math.random() * 14) * (window.devicePixelRatio || 1),
+            s: (0.35 + Math.random() * 0.45) * (window.devicePixelRatio || 1),
+            a: 0.04 + Math.random() * 0.06
+          };
+        });
+      }
+      function tick(t) {
+        ctx.clearRect(0, 0, w, h);
+        for (let i = 0; i < stars.length; i++) {
+          const s = stars[i];
+          const tw = 0.5 + 0.5 * Math.sin(t * 0.001 * s.tw + s.p);
+          ctx.beginPath();
+          ctx.fillStyle = "rgba(243,230,224," + (s.a * tw) + ")";
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.strokeStyle = "rgba(196,154,154,0.0)";
+        for (let i = 0; i < rain.length; i++) {
+          const r = rain[i];
+          ctx.beginPath();
+          ctx.strokeStyle = "rgba(210,190,200," + r.a + ")";
+          ctx.lineWidth = 0.7 * (window.devicePixelRatio || 1);
+          ctx.moveTo(r.x, r.y);
+          ctx.lineTo(r.x + 0.4 * (window.devicePixelRatio || 1), r.y + r.l);
+          ctx.stroke();
+          r.y += r.s;
+          r.x += 0.12 * (window.devicePixelRatio || 1);
+          if (r.y > h) { r.y = -r.l; r.x = Math.random() * w; }
+        }
+        for (let i = 0; i < motes.length; i++) {
+          const m = motes[i];
+          ctx.beginPath();
+          ctx.fillStyle = "rgba(220,200,200," + m.a + ")";
+          ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
+          ctx.fill();
+          m.y -= m.s;
+          m.x += m.drift;
+          if (m.y < -10) { m.y = h + 10; m.x = Math.random() * w; }
+        }
+        requestAnimationFrame(tick);
+      }
+      window.addEventListener("resize", resize);
+      resize();
+      requestAnimationFrame(tick);
+    })();
+  </script>
+</body>
+</html>
