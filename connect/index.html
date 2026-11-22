@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Connect your WhatsApp | Freca E-Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B1426;
+      --navy-mid: #111C33;
+      --accent: #0EA5E9;
+      --accent-hover: #0284C7;
+      --off-white: #F8FAFC;
+      --gray-100: #E2E8F0;
+      --gray-500: #64748B;
+      --gray-800: #1E293B;
+      --success: #10B981;
+      --danger: #A40000;
+      --radius: 12px;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--off-white);
+      color: var(--gray-800);
+      min-height: 100vh;
+      line-height: 1.55;
+    }
+    header {
+      background: var(--navy);
+      color: #fff;
+      padding: 1rem 1.25rem;
+    }
+    .brand {
+      max-width: 560px;
+      margin: 0 auto;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.95rem;
+    }
+    .brand span { color: var(--accent); }
+    main {
+      max-width: 560px;
+      margin: 2rem auto;
+      padding: 2rem 1.5rem;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(11, 20, 38, 0.1);
+    }
+    h1 { font-size: 1.45rem; color: var(--navy); margin-bottom: 0.6rem; }
+    p { margin-bottom: 0.9rem; }
+    ol { padding-left: 1.2rem; margin: 0 0 1.2rem; }
+    li { margin: 0.4rem 0; }
+    .note { color: var(--gray-500); font-size: 0.95rem; }
+    button.connect {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: #fff;
+      border: 0;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      height: 44px;
+      padding: 0 1.75rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
+    }
+    button.connect:hover { background: var(--accent-hover); }
+    button.connect:disabled { opacity: 0.6; cursor: not-allowed; }
+    .status { margin-top: 1rem; min-height: 1.4em; }
+    .ok { color: #0b6b2b; }
+    .err { color: var(--danger); }
+    .setup { margin-top: 1.5rem; font-size: 0.85rem; color: var(--gray-500); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">FRECA <span>E-SERVICES</span></div>
+  </header>
+  <main>
+    <h1>Connect your WhatsApp to Freca</h1>
+    <p>This links your WhatsApp Business app number to Freca. It keeps working on your phone, and can also reply when you are busy.</p>
+    <ol>
+      <li>Tap Connect, log in with Facebook.</li>
+      <li>Choose Connect your existing WhatsApp Business app.</li>
+      <li>Enter your number, then paste the code you receive in WhatsApp Business.</li>
+    </ol>
+    <p class="note">Use WhatsApp Business 2.24.17 or later, and keep the phone with you.</p>
+    <button class="connect" id="connectBtn" type="button" onclick="launchWhatsAppSignup()">Connect</button>
+    <p class="status" id="status"></p>
+    <p class="setup" id="setupHint"></p>
+  </main>
+
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+  <script>
+    // Fill CONFIG_ID before publishing. Never put WA_APP_SECRET on this page.
+    const APP_ID = '30195473676720421';
+    const CONFIG_ID = '29384888227863321';
+    const GRAPH_API_VERSION = 'v21.0';
+    const ONBOARD_URL = 'https://ewooyvsxiyibhdttzhwn.supabase.co/functions/v1/wa-onboard';
+
+    let sessionInfo = {};
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: APP_ID,
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: GRAPH_API_VERSION
+      });
+    };
+
+    window.addEventListener('message', (event) => {
+      if (!event.origin.endsWith('facebook.com')) return;
+      try {
+        const data = JSON.parse(event.data);
+        if (data.type === 'WA_EMBEDDED_SIGNUP') {
+          if (data.event === 'FINISH_WHATSAPP_BUSINESS_APP_ONBOARDING' || data.event === 'FINISH') {
+            sessionInfo = {
+              event: data.event,
+              waba_id: data.data && data.data.waba_id,
+              phone_number_id: data.data && data.data.phone_number_id,
+              business_id: data.data && data.data.business_id
+            };
+          }
+          if (data.event === 'CANCEL') {
+            setStatus('The Facebook window was closed before it finished.', true);
+          }
+          if (data.event === 'ERROR') {
+            const msg = (data.data && data.data.error_message) || 'Something went wrong in the Facebook window.';
+            setStatus(msg, true);
+          }
+        }
+      } catch {
+        // Ignore non-JSON messages from the Facebook frame.
+      }
+    });
+
+    const fbLoginCallback = function (response) {
+      if (response && response.authResponse && response.authResponse.code) {
+        sendCodeToServer(response.authResponse.code);
+      } else {
+        setStatus('Sign-in did not finish. You can try again.', true);
+      }
+    };
+
+    const launchWhatsAppSignup = function () {
+      if (CONFIG_ID.indexOf('REPLACE_') === 0) {
+        setStatus('This page is not fully set up yet. The Facebook Login configuration ID still needs to be added.', true);
+        return;
+      }
+      setStatus('Opening Facebook…');
+      document.getElementById('connectBtn').disabled = true;
+      FB.login(fbLoginCallback, {
+        config_id: CONFIG_ID,
+        response_type: 'code',
+        override_default_response_type: true,
+        extras: {
+          setup: {},
+          featureType: 'whatsapp_business_app_onboarding',
+          sessionInfoVersion: '3',
+          version: 'v4'
+        }
+      });
+    };
+
+    async function sendCodeToServer(code) {
+      if (!sessionInfo.waba_id || !sessionInfo.phone_number_id) {
+        setStatus('The Facebook window finished, but the WhatsApp IDs did not arrive. Please try again and keep the window open until you tap Finish.', true);
+        document.getElementById('connectBtn').disabled = false;
+        return;
+      }
+      setStatus('Saving the connection… keep the WhatsApp Business app open.');
+      try {
+        const res = await fetch(ONBOARD_URL, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            code: code,
+            waba_id: sessionInfo.waba_id,
+            phone_number_id: sessionInfo.phone_number_id,
+            business_id: sessionInfo.business_id || null,
+            event: sessionInfo.event || 'FINISH_WHATSAPP_BUSINESS_APP_ONBOARDING'
+          })
+        });
+        const body = await res.json().catch(function () { return {}; });
+        if (res.ok && body.ok) {
+          setStatus('Connected. Your WhatsApp Business app number is now linked. Keep the app open for a few minutes while chat history finishes syncing.', false);
+        } else {
+          setStatus('Could not finish linking (' + (body.error || res.status) + '). Please try again, or just message me.', true);
+        }
+      } catch (err) {
+        setStatus('Could not reach the server. Please try again.', true);
+      }
+      document.getElementById('connectBtn').disabled = false;
+    }
+
+    function setStatus(text, isError) {
+      const el = document.getElementById('status');
+      el.textContent = text;
+      el.className = 'status ' + (isError ? 'err' : 'ok');
+    }
+
+    (function setupHint() {
+      const hint = document.getElementById('setupHint');
+      if (CONFIG_ID.indexOf('REPLACE_') === 0) {
+        hint.textContent = 'Not published yet. The Facebook Login configuration ID still needs to be filled in.';
+      }
+    })();
+  </script>
+</body>
+</html>
