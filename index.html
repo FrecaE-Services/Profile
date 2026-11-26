@@ -1552,6 +1552,68 @@
     }
 
     /* RESPONSIVE */
+
+    /* ===== LEARN & EARN: SKILL E-BOOKS ===== */
+    .ebooks { background: var(--off-white); }
+    .ebooks .section-header { max-width: 760px; }
+    .ebooks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+    .ebook-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--gray-100);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .ebook-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+    .ebook-cover {
+      background: var(--navy);
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ebook-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .ebook-body {
+      padding: 1.25rem 1.35rem 1.45rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .ebook-body .service-desc {
+      margin-bottom: 0.85rem;
+      flex: 1;
+    }
+    .ebook-body .pkg-price { margin: 0 0 1rem; }
+    .ebook-body .btn {
+      width: 100%;
+      white-space: normal;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .ebooks-note {
+      text-align: center;
+      margin: 1.75rem 0 0;
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
     @media (max-width: 1024px) {
       .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
       .hero-visual { max-width: 520px; margin: 0 auto; }
@@ -1570,7 +1632,7 @@
       .hero { padding: 7.5rem 0 4rem; min-height: auto; }
       
       
-      .services-grid, .why-grid, .projects-grid, .projects-grid.featured-stores { grid-template-columns: minmax(0, 1fr); }
+      .services-grid, .why-grid, .projects-grid, .projects-grid.featured-stores, .ebooks-grid { grid-template-columns: minmax(0, 1fr); }
       .process-steps { grid-template-columns: 1fr; gap: 1.4rem; }
       .process-step:not(:last-child)::after { display: none; }
       .process-step {
@@ -1646,6 +1708,7 @@
         <a href="#about" class="nav-link">About</a>
         <a href="#services" class="nav-link">Services</a>
         <a href="#packages" class="nav-link">Quick-Start Packs</a>
+        <a href="#learn-and-earn" class="nav-link">Learn &amp; Earn</a>
         <a href="#problems" class="nav-link">Find a Solution</a>
         <a href="#how-it-works" class="nav-link">How We Work</a>
         <a href="#projects" class="nav-link">Work</a>
@@ -1664,6 +1727,7 @@
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#packages">Quick-Start Packs</a>
+    <a href="#learn-and-earn">Learn &amp; Earn</a>
     <a href="#problems">Find a Solution</a>
     <a href="#how-it-works">How We Work</a>
     <a href="#projects">Work</a>
@@ -2104,6 +2168,53 @@
           </ol>
           <p class="pay-note">After you review the live preview link, if you do not have the full cash right away, flexible installments are available in addition to the standard 50/50: <strong>25% weekly</strong>, <strong>50% monthly</strong>, or <strong>10% every 2 days</strong>, by Mobile Money to <a href="tel:+256758991506">0758 991506</a> — <strong>FREDRICK MUGAMBE</strong>.</p>
         </aside>
+      </div>
+    </section>
+
+    <!-- LEARN & EARN -->
+    <section id="learn-and-earn" class="ebooks section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Freca E-books</span>
+          <h2 class="section-title">Learn &amp; Earn</h2>
+          <p class="section-desc">Practical e-books written by Freca E-Services, built on careful research and real, tested experience. Each guide breaks a valuable digital skill into clear, simple steps you can apply right away to grow your income using the tools you already have.</p>
+        </div>
+        <div class="ebooks-grid">
+          <article class="ebook-card reveal">
+            <div class="ebook-cover">
+              <img src="assets/ebooks/cover-income-glitch.png" alt="Income Glitch e-book cover" width="641" height="910" loading="lazy">
+            </div>
+            <div class="ebook-body">
+              <h3 class="service-title">Income Glitch</h3>
+              <p class="service-desc">The CapCut + TikTok trick that turns your phone into daily income.</p>
+              <p class="pkg-price"><strong>UGX 5,000</strong></p>
+              <a href="https://wa.me/256726978988?text=Hello%2C%20I%27d%20like%20to%20order%20the%20Income%20Glitch%20e-book%20at%20UGX%205k." target="_blank" rel="noopener" class="btn btn-primary">Get your copy on WhatsApp</a>
+            </div>
+          </article>
+          <article class="ebook-card reveal">
+            <div class="ebook-cover">
+              <img src="assets/ebooks/cover-white-green.png" alt="White &amp; Green e-book cover" width="641" height="910" loading="lazy">
+            </div>
+            <div class="ebook-body">
+              <h3 class="service-title">White &amp; Green</h3>
+              <p class="service-desc">Turn ChatGPT, Canva, CapCut and WhatsApp Business into daily income using your phone.</p>
+              <p class="pkg-price"><strong>UGX 15,000</strong></p>
+              <a href="https://wa.me/256726978988?text=Hello%2C%20I%27d%20like%20to%20order%20the%20White%20%26%20Green%20e-book." target="_blank" rel="noopener" class="btn btn-primary">Get your copy on WhatsApp</a>
+            </div>
+          </article>
+          <article class="ebook-card reveal">
+            <div class="ebook-cover">
+              <img src="assets/ebooks/cover-phone-photo-income.png" alt="The Phone Photo Income e-book cover" width="800" height="1000" loading="lazy">
+            </div>
+            <div class="ebook-body">
+              <h3 class="service-title">The Phone Photo Income</h3>
+              <p class="service-desc">Earn by offering studio-style photos from your phone.</p>
+              <p class="pkg-price"><strong>UGX 20,000</strong></p>
+              <a href="https://wa.me/256726978988?text=Hello%2C%20I%27d%20like%20to%20order%20The%20Phone%20Photo%20Income%20e-book." target="_blank" rel="noopener" class="btn btn-primary">Get your copy on WhatsApp</a>
+            </div>
+          </article>
+        </div>
+        <p class="ebooks-note reveal">Pay by Mobile Money and receive your e-book on WhatsApp within minutes.</p>
       </div>
     </section>
 
@@ -2961,6 +3072,7 @@
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#packages">Quick-Start Packs</a>
+            <a href="#learn-and-earn">Learn &amp; Earn</a>
             <a href="#problems">Find a Solution</a>
             <a href="#how-it-works">How We Work</a>
             <a href="#watch">Watch</a>
